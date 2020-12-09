@@ -7,104 +7,67 @@
              mc:Ignorable="d">
     <Grid>
         <Border Padding="20">
-            <TabControl BorderThickness="0">
-                <TabItem Header="Тил кошуу терезеси" Style="{DynamicResource TabControl}" Width="165">
-                    <StackPanel HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
-                        <Grid Width="400" HorizontalAlignment="Left">
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition/>
-                                <ColumnDefinition/>
-                            </Grid.ColumnDefinitions>
-                            <StackPanel Grid.Column="0">
-                                <TextBlock Text="Кайсыл тил аркылуу" Margin="10,5,0,5"/>
-                                <TextBlock Text="Кайсыл тилге" Margin="10,5,0,5"/>
-                                <TextBlock Text="Кыскача аталышы" Margin="10,5,0,5"/>
-                            </StackPanel>
-                            <StackPanel Grid.Column="1">
-                                <ComboBox x:Name="Languages" IsEditable="True" IsReadOnly="True" Margin="10,5,0,5" FontSize="12" Height="23">
-                                    <ComboBoxItem Content="RUS"/>
-                                    <ComboBoxItem Content="KGZ"/>
-                                    <ComboBoxItem Content="KZ"/>
-                                    <ComboBoxItem Content="EN"/>
-                                </ComboBox>
-                                <TextBox x:Name="Language1" Margin="10,5,0,5" Height="23"/>
-                                <TextBox Margin="10,5,0,5" Height="23"/>
-                            </StackPanel>
-                        </Grid>
-                        <Grid>
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition/>
-                                <ColumnDefinition/>
-                            </Grid.ColumnDefinitions>
-                            <StackPanel Grid.Column="0">
-                                <StackPanel Orientation="Horizontal">
-                                    <TextBlock Text="Сиз тандаган тил:" Margin="10,5,0,5"/>
-                                    <TextBlock Text="{Binding ElementName=Languages,Path=Text}" Margin="5,5,0,5"/>
-                                </StackPanel>
-                                <TextBox Margin="10,5,0,5"/>
-                            </StackPanel>
-                            <StackPanel Grid.Column="1">
-                                <StackPanel Orientation="Horizontal">
-                                    <TextBlock Text="Сиз которо турган тил:" Margin="10,5,0,5"/>
-                                    <TextBlock Text="{Binding ElementName=Language1,Path=Text}" Margin="5,5,0,5"/>
-                                </StackPanel>
-                                <TextBox Margin="10,5,0,5"/>
-                            </StackPanel>
-                        </Grid>
-                        <Button Style="{DynamicResource ButtonStyle}" Content="Сактоо" HorizontalAlignment="Right" VerticalAlignment="Center"/>
-                        <DataGrid Margin="10,7,0,0" FontSize="12"  CanUserAddRows="False" Style="{DynamicResource grid_xml}" ColumnHeaderStyle="{DynamicResource hederstyle}" VerticalAlignment="Stretch" VerticalScrollBarVisibility="Auto"   HeadersVisibility="Column" Height="700"
-                   AutoGenerateColumns="False" >
-                            <DataGrid.Columns>
-                                <DataGridTextColumn Header="№" Width="50"/>
-                                <DataGridTextColumn Header="Сиз тандаган тил"/>
-                                <DataGridTextColumn Header="Сиз которуучу тил"/>
-                                <DataGridTemplateColumn Header="Удалить" Width="80" >
-                                    <DataGridTemplateColumn.CellTemplate>
-                                        <DataTemplate>
-                                            <Button Style="{DynamicResource Close_Button}" BorderThickness="0,0,0,0" Cursor="Hand">
-                                                <Image Source="/RAdminPanel;component/Image/Ico/udalit4.png" Width="20"/>
-                                            </Button>
-                                        </DataTemplate>
-                                    </DataGridTemplateColumn.CellTemplate>
-                                </DataGridTemplateColumn>
-                            </DataGrid.Columns>
-                        </DataGrid>
+            <StackPanel HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                <Grid Width="400" HorizontalAlignment="Left">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <StackPanel Grid.Column="0">
+                        <TextBlock Text="Кайсыл тил аркылуу" Margin="10,5,0,5"/>
+                        <TextBlock Text="Кайсыл тилге" Margin="10,9,0,5"/>
+                        <TextBlock Text="Кыскача аталышы" Margin="10,9,0,5"/>
                     </StackPanel>
-                </TabItem>
-                <TabItem Header="Терминалдын тилин тандоо" Style="{DynamicResource TabControl}" Width="210">
-                    <Grid>
-                        <StackPanel>
-                            <StackPanel Orientation="Horizontal">
-                                      <Grid Width="400" HorizontalAlignment="Left" Margin="0,20,0,0">
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition/>
-                                    <ColumnDefinition/>
-                                </Grid.ColumnDefinitions>
-                                <TextBlock Text="Кошуу учун тил танданыз" Margin="10,5,0,5"/>
-                                <ComboBox IsEditable="True" IsReadOnly="True" Margin="10,5,0,5" FontSize="12" Height="23" Grid.Column="1"/>
-                            </Grid>
-                                <Button Style="{DynamicResource ButtonStyle}" Content="Кошуу" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="20,22,0,5"/>
-                            </StackPanel>
-                            <DataGrid Margin="10,7,0,0" FontSize="12"  CanUserAddRows="False" Style="{DynamicResource grid_xml}" ColumnHeaderStyle="{DynamicResource hederstyle}" VerticalAlignment="Stretch" VerticalScrollBarVisibility="Auto"   HeadersVisibility="Column" Height="700"
-                   AutoGenerateColumns="False" >
-                                <DataGrid.Columns>
-                                    <DataGridTextColumn Header="№" Width="50"/>
-                                    <DataGridTextColumn Header="Терминалдагы тилдер"/>
-                                    <DataGridTemplateColumn Header="Удалить" Width="70">
-                                        <DataGridTemplateColumn.CellTemplate>
-                                            <DataTemplate>
-                                                <Button Style="{DynamicResource Close_Button}" BorderThickness="0,0,0,0" Cursor="Hand">
-                                                    <Image Source="/RAdminPanel;component/Image/Ico/udalit4.png" Width="20"/>
-                                                </Button>
-                                            </DataTemplate>
-                                        </DataGridTemplateColumn.CellTemplate>
-                                    </DataGridTemplateColumn>
-                                </DataGrid.Columns>
-                            </DataGrid>
+                    <StackPanel Grid.Column="1">
+                        <ComboBox x:Name="Languages" IsEditable="True" IsReadOnly="True" Margin="10,5,0,5" FontSize="12" Height="23" Width="Auto">
+                            <ComboBoxItem Content="RUS"/>
+                            <ComboBoxItem Content="KGZ"/>
+                            <ComboBoxItem Content="KZ"/>
+                            <ComboBoxItem Content="EN"/>
+                        </ComboBox>
+                        <TextBox x:Name="Language1" Margin="10,5,0,5" Height="23"/>
+                        <TextBox Margin="10,5,0,5" Height="23"/>
+                    </StackPanel>
+                </Grid>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <StackPanel Grid.Column="0">
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="Сиз тандаган тил:" Margin="10,5,0,5"/>
+                            <TextBlock Text="{Binding ElementName=Languages,Path=Text}" Margin="5,5,0,5"/>
                         </StackPanel>
-                    </Grid>
-                </TabItem>
-            </TabControl>
+                        <TextBox Margin="10,5,0,5"/>
+                    </StackPanel>
+                    <StackPanel Grid.Column="1">
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="Сиз которо турган тил:" Margin="10,5,0,5"/>
+                            <TextBlock Text="{Binding ElementName=Language1,Path=Text}" Margin="5,5,0,5"/>
+                        </StackPanel>
+                        <TextBox Margin="10,5,0,5"/>
+                    </StackPanel>
+                </Grid>
+                <Button Style="{DynamicResource ButtonStyle}" Content="Сактоо" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+                <DataGrid Margin="10,7,0,0" FontSize="12"  CanUserAddRows="False" Style="{DynamicResource grid_xml}" ColumnHeaderStyle="{DynamicResource hederstyle}" VerticalAlignment="Stretch" VerticalScrollBarVisibility="Auto"   HeadersVisibility="Column" Height="700"
+                   AutoGenerateColumns="False" >
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="№" Width="50"/>
+                        <DataGridTextColumn Header="Сиз тандаган тил"/>
+                        <DataGridTextColumn Header="Сиз которуучу тил"/>
+                        <DataGridTemplateColumn Header="Удалить" Width="80" >
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Button Style="{DynamicResource Close_Button}" BorderThickness="0,0,0,0" Cursor="Hand">
+                                        <Image Source="/RAdminPanel;component/Image/Ico/udalit4.png" Width="20"/>
+                                    </Button>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                    </DataGrid.Columns>
+                </DataGrid>
+            </StackPanel>
         </Border>
     </Grid>
 </UserControl>

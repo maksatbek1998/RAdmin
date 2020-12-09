@@ -2,5 +2,13 @@
 FC:\AdminP\РСКнын админ панели\RAdminPanel\App.xaml;;
 FC:\AdminP\РСКнын админ панели\RAdminPanel\MainWindow.xaml;;
 FC:\AdminP\РСКнын админ панели\RAdminPanel\UserControlFolder\AddOperator.xaml;;
+FC:\AdminP\РСКнын админ панели\RAdminPanel\UserControlFolder\Branches.xaml;;
+FC:\AdminP\РСКнын админ панели\RAdminPanel\UserControlFolder\Client.xaml;;
+FC:\AdminP\РСКнын админ панели\RAdminPanel\UserControlFolder\Departament.xaml;;
 FC:\AdminP\РСКнын админ панели\RAdminPanel\UserControlFolder\Language.xaml;;
+FC:\AdminP\РСКнын админ панели\RAdminPanel\UserControlFolder\Password.xaml;;
+FC:\AdminP\РСКнын админ панели\RAdminPanel\UserControlFolder\Rasspisania.xaml;;
+FC:\AdminP\РСКнын админ панели\RAdminPanel\UserControlFolder\Sound.xaml;;
+FC:\AdminP\РСКнын админ панели\RAdminPanel\UserControlFolder\Terminal.xaml;;
+FC:\AdminP\РСКнын админ панели\RAdminPanel\UserControlFolder\WorkPlaces.xaml;;
 

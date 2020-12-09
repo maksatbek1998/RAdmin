@@ -55,11 +55,36 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="ClassUserControl\ShowUserControl.cs" />
     <Compile Include="UserControlFolder\AddOperator.xaml.cs">
       <DependentUpon>AddOperator.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UserControlFolder\Branches.xaml.cs">
+      <DependentUpon>Branches.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControlFolder\Client.xaml.cs">
+      <DependentUpon>Client.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControlFolder\Departament.xaml.cs">
+      <DependentUpon>Departament.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UserControlFolder\Language.xaml.cs">
       <DependentUpon>Language.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControlFolder\Password.xaml.cs">
+      <DependentUpon>Password.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControlFolder\Rasspisania.xaml.cs">
+      <DependentUpon>Rasspisania.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControlFolder\Sound.xaml.cs">
+      <DependentUpon>Sound.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControlFolder\Terminal.xaml.cs">
+      <DependentUpon>Terminal.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControlFolder\WorkPlaces.xaml.cs">
+      <DependentUpon>WorkPlaces.xaml</DependentUpon>
     </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -81,7 +106,39 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="UserControlFolder\Branches.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControlFolder\Client.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControlFolder\Departament.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="UserControlFolder\Language.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControlFolder\Password.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControlFolder\Rasspisania.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControlFolder\Sound.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControlFolder\Terminal.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControlFolder\WorkPlaces.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -113,7 +170,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="ClassUserControl\" />
+    <Resource Include="Image\Just_Image\Branches.png" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Image\Just_Image\RSK.JPG" />
@@ -141,6 +198,42 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Image\Ico\udalit4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\Just_Image\Person.JPG" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\Just_Image\workers.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\Just_Image\rsk.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\Just_Image\rsk1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\Just_Image\rsk2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\Ico\Clear.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\Ico\search.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\Ico\search2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\Img\Department.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\Img\sound.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\Img\depar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\Img\pass.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

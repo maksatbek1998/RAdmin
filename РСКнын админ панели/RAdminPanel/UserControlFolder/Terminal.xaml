@@ -1,0 +1,116 @@
+﻿<UserControl x:Class="RAdminPanel.UserControlFolder.Terminal"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:RAdminPanel.UserControlFolder"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <Border Padding="20">
+            <TabControl BorderThickness="0">
+                <TabItem Header="Терминалдын тилин тандоо" Style="{DynamicResource TabControl}" Width="210">
+                    <Grid>
+                        <StackPanel>
+                            <StackPanel Orientation="Horizontal">
+                                <Grid Width="400" HorizontalAlignment="Left" Margin="0,20,0,0">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition/>
+                                        <ColumnDefinition/>
+                                    </Grid.ColumnDefinitions>
+                                    <TextBlock Text="Кошуу учун тил танданыз" Margin="10,5,0,5"/>
+                                    <ComboBox Grid.Column="1" Width="200"/>
+                                </Grid>
+                                <Button Style="{DynamicResource ButtonStyle}" Content="Кошуу" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="20,22,0,5"/>
+                            </StackPanel>
+                            <DataGrid Margin="10,7,0,0" FontSize="12"  CanUserAddRows="False" Style="{DynamicResource grid_xml}" ColumnHeaderStyle="{DynamicResource hederstyle}" VerticalAlignment="Stretch" VerticalScrollBarVisibility="Auto"   HeadersVisibility="Column" Height="700"
+                   AutoGenerateColumns="False" >
+                                <DataGrid.Columns>
+                                    <DataGridTextColumn Header="№" Width="50"/>
+                                    <DataGridTextColumn Header="Терминалдагы тилдер"/>
+                                    <DataGridTemplateColumn Header="Удалить" Width="70">
+                                        <DataGridTemplateColumn.CellTemplate>
+                                            <DataTemplate>
+                                                <Button Style="{DynamicResource Close_Button}" BorderThickness="0,0,0,0" Cursor="Hand">
+                                                    <Image Source="/RAdminPanel;component/Image/Ico/udalit4.png" Width="20"/>
+                                                </Button>
+                                            </DataTemplate>
+                                        </DataGridTemplateColumn.CellTemplate>
+                                    </DataGridTemplateColumn>
+                                </DataGrid.Columns>
+                            </DataGrid>
+                        </StackPanel>
+                    </Grid>
+                </TabItem>
+                <TabItem Header="Терминалды очуруу жана жандыруу" Style="{DynamicResource TabControl}" Width="270">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="120"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+                        <Canvas Height="82" VerticalAlignment="Top" HorizontalAlignment="Stretch" Grid.Row="0" Margin="0,20,0,0">
+                            <TextBlock Text="Терминалдын аты" Canvas.Left="3" Canvas.Top="22"/>
+                            <ComboBox Canvas.Left="181" Canvas.Top="22"/>
+                            <Button Style="{DynamicResource ButtonStyle}" Content="Жандыруу" Canvas.Left="451" Canvas.Top="21" FontWeight="DemiBold"/>
+                            <Button Style="{DynamicResource ButtonStyle}" Content="Очуруу" Canvas.Left="610" Canvas.Top="21" FontWeight="DemiBold"/>
+                        </Canvas>
+                    </Grid>
+                </TabItem>
+                <TabItem Header="Терминалдын менюсун тузуу" Style="{DynamicResource TabControl}" Width="210">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="120"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+                        <Canvas>
+                            <TextBlock Text="Кайсыл категорияга" Canvas.Top="10"/>
+                            <ComboBox Canvas.Left="178" Canvas.Top="8" Width="184" IsReadOnly="True">
+                                <ComboBoxItem Content="Главный"/>
+                            </ComboBox>
+                            <TextBlock Text="Кошулуучунун аталышы" Canvas.Top="41"/>
+                            <TextBox Style="{DynamicResource textbox_style}" Width="184" Canvas.Left="178" Canvas.Top="39" Tag="Кошулуучунун аталышы"/>
+                            <TextBlock Text="Приоритети" Canvas.Top="8" Canvas.Left="402" Width="105"/>
+                            <ComboBox Canvas.Left="514" Canvas.Top="8" Width="150" IsReadOnly="True">
+                                <ComboBoxItem Content="1"/>
+                                <ComboBoxItem Content="2"/>
+                                <ComboBoxItem Content="3"/>
+                            </ComboBox>
+                            <Button Style="{DynamicResource ButtonStyle}" Content="Сактоо" Canvas.Left="702" Canvas.Top="39"/>
+                            <TextBlock Text="Активдуулугу" Canvas.Top="40" Canvas.Left="402" Width="105"/>
+                            <ComboBox Canvas.Left="514" Canvas.Top="39" Width="150" IsReadOnly="True">
+                                <ComboBoxItem Content="Ооба активдуу"/>
+                                <ComboBoxItem Content="Жок активдуу эмес"/>
+                            </ComboBox>
+                            <Button Style="{DynamicResource ResourceKey=ButtonStyle}" Content="Озгортуу" Canvas.Left="702" Canvas.Top="8"/>
+                            <Button Style="{DynamicResource ResourceKey=ButtonStyle}" Canvas.Left="702" Canvas.Top="69">
+                                <StackPanel Orientation="Horizontal">
+                                    <Image Source="../Image/Ico/Clear.png" Margin="0,0,10,0"/>
+                                    <TextBlock Text="Баарын очуруу"/>
+                                </StackPanel>
+                            </Button>
+                        </Canvas>
+                        <DataGrid  FontSize="12"  CanUserAddRows="False" Style="{DynamicResource grid_xml}" ColumnHeaderStyle="{DynamicResource hederstyle}" VerticalAlignment="Top" VerticalScrollBarVisibility="Auto"   HeadersVisibility="Column" Height="800"
+                   AutoGenerateColumns="False"  Grid.Row="1">
+                            <DataGrid.Columns>
+                                <DataGridTextColumn Header="№" Width="40"/>
+                                <DataGridTextColumn Header="Категориялар"/>
+                                <DataGridTextColumn Header="Аткарылуучу операциялар"/>
+                                <DataGridTextColumn Header="Приоритети"/>
+                                <DataGridTextColumn Header="Активдуулугу"/>
+                                <DataGridTemplateColumn Header="Удалить" Width="80">
+                                    <DataGridTemplateColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <Button Style="{DynamicResource Close_Button}" BorderThickness="0,0,0,0" Cursor="Hand">
+                                                <Image Source="/RAdminPanel;component/Image/Ico/udalit4.png" Width="20"/>
+                                            </Button>
+                                        </DataTemplate>
+                                    </DataGridTemplateColumn.CellTemplate>
+                                </DataGridTemplateColumn>
+                            </DataGrid.Columns>
+                        </DataGrid>
+                    </Grid>
+                </TabItem>
+            </TabControl>
+        </Border>
+    </Grid>
+</UserControl>

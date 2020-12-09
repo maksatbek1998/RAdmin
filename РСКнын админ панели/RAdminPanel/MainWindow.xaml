@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:RAdminPanel"
         mc:Ignorable="d"
-        Title="MainWindow" Height="700" Width="1200" WindowStartupLocation="CenterScreen" WindowStyle="None" AllowsTransparency="True" Background="{x:Null}"> 
+        Title="MainWindow" Height="700" Width="1200" WindowStartupLocation="CenterScreen" WindowStyle="None" AllowsTransparency="True" Background="{x:Null}" Icon="Image/Img/Без названия.png">
     <Grid>
         <Grid Background="White" Margin="10,5,8,10">
             <Grid.Effect>
@@ -22,8 +22,8 @@
             <Border x:Name="JOK"  Grid.Column="0" Grid.Row="0" Background="White">
                 <StackPanel  Orientation="Horizontal" HorizontalAlignment="Left">
                     <Image x:Name="lbl_menu_2" Margin="10 0 20 0 " Source="Image/Img/Без названия.png" Height="40" Width="40"/>
-                    <TextBlock x:Name="lbl_menu_1" Height="20" Text="Admin" Foreground="Black"  FontSize="16" FontFamily="Arial Rounded MT Bold"/>
-                    <TextBlock x:Name="lbl_menu0" Height="20" Text="Panel" Foreground="#FFA4A4A4"  FontSize="16" FontFamily="Arial Rounded MT Bold"/>
+                    <TextBlock x:Name="lbl_menu_1" Height="20" Text="РСК" Foreground="Black"  FontSize="16" FontFamily="Arial Rounded MT Bold" FontWeight="Bold"/>
+                    <TextBlock x:Name="lbl_menu0" Height="20" Text="БАНК" Foreground="#FFA4A4A4"  FontSize="16" FontFamily="Arial Rounded MT Bold" FontWeight="Bold" Margin="5,0,0,0"/>
                 </StackPanel>
             </Border>
             <Border Grid.Column="0" Grid.Row="1" Background="#FF0070B8" Panel.ZIndex="1">
@@ -31,53 +31,47 @@
                     <DropShadowEffect Color="#FFA4A4A4" Opacity="0.5"/>
                 </Border.Effect>
                 <StackPanel>
-                    <Button Height="45" x:Name="fil"  Style="{DynamicResource menu}">
+                    <Button Height="45" x:Name="fil"  Style="{DynamicResource menu}" Click="fil_Click">
                         <DockPanel Margin="5 0 0 0">
                             <Image Source="Image/Img/company_48px.png" Height="25" />
-                            <!--<Image Source="/image/office-building.png" Height="25"  />-->
-                            <Label  FontSize="14"  VerticalAlignment="Center" Content="Филлиалы" Foreground="White" x:Name="lbl_menu1"/>
+                            <Label  FontSize="14"  VerticalAlignment="Center" Content="Филиал" Foreground="White" x:Name="lbl_menu1"/>
                         </DockPanel>
                     </Button>
-                    <Button Height="45" Style="{DynamicResource menu}" >
+                    <Button Height="45" Style="{DynamicResource menu}" Click="Button_Click_4">
                         <DockPanel Margin="5 0 0 0">
                             <Image Source="Image/Img/business_building_48px.png" Height="25" />
-
                             <Label FontSize="14"  VerticalAlignment="Center" Content="Операторы" Foreground="White" x:Name="lbl_menu2"/>
                         </DockPanel>
                     </Button>
-                    <Button Height="45" Style="{DynamicResource menu}" >
+                    <Button Height="45" Style="{DynamicResource menu}" Click="Button_Click_10">
+                        <DockPanel Margin="5 0 0 0">
+                            <Image Source="Image/Img/Department.png" Height="25" />
+                            <Label FontSize="14"  VerticalAlignment="Center" Content="Отделы" Foreground="White" x:Name="lbl_menu22"/>
+                        </DockPanel>
+                    </Button>
+                    <Button Height="45" Style="{DynamicResource menu}" Click="Button_Click_5">
                         <DockPanel Margin="5 0 0 0">
                             <Image Source="Image/Img/resume_48px.png" Height="25"/>
 
                             <Label FontSize="14" x:Name="lbl_menu3"  Content="Рабочие места" Foreground="White " VerticalAlignment="Center"/>
                         </DockPanel>
                     </Button>
-                    <Button Height="45" Style="{DynamicResource menu}">
+                    <Button Height="45" Style="{DynamicResource menu}" Click="Button_Click_8">
                         <DockPanel Margin="5 0 0 0">
                             <Image Source="Image/Img/timesheet_48px.png" Height="25"/>
-
                             <Label FontSize="14" x:Name="lbl_menu4" VerticalAlignment="Center" Content="Управление расписанием" Foreground="White" />
                         </DockPanel>
                     </Button>
-                    <Button Height="45" Style="{DynamicResource menu}" >
+                    <Button Height="45" Style="{DynamicResource menu}" Click="Button_Click_6">
                         <DockPanel Margin="5 0 0 0">
                             <Image Source="Image/Img/coding.png" Height="25"/>
-
                             <Label x:Name="lbl_menu5" FontSize="14"  VerticalAlignment="Center" Foreground="White" Content="Настройка терминала" />
                         </DockPanel>
                     </Button>
-                    <Button Height="45" Style="{DynamicResource menu}">
+                    <Button Height="45" Style="{DynamicResource menu}" Click="Button_Click_7">
                         <DockPanel Margin="5 0 0 0">
                             <Image Source="Image/Img/order_history_48px.png" Height="25" />
-
-                            <Label x:Name="lbl_menu6" VerticalAlignment="Center" FontSize="14" Content="История клиентов" Foreground="White" />
-                        </DockPanel>
-                    </Button>
-                    <Button Height="45" Style="{DynamicResource menu}">
-                        <DockPanel Margin="5 0 0 0">
-                            <Image Source="Image/Img/value.png" Height="25" />
-
-                            <Label FontSize="14" x:Name="lbl_menu7"  VerticalAlignment="Center" Content="Поток клиентов" Foreground="White" />
+                            <Label x:Name="lbl_menu6" VerticalAlignment="Center" FontSize="14" Content="Клиенты" Foreground="White" />
                         </DockPanel>
                     </Button>
                     <Button Height="45" Style="{DynamicResource menu}" Click="Button_Click_3">
@@ -86,15 +80,25 @@
                             <Label x:Name="lbl_menu8"  VerticalAlignment="Center" FontSize="14" Content="Настройка языков" Foreground="White" />
                         </DockPanel>
                     </Button>
+                    <Button Height="45" Style="{DynamicResource menu}" Click="Button_Click_9">
+                        <DockPanel Margin="5 0 0 0">
+                            <Image Source="Image/Img/sound.png" Height="25"/>
+                            <Label x:Name="lbl_menu81"  VerticalAlignment="Center" FontSize="14" Content="Настройка звукы" Foreground="White" />
+                        </DockPanel>
+                    </Button>
                 </StackPanel>
 
             </Border>
-            <Canvas Background="{x:Null}" Grid.Column="0" Grid.Row="1" Panel.ZIndex="1">
-                <Image x:Name="lbl_menu9" Source="Image/Img/Без названия.jpg" Height="50" Canvas.Left="30" Canvas.Top="464" Width="167"/>
+            <Grid Background="{x:Null}" Panel.ZIndex="1"  Grid.Column="0" Grid.Row="1" Height="150" Width="200" Margin="0,0,0,0" VerticalAlignment="Bottom" HorizontalAlignment="Center">
+                <Image x:Name="lbl_menu9" Source="Image/Just_Image/rsk2.png" Height="70" HorizontalAlignment="Center">
+                    <Image.Effect>
+                        <DropShadowEffect Direction="270" BlurRadius="15" ShadowDepth="1"/>
+                    </Image.Effect>
+                </Image>
                 <TextBlock 
-  Name="MyChangingColorText" 
-  Width="124" Height="24" FontSize="14"  Canvas.Left="49"  Canvas.Top="514" FontWeight="Bold">
-  Больше чем банк
+  Name="MyChangingColorText" HorizontalAlignment="Center"
+  Width="124" Height="24" FontSize="14"  FontWeight="Bold" VerticalAlignment="Bottom" Text="Больше чем банк" Margin="0,0,0,10">
+  
                     <TextBlock.Foreground>
                         <SolidColorBrush x:Name="MySolidColorBrush" Color="White" />
                     </TextBlock.Foreground>
@@ -114,13 +118,14 @@
                     </TextBlock.Triggers>
                 </TextBlock>
 
-            </Canvas>
+            </Grid>
+
             <Border  Grid.Column="1" Grid.Row="0" Background="#FF0070B8" Panel.ZIndex="1">
                 <Border.Effect>
                     <DropShadowEffect Color="#FFA4A4A4" Opacity="0.5"/>
                 </Border.Effect>
-                <StackPanel>
-                    <Canvas>
+                <Grid>
+                    <Canvas Width="100" HorizontalAlignment="Left">
 
                         <Image x:Name="Skryt"  Canvas.Left="11" Canvas.Top="9" MouseDown="Skryt_MouseDown">
                             <Image.Style>
@@ -139,17 +144,25 @@
 
                     </Canvas>
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Top">
-                        <Button  Style="{DynamicResource Close_Button}" VerticalAlignment="Top" Click="Button_Click_2">
-                            <Image Source="Image/Img/Mininmized.png" Margin="0,5,0,0" Width="30" Height="30"/>
-                        </Button>
-                        <Button  Style="{DynamicResource Close_Button}" VerticalAlignment="Top" Click="Button_Click_1">
-                            <Image Source="Image/Img/Svernut.png"/>
-                        </Button>
-                        <Button  Style="{DynamicResource Close_Button}" VerticalAlignment="Top" Click="Button_Click">
-                            <Image Source="Image/Img/Close.png"/>
-                        </Button>
+                        <StackPanel Orientation="Horizontal" Margin="0 0 10 0">
+                            <Button Style="{DynamicResource Language_Button1}" Content="Кыр.Г"/>
+                            <Button Style="{DynamicResource Language_Button1}" Content="KAZ"/>
+                            <Button Style="{DynamicResource Language_Button1}" Content="RUS"/>
+                            <Button Style="{DynamicResource Language_Button1}" Content="EN"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" >
+                            <Button  Style="{DynamicResource Close_Button}" VerticalAlignment="Top" Click="Button_Click_2">
+                                <Image Source="Image/Img/Mininmized.png" Margin="0,5,0,0" Width="30" Height="30"/>
+                            </Button>
+                            <Button  Style="{DynamicResource Close_Button}" VerticalAlignment="Top" Click="Button_Click_1">
+                                <Image Source="Image/Img/Svernut.png"/>
+                            </Button>
+                            <Button  Style="{DynamicResource Close_Button}" VerticalAlignment="Top" Click="Button_Click">
+                                <Image Source="Image/Img/Close.png"/>
+                            </Button>
+                        </StackPanel>
                     </StackPanel>
-                </StackPanel>
+                </Grid>
             </Border>
             <Grid Grid.Row="1" Grid.Column="1">
 

@@ -6,7 +6,50 @@
              xmlns:local="clr-namespace:RAdminPanel.UserControlFolder"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-    <Grid>
-            
-    </Grid>
+    <Border Padding="20">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="205"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0">
+                <Canvas>
+                    <Image Source="../Image/Just_Image/Person.JPG" Width="120" Height="140" Canvas.Left="17" Canvas.Top="26"/>
+                    <TextBlock Text="Ф.И.О" Canvas.Left="177" Canvas.Top="20" />
+                    <TextBox FontSize="14"  Style="{DynamicResource textbox_style}" Tag=" Ф.И.О" Height="24" Width="254" Canvas.Left="269" Canvas.Top="16"/>
+                    <TextBlock Text="Филиал" Canvas.Left="177" Canvas.Top="51"/>
+                    <ComboBox  Canvas.Left="269" Canvas.Top="47"/>
+                    <TextBlock Text="Жумушу" Canvas.Left="177" Canvas.Top="82" />
+                    <ComboBox  Canvas.Left="269" Canvas.Top="78"/>
+                    <TextBlock Text="Логин" Canvas.Left="177" Canvas.Top="112" />
+                    <TextBox FontSize="14"  Style="{DynamicResource textbox_style}" Tag="Логин" Height="24" Width="254" Canvas.Left="269" Canvas.Top="109"/>
+                    <TextBlock Text="Парол" Canvas.Left="177" Canvas.Top="144" />
+                    <TextBox FontSize="14"  Style="{DynamicResource textbox_style}" Tag="Парол" Height="24" Width="254" Canvas.Left="269" Canvas.Top="140"/>
+                    <Button Style="{DynamicResource ResourceKey=ButtonStyle}" Content="Сактоо" Canvas.Left="373" Canvas.Top="172"/>
+                </Canvas>
+            </Grid>
+            <Grid Grid.Row="1">
+                <DataGrid Margin="10,7,0,0" FontSize="12"  CanUserAddRows="False" Style="{DynamicResource grid_xml}" ColumnHeaderStyle="{DynamicResource hederstyle}" VerticalAlignment="Stretch" VerticalScrollBarVisibility="Auto"   HeadersVisibility="Column" Height="700"
+                   AutoGenerateColumns="False" >
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="№" Width="50"/>
+                        <DataGridTextColumn Header="Ф.И.О"/>
+                        <DataGridTextColumn Header="Филиал"/>
+                        <DataGridTextColumn Header="Логин"/>
+                        <DataGridTextColumn Header="Парол"/>
+                        <DataGridTemplateColumn Header="Удалить" Width="80" >
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Button Style="{DynamicResource Close_Button}" BorderThickness="0,0,0,0" Cursor="Hand">
+                                        <Image Source="/RAdminPanel;component/Image/Ico/udalit4.png" Width="20"/>
+                                    </Button>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                    </DataGrid.Columns>
+                </DataGrid>
+            </Grid>
+        </Grid>
+    </Border>
+
 </UserControl>
