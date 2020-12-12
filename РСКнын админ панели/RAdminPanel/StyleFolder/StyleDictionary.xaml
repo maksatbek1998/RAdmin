@@ -128,6 +128,7 @@
         <Setter Property="HorizontalGridLinesBrush" Value="#DDDDDD" />
         <Setter Property="VerticalGridLinesBrush" Value="#DDDDDD" />
         <Setter Property="ColumnWidth" Value="*"/>
+        <Setter Property="RowHeight" Value="27"/>
 
         <Setter Property="RowStyle">
             <Setter.Value>
