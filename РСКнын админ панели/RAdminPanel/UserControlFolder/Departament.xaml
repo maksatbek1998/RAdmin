@@ -19,8 +19,12 @@
                         <TextBlock Text="Отделдин аталышы" Canvas.Left="177" Canvas.Top="30" />
                         <TextBox FontSize="14"  Style="{DynamicResource textbox_style}" Tag="Отделдин аталышы" Height="24" Width="254" Canvas.Left="330" Canvas.Top="26"/>
                         <TextBlock Text="Приоритети" Canvas.Left="177" Canvas.Top="64" />
-                        <TextBox FontSize="14"  Style="{DynamicResource textbox_style}" Tag="Приоритети" Height="24" Width="254" Canvas.Left="330" Canvas.Top="61"/>
                         <Button Style="{DynamicResource ButtonStyle}" Content="Сактоо" Canvas.Left="434" Canvas.Top="96"/>
+                        <ComboBox Width="254" Canvas.Left="330" Canvas.Top="59">
+                            <ComboBoxItem Content="1"/>
+                            <ComboBoxItem Content="2"/>
+                            <ComboBoxItem Content="3"/>
+                        </ComboBox>
                     </Canvas>
                 </Grid>
                 <Grid Grid.Row="1">

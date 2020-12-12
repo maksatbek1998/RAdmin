@@ -34,7 +34,7 @@
                                 <ComboBoxItem Content="19:00"/>
                             </ComboBox>
                         </Canvas>
-                        <DataGrid FontSize="12"  CanUserAddRows="False" Style="{DynamicResource grid_xml}" ColumnHeaderStyle="{DynamicResource hederstyle}" VerticalAlignment="Stretch" VerticalScrollBarVisibility="Auto"   HeadersVisibility="Column" Height="750"
+                        <DataGrid FontSize="12"  CanUserAddRows="False" Style="{DynamicResource grid_xml}" ColumnHeaderStyle="{DynamicResource hederstyle}" VerticalAlignment="Stretch" VerticalScrollBarVisibility="Auto"   HeadersVisibility="Column" 
                    AutoGenerateColumns="False"  Grid.Row="1">
                             <DataGrid.Columns>
                                 <DataGridTextColumn Header="№" Width="50"/>
