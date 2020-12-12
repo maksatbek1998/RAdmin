@@ -29,7 +29,7 @@ namespace RAdminPanel.UserControlFolder
         }
         public void UpdateData()
         {
-            Bases.SoursDataGrid("SELECT id,NAME,address,created_at FROM branches", ref DataList);
+            Bases.SoursDataGrid("SELECT id,NAME,address, DATE_FORMAT(created_at,'%d.%m.%Y') as 'created_at' FROM branches", ref DataList);
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
