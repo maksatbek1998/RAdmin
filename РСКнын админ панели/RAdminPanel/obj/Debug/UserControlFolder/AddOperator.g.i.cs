@@ -10,7 +10,6 @@
 //------------------------------------------------------------------------------
 
 using RAdminPanel.UserControlFolder;
-using RAdminPanel.ViewModel;
 using System;
 using System.Diagnostics;
 using System.Windows;
@@ -39,95 +38,7 @@ namespace RAdminPanel.UserControlFolder {
     /// <summary>
     /// AddOperator
     /// </summary>
-    public partial class AddOperator : System.Windows.Controls.UserControl, System.Windows.Markup.IComponentConnector, System.Windows.Markup.IStyleConnector {
-        
-        
-        #line 22 "..\..\..\UserControlFolder\AddOperator.xaml"
-        [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
-        internal System.Windows.Controls.TextBox UserNameTextBox;
-        
-        #line default
-        #line hidden
-        
-        
-        #line 24 "..\..\..\UserControlFolder\AddOperator.xaml"
-        [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
-        internal System.Windows.Controls.ComboBox BranchComboBox;
-        
-        #line default
-        #line hidden
-        
-        
-        #line 28 "..\..\..\UserControlFolder\AddOperator.xaml"
-        [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
-        internal System.Windows.Controls.ComboBox PositionComboBox;
-        
-        #line default
-        #line hidden
-        
-        
-        #line 30 "..\..\..\UserControlFolder\AddOperator.xaml"
-        [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
-        internal System.Windows.Controls.TextBox LoginTextBox;
-        
-        #line default
-        #line hidden
-        
-        
-        #line 32 "..\..\..\UserControlFolder\AddOperator.xaml"
-        [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
-        internal System.Windows.Controls.TextBox PasswordTextBox;
-        
-        #line default
-        #line hidden
-        
-        
-        #line 38 "..\..\..\UserControlFolder\AddOperator.xaml"
-        [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
-        internal System.Windows.Controls.DataGrid dataGrid;
-        
-        #line default
-        #line hidden
-        
-        
-        #line 41 "..\..\..\UserControlFolder\AddOperator.xaml"
-        [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
-        internal System.Windows.Controls.DataGridTextColumn id;
-        
-        #line default
-        #line hidden
-        
-        
-        #line 42 "..\..\..\UserControlFolder\AddOperator.xaml"
-        [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
-        internal System.Windows.Controls.DataGridTextColumn Name;
-        
-        #line default
-        #line hidden
-        
-        
-        #line 43 "..\..\..\UserControlFolder\AddOperator.xaml"
-        [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
-        internal System.Windows.Controls.DataGridTextColumn Fili;
-        
-        #line default
-        #line hidden
-        
-        
-        #line 44 "..\..\..\UserControlFolder\AddOperator.xaml"
-        [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
-        internal System.Windows.Controls.DataGridTextColumn Login;
-        
-        #line default
-        #line hidden
-        
-        
-        #line 45 "..\..\..\UserControlFolder\AddOperator.xaml"
-        [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
-        internal System.Windows.Controls.DataGridTextColumn Pass;
-        
-        #line default
-        #line hidden
+    public partial class AddOperator : System.Windows.Controls.UserControl, System.Windows.Markup.IComponentConnector {
         
         private bool _contentLoaded;
         
@@ -157,71 +68,7 @@ namespace RAdminPanel.UserControlFolder {
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Maintainability", "CA1502:AvoidExcessiveComplexity")]
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1800:DoNotCastUnnecessarily")]
         void System.Windows.Markup.IComponentConnector.Connect(int connectionId, object target) {
-            switch (connectionId)
-            {
-            case 1:
-            this.UserNameTextBox = ((System.Windows.Controls.TextBox)(target));
-            return;
-            case 2:
-            this.BranchComboBox = ((System.Windows.Controls.ComboBox)(target));
-            return;
-            case 3:
-            this.PositionComboBox = ((System.Windows.Controls.ComboBox)(target));
-            return;
-            case 4:
-            this.LoginTextBox = ((System.Windows.Controls.TextBox)(target));
-            return;
-            case 5:
-            this.PasswordTextBox = ((System.Windows.Controls.TextBox)(target));
-            return;
-            case 6:
-            
-            #line 33 "..\..\..\UserControlFolder\AddOperator.xaml"
-            ((System.Windows.Controls.Button)(target)).Click += new System.Windows.RoutedEventHandler(this.Button_Click);
-            
-            #line default
-            #line hidden
-            return;
-            case 7:
-            this.dataGrid = ((System.Windows.Controls.DataGrid)(target));
-            return;
-            case 8:
-            this.id = ((System.Windows.Controls.DataGridTextColumn)(target));
-            return;
-            case 9:
-            this.Name = ((System.Windows.Controls.DataGridTextColumn)(target));
-            return;
-            case 10:
-            this.Fili = ((System.Windows.Controls.DataGridTextColumn)(target));
-            return;
-            case 11:
-            this.Login = ((System.Windows.Controls.DataGridTextColumn)(target));
-            return;
-            case 12:
-            this.Pass = ((System.Windows.Controls.DataGridTextColumn)(target));
-            return;
-            }
             this._contentLoaded = true;
-        }
-        
-        [System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("PresentationBuildTasks", "4.0.0.0")]
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
-        [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Design", "CA1033:InterfaceMethodsShouldBeCallableByChildTypes")]
-        [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1800:DoNotCastUnnecessarily")]
-        [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Maintainability", "CA1502:AvoidExcessiveComplexity")]
-        void System.Windows.Markup.IStyleConnector.Connect(int connectionId, object target) {
-            switch (connectionId)
-            {
-            case 13:
-            
-            #line 49 "..\..\..\UserControlFolder\AddOperator.xaml"
-            ((System.Windows.Controls.Button)(target)).Click += new System.Windows.RoutedEventHandler(this.Button_Click_2);
-            
-            #line default
-            #line hidden
-            break;
-            }
         }
     }
 }
