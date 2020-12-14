@@ -17,23 +17,24 @@
                     <Canvas>
                         <Image Source="../Image/Just_Image/Branches.png" Width="110" Height="120" Canvas.Left="17" Canvas.Top="26"/>
                         <TextBlock Text="Филиалдын аты" Canvas.Left="177" Canvas.Top="30" />
-                        <TextBox FontSize="14"  Style="{DynamicResource textbox_style}" Tag="Филиалдын аты" Height="24" Width="254" Canvas.Left="330" Canvas.Top="26"/>
+                        <TextBox x:Name="FilialName" FontSize="14"  Style="{DynamicResource textbox_style}" Tag="Филиалдын аты" Height="24" Width="254" Canvas.Left="330" Canvas.Top="26"/>
                         <TextBlock Text="Филиалдын адреси" Canvas.Left="177" Canvas.Top="64" />
-                        <TextBox FontSize="14"  Style="{DynamicResource textbox_style}" Tag="Филиалдын адреси" Height="24" Width="254" Canvas.Left="330" Canvas.Top="61"/>
-                        <Button Style="{DynamicResource ButtonStyle}" Content="Сактоо" Canvas.Left="434" Canvas.Top="95"/>
+                        <TextBox x:Name="FilialAdress" FontSize="14"  Style="{DynamicResource textbox_style}" Tag="Филиалдын адреси" Height="24" Width="254" Canvas.Left="330" Canvas.Top="61"/>
+                        <Button Style="{DynamicResource ButtonStyle}" Content="Сактоо" Canvas.Left="434" Canvas.Top="95" Click="Button_Click"/>
                     </Canvas>
                 </Grid>
                 <Grid Grid.Row="1">
-                    <DataGrid Margin="10,7,0,0" FontSize="12"  CanUserAddRows="False" Style="{DynamicResource grid_xml}" ColumnHeaderStyle="{DynamicResource hederstyle}" VerticalAlignment="Stretch" VerticalScrollBarVisibility="Auto"   HeadersVisibility="Column" Height="700"
+                    <DataGrid x:Name="DataList" SelectionChanged="DataList_SelectionChanged" Margin="10,7,0,0" FontSize="12"  CanUserAddRows="False"   HeadersVisibility="Column" Style="{DynamicResource grid_xml}" ColumnHeaderStyle="{DynamicResource hederstyle}" VerticalAlignment="Stretch" VerticalScrollBarVisibility="Auto"   ItemsSource="{Binding}" IsReadOnly="True"
                    AutoGenerateColumns="False" >
                         <DataGrid.Columns>
-                            <DataGridTextColumn Header="№" Width="50"/>
-                            <DataGridTextColumn Header="Филиалдын аты"/>
-                            <DataGridTextColumn Header="Филиалдын адреси"/>
+                            <DataGridTextColumn Header="№" Width="50" Binding="{Binding id}"/>
+                            <DataGridTextColumn Header="Филиалдын аты" Binding="{Binding NAME}"/>
+                            <DataGridTextColumn Header="Филиалдын адреси" Binding="{Binding address}"/>
+                            <DataGridTextColumn Header="Тузулгон убакты" Binding="{Binding created_at}"/>
                             <DataGridTemplateColumn Header="Удалить" Width="80" >
                                 <DataGridTemplateColumn.CellTemplate>
                                     <DataTemplate>
-                                        <Button Style="{DynamicResource Close_Button}" BorderThickness="0,0,0,0" Cursor="Hand">
+                                        <Button Style="{DynamicResource Close_Button}" BorderThickness="0,0,0,0" Cursor="Hand" Click="Button_Click_1">
                                             <Image Source="/RAdminPanel;component/Image/Ico/udalit4.png" Width="20"/>
                                         </Button>
                                     </DataTemplate>
