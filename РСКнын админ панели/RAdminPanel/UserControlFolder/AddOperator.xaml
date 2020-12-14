@@ -21,11 +21,9 @@
                     <TextBlock Text="Ф.И.О" Canvas.Left="177" Canvas.Top="20" />
                     <TextBox x:Name="UserNameTextBox" FontSize="14"  Style="{DynamicResource textbox_style}" Tag=" Ф.И.О" Height="24" Width="254" Canvas.Left="269" Canvas.Top="16"/>
                     <TextBlock Text="Филиал" Canvas.Left="177" Canvas.Top="51"/>
-                    <ComboBox  x:Name="BranchComboBox"  Canvas.Left="269" Canvas.Top="47">
-           
-                    </ComboBox>
+                    <ComboBox  x:Name="BranchComboBox"  Canvas.Left="269" Canvas.Top="47"/>
                     <TextBlock Text="Жумушу" Canvas.Left="177" Canvas.Top="82" />
-                    <ComboBox SelectedIndex="0" x:Name="PositionComboBox" Canvas.Left="269" Canvas.Top="78"/>
+                    <ComboBox  x:Name="PositionComboBox" Canvas.Left="269" Canvas.Top="78"/>
                     <TextBlock Text="Логин" Canvas.Left="177" Canvas.Top="112" />
                     <TextBox x:Name="LoginTextBox" FontSize="14"  Style="{DynamicResource textbox_style}" Tag="Логин" Height="24" Width="254" Canvas.Left="269" Canvas.Top="109"/>
                     <TextBlock Text="Пароль" Canvas.Left="177" Canvas.Top="144" />

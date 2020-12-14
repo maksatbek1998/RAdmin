@@ -19,15 +19,15 @@ namespace RAdminPanel.DataBase
 
         }
 
-        public void Display(string s,int count)
+        public void Display(string s,int count = 5)
         {
             connection.Open();
-            string[] a = new string[count];
-
             int i = 0;
             string sql = s;
             MySqlCommand command = new MySqlCommand(sql, connection);
             MySqlDataReader reader = command.ExecuteReader();
+            string[] a = new string[count];
+           
             while (reader.Read())
             {
                 a[i] = reader[0].ToString();

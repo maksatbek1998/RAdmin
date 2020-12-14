@@ -19,7 +19,8 @@ namespace RAdminPanel.UserControlFolder
         {
             InitializeComponent();          
             UpdateData();
-            UpdateComboBox();
+            UpdateComboBoxBranch();
+            UpdateComboBoxPosition();
             
         }
         public void Refresh() 
@@ -33,10 +34,10 @@ namespace RAdminPanel.UserControlFolder
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            if (LoginTextBox.Text != "" && UserNameTextBox.Text != "" && PasswordTextBox.Text != "")
+            if (LoginTextBox.Text != "" && UserNameTextBox.Text != "" && PasswordTextBox.Text != "" && BranchComboBox.SelectedItem != null && PositionComboBox.SelectedItem != null)
             {
                 dataBase = new Base();
-                dataBase.RegistrToBase("insert into users(name,login,password,branches_id,position_id) values ('" + UserNameTextBox.Text + "','" + LoginTextBox.Text + "','" + PasswordTextBox.Text + "',"+ BranchComboBox.SelectedItem.ToString() + "," + PositionComboBox.SelectedItem.ToString() + ")");
+                dataBase.RegistrToBase("insert into users(name,login,password,branches_id,position_id) values ('" + UserNameTextBox.Text + "','" + LoginTextBox.Text + "','" + PasswordTextBox.Text + "','"+ BranchComboBox.SelectedItem.ToString() + "','" + PositionComboBox.SelectedItem.ToString() + "')");
                 UpdateData();       
             }
             else
@@ -50,14 +51,23 @@ namespace RAdminPanel.UserControlFolder
             dataBase = new Base();
             dataBase.SoursDataGrid("select id,name,login,password,branches_id from users", ref dataGrid);
         }
-        public void UpdateComboBox()
+        public void UpdateComboBoxBranch()
         {
             dataBase = new Base();
             dataBase.eventDysplay2 += delegate (string[] db)
             {                
                 BranchComboBox.ItemsSource = db;
             };
-            dataBase.Display("SELECT name FROM branches",3);
+            dataBase.Display("SELECT name FROM branches");
+        }
+        public void UpdateComboBoxPosition()
+        {
+            dataBase = new Base();
+            dataBase.eventDysplay2 += delegate (string[] db)
+            {
+                PositionComboBox.ItemsSource = db;
+            };
+            dataBase.Display("SELECT name FROM position");
         }
         private void Button_Click_2(object sender, RoutedEventArgs e)
         {
