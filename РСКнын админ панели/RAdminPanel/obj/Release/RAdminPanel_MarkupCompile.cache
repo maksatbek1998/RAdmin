@@ -1,0 +1,20 @@
+﻿RAdminPanel
+
+
+winexe
+C#
+.cs
+C:\RAdmin\РСКнын админ панели\RAdminPanel\obj\Release\
+RAdminPanel
+none
+false
+TRACE
+C:\RAdmin\РСКнын админ панели\RAdminPanel\App.xaml
+1360786011
+
+18-1815243225
+1427811673
+MainWindow.xaml;StyleFolder\StyleDictionary.xaml;UserControlFolder\AddOperator.xaml;UserControlFolder\Branches.xaml;UserControlFolder\Client.xaml;UserControlFolder\Departament.xaml;UserControlFolder\Language.xaml;UserControlFolder\Message.xaml;UserControlFolder\Password.xaml;UserControlFolder\Rasspisania.xaml;UserControlFolder\Sound.xaml;UserControlFolder\Terminal.xaml;UserControlFolder\WorkPlaces.xaml;
+
+True
+
