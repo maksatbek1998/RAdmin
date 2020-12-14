@@ -8,21 +8,37 @@ namespace RAdminPanel.DataBase
 {
     class Base
     {
-        public MySqlConnection connection = new MySqlConnection("datasource=192.168.0.108; port=3306;Initial Catalog='rskbank';username=root;password=doni2429;CharSet=utf8;");
+        public MySqlConnection connection = new MySqlConnection("datasource=127.0.0.1; port=3306;Initial Catalog='rskbank';username=root;password=doni2429;CharSet=utf8;");
         public delegate void DisplaySourse(DataTable db);
         public delegate void DisplaySourse2(string[] a);
-        public event DisplaySourse eventDysplay;
+        public event DisplaySourse2 eventDysplay2;
         public delegate void SendData(DataTable data);
         public event SendData del;
-        public event DisplaySourse2 eventDysplay2;
         public Base()
         {
 
         }
 
-        public void SoursDataGrid(string s, ref DataGrid data)
+        public void Display(string s,int count)
         {
+            connection.Open();
+            string[] a = new string[count];
 
+            int i = 0;
+            string sql = s;
+            MySqlCommand command = new MySqlCommand(sql, connection);
+            MySqlDataReader reader = command.ExecuteReader();
+            while (reader.Read())
+            {
+                a[i] = reader[0].ToString();
+                i++;
+            }
+            connection.Close();
+            eventDysplay2(a);
+        }
+
+        public void SoursDataGrid(string s,ref DataGrid data)
+        {
             connection.Open();
             MySqlCommand cmd = connection.CreateCommand();
             cmd.CommandType = CommandType.Text;
@@ -31,9 +47,22 @@ namespace RAdminPanel.DataBase
             DataTable dta1 = new DataTable();
             MySqlDataAdapter dataadap = new MySqlDataAdapter(cmd);
             dataadap.Fill(dta1);
-            data.ItemsSource = dta1.DefaultView; ;
+            data.ItemsSource = dta1.DefaultView;
+            connection.Close();         
+            
+        }
+        public void SourComboBox(string s, ref ComboBox data)
+        {          
+            connection.Open();
+            MySqlCommand cmd = new MySqlCommand(s, connection);
+            MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            adapter.Fill(dt);
+            data.ItemsSource = dt.DefaultView;
+            cmd.Dispose();
             connection.Close();
         }
+
         public void SoursData(string s)
         {
             connection.Close();
@@ -53,7 +82,7 @@ namespace RAdminPanel.DataBase
             connection.Open();
             MySqlCommand cmd = connection.CreateCommand();
             cmd.CommandType = CommandType.Text;
-            cmd.CommandText = "DELETE FROM " + table + " WHERE id= '" + id + "';";
+            cmd.CommandText = "DELETE FROM " + table + " WHERE id= " + id + "";
             cmd.ExecuteNonQuery();
             connection.Close();
         }
