@@ -76,6 +76,9 @@
     <Compile Include="UserControlFolder\Language.xaml.cs">
       <DependentUpon>Language.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UserControlFolder\Message.xaml.cs">
+      <DependentUpon>Message.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UserControlFolder\Password.xaml.cs">
       <DependentUpon>Password.xaml</DependentUpon>
     </Compile>
@@ -91,6 +94,10 @@
     <Compile Include="UserControlFolder\WorkPlaces.xaml.cs">
       <DependentUpon>WorkPlaces.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ViewModel\BaseView\BaseView.cs" />
+    <Compile Include="ViewModel\BaseView\ViewCommand.cs" />
+    <Compile Include="ViewModel\MainView.cs" />
+    <Compile Include="ViewModel\Models\GridVariables.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -124,6 +131,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="UserControlFolder\Language.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControlFolder\Message.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
