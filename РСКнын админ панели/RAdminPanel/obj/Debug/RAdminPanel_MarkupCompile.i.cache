@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\RR\РСКнын админ панели\RAdminPanel\obj\Debug\
+C:\RAdmin\РСКнын админ панели\RAdminPanel\obj\Debug\
 RAdminPanel
 none
 false
 DEBUG;TRACE
-C:\RR\РСКнын админ панели\RAdminPanel\App.xaml
+C:\RAdmin\РСКнын админ панели\RAdminPanel\App.xaml
 1360786011
 
 191637364704
 1427811673
 MainWindow.xaml;StyleFolder\StyleDictionary.xaml;UserControlFolder\AddOperator.xaml;UserControlFolder\Branches.xaml;UserControlFolder\Client.xaml;UserControlFolder\Departament.xaml;UserControlFolder\Language.xaml;UserControlFolder\Message.xaml;UserControlFolder\Password.xaml;UserControlFolder\Rasspisania.xaml;UserControlFolder\Sound.xaml;UserControlFolder\Terminal.xaml;UserControlFolder\WorkPlaces.xaml;
 
-False
+True
 

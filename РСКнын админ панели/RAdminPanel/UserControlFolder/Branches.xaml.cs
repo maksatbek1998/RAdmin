@@ -41,7 +41,6 @@ namespace RAdminPanel.UserControlFolder
                 Message messageO = new Message();
                 if (id_1 != "")
                 {
-                    MessageBox.Show(id_1);
                     messageO.Id = id_1;
                     messageO.TableBasa = "branches";
                     messageO.del_ += () => UpdateData();
