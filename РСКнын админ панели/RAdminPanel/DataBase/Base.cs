@@ -26,8 +26,7 @@ namespace RAdminPanel.DataBase
             string sql = s;
             MySqlCommand command = new MySqlCommand(sql, connection);
             MySqlDataReader reader = command.ExecuteReader();
-            string[] a = new string[count];
-           
+            string[] a = new string[count];           
             while (reader.Read())
             {
                 a[i] = reader[0].ToString();

@@ -67,7 +67,7 @@ namespace RAdminPanel.UserControlFolder
             {
                 PositionComboBox.ItemsSource = db;
             };
-            dataBase.Display("SELECT name FROM position");
+            dataBase.Display("SELECT name_p FROM position");
         }
         private void Button_Click_2(object sender, RoutedEventArgs e)
         {

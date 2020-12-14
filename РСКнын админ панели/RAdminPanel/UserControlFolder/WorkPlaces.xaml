@@ -17,30 +17,30 @@
                     <Canvas>
                         <Image Source="../Image/Just_Image/workers.png" Width="110" Height="120" Canvas.Left="17" Canvas.Top="26"/>
                         <TextBlock Text="Жумуштун аталышы" Canvas.Left="177" Canvas.Top="30" />
-                        <TextBox FontSize="14"  Style="{DynamicResource textbox_style}" Tag="Жумуштун аталышы" Height="24" Width="254" Canvas.Left="330" Canvas.Top="26"/>
+                        <TextBox x:Name="workName"  FontSize="14"  Style="{DynamicResource textbox_style}" Tag="Жумуштун аталышы" Height="24" Width="254" Canvas.Left="330" Canvas.Top="26"/>
                         <TextBlock Text="Жумуштун терезеси" Canvas.Left="177" Canvas.Top="64" />
-                        <TextBox FontSize="14"  Style="{DynamicResource textbox_style}" Tag="Жумуштун терезеси" Height="24" Width="254" Canvas.Left="330" Canvas.Top="61"/>
-                        <Button Style="{DynamicResource ButtonStyle}" Content="Сактоо" Canvas.Left="434" Canvas.Top="133"/>
+                        <TextBox x:Name="workWindow" FontSize="14"  Style="{DynamicResource textbox_style}" Tag="Жумуштун терезеси" Height="24" Width="254" Canvas.Left="330" Canvas.Top="61"/>
+                        <Button Click="Button_Click" Style="{DynamicResource ButtonStyle}" Content="Сактоо" Canvas.Left="434" Canvas.Top="133"/>
                         <TextBlock Text="Приоритети" Canvas.Top="96" Canvas.Left="177" Width="105"/>
-                        <ComboBox Canvas.Left="330" Canvas.Top="96" Width="254" IsEditable="True">
-                            <ComboBoxItem Content="1"/>
-                            <ComboBoxItem Content="2"/>
-                            <ComboBoxItem Content="3"/>
+                        <ComboBox x:Name="PriorityComboBox" Canvas.Left="330" Canvas.Top="96" Width="254" IsEditable="True" IsReadOnly="False">
+                            <ComboBoxItem x:Name="Priority1" Content="1"/>
+                            <ComboBoxItem x:Name="Priority2" Content="2"/>
+                            <ComboBoxItem x:Name="Priority3" Content="3"/>
                         </ComboBox>
                     </Canvas>
                 </Grid>
                 <Grid Grid.Row="1">
-                    <DataGrid Margin="10,7,0,0" FontSize="12"  CanUserAddRows="False" Style="{DynamicResource grid_xml}" ColumnHeaderStyle="{DynamicResource hederstyle}" VerticalAlignment="Stretch" VerticalScrollBarVisibility="Auto"   HeadersVisibility="Column" HorizontalAlignment="Stretch"
+                    <DataGrid x:Name="dataGrid" Margin="10,7,0,0" FontSize="12"  CanUserAddRows="False" Style="{DynamicResource grid_xml}" ColumnHeaderStyle="{DynamicResource hederstyle}" VerticalAlignment="Stretch" VerticalScrollBarVisibility="Auto"   HeadersVisibility="Column" HorizontalAlignment="Stretch"
                    AutoGenerateColumns="False" >
                         <DataGrid.Columns>
-                            <DataGridTextColumn Header="№" Width="50"/>
-                            <DataGridTextColumn Header="Жумуштун аталышы"/>
-                            <DataGridTextColumn Header="Жумуштун терезеси"/>
-                            <DataGridTextColumn Header="Приоритети"/>
+                            <DataGridTextColumn Header="№" Width="50" Binding="{Binding id}"/>
+                            <DataGridTextColumn Header="Жумуштун аталышы" Binding="{Binding name}"/>
+                            <DataGridTextColumn Header="Жумуштун терезеси" Binding="{Binding windowName}"/>
+                            <DataGridTextColumn Header="Приоритети" Binding="{Binding priority}"/>
                             <DataGridTemplateColumn Header="Удалить" Width="80" >
                                 <DataGridTemplateColumn.CellTemplate>
                                     <DataTemplate>
-                                        <Button Style="{DynamicResource Close_Button}" BorderThickness="0,0,0,0" Cursor="Hand">
+                                        <Button Style="{DynamicResource Close_Button}" Click="Button_Click_2" BorderThickness="0,0,0,0" Cursor="Hand">
                                             <Image Source="/RAdminPanel;component/Image/Ico/udalit4.png" Width="20"/>
                                         </Button>
                                     </DataTemplate>
