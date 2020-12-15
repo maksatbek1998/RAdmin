@@ -18,7 +18,6 @@ namespace RAdminPanel.DataBase
         {
 
         }
-
         public void Display(string s,int count = 5)
         {
             connection.Open();
@@ -107,6 +106,19 @@ namespace RAdminPanel.DataBase
             int x = Convert.ToInt32(value);
             connection.Close();
             return x;
+        }
+        public string Return1String(string s)
+        {
+            connection.Open();
+            string sql = s, value = "";
+            MySqlCommand command = new MySqlCommand(sql, connection);
+            MySqlDataReader reader = command.ExecuteReader();
+            while (reader.Read())
+            {
+                value = reader[0].ToString();
+            }
+            connection.Close();
+            return value;
         }
     }
 }

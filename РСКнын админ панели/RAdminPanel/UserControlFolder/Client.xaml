@@ -4,45 +4,53 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:RAdminPanel.UserControlFolder"
+             xmlns:vm="clr-namespace:RAdminPanel.ViewModel"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
+        <Grid.DataContext>
+            <vm:MainView/>
+        </Grid.DataContext>
         <Border Padding="10">
             <TabControl BorderThickness="0">
                 <TabItem Header="Клиенттер агымы" Style="{DynamicResource TabControl}" Width="150">
                     <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="223*"/>
+                            <ColumnDefinition Width="853*"/>
+                        </Grid.ColumnDefinitions>
                         <Grid.RowDefinitions>
                             <RowDefinition Height="50"/>
                             <RowDefinition Height="*"/>
                         </Grid.RowDefinitions>
-                        <Canvas>
-                            <ToggleButton Style="{DynamicResource Togle_Button}" Canvas.Left="130" Canvas.Top="10"/>
+                        <Canvas Grid.ColumnSpan="2">
+                            <ToggleButton Checked="ToggleButton_Click" x:Name="tog1" Style="{DynamicResource Togle_Button}" Unchecked="tog1_Unchecked" Canvas.Left="130" Canvas.Top="10"/>
                             <TextBlock Text="Очереттегилер" Canvas.Left="10" Canvas.Top="14"/>
-                            <ToggleButton Style="{DynamicResource Togle_Button}" Canvas.Left="439" Canvas.Top="10"/>
+                            <ToggleButton x:Name="tog2" Style="{DynamicResource Togle_Button}" Checked="ToggleButton_Click1" Unchecked="tog1_Unchecked1" Canvas.Left="439" Canvas.Top="10"/>
                             <TextBlock Text="Кутуп тургандар" Canvas.Left="307" Canvas.Top="14"/>
-                            <ToggleButton Style="{DynamicResource Togle_Button}" Canvas.Left="800" Canvas.Top="10"/>
+                            <ToggleButton x:Name="tog3" Style="{DynamicResource Togle_Button}" Checked="ToggleButton_Click2" Unchecked="tog1_Unchecked2" Canvas.Left="800" Canvas.Top="10"/>
                             <TextBlock Text="Операторго жолуккандар" Canvas.Left="602" Canvas.Top="14"/>
                         </Canvas>
-                        <Grid Grid.Row="1">
+                        <Grid Grid.Row="1" Grid.ColumnSpan="2">
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="35"/>
                                 <RowDefinition Height="*"/>
                             </Grid.RowDefinitions>
                             <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Bottom">
-                                <TextBlock Text="Номери боюнча издоо" Canvas.Left="602" Canvas.Top="14" VerticalAlignment="Center" Margin="0,0,15,0"/>
-                                <TextBox Style="{DynamicResource styleLog}" Tag="Номери боюнча издоо" Width="200"/>
+                                <TextBlock Text="Чек номери боюнча издоо" Canvas.Left="602" Canvas.Top="14" VerticalAlignment="Center" Margin="0,0,15,0"/>
+                                <TextBox  x:Name="filterTextBox" Style="{DynamicResource styleLog}" Tag="Номери боюнча издоо" Width="200" TextChanged="filterTextBox_TextChanged"/>
                             </StackPanel>
-                            <DataGrid Margin="10,7,0,0" FontSize="12"  CanUserAddRows="False" Style="{DynamicResource grid_xml}" ColumnHeaderStyle="{DynamicResource hederstyle}" VerticalAlignment="Stretch" VerticalScrollBarVisibility="Auto"   HeadersVisibility="Column" HorizontalAlignment="Stretch"
+                            <DataGrid x:Name="dataGrid" Margin="10,7,0,0" FontSize="12"  CanUserAddRows="False" Style="{DynamicResource grid_xml}" ColumnHeaderStyle="{DynamicResource hederstyle}" VerticalAlignment="Stretch" VerticalScrollBarVisibility="Auto"   HeadersVisibility="Column" HorizontalAlignment="Stretch"
                    AutoGenerateColumns="False" Grid.Row="1" >
                                 <DataGrid.Columns>
-                                    <DataGridTextColumn Header="№" Width="50"/>
-                                    <DataGridTextColumn Header="Чектин номери"/>
-                                    <DataGridTextColumn Header="Статусу"/>
-                                    <DataGridTextColumn Header="Услуганын туру"/>
-                                    <DataGridTextColumn Header="Терезе"/>
-                                    <DataGridTextColumn Header="Опеоратор"/>
-                                    <DataGridTextColumn Header="Очеред алган убакты"/>
-                                    <DataGridTextColumn Header="Очереди буткон убакты"/>
+                                    <DataGridTextColumn Header="№"  Width="0.5*" Binding="{Binding id}"/>
+                                    <DataGridTextColumn Header="Чектин номери" Width="1.5*" Binding="{Binding checkNum}" />
+                                    <DataGridTextColumn Header="Статусу" Width="*" Binding="{Binding status}" />
+                                    <DataGridTextColumn Header="Услуганын туру" Width="1.5*"  Binding="{Binding uslugvid}"/>
+                                    <DataGridTextColumn Header="Терезе" Width="*"  Binding="{Binding window}"/>
+                                    <DataGridTextColumn Header="Опеоратор" Width="1.2*"  Binding="{Binding oper}" />
+                                    <DataGridTextColumn Header="Очеред алган убакты" Width="2*" Binding="{Binding start}"/>
+                                    <DataGridTextColumn Header="Очереди буткон убакты" Width="2*" Binding="{Binding end}"/>
                                 </DataGrid.Columns>
                             </DataGrid>
                         </Grid>
@@ -50,49 +58,46 @@
                 </TabItem>
                 <TabItem Header="Клиенттер тизмеси" Style="{DynamicResource TabControl}" Width="150">
                     <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="22*"/>
+                            <ColumnDefinition Width="247*"/>
+                        </Grid.ColumnDefinitions>
                         <Grid.RowDefinitions>
                             <RowDefinition Height="50"/>
                             <RowDefinition Height="*"/>
                         </Grid.RowDefinitions>
-                        <Canvas>
-                            <DatePicker Canvas.Left="165" Canvas.Top="12" Width="117"/>
+                        <Canvas Grid.ColumnSpan="2">
+                            <DatePicker x:Name="dataPicker" Canvas.Left="165" Canvas.Top="12" Width="117"/>
                             <TextBlock Text="Датасы менен издоо" Canvas.Left="10" Canvas.Top="14"/>
-                            <TextBlock Text="Оператор" Canvas.Left="319" Canvas.Top="14"/>
-                            <ComboBox Canvas.Left="402" Canvas.Top="12" Width="150" IsReadOnly="True">
-                                <ComboBoxItem Content="1"/>
-                                <ComboBoxItem Content="2"/>
-                                <ComboBoxItem Content="3"/>
-                            </ComboBox>
-                            <TextBlock Text="Услуга туру" Canvas.Left="586" Canvas.Top="12"/>
-                            <ComboBox Canvas.Left="677" Canvas.Top="10" Width="150" IsReadOnly="True">
-                                <ComboBoxItem Content="1"/>
-                                <ComboBoxItem Content="2"/>
-                                <ComboBoxItem Content="3"/>
-                            </ComboBox>
+                            <TextBlock Text="Имя работника" Canvas.Left="287" Canvas.Top="14" Width="134"/>
+                            <ComboBox DropDownClosed="OperComBox_DropDownClosed"  x:Name="OperComBox" Canvas.Left="402" Canvas.Top="12" Width="150" IsReadOnly="True"/>
+                            <TextBlock Text="Отдел" Canvas.Left="586" Canvas.Top="12"/>
+                            <ComboBox DropDownClosed="UslugComBox_DropDownClosed"  x:Name="UslugComBox" Canvas.Left="677" Canvas.Top="10" Width="150" IsReadOnly="True"/>
                         </Canvas>
-                        <Grid Grid.Row="1">
+                        <Grid Grid.Row="1" Grid.ColumnSpan="2">
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="35"/>
                                 <RowDefinition Height="*"/>
                             </Grid.RowDefinitions>
-                            <Button Grid.Row="0" Style="{DynamicResource ButtonStyle}" Content="Адаттагыдай коруу" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="10,0"/>
+                            <Button Grid.Row="0" Style="{DynamicResource ButtonStyle}" Content="Адаттагыдай коруу" HorizontalAlignment="Left" Click="Button_Click" VerticalAlignment="Bottom" Margin="10,0"/>
                             <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Bottom">
                                 <TextBlock Text="Номери боюнча издоо" Canvas.Left="602" Canvas.Top="14" VerticalAlignment="Center" Margin="0,0,15,0"/>
-                                <TextBox Style="{DynamicResource styleLog}" Tag="Номери боюнча издоо" Width="200"/>
+                                <TextBox x:Name="FiltrTextBox2" TextChanged="filterTextBox1_TextChanged" Style="{DynamicResource styleLog}" Tag="Номери боюнча издоо" Width="200"/>
                             </StackPanel>
-                            <DataGrid Margin="10,7,0,0" FontSize="12"  CanUserAddRows="False" Style="{DynamicResource grid_xml}" ColumnHeaderStyle="{DynamicResource hederstyle}" VerticalAlignment="Stretch" VerticalScrollBarVisibility="Auto"   HeadersVisibility="Column" HorizontalAlignment="Stretch"
+                            <DataGrid x:Name="dataGrid2" Margin="10,7,0,0" FontSize="12"  CanUserAddRows="False" Style="{DynamicResource grid_xml}" ColumnHeaderStyle="{DynamicResource hederstyle}" VerticalAlignment="Stretch" VerticalScrollBarVisibility="Auto"   HeadersVisibility="Column" HorizontalAlignment="Stretch"
                    AutoGenerateColumns="False" Grid.Row="1" >
                                 <DataGrid.Columns>
-                                    <DataGridTextColumn Header="№" Width="50"/>
-                                    <DataGridTextColumn Header="Чектин номери"/>
-                                    <DataGridTextColumn Header="Статусу"/>
-                                    <DataGridTextColumn Header="Услуганын туру"/>
-                                    <DataGridTextColumn Header="Терезе"/>
-                                    <DataGridTextColumn Header="Опеоратор"/>
-                                    <DataGridTextColumn Header="Очеред алган убакты"/>
-                                    <DataGridTextColumn Header="Очереди буткон убакты"/>
+                                    <DataGridTextColumn Header="№"  Width="0.5*" Binding="{Binding id}"/>
+                                    <DataGridTextColumn Header="Чектин номери" Width="1.5*" Binding="{Binding checkNum}" />
+                                    <DataGridTextColumn Header="Статусу" Width="*" Binding="{Binding status}" />
+                                    <DataGridTextColumn Header="Услуганын туру" Width="1.5*"  Binding="{Binding uslugvid}"/>
+                                    <DataGridTextColumn Header="Терезе" Width="*"  Binding="{Binding window}"/>
+                                    <DataGridTextColumn Header="Опеоратор" Width="1.2*"  Binding="{Binding oper}" />
+                                    <DataGridTextColumn Header="Очеред алган убакты" Width="2*" Binding="{Binding start}"/>
+                                    <DataGridTextColumn Header="Очереди буткон убакты" Width="2*" Binding="{Binding end}"/>
                                 </DataGrid.Columns>
                             </DataGrid>
+                            <Button Grid.Row="0" Style="{DynamicResource ButtonStyle}" Content="Издоо" HorizontalAlignment="Left" Click="Button_Click_1" VerticalAlignment="Bottom" Margin="178,0,0,0"/>
                         </Grid>
                     </Grid>
                 </TabItem>

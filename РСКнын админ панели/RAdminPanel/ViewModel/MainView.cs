@@ -6,7 +6,12 @@ using System.Text;
 using System.Threading.Tasks;
 using RAdminPanel.ViewModel.Models;
 using RAdminPanel.DataBase;
-
+using System.Windows.Data;
+using RAdminPanel.ClassUserControl;
+using System.ComponentModel;
+using System.Windows.Input;
+using System.Windows.Media;
+using System.Windows.Media.Imaging;
 
 namespace RAdminPanel.ViewModel
 {
@@ -26,7 +31,6 @@ namespace RAdminPanel.ViewModel
             get => _ComboItem;
             set => Set(ref _ComboItem, value);
         }
-
         public MainView()
         {
 
