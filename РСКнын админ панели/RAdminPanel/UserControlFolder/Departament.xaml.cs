@@ -21,10 +21,13 @@ namespace RAdminPanel.UserControlFolder
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            Bases.RegistrToBase("INSERT INTO  position value(null,'" + OtdelName.Text + "','" + OtdelPrioritet.Text + "')");
-            OtdelName.Text = "";
-            OtdelPrioritet.Text = "";
-            UpdateData();
+            if (OtdelName.Text != "" && OtdelPrioritet.Text != "")
+            {
+                Bases.RegistrToBase("INSERT INTO  position value(null,'" + OtdelName.Text + "','" + OtdelPrioritet.Text + "')");
+                OtdelName.Text = "";
+                OtdelPrioritet.Text = "";
+                UpdateData();
+            }
         }
         public void UpdateData()
         {
