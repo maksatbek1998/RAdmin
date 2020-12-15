@@ -39,7 +39,7 @@ namespace RAdminPanel.UserControlFolder
             if (LoginTextBox.Text != "" && UserNameTextBox.Text != "" && PasswordTextBox.Text != "" && BranchComboBox.SelectedItem != null && PositionComboBox.SelectedItem != null)
             {
                 dataBase = new Base();
-                dataBase.RegistrToBase("insert into users(name,login,password,branches_id,position_id) values ('" + UserNameTextBox.Text + "','" + LoginTextBox.Text + "','" + PasswordTextBox.Text + "',"+ returnedFili + "," + returnedWork + ")");
+                dataBase.RegistrToBase("insert into users(name_u,login,password,branches_id,position_id) values ('" + UserNameTextBox.Text + "','" + LoginTextBox.Text + "','" + PasswordTextBox.Text + "',"+ returnedFili + "," + returnedWork + ")");
                 UpdateData();       
             }
             else
@@ -51,7 +51,7 @@ namespace RAdminPanel.UserControlFolder
         public void UpdateData()
         {
             dataBase = new Base();
-            dataBase.SoursDataGrid("SELECT u.id,u.name, b.name_b,u.login,u.password FROM users AS u INNER JOIN branches AS b ON u.branches_id = b.id INNER JOIN position AS p ON u.position_id = p.id", ref dataGrid);
+            dataBase.SoursDataGrid("SELECT u.id,u.name_u, b.name_b,u.login,u.password FROM users AS u INNER JOIN branches AS b ON u.branches_id = b.id INNER JOIN position AS p ON u.position_id = p.id", ref dataGrid);
         }
         public void UpdateComboBoxBranch()
         {

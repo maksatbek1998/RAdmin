@@ -34,7 +34,7 @@
                    AutoGenerateColumns="False" >
                         <DataGrid.Columns>
                             <DataGridTextColumn Header="№" Width="50" Binding="{Binding id}"/>
-                            <DataGridTextColumn Header="Жумуштун аталышы" Binding="{Binding name}"/>
+                            <DataGridTextColumn Header="Жумуштун аталышы" Binding="{Binding name_w}"/>
                             <DataGridTextColumn Header="Жумуштун терезеси" Binding="{Binding windowName}"/>
                             <DataGridTextColumn Header="Приоритети" Binding="{Binding priority}"/>
                             <DataGridTemplateColumn Header="Удалить" Width="80" >

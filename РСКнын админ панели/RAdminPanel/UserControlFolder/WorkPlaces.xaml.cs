@@ -32,7 +32,7 @@ namespace RAdminPanel.UserControlFolder
             if (workName.Text != String.Empty && workWindow.Text != String.Empty && PriorityComboBox.Text != String.Empty)
             {
                 dataBase = new Base();               
-                dataBase.RegistrToBase("insert into workplaces(name,windowName,priority) values ('" + workName.Text + "','" + workWindow.Text + "'," + PriorityComboBox.Text + ")");
+                dataBase.RegistrToBase("insert into workplaces(name_w,windowName,priority) values ('" + workName.Text + "','" + workWindow.Text + "'," + PriorityComboBox.Text + ")");
                 UpdateData();
                 Refresh();
             }
@@ -45,7 +45,7 @@ namespace RAdminPanel.UserControlFolder
         public void UpdateData()
         {
             dataBase = new Base();
-            dataBase.SoursDataGrid("select * from workplaces order by priority desc", ref dataGrid);
+            dataBase.SoursDataGrid("select id,name_w,windowName,priority from workplaces order by priority desc", ref dataGrid);
         }
         public void UpdateComboBoxBranch()
         {

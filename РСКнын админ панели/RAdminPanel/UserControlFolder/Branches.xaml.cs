@@ -22,14 +22,14 @@ namespace RAdminPanel.UserControlFolder
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            Bases.RegistrToBase("INSERT INTO branches(NAME,address)VALUES ('" + FilialName.Text + "','" + FilialAdress.Text + "')");
+            Bases.RegistrToBase("INSERT INTO branches(name_b,address)VALUES ('" + FilialName.Text + "','" + FilialAdress.Text + "')");
             FilialName.Text = "";
             FilialAdress.Text = "";
             UpdateData();
         }
         public void UpdateData()
         {
-            Bases.SoursDataGrid("SELECT id,NAME,address, DATE_FORMAT(created_at,'%d.%m.%Y') as 'created_at' FROM branches", ref DataList);
+            Bases.SoursDataGrid("SELECT id,name_b,address, DATE_FORMAT(created_at,'%d.%m.%Y') as 'created_at' FROM branches", ref DataList);
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)

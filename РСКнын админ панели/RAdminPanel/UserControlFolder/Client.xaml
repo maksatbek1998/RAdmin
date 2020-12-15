@@ -67,7 +67,7 @@
                             <RowDefinition Height="*"/>
                         </Grid.RowDefinitions>
                         <Canvas Grid.ColumnSpan="2">
-                            <DatePicker x:Name="dataPicker" Canvas.Left="165" Canvas.Top="12" Width="117"/>
+                            <DatePicker SelectedDateChanged="DatePicker_SelectedDateChanged" x:Name="dataPicker" Canvas.Left="165" Canvas.Top="12" Width="117"/>
                             <TextBlock Text="Датасы менен издоо" Canvas.Left="10" Canvas.Top="14"/>
                             <TextBlock Text="Имя работника" Canvas.Left="287" Canvas.Top="14" Width="134"/>
                             <ComboBox DropDownClosed="OperComBox_DropDownClosed"  x:Name="OperComBox" Canvas.Left="402" Canvas.Top="12" Width="150" IsReadOnly="True"/>
