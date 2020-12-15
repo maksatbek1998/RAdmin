@@ -8,7 +8,7 @@ namespace RAdminPanel.DataBase
 {
     class Base
     {
-        public MySqlConnection connection = new MySqlConnection("datasource=127.0.0.1; port=3306;Initial Catalog='rskbank';username=root;password=doni2429;CharSet=utf8;");
+        public MySqlConnection connection = new MySqlConnection("datasource=192.168.0.108; port=3306;Initial Catalog='rskbank';username=root;password=doni2429;CharSet=utf8;");
         public delegate void DisplaySourse(DataTable db);
         public delegate void DisplaySourse2(string[] a);
         public event DisplaySourse2 eventDysplay2;
@@ -23,7 +23,6 @@ namespace RAdminPanel.DataBase
         {
             connection.Open();
             string[] a = new string[count];
-
             int i = 0;
             string sql = s;
             MySqlCommand command = new MySqlCommand(sql, connection);

@@ -11,7 +11,6 @@ namespace RAdminPanel.UserControlFolder
     /// </summary>
     public partial class Branches : UserControl
     {
-        int columnIndex;
         string id_1;
         Base Bases = new Base();
         public Branches()

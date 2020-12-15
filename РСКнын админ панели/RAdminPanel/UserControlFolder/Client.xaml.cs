@@ -24,5 +24,10 @@ namespace RAdminPanel.UserControlFolder
         {
             InitializeComponent();
         }
+
+        private void fv_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

@@ -16,7 +16,7 @@
                             <RowDefinition Height="*"/>
                         </Grid.RowDefinitions>
                         <Canvas>
-                            <ToggleButton Style="{DynamicResource Togle_Button}" Canvas.Left="130" Canvas.Top="10"/>
+                            <ToggleButton  Style="{DynamicResource Togle_Button}" Canvas.Left="130" Canvas.Top="10"/>
                             <TextBlock Text="Очереттегилер" Canvas.Left="10" Canvas.Top="14"/>
                             <ToggleButton Style="{DynamicResource Togle_Button}" Canvas.Left="439" Canvas.Top="10"/>
                             <TextBlock Text="Кутуп тургандар" Canvas.Left="307" Canvas.Top="14"/>

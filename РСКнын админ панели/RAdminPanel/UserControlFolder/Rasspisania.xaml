@@ -17,34 +17,42 @@
                         </Grid.RowDefinitions>
                         <Canvas>
                             <TextBlock Text="Терминалдын дем алуу убакыттары" Canvas.Left="7" Canvas.Top="46"/>
-                            <DatePicker Canvas.Left="276" Canvas.Top="46"/>
-                            <Button Content="Сактоо" Style="{DynamicResource ButtonStyle}" Canvas.Left="433" Canvas.Top="46"/>
+                            <DatePicker x:Name="Power_Date" Canvas.Left="276" Canvas.Top="46" Width="138"/>
+                            <Button Content="Сактоо" Style="{DynamicResource ButtonStyle}" Canvas.Left="433" Canvas.Top="46" Click="Button_Click"/>
                             <TextBlock Text="Жануу убакты" Canvas.Left="7" Canvas.Top="10"/>
-                            <ComboBox Canvas.Left="118" Canvas.Top="10" Width="77" IsReadOnly="False">
+                            <ComboBox x:Name="Power_ON" Canvas.Left="118" Canvas.Top="10" Width="115" IsReadOnly="False">
                                 <ComboBoxItem Content="06:00"/>
                                 <ComboBoxItem Content="07:00"/>
                                 <ComboBoxItem Content="08:00"/>
                                 <ComboBoxItem Content="09:00"/>
                             </ComboBox>
-                            <TextBlock Text="Очуу убакты" Canvas.Left="238" Canvas.Top="10"/>
-                            <ComboBox Canvas.Left="337" Canvas.Top="10" Width="77" IsReadOnly="False">
+                            <TextBlock Text="Очуу убакты" Canvas.Left="263" Canvas.Top="10"/>
+                            <ComboBox x:Name="Power_OF" Canvas.Left="369" Canvas.Top="10" Width="115" IsReadOnly="False">
                                 <ComboBoxItem Content="16:00"/>
                                 <ComboBoxItem Content="17:00"/>
                                 <ComboBoxItem Content="18:00"/>
                                 <ComboBoxItem Content="19:00"/>
                             </ComboBox>
+                            <TextBlock Text="Абалы" Canvas.Left="771" Canvas.Top="10"/>
+                            <ComboBox x:Name="TerminalPower" Canvas.Left="874" Canvas.Top="10" Width="115" IsReadOnly="False">
+                                <ComboBoxItem Content="ON"/>
+                                <ComboBoxItem Content="OF"/>
+                            </ComboBox>
+                            <TextBlock Text="Терминал" Canvas.Left="530" Canvas.Top="10"/>
+                            <ComboBox x:Name="TerminalName" Canvas.Left="618" Canvas.Top="10" Width="115" IsReadOnly="False">
+                            </ComboBox>
                         </Canvas>
-                        <DataGrid FontSize="12"  CanUserAddRows="False" Style="{DynamicResource grid_xml}" ColumnHeaderStyle="{DynamicResource hederstyle}" VerticalAlignment="Stretch" VerticalScrollBarVisibility="Auto"   HeadersVisibility="Column" 
+                        <DataGrid x:Name="RaspisaniaData" FontSize="12"  CanUserAddRows="False" Style="{DynamicResource grid_xml}" ColumnHeaderStyle="{DynamicResource hederstyle}" VerticalAlignment="Stretch" VerticalScrollBarVisibility="Auto"   HeadersVisibility="Column" 
                    AutoGenerateColumns="False"  Grid.Row="1">
                             <DataGrid.Columns>
-                                <DataGridTextColumn Header="№" Width="50"/>
-                                <DataGridTextColumn Header="Жануу убакты"/>
-                                <DataGridTextColumn Header="Очуу убакты"/>
-                                <DataGridTextColumn Header="Дата"/>
+                                <DataGridTextColumn Header="№" Width="50" Binding="{Binding id}"/>
+                                <DataGridTextColumn Header="Жануу убакты" Binding="{Binding t_ON}"/>
+                                <DataGridTextColumn Header="Очуу убакты" Binding="{Binding t_OF}"/>
+                                <DataGridTextColumn Header="Дата" Binding="{Binding t_date}"/>
                                 <DataGridTemplateColumn Header="Удалить" Width="80" >
                                     <DataGridTemplateColumn.CellTemplate>
                                         <DataTemplate>
-                                            <Button Style="{DynamicResource Close_Button}" BorderThickness="0,0,0,0" Cursor="Hand">
+                                            <Button Style="{DynamicResource Close_Button}" BorderThickness="0,0,0,0" Cursor="Hand" Click="Button_Click_1">
                                                 <Image Source="/RAdminPanel;component/Image/Ico/udalit4.png" Width="20"/>
                                             </Button>
                                         </DataTemplate>
