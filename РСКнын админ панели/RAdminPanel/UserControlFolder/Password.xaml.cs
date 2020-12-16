@@ -34,7 +34,7 @@ namespace RAdminPanel.UserControlFolder
             {
                 flag = Base1.ReturnIDString("SELECT id FROM parol WHERE LOG='" + LogTextBox.Text + "' AND pass='" + PassTextBox.Text + "'");
                 if (flag != String.Empty)
-                {
+                { 
                     MainWindow mainWindow = new MainWindow();
                     mainWindow.Show();
                     this.Close();
