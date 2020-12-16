@@ -15,6 +15,7 @@ namespace RAdminPanel.UserControlFolder
     {
         Base dataBase;
         string id_1;
+        static int returnedWork;
         public WorkPlaces()
         {
             InitializeComponent();
@@ -31,8 +32,8 @@ namespace RAdminPanel.UserControlFolder
         {
             if (workName.Text != String.Empty && workWindow.Text != String.Empty && PriorityComboBox.Text != String.Empty)
             {
-                dataBase = new Base();               
-                dataBase.RegistrToBase("insert into workplaces(name_w,windowName,priority) values ('" + workName.Text + "','" + workWindow.Text + "'," + PriorityComboBox.Text + ")");
+                dataBase = new Base();              
+                dataBase.RegistrToBase("insert into workplaces(name_id,windowName,priority,status) values (" +returnedWork + "," + workWindow.Text + "," + PriorityComboBox.Text + ", 0)");
                 UpdateData();
                 Refresh();
             }
@@ -45,12 +46,12 @@ namespace RAdminPanel.UserControlFolder
         public void UpdateData()
         {
             dataBase = new Base();
-            dataBase.SoursDataGrid("select id,name_w,windowName,priority from workplaces order by priority desc", ref dataGrid);
+            dataBase.SoursDataGrid("SELECT w.id,p.name_p,w.windowName,w.priority,w.status from workplaces AS w INNER JOIN position AS p ON w.name_id = p.id order by priority desc", ref dataGrid);
         }
         public void UpdateComboBoxBranch()
         {
             dataBase = new Base();
-            dataBase.eventDysplay2 += delegate (string[] db)
+            dataBase.eventDysplay2 += delegate (List<string> db)
             {
                 workName.ItemsSource = db;
             };
@@ -70,6 +71,15 @@ namespace RAdminPanel.UserControlFolder
                     messageO.del_ += () => UpdateData();
                     messageO.ShowDialog();
                 }
+            }
+        }
+
+        private void workName_DropDownClosed(object sender, EventArgs e)
+        {
+            if (workName.SelectedItem != null)
+            {
+                dataBase = new Base();
+                returnedWork = dataBase.ReturnID("select id from workplaces where windowName = '" + workName.SelectedValue.ToString() + "'");
             }
         }
     }
