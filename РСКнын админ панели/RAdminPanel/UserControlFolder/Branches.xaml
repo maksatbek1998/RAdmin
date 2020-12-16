@@ -28,7 +28,7 @@
                    AutoGenerateColumns="False" >
                         <DataGrid.Columns>
                             <DataGridTextColumn Header="№" Width="50" Binding="{Binding id}"/>
-                            <DataGridTextColumn Header="Филиалдын аты" Binding="{Binding NAME}"/>
+                            <DataGridTextColumn Header="Филиалдын аты" Binding="{Binding name_b}"/>
                             <DataGridTextColumn Header="Филиалдын адреси" Binding="{Binding address}"/>
                             <DataGridTextColumn Header="Тузулгон убакты" Binding="{Binding created_at}"/>
                             <DataGridTemplateColumn Header="Удалить" Width="80" >

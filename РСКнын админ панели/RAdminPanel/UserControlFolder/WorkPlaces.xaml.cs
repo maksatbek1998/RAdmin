@@ -6,6 +6,7 @@ using RAdminPanel.ViewModel.Models;
 using System.Data;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Data;
 
 namespace RAdminPanel.UserControlFolder
 {
@@ -18,6 +19,7 @@ namespace RAdminPanel.UserControlFolder
         {
             InitializeComponent();
             UpdateData();
+            UpdateComboBoxBranch();
         }
         public void Refresh()
         {
@@ -27,22 +29,10 @@ namespace RAdminPanel.UserControlFolder
         }
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            if (workName.Text != "" && workWindow.Text != "" && PriorityComboBox.Text != String.Empty)
+            if (workName.Text != String.Empty && workWindow.Text != String.Empty && PriorityComboBox.Text != String.Empty)
             {
-                dataBase = new Base();
-                /*if (PriorityComboBox.SelectedItem == Priority1)
-                {
-                    dataBase.RegistrToBase("insert into workplaces(name,windowName,priority) values ('" + workName.Text + "','" + workWindow.Text + "'," + 1 + ")");
-                }
-                else if (PriorityComboBox.SelectedItem == Priority2)
-                {
-                    dataBase.RegistrToBase("insert into workplaces(name,windowName,priority) values ('" + workName.Text + "','" + workWindow.Text + "'," + 2 + ")");
-                }
-                else
-                {
-                    dataBase.RegistrToBase("insert into workplaces(name,windowName,priority) values ('" + workName.Text + "','" + workWindow.Text + "'," + 3 + ")");
-                }*/
-                dataBase.RegistrToBase("insert into workplaces(name,windowName,priority) values ('" + workName.Text + "','" + workWindow.Text + "'," + PriorityComboBox.Text + ")");
+                dataBase = new Base();               
+                dataBase.RegistrToBase("insert into workplaces(name_w,windowName,priority) values ('" + workName.Text + "','" + workWindow.Text + "'," + PriorityComboBox.Text + ")");
                 UpdateData();
                 Refresh();
             }
@@ -55,7 +45,16 @@ namespace RAdminPanel.UserControlFolder
         public void UpdateData()
         {
             dataBase = new Base();
-            dataBase.SoursDataGrid("select * from workplaces order by priority desc", ref dataGrid);
+            dataBase.SoursDataGrid("select id,name_w,windowName,priority from workplaces order by priority desc", ref dataGrid);
+        }
+        public void UpdateComboBoxBranch()
+        {
+            dataBase = new Base();
+            dataBase.eventDysplay2 += delegate (string[] db)
+            {
+                workName.ItemsSource = db;
+            };
+            dataBase.Display("SELECT name_p FROM position");
         }
         private void Button_Click_2(object sender, RoutedEventArgs e)
         {

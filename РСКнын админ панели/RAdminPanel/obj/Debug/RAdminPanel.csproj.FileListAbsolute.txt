@@ -101,3 +101,4 @@ D:\C# projects\rsk\RAdmin\РСКнын админ панели\RAdminPanel\obj\D
 D:\C# projects\rsk\RAdmin\РСКнын админ панели\RAdminPanel\obj\Debug\UserControlFolder\Message.g.cs
 D:\C# projects\rsk\RAdmin\РСКнын админ панели\RAdminPanel\obj\Debug\UserControlFolder\Message.baml
 D:\C# projects\rsk\RAdmin\РСКнын админ панели\RAdminPanel\obj\Debug\RAdminPanel.csprojAssemblyReference.cache
+D:\C# projects\rsk\RAdmin\РСКнын админ панели\RAdminPanel\obj\Debug\GeneratedInternalTypeHelper.g.cs

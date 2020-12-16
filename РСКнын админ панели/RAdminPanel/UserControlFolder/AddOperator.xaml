@@ -21,9 +21,9 @@
                     <TextBlock Text="Ф.И.О" Canvas.Left="177" Canvas.Top="20" />
                     <TextBox x:Name="UserNameTextBox" FontSize="14"  Style="{DynamicResource textbox_style}" Tag=" Ф.И.О" Height="24" Width="254" Canvas.Left="269" Canvas.Top="16"/>
                     <TextBlock Text="Филиал" Canvas.Left="177" Canvas.Top="51"/>
-                    <ComboBox  x:Name="BranchComboBox"  Canvas.Left="269" Canvas.Top="47"/>
+                    <ComboBox DropDownClosed="BranchComboBox_DropDownClosed" x:Name="BranchComboBox"  Canvas.Left="269" Canvas.Top="47"/>
                     <TextBlock Text="Жумушу" Canvas.Left="177" Canvas.Top="82" />
-                    <ComboBox  x:Name="PositionComboBox" Canvas.Left="269" Canvas.Top="78"/>
+                    <ComboBox DropDownClosed="PositionComboBox_DropDownClosed"  x:Name="PositionComboBox" Canvas.Left="269" Canvas.Top="78"/>
                     <TextBlock Text="Логин" Canvas.Left="177" Canvas.Top="112" />
                     <TextBox x:Name="LoginTextBox" FontSize="14"  Style="{DynamicResource textbox_style}" Tag="Логин" Height="24" Width="254" Canvas.Left="269" Canvas.Top="109"/>
                     <TextBlock Text="Пароль" Canvas.Left="177" Canvas.Top="144" />
@@ -37,8 +37,8 @@
                    AutoGenerateColumns="False" >
                     <DataGrid.Columns>
                         <DataGridTextColumn x:Name="id" Header="№" Width="50" Binding="{Binding id}" />
-                        <DataGridTextColumn x:Name="Name" Header="Ф.И.О" Binding="{Binding name}"/>
-                        <DataGridTextColumn x:Name="Fili" Header="Филиал" Binding="{Binding branches_id}"/>
+                        <DataGridTextColumn x:Name="Name" Header="Ф.И.О" Binding="{Binding name_u}"/>
+                        <DataGridTextColumn x:Name="Fili" Header="Филиал" Binding="{Binding name_b}"/>
                         <DataGridTextColumn x:Name="Login" Header="Логин" Binding="{Binding login}"/>
                         <DataGridTextColumn x:Name="Pass" Header="Пароль" Binding="{Binding password}"/>
                         <DataGridTemplateColumn Header="Удалить" Width="80" >
