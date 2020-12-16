@@ -127,5 +127,18 @@ namespace RAdminPanel.DataBase
             connection.Close();
             return x;
         }
+        public string ReturnIDString(string s)
+        {
+            connection.Open();
+            string sql = s, value = "";
+            MySqlCommand command = new MySqlCommand(sql, connection);
+            MySqlDataReader reader = command.ExecuteReader();
+            while (reader.Read())
+            {
+                value = reader[0].ToString();
+            }
+            connection.Close();
+            return value;
+        }
     }
 }

@@ -10,12 +10,12 @@
         <Border Padding="20">
             <Canvas>
                 <Image Source="../Image/Img/sound.png" Width="90" Height="90" Canvas.Left="17" Canvas.Top="26"/>
-                <Button Style="{DynamicResource ButtonStyle}" Content="Сактоо" Canvas.Left="434" Canvas.Top="73"/>
+                <Button Style="{DynamicResource ButtonStyle}" Content="Сактоо" Canvas.Left="434" Canvas.Top="73" Click="Button_Click_2"/>
                 <TextBlock Text="Тил тандоо" Canvas.Top="36" Canvas.Left="177" Width="148"/>
-                <ComboBox Canvas.Left="330" Canvas.Top="36" Width="254" IsReadOnly="True">
-                    <ComboBoxItem Content="Ун жана звук"/>
-                    <ComboBoxItem Content="Звук"/>
-                    <ComboBoxItem Content="Унсуз жана звуксуз"/>
+                <ComboBox x:Name="SoundCombo" Canvas.Left="330" Canvas.Top="36" Width="254" IsReadOnly="True" SelectionChanged="Sound_SelectionChanged">
+                    <ComboBoxItem Content="Ун жана звук" Tag="ON_Sound_Speech"/>
+                    <ComboBoxItem Content="Звук" Tag="Sound"/>
+                    <ComboBoxItem Content="Унсуз жана звуксуз" Tag="OF_Sound_Speech"/>
                 </ComboBox>
             </Canvas>
         </Border>
