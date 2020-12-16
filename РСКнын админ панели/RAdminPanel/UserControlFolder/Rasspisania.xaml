@@ -12,39 +12,49 @@
                 <TabItem Header="СЭО майрам кундору" Style="{DynamicResource TabControl}" Width="150">
                     <Grid>
                         <Grid.RowDefinitions>
-                            <RowDefinition Height="85"/>
+                            <RowDefinition Height="140"/>
                             <RowDefinition Height="*"/>
                         </Grid.RowDefinitions>
                         <Canvas>
-                            <TextBlock Text="Терминалдын дем алуу убакыттары" Canvas.Left="7" Canvas.Top="46"/>
-                            <DatePicker Canvas.Left="276" Canvas.Top="46"/>
-                            <Button Content="Сактоо" Style="{DynamicResource ButtonStyle}" Canvas.Left="433" Canvas.Top="46"/>
-                            <TextBlock Text="Жануу убакты" Canvas.Left="7" Canvas.Top="10"/>
-                            <ComboBox Canvas.Left="118" Canvas.Top="10" Width="77" IsReadOnly="False">
+                            <TextBlock Text="Терминалдын дем алуу убакыттары" Canvas.Left="6" Canvas.Top="18" Width="290"/>
+                            <DatePicker x:Name="Power_Date" Canvas.Left="287" Canvas.Top="16" Width="110" />
+                            <Button Content="Сактоо" Style="{DynamicResource ButtonStyle}" Canvas.Left="546" Canvas.Top="89" Click="Button_Click"/>
+                            <TextBlock Text="Жануу убакты" Canvas.Left="7" Canvas.Top="52" Width="140"/>
+                            <ComboBox x:Name="Power_ON" Canvas.Left="143" Canvas.Top="52" Width="115" IsReadOnly="False">
                                 <ComboBoxItem Content="06:00"/>
                                 <ComboBoxItem Content="07:00"/>
                                 <ComboBoxItem Content="08:00"/>
                                 <ComboBoxItem Content="09:00"/>
                             </ComboBox>
-                            <TextBlock Text="Очуу убакты" Canvas.Left="238" Canvas.Top="10"/>
-                            <ComboBox Canvas.Left="337" Canvas.Top="10" Width="77" IsReadOnly="False">
+                            <TextBlock Text="Очуу убакты" Canvas.Left="8" Canvas.Top="89" Width="134"/>
+                            <ComboBox x:Name="Power_OF" Canvas.Left="143" Canvas.Top="89" Width="115" IsReadOnly="False">
                                 <ComboBoxItem Content="16:00"/>
                                 <ComboBoxItem Content="17:00"/>
                                 <ComboBoxItem Content="18:00"/>
                                 <ComboBoxItem Content="19:00"/>
                             </ComboBox>
+                            <TextBlock Text="Абалы" Canvas.Left="317" Canvas.Top="89" Width="80"/>
+                            <ComboBox x:Name="TerminalPower" Canvas.Left="402" Canvas.Top="89" Width="115" IsReadOnly="True">
+                                <ComboBoxItem Content="ON"/>
+                                <ComboBoxItem Content="OF"/>
+                            </ComboBox>
+                            <TextBlock Text="Терминал" Canvas.Left="314" Canvas.Top="52" Width="83"/>
+                            <ComboBox x:Name="TerminalName" Canvas.Left="402" Canvas.Top="52" Width="115" IsReadOnly="True" SelectionChanged="TerminalName_SelectionChanged">
+                            </ComboBox>
                         </Canvas>
-                        <DataGrid FontSize="12"  CanUserAddRows="False" Style="{DynamicResource grid_xml}" ColumnHeaderStyle="{DynamicResource hederstyle}" VerticalAlignment="Stretch" VerticalScrollBarVisibility="Auto"   HeadersVisibility="Column" 
+                        <DataGrid x:Name="RaspisaniaData" FontSize="12"  CanUserAddRows="False" Style="{DynamicResource grid_xml}" ColumnHeaderStyle="{DynamicResource hederstyle}" VerticalAlignment="Stretch" VerticalScrollBarVisibility="Auto"   HeadersVisibility="Column" 
                    AutoGenerateColumns="False"  Grid.Row="1">
                             <DataGrid.Columns>
-                                <DataGridTextColumn Header="№" Width="50"/>
-                                <DataGridTextColumn Header="Жануу убакты"/>
-                                <DataGridTextColumn Header="Очуу убакты"/>
-                                <DataGridTextColumn Header="Дата"/>
+                                <DataGridTextColumn Header="№" Width="50" Binding="{Binding id}"/>
+                                <DataGridTextColumn Header="Жануу убакты" Binding="{Binding t_ON}"/>
+                                <DataGridTextColumn Header="Очуу убакты" Binding="{Binding t_OF}"/>
+                                <DataGridTextColumn Header="Терминал" Binding="{Binding t_name}"/>
+                                <DataGridTextColumn Header="Абалы" Binding="{Binding t_key}"/>
+                                <DataGridTextColumn Header="Дата" Binding="{Binding t_date}"/>
                                 <DataGridTemplateColumn Header="Удалить" Width="80" >
                                     <DataGridTemplateColumn.CellTemplate>
                                         <DataTemplate>
-                                            <Button Style="{DynamicResource Close_Button}" BorderThickness="0,0,0,0" Cursor="Hand">
+                                            <Button Style="{DynamicResource Close_Button}" BorderThickness="0,0,0,0" Cursor="Hand" Click="Button_Click_1">
                                                 <Image Source="/RAdminPanel;component/Image/Ico/udalit4.png" Width="20"/>
                                             </Button>
                                         </DataTemplate>
@@ -58,27 +68,27 @@
                     <Grid>
                         <Grid Grid.Row="1" Margin="0,0,0,0">
                             <Grid.RowDefinitions>
-                                <RowDefinition Height="50"/>
+                                <RowDefinition Height="100"/>
                                 <RowDefinition Height="*"/>
                             </Grid.RowDefinitions>
                             <Canvas>
-                                <TextBlock Text="Жануу убакты" Canvas.Left="3" Canvas.Top="10"/>
-                                <ComboBox Canvas.Left="114" Canvas.Top="10" Width="77" IsReadOnly="False">
+                                <TextBlock Text="Жануу убакты" Canvas.Left="3" Canvas.Top="10" Width="115"/>
+                                <ComboBox x:Name="ON_Time" Canvas.Left="123" Canvas.Top="10" Width="77" IsReadOnly="False">
                                     <ComboBoxItem Content="06:00"/>
                                     <ComboBoxItem Content="07:00"/>
                                     <ComboBoxItem Content="08:00"/>
                                     <ComboBoxItem Content="09:00"/>
                                 </ComboBox>
-                                <TextBlock Text="Очуу убакты" Canvas.Left="234" Canvas.Top="10"/>
-                                <ComboBox Canvas.Left="333" Canvas.Top="10" Width="77" IsReadOnly="False">
+                                <TextBlock Text="Очуу убакты" Canvas.Left="7" Canvas.Top="47" Width="111"/>
+                                <ComboBox x:Name="OF_Time" Canvas.Left="123" Canvas.Top="46" Width="76" IsReadOnly="False">
                                     <ComboBoxItem Content="16:00"/>
                                     <ComboBoxItem Content="17:00"/>
                                     <ComboBoxItem Content="18:00"/>
                                     <ComboBoxItem Content="19:00"/>
                                 </ComboBox>
-                                <Button Content="Сактоо" Style="{DynamicResource ButtonStyle}" Canvas.Left="688" Canvas.Top="9"/>
-                                <TextBlock Text="Кун тартиби" Canvas.Left="438" Canvas.Top="10"/>
-                                <ComboBox Canvas.Left="540" Canvas.Top="10" Width="126" IsReadOnly="True">
+                                <Button Content="Сактоо" Style="{DynamicResource ButtonStyle}" Canvas.Left="512" Canvas.Top="45" Click="Button_Click_2"/>
+                                <TextBlock Text="Кун тартиби" Canvas.Left="243" Canvas.Top="46" Width="101"/>
+                                <ComboBox x:Name="DayCombobox" Canvas.Left="349" Canvas.Top="46" Width="126" IsReadOnly="True">
                                     <ComboBoxItem Content="Понедельник"/>
                                     <ComboBoxItem Content="Вторник"/>
                                     <ComboBoxItem Content="Среда"/>
@@ -87,18 +97,27 @@
                                     <ComboBoxItem Content="Суббота"/>
                                     <ComboBoxItem Content="Воскресенье"/>
                                 </ComboBox>
+                                <TextBlock Text="Терминал" Canvas.Left="243" Canvas.Top="10" Width="100"/>
+                                <ComboBox x:Name="TerminalName_Copy" Canvas.Left="349" Canvas.Top="10" Width="126" IsReadOnly="True" SelectionChanged="TerminalName_SelectionChanged"/>
+                                <TextBlock Text="Абалы" Canvas.Left="512" Canvas.Top="10" Width="80"/>
+                                <ComboBox x:Name="TerminalPower_Copy" Canvas.Left="597" Canvas.Top="10" Width="115" IsReadOnly="True">
+                                    <ComboBoxItem Content="ON"/>
+                                    <ComboBoxItem Content="OF"/>
+                                </ComboBox>
                             </Canvas>
-                            <DataGrid  FontSize="12"  CanUserAddRows="False" Style="{DynamicResource grid_xml}" ColumnHeaderStyle="{DynamicResource hederstyle}" VerticalAlignment="Top" VerticalScrollBarVisibility="Auto"   HeadersVisibility="Column" Height="800"
+                            <DataGrid x:Name="Day_Grafik"  FontSize="12"  CanUserAddRows="False" Style="{DynamicResource grid_xml}" ColumnHeaderStyle="{DynamicResource hederstyle}" VerticalAlignment="Stretch" VerticalScrollBarVisibility="Auto"   HeadersVisibility="Column"
                    AutoGenerateColumns="False"  Grid.Row="1">
                                 <DataGrid.Columns>
-                                    <DataGridTextColumn Header="№" Width="50"/>
-                                    <DataGridTextColumn Header="Жануу убакты"/>
-                                    <DataGridTextColumn Header="Очуу убакты"/>
-                                    <DataGridTextColumn Header="Дни недели"/>
+                                    <DataGridTextColumn Header="№" Width="50" Binding="{Binding id}"/>
+                                    <DataGridTextColumn Header="Жануу убакты" Binding="{Binding t_on}"/>
+                                    <DataGridTextColumn Header="Очуу убакты" Binding="{Binding t_of}"/>
+                                    <DataGridTextColumn Header="Дни недели" Binding="{Binding day}"/>
+                                    <DataGridTextColumn Header="Терминал" Binding="{Binding t_name}"/>
+                                    <DataGridTextColumn Header="Абалы" Binding="{Binding t_key}"/>
                                     <DataGridTemplateColumn Header="Удалить" Width="80" >
                                         <DataGridTemplateColumn.CellTemplate>
                                             <DataTemplate>
-                                                <Button Style="{DynamicResource Close_Button}" BorderThickness="0,0,0,0" Cursor="Hand">
+                                                <Button Style="{DynamicResource Close_Button}" BorderThickness="0,0,0,0" Cursor="Hand" Click="Button_Click_3">
                                                     <Image Source="/RAdminPanel;component/Image/Ico/udalit4.png" Width="20"/>
                                                 </Button>
                                             </DataTemplate>

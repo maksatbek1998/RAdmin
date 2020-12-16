@@ -28,7 +28,7 @@ namespace RAdminPanel.ViewModel.BaseView
                 _action("-1");
             }
         }
-
         public event EventHandler CanExecuteChanged;
+
     }
 }
