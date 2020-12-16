@@ -80,7 +80,7 @@
                     </Button>
                     <Button Height="45" Style="{DynamicResource menu}" Click="Button_Click_3">
                         <DockPanel Margin="5 0 0 0">
-                            <Image Source="Image/Img/translate.png" Height="25"/>
+                            <Image Source="Image/Img/language_250px.png" Height="25"/>
                             <Label x:Name="lbl_menu8"  VerticalAlignment="Center" FontSize="14" Content="{Binding LangSetting, UpdateSourceTrigger=PropertyChanged}" Foreground="White" />
                         </DockPanel>
                     </Button>
@@ -88,6 +88,12 @@
                         <DockPanel Margin="5 0 0 0">
                             <Image Source="Image/Img/sound.png" Height="25"/>
                             <Label x:Name="lbl_menu81"  VerticalAlignment="Center" FontSize="14" Content="{Binding SoundSetting, UpdateSourceTrigger=PropertyChanged}" Foreground="White" />
+                        </DockPanel>
+                    </Button>
+                    <Button Height="45" Style="{DynamicResource menu}" Click="Button_Click_11">
+                        <DockPanel Margin="5 0 0 0">
+                            <Image Source="Image/Img/sleep_250px.png" Height="25"/>
+                            <Label x:Name="lbl_menu811"  VerticalAlignment="Center" FontSize="14" Content="{Binding SoundSetting, UpdateSourceTrigger=PropertyChanged}" Foreground="White" />
                         </DockPanel>
                     </Button>
                 </StackPanel>

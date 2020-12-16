@@ -51,6 +51,7 @@ namespace RAdminPanel
                 lbl_menu9.Visibility = Visibility.Collapsed;
                 lbl_menu81.Visibility = Visibility.Collapsed;
                 lbl_menu22.Visibility = Visibility.Collapsed;
+                lbl_menu811.Visibility = Visibility.Collapsed;
                 MyChangingColorText.Visibility = Visibility.Collapsed;
                 Skryt.Width = 20;
             }
@@ -75,6 +76,7 @@ namespace RAdminPanel
                 lbl_menu6.Visibility = Visibility.Visible;
                 lbl_menu8.Visibility = Visibility.Visible;
                 lbl_menu9.Visibility = Visibility.Visible;
+                lbl_menu811.Visibility = Visibility.Visible;
                 MyChangingColorText.Visibility = Visibility.Visible;
                 Skryt.Width = 32;
             }
@@ -145,6 +147,11 @@ namespace RAdminPanel
         private void Button_Click_10(object sender, RoutedEventArgs e)
         {
             ShowUserControl.Show(Lists, new Departament());
+        }
+
+        private void Button_Click_11(object sender, RoutedEventArgs e)
+        {
+            ShowUserControl.Show(Lists, new Mode());
         }
     }
 }

@@ -167,3 +167,5 @@ C:\RAdmin\РСКнын админ панели\RAdminPanel\obj\Debug\RAdminPanel
 C:\RAdmin\РСКнын админ панели\RAdminPanel\obj\Debug\RAdminPanel.csproj.GenerateResource.cache
 C:\RAdmin\РСКнын админ панели\RAdminPanel\obj\Debug\RAdminPanel.csproj.CoreCompileInputs.cache
 C:\RAdmin\РСКнын админ панели\RAdminPanel\obj\Debug\RAdminPanel.csproj.CopyComplete
+C:\RAdmin\РСКнын админ панели\RAdminPanel\obj\Debug\UserControlFolder\Mode.g.cs
+C:\RAdmin\РСКнын админ панели\RAdminPanel\obj\Debug\UserControlFolder\Mode.baml
