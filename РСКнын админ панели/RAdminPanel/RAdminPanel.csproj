@@ -105,6 +105,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="ClassUserControl\gridvar.cs" />
     <Compile Include="ClassUserControl\ShowUserControl.cs" />
     <Compile Include="DataBase\Base.cs" />
     <Compile Include="UserControlFolder\AddOperator.xaml.cs">
