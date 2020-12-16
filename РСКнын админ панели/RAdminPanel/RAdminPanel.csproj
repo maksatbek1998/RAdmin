@@ -257,7 +257,6 @@
     <Resource Include="Image\Img\order_history_48px.png" />
     <Resource Include="Image\Img\resume_48px.png" />
     <Resource Include="Image\Img\timesheet_48px.png" />
-    <Resource Include="Image\Img\translate.png" />
     <Resource Include="Image\Img\value.png" />
     <Resource Include="Image\Img\Без названия.jpg" />
     <Resource Include="Image\Img\Без названия.png" />
@@ -308,6 +307,12 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Image\Ico\Edit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\Img\sleep_250px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\Img\language_250px.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
