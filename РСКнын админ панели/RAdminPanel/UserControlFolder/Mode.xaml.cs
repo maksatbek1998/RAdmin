@@ -30,7 +30,7 @@ namespace RAdminPanel.UserControlFolder
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             Base1 = new Base();
-            Base1.RegistrToBase("UPDATE options SET value='"+ UserNameTextBox .Text+ "' WHERE id=5");
+            Base1.RegistrToBase("UPDATE options SET value='" + UserNameTextBox.Text + "' WHERE id=5");
             UserNameTextBox.Text = "";
         }
     }
