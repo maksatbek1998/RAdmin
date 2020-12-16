@@ -10,7 +10,6 @@
 //------------------------------------------------------------------------------
 
 using RAdminPanel.UserControlFolder;
-using RAdminPanel.ViewModel;
 using System;
 using System.Diagnostics;
 using System.Windows;

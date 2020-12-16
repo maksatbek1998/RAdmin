@@ -23,7 +23,7 @@ namespace RAdminPanel.DataBase
 
         }
 
-        public void Display(string s,int count)
+        public void Display(string s,int count =5)
         {
             connection.Open();
             string[] a = new string[count];
