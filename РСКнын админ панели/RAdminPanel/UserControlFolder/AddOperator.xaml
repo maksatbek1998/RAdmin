@@ -9,13 +9,14 @@
              d:DesignHeight="450" d:DesignWidth="800">
     <Border Padding="20">
         <Grid>
-            
+            <Grid.DataContext>
+                <vm:MainView/>
+            </Grid.DataContext>
             <Grid.RowDefinitions>
-                <RowDefinition Height="205"/>
+                <RowDefinition Height="250"/>
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
             <Grid Grid.Row="0">
-                
                 <Canvas>
                     <Image Source="../Image/Just_Image/Person.JPG" Width="120" Height="140" Canvas.Left="17" Canvas.Top="26"/>
                     <TextBlock Text="Ф.И.О" Canvas.Left="177" Canvas.Top="20" />
@@ -24,23 +25,37 @@
                     <ComboBox DropDownClosed="BranchComboBox_DropDownClosed" x:Name="BranchComboBox"  Canvas.Left="269" Canvas.Top="47"/>
                     <TextBlock Text="Жумушу" Canvas.Left="177" Canvas.Top="82" />
                     <ComboBox DropDownClosed="PositionComboBox_DropDownClosed"  x:Name="PositionComboBox" Canvas.Left="269" Canvas.Top="78"/>
-                    <TextBlock Text="Логин" Canvas.Left="177" Canvas.Top="112" />
-                    <TextBox x:Name="LoginTextBox" FontSize="14"  Style="{DynamicResource textbox_style}" Tag="Логин" Height="24" Width="254" Canvas.Left="269" Canvas.Top="109"/>
-                    <TextBlock Text="Пароль" Canvas.Left="177" Canvas.Top="144" />
-                    <TextBox x:Name="PasswordTextBox" FontSize="14"  Style="{DynamicResource textbox_style}" Tag="Пароль" Height="24" Width="254" Canvas.Left="269" Canvas.Top="140"/>
-                    <Button Style="{DynamicResource ResourceKey=ButtonStyle}" Content="Сактоо" Click="Button_Click" Canvas.Left="373" Canvas.Top="172">
+                    <TextBlock Text="Логин" Canvas.Left="178" Canvas.Top="146" />
+                    <TextBox x:Name="LoginTextBox" FontSize="14"  Style="{DynamicResource textbox_style}" Tag="Логин" Height="24" Width="254" Canvas.Left="269" Canvas.Top="143"/>
+                    <TextBlock Text="Пароль" Canvas.Left="178" Canvas.Top="178" />
+                    <TextBox x:Name="PasswordTextBox" FontSize="14"  Style="{DynamicResource textbox_style}" Tag="Пароль" Height="24" Width="254" Canvas.Left="269" Canvas.Top="174"/>
+                    <Button Style="{DynamicResource ResourceKey=ButtonStyle}" Content="Сактоо" Click="Button_Click" Canvas.Left="373" Canvas.Top="208">
                     </Button>
+                    <Button x:Name="UpdateButton" Style="{DynamicResource ResourceKey=ButtonStyle}" Visibility="Hidden" Content="Изменить" Click="UpdateButton_Click" Canvas.Left="555" Canvas.Top="172"/>
+                    <ComboBox DropDownClosed="WorkPod_DropDownClosed" x:Name="WorkPod"  Canvas.Left="269" Canvas.Top="110" RenderTransformOrigin="0.48,2.625"/>
+                    <TextBlock Text="Терезе" Canvas.Left="178" Canvas.Top="113" />
                 </Canvas>
             </Grid>
             <Grid Grid.Row="1">
-                <DataGrid  x:Name="dataGrid" IsReadOnly="True" Margin="10,7,0,0" FontSize="12"  CanUserAddRows="False" Style="{DynamicResource grid_xml}" ColumnHeaderStyle="{DynamicResource hederstyle}" VerticalAlignment="Stretch" VerticalScrollBarVisibility="Auto"  HeadersVisibility="Column"
+                <DataGrid x:Name="dataGrid" IsReadOnly="True" Margin="10,7,0,0" FontSize="12"  CanUserAddRows="False" Style="{DynamicResource grid_xml}" ColumnHeaderStyle="{DynamicResource hederstyle}" VerticalAlignment="Stretch" VerticalScrollBarVisibility="Auto"  HeadersVisibility="Column"
                    AutoGenerateColumns="False" >
                     <DataGrid.Columns>
-                        <DataGridTextColumn x:Name="id" Header="№" Width="50" Binding="{Binding id}" />
-                        <DataGridTextColumn x:Name="Name" Header="Ф.И.О" Binding="{Binding name_u}"/>
-                        <DataGridTextColumn x:Name="Fili" Header="Филиал" Binding="{Binding name_b}"/>
-                        <DataGridTextColumn x:Name="Login" Header="Логин" Binding="{Binding login}"/>
-                        <DataGridTextColumn x:Name="Pass" Header="Пароль" Binding="{Binding password}"/>
+                        <DataGridTextColumn  Header="№" Width="50" Binding="{Binding id}" />
+                        <DataGridTextColumn  Header="Ф.И.О" Binding="{Binding name_u}"/>
+                        <DataGridTextColumn  Header="Филиал" Binding="{Binding name_b}"/>
+                        <DataGridTextColumn  Header="Жумушу" Binding="{Binding name_p}"/>
+                        <DataGridTextColumn  Header="Терезе" Binding="{Binding windowName}"/>
+                        <DataGridTextColumn  Header="Логин" Binding="{Binding login}"/>
+                        <DataGridTextColumn  Header="Пароль" Binding="{Binding password}"/>
+                        <DataGridTemplateColumn Header="Изменить" Width="80" >
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Button Style="{DynamicResource Close_Button}" BorderThickness="0,0,0,0" Cursor="Hand" Click="UpdateButtonClick">
+                                        <Image Source="/RAdminPanel;component/Image/Ico/Edit.png" Width="20"/>
+                                    </Button>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
                         <DataGridTemplateColumn Header="Удалить" Width="80" >
                             <DataGridTemplateColumn.CellTemplate>
                                 <DataTemplate>
@@ -50,7 +65,6 @@
                                 </DataTemplate>
                             </DataGridTemplateColumn.CellTemplate>
                         </DataGridTemplateColumn>
-                        
                     </DataGrid.Columns>
                 </DataGrid>
             </Grid>

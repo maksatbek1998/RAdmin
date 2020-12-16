@@ -299,5 +299,8 @@
   <ItemGroup>
     <Resource Include="Image\Img\pass.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\Ico\Edit.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -82,6 +82,13 @@ namespace RAdminPanel.ViewModel
 
         #endregion
 
+        private string _SelectedItem;
+        public string SelectedItem
+        {
+            get => _SelectedItem;
+            set => Set(ref _SelectedItem, value);
+        }
+
         public MainView()
         {
             #region Реализация Комманд
