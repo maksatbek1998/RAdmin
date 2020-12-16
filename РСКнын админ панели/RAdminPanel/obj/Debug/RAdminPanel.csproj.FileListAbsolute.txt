@@ -100,7 +100,6 @@ D:\C# projects\rsk\RAdmin\РСКнын админ панели\RAdminPanel\obj\D
 D:\C# projects\rsk\RAdmin\РСКнын админ панели\RAdminPanel\obj\Debug\RAdminPanel.pdb
 D:\C# projects\rsk\RAdmin\РСКнын админ панели\RAdminPanel\obj\Debug\UserControlFolder\Message.g.cs
 D:\C# projects\rsk\RAdmin\РСКнын админ панели\RAdminPanel\obj\Debug\UserControlFolder\Message.baml
-D:\C# projects\rsk\RAdmin\РСКнын админ панели\RAdminPanel\obj\Debug\RAdminPanel.csprojAssemblyReference.cache
 D:\C# projects\rsk\RAdmin\РСКнын админ панели\RAdminPanel\obj\Debug\GeneratedInternalTypeHelper.g.cs
 C:\RAdmin\РСКнын админ панели\RAdminPanel\obj\Debug\RAdminPanel.csprojAssemblyReference.cache
 C:\RAdmin\РСКнын админ панели\RAdminPanel\obj\Debug\StyleFolder\StyleDictionary.baml
@@ -167,5 +166,24 @@ C:\RAdmin\РСКнын админ панели\RAdminPanel\obj\Debug\RAdminPanel
 C:\RAdmin\РСКнын админ панели\RAdminPanel\obj\Debug\RAdminPanel.csproj.GenerateResource.cache
 C:\RAdmin\РСКнын админ панели\RAdminPanel\obj\Debug\RAdminPanel.csproj.CoreCompileInputs.cache
 C:\RAdmin\РСКнын админ панели\RAdminPanel\obj\Debug\RAdminPanel.csproj.CopyComplete
-C:\RAdmin\РСКнын админ панели\RAdminPanel\obj\Debug\UserControlFolder\Mode.g.cs
-C:\RAdmin\РСКнын админ панели\RAdminPanel\obj\Debug\UserControlFolder\Mode.baml
+D:\C# projects\rsk\RAdmin\РСКнын админ панели\RAdminPanel\bin\Debug\BouncyCastle.Crypto.dll
+D:\C# projects\rsk\RAdmin\РСКнын админ панели\RAdminPanel\bin\Debug\K4os.Compression.LZ4.dll
+D:\C# projects\rsk\RAdmin\РСКнын админ панели\RAdminPanel\bin\Debug\K4os.Compression.LZ4.Streams.dll
+D:\C# projects\rsk\RAdmin\РСКнын админ панели\RAdminPanel\bin\Debug\K4os.Hash.xxHash.dll
+D:\C# projects\rsk\RAdmin\РСКнын админ панели\RAdminPanel\bin\Debug\Renci.SshNet.dll
+D:\C# projects\rsk\RAdmin\РСКнын админ панели\RAdminPanel\bin\Debug\System.Buffers.dll
+D:\C# projects\rsk\RAdmin\РСКнын админ панели\RAdminPanel\bin\Debug\System.Memory.dll
+D:\C# projects\rsk\RAdmin\РСКнын админ панели\RAdminPanel\bin\Debug\System.Numerics.Vectors.dll
+D:\C# projects\rsk\RAdmin\РСКнын админ панели\RAdminPanel\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+D:\C# projects\rsk\RAdmin\РСКнын админ панели\RAdminPanel\bin\Debug\Ubiety.Dns.Core.dll
+D:\C# projects\rsk\RAdmin\РСКнын админ панели\RAdminPanel\bin\Debug\Zstandard.Net.dll
+D:\C# projects\rsk\RAdmin\РСКнын админ панели\RAdminPanel\bin\Debug\Google.Protobuf.pdb
+D:\C# projects\rsk\RAdmin\РСКнын админ панели\RAdminPanel\bin\Debug\Google.Protobuf.xml
+D:\C# projects\rsk\RAdmin\РСКнын админ панели\RAdminPanel\bin\Debug\K4os.Compression.LZ4.xml
+D:\C# projects\rsk\RAdmin\РСКнын админ панели\RAdminPanel\bin\Debug\K4os.Compression.LZ4.Streams.xml
+D:\C# projects\rsk\RAdmin\РСКнын админ панели\RAdminPanel\bin\Debug\K4os.Hash.xxHash.xml
+D:\C# projects\rsk\RAdmin\РСКнын админ панели\RAdminPanel\bin\Debug\Renci.SshNet.xml
+D:\C# projects\rsk\RAdmin\РСКнын админ панели\RAdminPanel\bin\Debug\System.Buffers.xml
+D:\C# projects\rsk\RAdmin\РСКнын админ панели\RAdminPanel\bin\Debug\System.Memory.xml
+D:\C# projects\rsk\RAdmin\РСКнын админ панели\RAdminPanel\bin\Debug\System.Numerics.Vectors.xml
+D:\C# projects\rsk\RAdmin\РСКнын админ панели\RAdminPanel\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml

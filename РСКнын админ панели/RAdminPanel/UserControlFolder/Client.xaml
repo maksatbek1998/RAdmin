@@ -49,8 +49,8 @@
                                     <DataGridTextColumn Header="Услуганын туру" Width="1.5*"  Binding="{Binding uslugvid}"/>
                                     <DataGridTextColumn Header="Терезе" Width="*"  Binding="{Binding window}"/>
                                     <DataGridTextColumn Header="Опеоратор" Width="1.2*"  Binding="{Binding oper}" />
-                                    <DataGridTextColumn Header="Очеред алган убакты" Width="2*" Binding="{Binding start}"/>
-                                    <DataGridTextColumn Header="Очереди буткон убакты" Width="2*" Binding="{Binding end}"/>
+                                    <DataGridTextColumn  Header="Очеред алган убакты" Width="2*" Binding="{Binding start, StringFormat='dd-MM-yyyy hh:mm:ss'}"/>
+                                    <DataGridTextColumn Header="Очереди буткон убакты" Width="2*" Binding="{Binding end,StringFormat='dd-MM-yyyy hh:mm:ss'}"/>
                                 </DataGrid.Columns>
                             </DataGrid>
                         </Grid>
@@ -93,8 +93,8 @@
                                     <DataGridTextColumn Header="Услуганын туру" Width="1.5*"  Binding="{Binding uslugvid}"/>
                                     <DataGridTextColumn Header="Терезе" Width="*"  Binding="{Binding window}"/>
                                     <DataGridTextColumn Header="Опеоратор" Width="1.2*"  Binding="{Binding oper}" />
-                                    <DataGridTextColumn Header="Очеред алган убакты" Width="2*" Binding="{Binding start}"/>
-                                    <DataGridTextColumn Header="Очереди буткон убакты" Width="2*" Binding="{Binding end}"/>
+                                    <DataGridTextColumn Header="Очеред алган убакты" Width="2*" Binding="{Binding start,StringFormat='dd-MM-yyyy hh:mm:ss'}"/>
+                                    <DataGridTextColumn Header="Очереди буткон убакты" Width="2*" Binding="{Binding end,StringFormat='dd-MM-yyyy hh:mm:ss'}"/>
                                 </DataGrid.Columns>
                             </DataGrid>
                         </Grid>
