@@ -97,7 +97,6 @@
                                     <DataGridTextColumn Header="Очереди буткон убакты" Width="2*" Binding="{Binding end}"/>
                                 </DataGrid.Columns>
                             </DataGrid>
-                            <Button Grid.Row="0" Style="{DynamicResource ButtonStyle}" Content="Издоо" HorizontalAlignment="Left" Click="Button_Click_1" VerticalAlignment="Bottom" Margin="178,0,0,0"/>
                         </Grid>
                     </Grid>
                 </TabItem>

@@ -20,7 +20,9 @@ namespace RAdminPanel.UserControlFolder
         #region List
         List<gridvar> list = new List<gridvar>();
         List<gridvar> lister = new List<gridvar>();
+        List<gridvar> Mainlist = new List<gridvar>();
         List<gridvar> listDt2 = new List<gridvar>();
+        List<gridvar> MainlistDt2 = new List<gridvar>();
         List<gridvar> list0 = new List<gridvar>();
         List<gridvar> list1 = new List<gridvar>();
         List<gridvar> list2 = new List<gridvar>();
@@ -60,6 +62,7 @@ namespace RAdminPanel.UserControlFolder
                             end = Convert.ToDateTime(db.Rows[i][7])
                         });
                     }
+                    Mainlist = list;
                     dataGrid.ItemsSource = list;
                 }
             };
@@ -88,6 +91,7 @@ namespace RAdminPanel.UserControlFolder
                             end = Convert.ToDateTime(db.Rows[i][7])
                         });
                     }
+                    MainlistDt2 = listDt2;
                     dataGrid2.ItemsSource = listDt2;
                 }
             };
@@ -179,7 +183,8 @@ namespace RAdminPanel.UserControlFolder
                                 end = Convert.ToDateTime(db.Rows[i][7])
                             });
                         }
-                        dataGrid.ItemsSource = list0;
+                        list = list0;
+                        dataGrid.ItemsSource = list;
                     }
                 };
                 dataBase.SoursData("SELECT t.id,t.nomer,t.`status`,p.name_p,w.windowName,u.name_u,t.created_at,t.updated_at from turns AS t JOIN users AS u ON t.user_id = u.id INNER JOIN position AS p ON t.service_id = p.id INNER JOIN workplaces AS w ON t.workplace_id = w.id WHERE DATE_FORMAT(t.created_at,'%d.%m.%Y') ='" + DateTime.Now.ToString("dd.MM.yyyy") + "' and status = 1");
@@ -217,7 +222,8 @@ namespace RAdminPanel.UserControlFolder
                                 end = Convert.ToDateTime(db.Rows[i][7])
                             });
                         }
-                        dataGrid.ItemsSource = list1;
+                        list = list1;
+                        dataGrid.ItemsSource = list;
                     }
                 };
                 dataBase.SoursData("SELECT t.id,t.nomer,t.`status`,p.name_p,w.windowName,u.name_u,t.created_at,t.updated_at from turns AS t JOIN users AS u ON t.user_id = u.id INNER JOIN position AS p ON t.service_id = p.id INNER JOIN workplaces AS w ON t.workplace_id = w.id WHERE DATE_FORMAT(t.created_at,'%d.%m.%Y') ='" + DateTime.Now.ToString("dd.MM.yyyy") + "' and status = 2"); 
@@ -255,7 +261,8 @@ namespace RAdminPanel.UserControlFolder
                                 end = Convert.ToDateTime(db.Rows[i][7])
                             });
                         }
-                        dataGrid.ItemsSource = list2;
+                        list = list2;
+                        dataGrid.ItemsSource = list;
                     }
                 };
                 dataBase.SoursData("SELECT t.id,t.nomer,t.`status`,p.name_p,w.windowName,u.name_u,t.created_at,t.updated_at from turns AS t JOIN users AS u ON t.user_id = u.id INNER JOIN position AS p ON t.service_id = p.id INNER JOIN workplaces AS w ON t.workplace_id = w.id WHERE DATE_FORMAT(t.created_at,'%d.%m.%Y') ='" + DateTime.Now.ToString("dd.MM.yyyy") + "' and status = 3");
@@ -265,20 +272,20 @@ namespace RAdminPanel.UserControlFolder
         {
             if (tog2.IsChecked == true) tog2.IsChecked = false;
             if (tog3.IsChecked == true) tog3.IsChecked = false;
-            dataGrid.ItemsSource = list;
+            dataGrid.ItemsSource = Mainlist;
 
         }
         private void tog1_Unchecked1(object sender, System.Windows.RoutedEventArgs e)
         {
             if (tog1.IsChecked == true) tog1.IsChecked = false;
             if (tog3.IsChecked == true) tog3.IsChecked = false;
-            dataGrid.ItemsSource = list;
+            dataGrid.ItemsSource = Mainlist;
         }
         private void tog1_Unchecked2(object sender, System.Windows.RoutedEventArgs e)
         {
             if (tog2.IsChecked == true) tog2.IsChecked = false;
             if (tog1.IsChecked == true) tog1.IsChecked = false;
-            dataGrid.ItemsSource = list;
+            dataGrid.ItemsSource = Mainlist;
         }
 
         #endregion     
@@ -288,7 +295,7 @@ namespace RAdminPanel.UserControlFolder
                 OperComBox.SelectedItem = null;
                 UslugComBox.SelectedItem = null;
                 dataPicker.SelectedDate = DateTime.Today;
-                dataGrid2.ItemsSource = listDt2;           
+                dataGrid2.ItemsSource = MainlistDt2;           
         }
 
         #region Быстрое изменение Не доработано
@@ -321,7 +328,8 @@ namespace RAdminPanel.UserControlFolder
                             end = Convert.ToDateTime(db.Rows[i][7])
                         });
                     }
-                    dataGrid2.ItemsSource = listOper;
+                    listDt2 = listOper;
+                    dataGrid2.ItemsSource = listDt2;
                 }
             };
             if (dataPicker.Text != "" && OperComBox.Text != "" && UslugComBox.Text != "")
@@ -381,7 +389,8 @@ namespace RAdminPanel.UserControlFolder
                             end = Convert.ToDateTime(db.Rows[i][7])
                         });
                     }
-                    dataGrid2.ItemsSource = lister;
+                    listDt2 = lister;
+                    dataGrid2.ItemsSource = listDt2;
                 }
             };
             if (dataPicker.Text != "" && OperComBox.Text != "" && UslugComBox.Text != "")
@@ -447,7 +456,8 @@ namespace RAdminPanel.UserControlFolder
                             end = Convert.ToDateTime(db.Rows[i][7])
                         });
                     }
-                    dataGrid2.ItemsSource = listUslug;
+                    listDt2 = listUslug;
+                    dataGrid2.ItemsSource = listDt2;
                 }
             };
             if (dataPicker.Text != "" && OperComBox.Text != "" && UslugComBox.Text != "")
@@ -483,70 +493,7 @@ namespace RAdminPanel.UserControlFolder
                 MessageBox.Show("Неправильный запрос");
             }
         }
-        #endregion
-
-        #region Search
-
-        private void Button_Click_1(object sender, RoutedEventArgs e)
-        {
-            dataGrid2.ItemsSource = new List<gridvar>();
-            listOper.Clear();
-            dataBase = new Base();
-            dataBase.del += db =>
-            {
-                if (db.Rows.Count > 0)
-                {
-                    for (int i = 0; i < db.Rows.Count; i++)
-                    {
-                        listOper.Add(new gridvar
-                        {
-                            id = db.Rows[i][0].ToString(),
-                            checkNum = db.Rows[i][1].ToString(),
-                            status = db.Rows[i][2].ToString(),
-                            uslugvid = db.Rows[i][3].ToString(),
-                            window = db.Rows[i][4].ToString(),
-                            oper = db.Rows[i][5].ToString(),
-                            start = Convert.ToDateTime(db.Rows[i][6]),
-                            end = Convert.ToDateTime(db.Rows[i][7])
-                        });
-                    }
-                    dataGrid2.ItemsSource = listOper;
-                }
-            };
-            if (dataPicker.Text != "" && OperComBox.Text != "" && UslugComBox.Text != "")
-            {
-                dataBase.SoursData("SELECT t.id,t.nomer,t.`status`,p.name_p,w.windowName,u.name_u,t.created_at,t.updated_at from turns AS t JOIN users AS u ON t.user_id = u.id INNER JOIN position AS p ON t.service_id = p.id INNER JOIN workplaces AS w ON t.workplace_id = w.id WHERE DATE_FORMAT(t.created_at,'%d.%m.%Y') = '" + dataPicker.Text + "' AND user_id = " +returnedOper + " AND service_id = " + returnedUslug + "");
-            }
-            else if (dataPicker.Text != "" && OperComBox.Text != "" && UslugComBox.Text == "")
-            {
-                dataBase.SoursData("SELECT t.id,t.nomer,t.`status`,p.name_p,w.windowName,u.name_u,t.created_at,t.updated_at from turns AS t JOIN users AS u ON t.user_id = u.id INNER JOIN position AS p ON t.service_id = p.id INNER JOIN workplaces AS w ON t.workplace_id = w.id  WHERE DATE_FORMAT(t.created_at,'%d.%m.%Y') = '" + dataPicker.Text + "' AND user_id = " + returnedOper + "");
-            }
-            else if (dataPicker.Text != "" && OperComBox.Text == "" && UslugComBox.Text == "")
-            {
-                dataBase.SoursData("SELECT t.id,t.nomer,t.`status`,p.name_p,w.windowName,u.name_u,t.created_at,t.updated_at from turns AS t JOIN users AS u ON t.user_id = u.id INNER JOIN position AS p ON t.service_id = p.id INNER JOIN workplaces AS w ON t.workplace_id = w.id  WHERE DATE_FORMAT(t.created_at,'%d.%m.%Y') = '" + dataPicker.Text + "'");
-            }
-            else if (dataPicker.Text == "" && OperComBox.Text != "" && UslugComBox.Text == "")
-            {
-                dataBase.SoursData("SELECT t.id,t.nomer,t.`status`,p.name_p,w.windowName,u.name_u,t.created_at,t.updated_at from turns AS t JOIN users AS u ON t.user_id = u.id INNER JOIN position AS p ON t.service_id = p.id INNER JOIN workplaces AS w ON t.workplace_id = w.id  WHERE user_id = " + returnedOper + "");
-            }
-            else if (dataPicker.Text != "" && OperComBox.Text == "" && UslugComBox.Text != "")
-            {
-                dataBase.SoursData("SELECT t.id,t.nomer,t.`status`,p.name_p,w.windowName,u.name_u,t.created_at,t.updated_at from turns AS t JOIN users AS u ON t.user_id = u.id INNER JOIN position AS p ON t.service_id = p.id INNER JOIN workplaces AS w ON t.workplace_id = w.id  WHERE DATE_FORMAT(t.created_at,'%d.%m.%Y') = '" + dataPicker.Text + "' AND service_id = " + returnedUslug + "");
-            }
-            else if (dataPicker.Text == "" && OperComBox.Text == "" && UslugComBox.Text != "")
-            {
-                dataBase.SoursData("SELECT t.id,t.nomer,t.`status`,p.name_p,w.windowName,u.name_u,t.created_at,t.updated_at from turns AS t JOIN users AS u ON t.user_id = u.id INNER JOIN position AS p ON t.service_id = p.id INNER JOIN workplaces AS w ON t.workplace_id = w.id  WHERE service_id = " + returnedUslug + "");
-            }
-            else if (dataPicker.Text == "" && OperComBox.Text != "" && UslugComBox.Text != "")
-            {
-                dataBase.SoursData("SELECT t.id,t.nomer,t.`status`,p.name_p,w.windowName,u.name_u,t.created_at,t.updated_at from turns AS t JOIN users AS u ON t.user_id = u.id INNER JOIN position AS p ON t.service_id = p.id INNER JOIN workplaces AS w ON t.workplace_id = w.id  WHERE service_id = " + returnedUslug + " and user_id = " + returnedOper + "");
-            }
-            else
-            {
-                MessageBox.Show("Неправильный запрос");
-            }
-        }
-        #endregion
+        #endregion      
 
         #region comBoxBinding with database
 
