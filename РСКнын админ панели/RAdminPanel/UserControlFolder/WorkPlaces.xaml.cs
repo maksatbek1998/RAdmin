@@ -26,7 +26,7 @@ namespace RAdminPanel.UserControlFolder
         {
             workName.Text = "";
             workWindow.Text = "";
-            PriorityComboBox.SelectedItem = 0;
+            PriorityComboBox.SelectedItem = null;
         }
         private void Button_Click(object sender, RoutedEventArgs e)
         {
@@ -46,7 +46,7 @@ namespace RAdminPanel.UserControlFolder
         public void UpdateData()
         {
             dataBase = new Base();
-            dataBase.SoursDataGrid("SELECT w.id,p.name_p,w.windowName,w.priority,w.status from workplaces AS w INNER JOIN position AS p ON w.name_id = p.id order by priority desc", ref dataGrid);
+            dataBase.SoursDataGrid("SELECT w.id,p.name_p,w.windowName,w.priority,CASE WHEN w.status = 0  THEN 'Не занято' WHEN w.status=1 THEN 'Занято' END AS status  from workplaces AS w INNER JOIN position AS p ON w.name_id = p.id order by priority desc", ref dataGrid);
         }
         public void UpdateComboBoxBranch()
         {
@@ -79,7 +79,7 @@ namespace RAdminPanel.UserControlFolder
             if (workName.SelectedItem != null)
             {
                 dataBase = new Base();
-                returnedWork = dataBase.ReturnID("select id from workplaces where windowName = '" + workName.SelectedValue.ToString() + "'");
+                returnedWork = dataBase.ReturnID("select id from position where name_p = '" + workName.SelectedValue.ToString() + "'");
             }
         }
     }

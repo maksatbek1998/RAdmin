@@ -19,13 +19,13 @@ namespace RAdminPanel.UserControlFolder
         static int returnedFili;
         static int returnedWork;
         static int returnedPositionId;
-
+        
         public AddOperator()
         {
             InitializeComponent();          
             UpdateData();
             UpdateComboBoxBranch();
-            UpdateComboBoxPosition();         
+            UpdateComboBoxPosition();
         }
         public void Refresh() 
         {
@@ -122,14 +122,17 @@ namespace RAdminPanel.UserControlFolder
         }
         private void UpdateButtonClick(object sender, RoutedEventArgs e)
         {
+            SaveButton.Visibility = Visibility.Hidden;
             UpdateButton.Visibility = Visibility.Visible;
             DataRowView dataRow = (DataRowView)dataGrid.SelectedItem;
             if (dataRow != null)
             {
+                dataBase = new Base();
+                dataBase.RegistrToBase("update workplaces AS w INNER JOIN position AS p ON w.name_id = p.id set STATUS = 0 WHERE w.windowName = "+dataRow.Row.ItemArray[4].ToString()+" AND p.name_p =  '"+dataRow.Row.ItemArray[3].ToString()+"'"); ;
                 id_1 = dataRow.Row.ItemArray[0].ToString();
                 UserNameTextBox.Text = dataRow.Row.ItemArray[1].ToString();
-                LoginTextBox.Text = dataRow.Row.ItemArray[4].ToString();
-                PasswordTextBox.Text = dataRow.Row.ItemArray[5].ToString();
+                LoginTextBox.Text = dataRow.Row.ItemArray[5].ToString();
+                PasswordTextBox.Text = dataRow.Row.ItemArray[6].ToString();
             }
         }
 
@@ -139,13 +142,18 @@ namespace RAdminPanel.UserControlFolder
             {
 
                 dataBase = new Base();
-                dataBase.RegistrToBase("UPDATE users AS u SET u.name_u = '" + UserNameTextBox.Text + "' ,u.login ='" + LoginTextBox.Text + "' , u.password = '" + PasswordTextBox.Text + "', u.branches_id = " + returnedFili + ",u.position_id = " + returnedWork + " WHERE id = " + id_1 + "");
+                dataBase.RegistrToBase("UPDATE users AS u SET u.name_u = '" + UserNameTextBox.Text + "' ,u.login ='" + LoginTextBox.Text + "' , u.password = '" + PasswordTextBox.Text + "', u.branches_id = " + returnedFili + ",u.workplace_id = " + returnedWork + " WHERE id = " + id_1 + "");
+                dataBase.RegistrToBase("UPdate workplaces set status = 1 where id = "+returnedWork+"");
                 MessageBox.Show("Данные успешно обновлены!");
                 UpdateData();
+                UpdateButton.Visibility = Visibility.Hidden;
+                SaveButton.Visibility = Visibility.Visible;
+                Refresh();
             }
             else 
             {
                 MessageBox.Show("Не верно введены данные");
+                Refresh();
             }
         }
 
@@ -154,7 +162,7 @@ namespace RAdminPanel.UserControlFolder
             if (WorkPod.SelectedItem != null)
             {
                 dataBase = new Base();
-                returnedWork = dataBase.ReturnID("select id from workplaces where windowName = '" + WorkPod.SelectedValue.ToString() + "'") ;
+                returnedWork = dataBase.ReturnID("select id from workplaces where windowName = " + WorkPod.SelectedValue.ToString() + "") ;
             }
         }
     }

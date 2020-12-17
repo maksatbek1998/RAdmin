@@ -187,3 +187,4 @@ D:\C# projects\rsk\RAdmin\РСКнын админ панели\RAdminPanel\bin\D
 D:\C# projects\rsk\RAdmin\РСКнын админ панели\RAdminPanel\bin\Debug\System.Memory.xml
 D:\C# projects\rsk\RAdmin\РСКнын админ панели\RAdminPanel\bin\Debug\System.Numerics.Vectors.xml
 D:\C# projects\rsk\RAdmin\РСКнын админ панели\RAdminPanel\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+D:\C# projects\rsk\RAdmin\РСКнын админ панели\RAdminPanel\obj\Debug\RAdminPanel.csprojAssemblyReference.cache

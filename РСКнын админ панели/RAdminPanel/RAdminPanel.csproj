@@ -143,8 +143,10 @@
     </Compile>
     <Compile Include="ViewModel\BaseView\BaseView.cs" />
     <Compile Include="ViewModel\BaseView\ViewCommand.cs" />
+    <Compile Include="ViewModel\BindingProxy.cs" />
     <Compile Include="ViewModel\MainView.cs" />
     <Compile Include="ViewModel\Models\GridVariables.cs" />
+    <Compile Include="ViewModel\staticClaseForLangue.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
