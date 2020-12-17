@@ -101,7 +101,6 @@ D:\C# projects\rsk\RAdmin\РСКнын админ панели\RAdminPanel\obj\D
 D:\C# projects\rsk\RAdmin\РСКнын админ панели\RAdminPanel\obj\Debug\UserControlFolder\Message.g.cs
 D:\C# projects\rsk\RAdmin\РСКнын админ панели\RAdminPanel\obj\Debug\UserControlFolder\Message.baml
 D:\C# projects\rsk\RAdmin\РСКнын админ панели\RAdminPanel\obj\Debug\GeneratedInternalTypeHelper.g.cs
-C:\RAdmin\РСКнын админ панели\RAdminPanel\obj\Debug\RAdminPanel.csprojAssemblyReference.cache
 C:\RAdmin\РСКнын админ панели\RAdminPanel\obj\Debug\StyleFolder\StyleDictionary.baml
 C:\RAdmin\РСКнын админ панели\RAdminPanel\obj\Debug\MainWindow.g.cs
 C:\RAdmin\РСКнын админ панели\RAdminPanel\obj\Debug\UserControlFolder\AddOperator.g.cs
@@ -187,4 +186,6 @@ D:\C# projects\rsk\RAdmin\РСКнын админ панели\RAdminPanel\bin\D
 D:\C# projects\rsk\RAdmin\РСКнын админ панели\RAdminPanel\bin\Debug\System.Memory.xml
 D:\C# projects\rsk\RAdmin\РСКнын админ панели\RAdminPanel\bin\Debug\System.Numerics.Vectors.xml
 D:\C# projects\rsk\RAdmin\РСКнын админ панели\RAdminPanel\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
-D:\C# projects\rsk\RAdmin\РСКнын админ панели\RAdminPanel\obj\Debug\RAdminPanel.csprojAssemblyReference.cache
+C:\RAdmin\РСКнын админ панели\RAdminPanel\obj\Debug\UserControlFolder\Mode.g.cs
+C:\RAdmin\РСКнын админ панели\RAdminPanel\obj\Debug\UserControlFolder\Mode.baml
+C:\RAdmin\РСКнын админ панели\RAdminPanel\obj\Debug\RAdminPanel.csprojAssemblyReference.cache

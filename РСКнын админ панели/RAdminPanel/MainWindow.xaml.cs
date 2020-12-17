@@ -51,7 +51,9 @@ namespace RAdminPanel
                 lbl_menu9.Visibility = Visibility.Collapsed;
                 lbl_menu81.Visibility = Visibility.Collapsed;
                 lbl_menu22.Visibility = Visibility.Collapsed;
+                lbl_menu811.Visibility = Visibility.Collapsed;
                 MyChangingColorText.Visibility = Visibility.Collapsed;
+                lbl_menu8111.Visibility = Visibility.Collapsed;
                 Skryt.Width = 20;
             }
 
@@ -75,7 +77,9 @@ namespace RAdminPanel
                 lbl_menu6.Visibility = Visibility.Visible;
                 lbl_menu8.Visibility = Visibility.Visible;
                 lbl_menu9.Visibility = Visibility.Visible;
+                lbl_menu811.Visibility = Visibility.Visible;
                 MyChangingColorText.Visibility = Visibility.Visible;
+                lbl_menu8111.Visibility = Visibility.Visible;
                 Skryt.Width = 32;
             }
         }
@@ -145,6 +149,42 @@ namespace RAdminPanel
         private void Button_Click_10(object sender, RoutedEventArgs e)
         {
             ShowUserControl.Show(Lists, new Departament());
+        }
+
+        private void Button_Click_11(object sender, RoutedEventArgs e)
+        {
+            ShowUserControl.Show(Lists, new Mode());
+        }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            ShowUserControl.Show(Lists, new Branches());
+            OpenWindows();
+        }
+
+        private void OpenWindows()
+        {
+            Password window1 = new Password();
+            window1.ValueChanged += new Action<string>((x) =>//подписываемся на событие
+            {
+                blur.Radius = Convert.ToInt32(x);
+
+            });
+
+            if (blur.Radius == 15)
+                blur.Radius = 0;
+            else
+            {
+
+                window1.Owner = this;
+                blur.Radius = 15;
+                window1.ShowDialog();
+            }
+        }
+
+        private void Button_Click_12(object sender, RoutedEventArgs e)
+        {
+            OpenWindows();
         }
     }
 }
