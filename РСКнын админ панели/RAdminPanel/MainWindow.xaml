@@ -6,11 +6,14 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:RAdminPanel"
         mc:Ignorable="d"
-        Title="MainWindow" Height="700" Width="1200" WindowStartupLocation="CenterScreen" WindowStyle="None" AllowsTransparency="True" Background="{x:Null}" Icon="Image/Img/Без названия.png">
+        Title="MainWindow" Height="700" Width="1200" WindowStartupLocation="CenterScreen" WindowStyle="None" AllowsTransparency="True" WindowState="Maximized" Background="{x:Null}" Icon="Image/Img/Без названия.png" Loaded="Window_Loaded">
     <Window.DataContext>
         <vm:MainView/>
     </Window.DataContext>
     <Grid>
+        <Grid.Effect>
+            <BlurEffect Radius="0" RenderingBias="Performance" KernelType="Gaussian" x:Name="blur"/>
+        </Grid.Effect>
         <Grid Background="White" Margin="10,5,8,10">
             <Grid.Effect>
                 <DropShadowEffect BlurRadius="10" ShadowDepth="3" Direction="250"/>
@@ -94,6 +97,12 @@
                         <DockPanel Margin="5 0 0 0">
                             <Image Source="Image/Img/sleep_250px.png" Height="25"/>
                             <Label x:Name="lbl_menu811"  VerticalAlignment="Center" FontSize="14" Content="{Binding SoundSetting, UpdateSourceTrigger=PropertyChanged}" Foreground="White" />
+                        </DockPanel>
+                    </Button>
+                    <Button Height="45" Style="{DynamicResource menu}" Click="Button_Click_12">
+                        <DockPanel Margin="5 0 0 0">
+                            <Image Source="Image/Img/private_lock_250px.png" Height="25"/>
+                            <Label x:Name="lbl_menu8111"  VerticalAlignment="Center" FontSize="14" Content="{Binding SoundSetting, UpdateSourceTrigger=PropertyChanged}" Foreground="White" />
                         </DockPanel>
                     </Button>
                 </StackPanel>
