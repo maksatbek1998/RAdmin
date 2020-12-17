@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 D:\C# projects\rsk\RAdmin\РСКнын админ панели\RAdminPanel\App.xaml
-1360786011
+14145698954
 
-2671255055
+272128592747
 136-1289055312
-MainWindow.xaml;StyleFolder\StyleDictionary.xaml;UserControlFolder\AddOperator.xaml;UserControlFolder\Branches.xaml;UserControlFolder\Client.xaml;UserControlFolder\Departament.xaml;UserControlFolder\Language.xaml;UserControlFolder\Message.xaml;UserControlFolder\Password.xaml;UserControlFolder\Rasspisania.xaml;UserControlFolder\Sound.xaml;UserControlFolder\Terminal.xaml;UserControlFolder\WorkPlaces.xaml;
+MainWindow.xaml;StyleFolder\StyleDictionary.xaml;UserControlFolder\AddOperator.xaml;UserControlFolder\Branches.xaml;UserControlFolder\Client.xaml;UserControlFolder\Departament.xaml;UserControlFolder\Language.xaml;UserControlFolder\Message.xaml;UserControlFolder\Mode.xaml;UserControlFolder\Password.xaml;UserControlFolder\Rasspisania.xaml;UserControlFolder\Sound.xaml;UserControlFolder\Terminal.xaml;UserControlFolder\WorkPlaces.xaml;
 
-False
+True
 
