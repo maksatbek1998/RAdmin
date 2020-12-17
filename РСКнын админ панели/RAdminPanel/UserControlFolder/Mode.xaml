@@ -1,0 +1,22 @@
+﻿<UserControl x:Class="RAdminPanel.UserControlFolder.Mode"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:RAdminPanel.UserControlFolder"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <Canvas>
+            <Image Source="../Image/Img/sleep_250px.png" Width="90" Height="90" Canvas.Left="49" Canvas.Top="38"/>
+            <!-- <TextBlock Text="Клиент чакыруу режимин башкаруу" Canvas.Left="177" Canvas.Top="42"  Width="275"/>-->
+            <TextBlock Text="Чакыруу убакты скеунда менен" Canvas.Left="193" Canvas.Top="52"  Width="275"/>
+            <!-- <ComboBox x:Name="SoundCombo" Canvas.Left="457" Canvas.Top="42" Width="254" IsReadOnly="True" SelectionChanged="Sound_SelectionChanged">
+                <ComboBoxItem Content="NO"/>
+                <ComboBoxItem Content="OF"/>
+            </ComboBox>-->
+            <TextBox x:Name="UserNameTextBox" FontSize="14"  Style="{DynamicResource textbox_style}" Tag="Кутуу убакты скеунда менен" Height="24" Width="254" Canvas.Left="473" Canvas.Top="49"/>
+            <Button Style="{DynamicResource ButtonStyle}" Content="Сактоо" Canvas.Left="577" Canvas.Top="87" Click="Button_Click"/>
+        </Canvas>
+    </Grid>
+</UserControl>
