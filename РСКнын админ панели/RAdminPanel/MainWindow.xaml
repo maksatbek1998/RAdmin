@@ -96,13 +96,13 @@
                     <Button Height="45" Style="{DynamicResource menu}" Click="Button_Click_11">
                         <DockPanel Margin="5 0 0 0">
                             <Image Source="Image/Img/sleep_250px.png" Height="25"/>
-                            <Label x:Name="lbl_menu811"  VerticalAlignment="Center" FontSize="14" Content="{Binding SoundSetting, UpdateSourceTrigger=PropertyChanged}" Foreground="White" />
+                            <Label x:Name="lbl_menu811"  VerticalAlignment="Center" FontSize="14" Content="{Binding Auto, UpdateSourceTrigger=PropertyChanged}" Foreground="White" />
                         </DockPanel>
                     </Button>
                     <Button Height="45" Style="{DynamicResource menu}" Click="Button_Click_12">
                         <DockPanel Margin="5 0 0 0">
                             <Image Source="Image/Img/private_lock_250px.png" Height="25"/>
-                            <Label x:Name="lbl_menu8111"  VerticalAlignment="Center" FontSize="14" Content="{Binding SoundSetting, UpdateSourceTrigger=PropertyChanged}" Foreground="White" />
+                            <Label x:Name="lbl_menu8111"  VerticalAlignment="Center" FontSize="14" Content="{Binding Block, UpdateSourceTrigger=PropertyChanged}" Foreground="White" />
                         </DockPanel>
                     </Button>
                 </StackPanel>

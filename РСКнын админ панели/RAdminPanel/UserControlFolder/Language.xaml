@@ -19,14 +19,9 @@
                         <TextBlock Text="Кыскача аталышы" Margin="10,9,0,5"/>
                     </StackPanel>
                     <StackPanel Grid.Column="1">
-                        <ComboBox x:Name="Languages" IsEditable="True" IsReadOnly="True" Margin="10,5,0,5" FontSize="12" Height="23" Width="Auto">
-                            <ComboBoxItem Content="RUS"/>
-                            <ComboBoxItem Content="KGZ"/>
-                            <ComboBoxItem Content="KZ"/>
-                            <ComboBoxItem Content="EN"/>
-                        </ComboBox>
+                        <ComboBox x:Name="Languages" DropDownClosed="Languages_DropDownClosed" IsEditable="True" IsReadOnly="True" Margin="10,5,0,5" FontSize="12" Height="23" Width="Auto"/>
                         <TextBox x:Name="Language1" Margin="10,5,0,5" Height="23"/>
-                        <TextBox Margin="10,5,0,5" Height="23"/>
+                        <TextBox x:Name="ShortName" Margin="10,5,0,5" Height="23"/>
                     </StackPanel>
                 </Grid>
                 <Grid>
@@ -39,23 +34,23 @@
                             <TextBlock Text="Сиз тандаган тил:" Margin="10,5,0,5"/>
                             <TextBlock Text="{Binding ElementName=Languages,Path=Text}" Margin="5,5,0,5"/>
                         </StackPanel>
-                        <TextBox Margin="10,5,0,5"/>
+                        <TextBox x:Name="CurrentLang" Margin="10,5,0,5"/>
                     </StackPanel>
                     <StackPanel Grid.Column="1">
                         <StackPanel Orientation="Horizontal">
                             <TextBlock Text="Сиз которо турган тил:" Margin="10,5,0,5"/>
                             <TextBlock Text="{Binding ElementName=Language1,Path=Text}" Margin="5,5,0,5"/>
                         </StackPanel>
-                        <TextBox Margin="10,5,0,5"/>
+                        <TextBox x:Name="NewLang" Margin="10,5,0,5"/>
                     </StackPanel>
                 </Grid>
-                <Button Style="{DynamicResource ButtonStyle}" Content="Сактоо" HorizontalAlignment="Right" VerticalAlignment="Center"/>
-                <DataGrid Margin="10,7,0,0" FontSize="12"  CanUserAddRows="False" Style="{DynamicResource grid_xml}" ColumnHeaderStyle="{DynamicResource hederstyle}" VerticalAlignment="Stretch" VerticalScrollBarVisibility="Auto"   HeadersVisibility="Column" Height="700"
+                <Button Style="{DynamicResource ButtonStyle}" Click="Button_Click" Content="Сактоо" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+                <DataGrid x:Name="dataGrid" Margin="10,7,0,0" FontSize="12"  CanUserAddRows="False" Style="{DynamicResource grid_xml}" ColumnHeaderStyle="{DynamicResource hederstyle}" VerticalAlignment="Stretch" VerticalScrollBarVisibility="Auto"   HeadersVisibility="Column"
                    AutoGenerateColumns="False" >
                     <DataGrid.Columns>
-                        <DataGridTextColumn Header="№" Width="50"/>
-                        <DataGridTextColumn Header="Сиз тандаган тил"/>
-                        <DataGridTextColumn Header="Сиз которуучу тил"/>
+                        <DataGridTextColumn Header="№" Binding="{Binding id}"  Width="50"/>
+                        <DataGridTextColumn Binding="{Binding currentlan}" Header="Сиз тандаган тил"/> 
+                        <DataGridTextColumn Header="Сиз которуучу тил" Binding="{Binding newlan}"/>
                         <DataGridTemplateColumn Header="Удалить" Width="80" >
                             <DataGridTemplateColumn.CellTemplate>
                                 <DataTemplate>
