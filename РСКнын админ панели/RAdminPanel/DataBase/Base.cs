@@ -9,8 +9,8 @@ namespace RAdminPanel.DataBase
 {
     class Base
     {
-        public MySqlConnection connection = new MySqlConnection("datasource=192.168.0.108; port=3306;Initial Catalog='rskbank';username=root;password=doni2429;CharSet=utf8;");
-        //public MySqlConnection connection = new MySqlConnection("datasource=127.0.0.1; port=3306;Initial Catalog='rskbank';username=root;password=123456;CharSet=utf8;");
+        public MySqlConnection connection = new MySqlConnection("datasource=127.0.0.1; port=3306;Initial Catalog='rskbank';username=root;password=doni2429;CharSet=utf8;");
+        //public MySqlConnection connection = new MySqlConnection("datasource=; port=3306;Initial Catalog='rskbank';username=root;password=123456;CharSet=utf8;");
         public delegate void DisplaySourse(DataTable db);
         public delegate void DisplaySourse2(List<string> a);
         public delegate void Display_Dictionary(Dictionary<string,string> a);
