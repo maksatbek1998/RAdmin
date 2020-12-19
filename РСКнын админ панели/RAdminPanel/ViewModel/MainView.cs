@@ -80,14 +80,42 @@ namespace RAdminPanel.ViewModel
             set => Set(ref _SoundSetting, value);
         }
 
-        #endregion
-
-        private string _SelectedItem;
-        public string SelectedItem
+        private string _BranchName = "Название филиала";
+        public string BranchName
         {
-            get => _SelectedItem;
-            set => Set(ref _SelectedItem, value);
+            get => _BranchName;
+            set => Set(ref _BranchName, value);
         }
+
+        private string _BranchAdres = "Адрес филиала";
+        public string BranchAdres
+        {
+            get => _BranchAdres;
+            set => Set(ref _BranchAdres, value);
+        }
+
+        private string _CreatedTime = "Дата создания";
+        public string CreatedTime
+        {
+            get => _CreatedTime;
+            set => Set(ref _CreatedTime, value);
+        }
+
+        private string _Delete = "Удалить";
+        public string Delete
+        {
+            get => _Delete;
+            set => Set(ref _Delete, value);
+        }
+
+        private string _Save = "Сохранить";
+        public string Save
+        {
+            get => _Save;
+            set => Set(ref _Save, value);
+        }
+
+        #endregion
 
         public MainView()
         {
@@ -111,6 +139,11 @@ namespace RAdminPanel.ViewModel
             Clients = "Кардарлар";
             LangSetting = "Тил жөндөөсү";
             SoundSetting = "Үндөрдү орнотуу";
+            BranchAdres = "Филиалдын адреси";            
+            CreatedTime = "Түзүлгөн күнү";
+            Delete = "Очүрүү";
+            Save = "Сактоо";
+            BranchName = "Филиалдын аты";
         }
 
         private void ToRus(object obj)
@@ -124,6 +157,11 @@ namespace RAdminPanel.ViewModel
             Clients = "Клиенты";
             LangSetting = "Настройки языков";
             SoundSetting = "Настройки звуков";
+            BranchAdres = "Адрес филиала";
+            CreatedTime = "Дата создание";
+            Delete = "Удалить";
+            Save = "Сохранить";
+            BranchName = "Название филиала";
         }
 
         private void ToEng(object obj)
@@ -137,6 +175,11 @@ namespace RAdminPanel.ViewModel
             Clients = "Сlients";
             LangSetting = "Languages settings";
             SoundSetting = "Sounds settings";
+            BranchAdres = "Branches address";
+            CreatedTime = "Created date";
+            Delete = "Delete";
+            Save = "Save";
+            BranchName = "Baranches name";
         }
 
         #endregion

@@ -29,9 +29,9 @@
                     <TextBox x:Name="LoginTextBox" FontSize="14"  Style="{DynamicResource textbox_style}" Tag="Логин" Height="24" Width="254" Canvas.Left="269" Canvas.Top="143"/>
                     <TextBlock Text="Пароль" Canvas.Left="178" Canvas.Top="178" />
                     <TextBox x:Name="PasswordTextBox" FontSize="14"  Style="{DynamicResource textbox_style}" Tag="Пароль" Height="24" Width="254" Canvas.Left="269" Canvas.Top="174"/>
-                    <Button Style="{DynamicResource ResourceKey=ButtonStyle}" Content="Сактоо" Click="Button_Click" Canvas.Left="373" Canvas.Top="208">
+                    <Button x:Name="SaveButton" Style="{DynamicResource ResourceKey=ButtonStyle}" Content="Сактоо" Click="Button_Click" Canvas.Left="373" Canvas.Top="208">
                     </Button>
-                    <Button x:Name="UpdateButton" Style="{DynamicResource ResourceKey=ButtonStyle}" Visibility="Hidden" Content="Изменить" Click="UpdateButton_Click" Canvas.Left="555" Canvas.Top="172"/>
+                    <Button x:Name="UpdateButton" Style="{DynamicResource ResourceKey=ButtonStyle}" Visibility="Hidden" Content="Изменить" Click="UpdateButton_Click" Canvas.Left="373" Canvas.Top="208"/>
                     <ComboBox DropDownClosed="WorkPod_DropDownClosed" x:Name="WorkPod"  Canvas.Left="269" Canvas.Top="110" RenderTransformOrigin="0.48,2.625"/>
                     <TextBlock Text="Терезе" Canvas.Left="178" Canvas.Top="113" />
                 </Canvas>
