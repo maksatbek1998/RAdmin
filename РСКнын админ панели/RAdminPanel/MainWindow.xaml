@@ -38,73 +38,73 @@
                     <DropShadowEffect Color="#FFA4A4A4" Opacity="0.5"/>
                 </Border.Effect>
                 <StackPanel>
-                    <Button Height="45" x:Name="fil"  Style="{DynamicResource menu}" Click="fil_Click">
+                    <ToggleButton Height="45" x:Name="fil"  Style="{DynamicResource menu}" Click="fil_Click">
                         <DockPanel Margin="5 0 0 0">
                             <Image Source="Image/Img/company_48px.png" Height="25" />
                             <Label  FontSize="14"  VerticalAlignment="Center" Content="{Binding Filial, UpdateSourceTrigger=PropertyChanged}" Foreground="White" x:Name="lbl_menu1"/>
                         </DockPanel>
-                    </Button>
-                    <Button Height="45" Style="{DynamicResource menu}" Click="Button_Click_4">
-                        <DockPanel Margin="5 0 0 0">
-                            <Image Source="Image/Img/business_building_48px.png" Height="25" />
-                            <Label FontSize="14"  VerticalAlignment="Center" Content="{Binding Operators,UpdateSourceTrigger=PropertyChanged}" Foreground="White" x:Name="lbl_menu2"/>
-                        </DockPanel>
-                    </Button>
-                    <Button Height="45" Style="{DynamicResource menu}" Click="Button_Click_10">
+                    </ToggleButton>
+                    <ToggleButton x:Name="button1" Height="45" Style="{DynamicResource menu}" Click="Button_Click_10">
                         <DockPanel Margin="5 0 0 0">
                             <Image Source="Image/Img/Department.png" Height="25" />
                             <Label FontSize="14"  VerticalAlignment="Center" Content="{Binding Otdels, UpdateSourceTrigger=PropertyChanged}" Foreground="White" x:Name="lbl_menu22"/>
                         </DockPanel>
-                    </Button>
-                    <Button Height="45" Style="{DynamicResource menu}" Click="Button_Click_5">
+                    </ToggleButton>
+                    <ToggleButton x:Name="button2" Height="45" Style="{DynamicResource menu}" Click="Button_Click_5">
                         <DockPanel Margin="5 0 0 0">
                             <Image Source="Image/Img/resume_48px.png" Height="25"/>
 
                             <Label FontSize="14" x:Name="lbl_menu3"  Content="{Binding WorkPlace , UpdateSourceTrigger=PropertyChanged}" Foreground="White " VerticalAlignment="Center"/>
                         </DockPanel>
-                    </Button>
-                    <Button Height="45" Style="{DynamicResource menu}" Click="Button_Click_8">
+                    </ToggleButton>
+                    <ToggleButton x:Name="button3" Height="45" Style="{DynamicResource menu}" Click="Button_Click_4" >
+                        <DockPanel Margin="5 0 0 0">
+                            <Image Source="Image/Img/business_building_48px.png" Height="25" />
+                            <Label FontSize="14"  VerticalAlignment="Center" Content="{Binding Operators,UpdateSourceTrigger=PropertyChanged}" Foreground="White" x:Name="lbl_menu2"/>
+                        </DockPanel>
+                    </ToggleButton>
+                    <ToggleButton x:Name="button4" Height="45" Style="{DynamicResource menu}" Click="Button_Click_8">
                         <DockPanel Margin="5 0 0 0">
                             <Image Source="Image/Img/timesheet_48px.png" Height="25"/>
                             <Label FontSize="14" x:Name="lbl_menu4" VerticalAlignment="Center" Content="{Binding Raspisanie, UpdateSourceTrigger=PropertyChanged}" Foreground="White" />
                         </DockPanel>
-                    </Button>
-                    <Button Height="45" Style="{DynamicResource menu}" Click="Button_Click_6">
+                    </ToggleButton>
+                    <ToggleButton x:Name="button5" Height="45" Style="{DynamicResource menu}" Click="Button_Click_6">
                         <DockPanel Margin="5 0 0 0">
                             <Image Source="Image/Img/coding.png" Height="25"/>
                             <Label x:Name="lbl_menu5" FontSize="14"  VerticalAlignment="Center" Foreground="White" Content="{Binding TerminalSetting, UpdateSourceTrigger=PropertyChanged}" />
                         </DockPanel>
-                    </Button>
-                    <Button Height="45" Style="{DynamicResource menu}" Click="Button_Click_7">
+                    </ToggleButton>
+                    <ToggleButton x:Name="button6" Height="45" Style="{DynamicResource menu}" Click="Button_Click_7">
                         <DockPanel Margin="5 0 0 0">
                             <Image Source="Image/Img/order_history_48px.png" Height="25" />
                             <Label x:Name="lbl_menu6" VerticalAlignment="Center" FontSize="14" Content="{Binding Clients}" Foreground="White" />
                         </DockPanel>
-                    </Button>
-                    <Button Height="45" Style="{DynamicResource menu}" Click="Button_Click_3">
+                    </ToggleButton>
+                    <ToggleButton x:Name="button7" Height="45" Style="{DynamicResource menu}" Click="Button_Click_3">
                         <DockPanel Margin="5 0 0 0">
                             <Image Source="Image/Img/language_250px.png" Height="25"/>
                             <Label x:Name="lbl_menu8"  VerticalAlignment="Center" FontSize="14" Content="{Binding LangSetting, UpdateSourceTrigger=PropertyChanged}" Foreground="White" />
                         </DockPanel>
-                    </Button>
-                    <Button Height="45" Style="{DynamicResource menu}" Click="Button_Click_9">
+                    </ToggleButton>
+                    <ToggleButton x:Name="button8" Height="45" Style="{DynamicResource menu}" Click="Button_Click_9">
                         <DockPanel Margin="5 0 0 0">
                             <Image Source="Image/Img/sound.png" Height="25"/>
                             <Label x:Name="lbl_menu81"  VerticalAlignment="Center" FontSize="14" Content="{Binding SoundSetting, UpdateSourceTrigger=PropertyChanged}" Foreground="White" />
                         </DockPanel>
-                    </Button>
-                    <Button Height="45" Style="{DynamicResource menu}" Click="Button_Click_11">
+                    </ToggleButton>
+                    <ToggleButton x:Name="button9" Height="45" Style="{DynamicResource menu}" Click="Button_Click_11">
                         <DockPanel Margin="5 0 0 0">
                             <Image Source="Image/Img/sleep_250px.png" Height="25"/>
                             <Label x:Name="lbl_menu811"  VerticalAlignment="Center" FontSize="14" Content="{Binding Auto, UpdateSourceTrigger=PropertyChanged}" Foreground="White" />
                         </DockPanel>
-                    </Button>
-                    <Button Height="45" Style="{DynamicResource menu}" Click="Button_Click_12">
+                    </ToggleButton>
+                    <ToggleButton x:Name="button10" Height="45" Style="{DynamicResource menu}" Click="Button_Click_12">
                         <DockPanel Margin="5 0 0 0">
                             <Image Source="Image/Img/private_lock_250px.png" Height="25"/>
                             <Label x:Name="lbl_menu8111"  VerticalAlignment="Center" FontSize="14" Content="{Binding Block, UpdateSourceTrigger=PropertyChanged}" Foreground="White" />
                         </DockPanel>
-                    </Button>
+                    </ToggleButton>
                 </StackPanel>
 
             </Border>
@@ -139,7 +139,7 @@
 
             </Grid>
 
-            <Border  Grid.Column="1" Grid.Row="0" Background="#FF0070B8" Panel.ZIndex="1">
+            <Border  Grid.Column="1" Grid.Row="0" Background="#FF0070B8" Panel.ZIndex="1" MouseLeftButtonDown="Border_MouseLeftButtonDown">
                 <Border.Effect>
                     <DropShadowEffect Color="#FFA4A4A4" Opacity="0.5"/>
                 </Border.Effect>
