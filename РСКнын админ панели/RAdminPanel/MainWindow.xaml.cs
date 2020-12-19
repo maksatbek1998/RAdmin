@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Controls.Primitives;
 using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
@@ -108,51 +109,61 @@ namespace RAdminPanel
 
         private void Button_Click_3(object sender, RoutedEventArgs e)
         {
+            Checked(7);
             ShowUserControl.Show(Lists, new Language());
         }
 
         private void Button_Click_4(object sender, RoutedEventArgs e)
         {
+            Checked(3);
             ShowUserControl.Show(Lists, new AddOperator());
         }
 
         private void Button_Click_5(object sender, RoutedEventArgs e)
         {
+            Checked(2);
             ShowUserControl.Show(Lists, new WorkPlaces());
         }
 
         private void fil_Click(object sender, RoutedEventArgs e)
         {
+            Checked(0);
             ShowUserControl.Show(Lists, new Branches());            
         }
 
         private void Button_Click_6(object sender, RoutedEventArgs e)
         {
+            Checked(5);
             ShowUserControl.Show(Lists, new Terminal());
         }
 
         private void Button_Click_7(object sender, RoutedEventArgs e)
         {
+            Checked(6);
             ShowUserControl.Show(Lists, new Client());
         }
 
         private void Button_Click_8(object sender, RoutedEventArgs e)
         {
+            Checked(4);
             ShowUserControl.Show(Lists, new Rasspisania());
         }
 
         private void Button_Click_9(object sender, RoutedEventArgs e)
         {
+            Checked(8);
             ShowUserControl.Show(Lists, new Sound());
         }
 
         private void Button_Click_10(object sender, RoutedEventArgs e)
         {
+            Checked(1);
             ShowUserControl.Show(Lists, new Departament());
         }
 
         private void Button_Click_11(object sender, RoutedEventArgs e)
         {
+            Checked(9);
             ShowUserControl.Show(Lists, new Mode());
         }
 
@@ -185,6 +196,70 @@ namespace RAdminPanel
         private void Button_Click_12(object sender, RoutedEventArgs e)
         {
             OpenWindows();
+        }
+
+        private void Checked(int button)
+        {
+            fil.IsChecked = false;
+            button1.IsChecked = false;
+            button2.IsChecked = false;
+            button3.IsChecked = false;
+            button4.IsChecked = false;
+            button5.IsChecked = false;
+            button6.IsChecked = false;
+            button7.IsChecked = false;
+            button8.IsChecked = false;
+            button9.IsChecked = false;
+            button10.IsChecked = false;
+            if (button == 0)
+            {
+                fil.IsChecked = true;
+            }
+            else if(button==1)
+            {
+                button1.IsChecked = true;
+            }
+            else if (button == 2)
+            {
+                button2.IsChecked = true;
+            }
+            else if (button == 3)
+            {
+                button3.IsChecked = true;
+            }
+            else if (button == 4)
+            {
+                button4.IsChecked = true;
+            }
+            else if (button == 5)
+            {
+                button5.IsChecked = true;
+            }
+            else if (button == 6)
+            {
+                button6.IsChecked = true;
+            }
+            else if (button == 7)
+            {
+                button7.IsChecked = true;
+            }
+            else if (button == 8)
+            {
+                button8.IsChecked = true;
+            }
+            else if (button == 9)
+            {
+                button9.IsChecked = true;
+            }
+            else if (button == 10)
+            {
+                button10.IsChecked = true;
+            }
+        }
+
+        private void Border_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            this.DragMove();
         }
     }
 }

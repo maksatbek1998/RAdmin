@@ -9,7 +9,7 @@
     <Grid>
         <Border Padding="20">
             <TabControl BorderThickness="0">
-                <TabItem Header="Терминалдын тилин тандоо" Style="{DynamicResource TabControl}" Width="210">
+                <TabItem Header="Терминалдын тилин тандоо" Style="{DynamicResource TabControl}" Width="200">
                     <Grid>
                         <StackPanel>
                             <StackPanel Orientation="Horizontal">
@@ -19,20 +19,20 @@
                                         <ColumnDefinition/>
                                     </Grid.ColumnDefinitions>
                                     <TextBlock Text="Кошуу учун тил танданыз" Margin="10,5,0,5"/>
-                                    <ComboBox Grid.Column="1" Width="200"/>
+                                    <ComboBox x:Name="LangTerminal" Grid.Column="1" Width="200" SelectionChanged="LangTerminal_SelectionChanged"/>
                                 </Grid>
-                                <Button Style="{DynamicResource ButtonStyle}" Content="Кошуу" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="20,22,0,5"/>
+                                <Button Style="{DynamicResource ButtonStyle}" Content="Кошуу" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="20,22,0,5" Click="Button_Click"/>
                             </StackPanel>
-                            <DataGrid Margin="10,7,0,0" FontSize="12"  CanUserAddRows="False" Style="{DynamicResource grid_xml}" ColumnHeaderStyle="{DynamicResource hederstyle}" VerticalAlignment="Stretch" VerticalScrollBarVisibility="Auto" HorizontalAlignment="Stretch"   HeadersVisibility="Column" 
+                            <DataGrid x:Name="LangData" Margin="10,7,0,0" FontSize="12"  CanUserAddRows="False" Style="{DynamicResource grid_xml}" ColumnHeaderStyle="{DynamicResource hederstyle}" VerticalAlignment="Stretch" VerticalScrollBarVisibility="Auto" HorizontalAlignment="Stretch"   HeadersVisibility="Column" 
                    AutoGenerateColumns="False" >
                                 <DataGrid.Columns>
-                                    <DataGridTextColumn Header="№" Width="50"/>
-                                    <DataGridTextColumn Header="Терминалдагы тилдер"/>
-                                    <DataGridTemplateColumn Header="Удалить" Width="70">
+                                    <DataGridTextColumn Header="№" Width="50" Binding="{Binding id}"/>
+                                    <DataGridTextColumn Header="Терминалдагы тилдер" Binding="{Binding locale}"/>
+                                    <DataGridTemplateColumn Header="Не активен" Width="70">
                                         <DataGridTemplateColumn.CellTemplate>
                                             <DataTemplate>
-                                                <Button Style="{DynamicResource Close_Button}" BorderThickness="0,0,0,0" Cursor="Hand">
-                                                    <Image Source="/RAdminPanel;component/Image/Ico/udalit4.png" Width="20"/>
+                                                <Button Style="{DynamicResource Close_Button}" BorderThickness="0,0,0,0" Cursor="Hand" Click="Button_Click_1">
+                                                    <Image Source="/RAdminPanel;component/Image/Ico/delete_250px.png" Width="20"/>
                                                 </Button>
                                             </DataTemplate>
                                         </DataGridTemplateColumn.CellTemplate>
@@ -42,7 +42,7 @@
                         </StackPanel>
                     </Grid>
                 </TabItem>
-                <TabItem Header="Терминалды очуруу жана жандыруу" Style="{DynamicResource TabControl}" Width="270">
+                <TabItem Header="Терминалды очуруу жана жандыруу" Style="{DynamicResource TabControl}" Width="260">
                     <Grid>
                         <Grid.RowDefinitions>
                             <RowDefinition Height="120"/>
@@ -89,7 +89,7 @@
                                 </StackPanel>
                             </Button>
                         </Canvas>
-                        <DataGrid  FontSize="12"  CanUserAddRows="False" Style="{DynamicResource grid_xml}" ColumnHeaderStyle="{DynamicResource hederstyle}" VerticalAlignment="Top" VerticalScrollBarVisibility="Auto"   HeadersVisibility="Column" Height="800"
+                        <DataGrid  FontSize="12"  CanUserAddRows="False" Style="{DynamicResource grid_xml}" ColumnHeaderStyle="{DynamicResource hederstyle}" VerticalAlignment="Stretch" VerticalScrollBarVisibility="Auto"   HeadersVisibility="Column"
                    AutoGenerateColumns="False"  Grid.Row="1">
                             <DataGrid.Columns>
                                 <DataGridTextColumn Header="№" Width="40"/>
