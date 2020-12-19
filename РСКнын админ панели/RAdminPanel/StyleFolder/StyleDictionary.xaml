@@ -1,11 +1,11 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
-    <Style x:Key="menu" TargetType="Button">
+    <Style x:Key="menu" TargetType="ToggleButton">
         <Setter Property="Foreground" Value="#FF787878" />
         <Setter Property="Margin" Value="0 0 0 1" />
         <Setter Property="Template">
             <Setter.Value>
-                <ControlTemplate TargetType="Button">
+                <ControlTemplate TargetType="ToggleButton">
                     <Border x:Name="border"
                      BorderThickness="5 0 0 0"
                      BorderBrush="{x:Null}"
@@ -20,7 +20,7 @@
                             <Setter TargetName="border" Property="BorderThickness" Value="5 0 0 0"/>
                             <Setter  Property="Foreground" Value="White"/>
                         </Trigger>
-                        <Trigger Property="IsFocused" Value="true">
+                        <Trigger Property="IsChecked" Value="true">
                             <Setter TargetName="border" Property="BorderBrush" Value="white"/>
                             <Setter TargetName="border" Property="Background" Value="#7F477DD0"/>
                             <Setter TargetName="border" Property="BorderThickness" Value="5 0 0 0"/>
