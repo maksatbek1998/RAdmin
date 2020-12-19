@@ -9,7 +9,7 @@ namespace RAdminPanel.DataBase
 {
     class Base
     {
-        public MySqlConnection connection = new MySqlConnection("datasource=192.168.0.108; port=3306;Initial Catalog='rskbank';username=root;password=doni2429;CharSet=utf8;");
+        public MySqlConnection connection = new MySqlConnection("datasource=192.168.0.7; port=3306;Initial Catalog='rskbank';username=admin;password=1;CharSet=utf8;");
         //public MySqlConnection connection = new MySqlConnection("datasource=127.0.0.1; port=3306;Initial Catalog='rskbank';username=root;password=123456;CharSet=utf8;");
         public delegate void DisplaySourse(DataTable db);
         public delegate void DisplaySourse2(List<string> a);
@@ -50,7 +50,7 @@ namespace RAdminPanel.DataBase
             MySqlDataReader reader = command.ExecuteReader();
             while (reader.Read())
             {
-                a.Add(reader[1].ToString(), reader[0].ToString());
+                a.Add(reader[0].ToString(), reader[1].ToString());
                 i++;
             }
             connection.Close();
@@ -127,6 +127,19 @@ namespace RAdminPanel.DataBase
             int x = Convert.ToInt32(value);
             connection.Close();
             return x;
+        }
+        public string ReturnID1(string s)
+        {
+            connection.Open();
+            string sql = s, value = "";
+            MySqlCommand command = new MySqlCommand(sql, connection);
+            MySqlDataReader reader = command.ExecuteReader();
+            while (reader.Read())
+            {
+                value = reader[0].ToString();
+            };
+            connection.Close();
+            return value;
         }
         public string ReturnIDString(string s)
         {

@@ -317,5 +317,8 @@
   <ItemGroup>
     <Resource Include="Image\Img\private_lock_250px.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\Ico\delete_250px.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
