@@ -10,30 +10,36 @@
         <Border Padding="20">
             <Grid>
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="180"/>
+                    <RowDefinition Height="130"/>
                     <RowDefinition Height="*"/>
+                    
                 </Grid.RowDefinitions>
                 <Grid Grid.Row="0">
                     <Canvas>
                         <Image Source="../Image/Img/depar.png" Width="110" Height="120" Canvas.Left="17" Canvas.Top="14"/>
                         <TextBlock Text="Отделдин аталышы" Canvas.Left="177" Canvas.Top="30" />
                         <TextBox x:Name="OtdelName" FontSize="14"  Style="{DynamicResource textbox_style}" Tag="Отделдин аталышы" Height="24" Width="254" Canvas.Left="330" Canvas.Top="26"/>
-                        <TextBlock Text="Приоритети" Canvas.Left="177" Canvas.Top="64" />
-                        <Button Style="{DynamicResource ButtonStyle}" Content="Сактоо" Canvas.Left="434" Canvas.Top="96" Click="Button_Click"/>
-                        <ComboBox  x:Name="OtdelPrioritet" Width="254" Canvas.Left="330" Canvas.Top="59" IsReadOnly="False">
-                            <ComboBoxItem Content="1"/>
-                            <ComboBoxItem Content="2"/>
-                            <ComboBoxItem Content="3"/>
-                        </ComboBox>
+                        <Button Style="{DynamicResource ButtonStyle}" Content="Сактоо"
+                                Canvas.Left="434" Canvas.Top="96" Click="Button_Click"/>
                     </Canvas>
                 </Grid>
                 <Grid Grid.Row="1">
-                    <DataGrid x:Name="OtdelData" Margin="10,7,0,0" FontSize="12"  CanUserAddRows="False" Style="{DynamicResource grid_xml}" ColumnHeaderStyle="{DynamicResource hederstyle}" VerticalAlignment="Stretch" VerticalScrollBarVisibility="Auto"   HeadersVisibility="Column" HorizontalAlignment="Stretch"
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <DataGrid x:Name="OtdelData" Margin="10,7,0,0" FontSize="12"  
+                              CanUserAddRows="False" Style="{DynamicResource grid_xml}"
+                               SelectedCellsChanged="OtdelData2_SelectedCellsChanged"
+                              ColumnHeaderStyle="{DynamicResource hederstyle}"
+                              VerticalAlignment="Stretch"
+                              VerticalScrollBarVisibility="Auto"   
+                              HeadersVisibility="Column"
+                              HorizontalAlignment="Stretch"
                    AutoGenerateColumns="False" >
                         <DataGrid.Columns>
                             <DataGridTextColumn Header="№" Width="50" Binding="{Binding id}"/>
                             <DataGridTextColumn Header="Отделдин аталышы" Binding="{Binding name_p}"/>
-                            <DataGridTextColumn Header="Приоритети" Binding="{Binding index_p}"/>
                             <DataGridTemplateColumn Header="Удалить" Width="80" >
                                 <DataGridTemplateColumn.CellTemplate>
                                     <DataTemplate>
@@ -45,6 +51,24 @@
                             </DataGridTemplateColumn>
                         </DataGrid.Columns>
                     </DataGrid>
+                    <DataGrid x:Name="OtdelData2" Margin="10,7,0,0"
+                              Grid.Column="1"
+                              FontSize="12"  CanUserAddRows="False" 
+                              Style="{DynamicResource grid_xml}" 
+                              ColumnHeaderStyle="{DynamicResource hederstyle}" 
+                              VerticalAlignment="Stretch" 
+                              VerticalScrollBarVisibility="Auto"   
+                              HeadersVisibility="Column" 
+                              HorizontalAlignment="Stretch"
+                   AutoGenerateColumns="False" >
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="№" Width="50" Binding="{Binding id}"/>
+                            <DataGridCheckBoxColumn Width="80" Header="Статус" Binding="{Binding MyBool}" />
+                            <DataGridTextColumn Header="Категории" Binding="{Binding name}"/>
+                            
+                        </DataGrid.Columns>
+                    </DataGrid>
+
                 </Grid>
             </Grid>
         </Border>
