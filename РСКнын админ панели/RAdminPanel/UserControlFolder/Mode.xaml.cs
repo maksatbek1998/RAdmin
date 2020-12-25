@@ -31,6 +31,7 @@ namespace RAdminPanel.UserControlFolder
         {
             Base1 = new Base();
             Base1.RegistrToBase("UPDATE options SET value='" + UserNameTextBox.Text + "' WHERE id=5");
+            MessageBox.Show("Успешно сохранено", "", MessageBoxButton.OK);
             UserNameTextBox.Text = "";
         }
     }

@@ -26,32 +26,54 @@ namespace RAdminPanel.UserControlFolder
         public Sound()
         {
             InitializeComponent();
+            ToSourseCombo();
         }
 
         private void Button_Click_2(object sender, RoutedEventArgs e)
         {
-            if (Option!="")
+            if (Option != "")
             {
                 Base1.RegistrToBase("UPDATE options SET VALUE='" + Option + "' WHERE id=1");
+                MessageBox.Show("Успешно сохранено", "", MessageBoxButton.OK);
                 Option = "";
                 SoundCombo.Text = "";
             }
+            else
+            {
+                MessageBox.Show("Заполните все поли!", "Внимание !", MessageBoxButton.OK);
+            }
+            LanguageCombo.Visibility = Visibility.Hidden;
         }
         private void Sound_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             int index = SoundCombo.SelectedIndex;
-            if (index==0)
+            if (index == 0)
             {
-                Option = "ON_Sound_Speech";
+                LanguageCombo.Visibility = Visibility.Visible;
             }
             else if (index == 1)
             {
-                Option = "Sound";
+                Option = "ALL";
+                LanguageCombo.Visibility = Visibility.Hidden;
             }
             else if (index == 2)
             {
-                Option = "OF_Sound_Speech";
+                Option = "SOUND";
+                LanguageCombo.Visibility = Visibility.Hidden;
             }
+        }
+        void ToSourseCombo()
+        {
+            Base1 = new Base();
+            Base1.eventDysplay2 += delegate (List<string> list)
+            {
+                SoundCombo_Copy.ItemsSource = list;
+            };
+            Base1.Display("SELECT locale FROM langs");
+        }
+        private void SoundCombo_Copy_SelectionChanged_1(object sender, SelectionChangedEventArgs e)
+        {
+            Option = SoundCombo_Copy.SelectedValue.ToString();
         }
     }
 }
