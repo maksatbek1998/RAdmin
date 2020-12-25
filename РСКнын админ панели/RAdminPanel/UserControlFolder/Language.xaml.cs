@@ -15,8 +15,12 @@ namespace RAdminPanel.UserControlFolder
     {
         static int count = 0;
         static string shorting;
+        static string ID;
         Base dataBase;
-        List<langgrid> list; List<langgrid> lister;
+        List<langgrid> list;
+        List<langgrid> lister;
+        List<langgrid> Updatelist;
+        List<langgrid> Updatelister;
         public Language()
         {
             InitializeComponent();
@@ -35,6 +39,7 @@ namespace RAdminPanel.UserControlFolder
             {
                 Languages.ItemsSource = db;
                 DeleteComBox.ItemsSource = db;
+                UpdateComboBox.ItemsSource = db;
             };
             dataBase.Display("SELECT locale FROM langs");
         }
@@ -71,12 +76,12 @@ namespace RAdminPanel.UserControlFolder
                 lister = (List<langgrid>)dataGrid.ItemsSource;
                 for (int i = 0, c = 1; i < count; i++, c++)
                 {
-                    MessageBox.Show(lister[i].newlan.ToString());
                     dataBase.RegistrToBase("update service_langs set name='" + lister[i].newlan.ToString() + "' where service_id = " + c + " and locale = '" + shorting + "'");
                 }
                 Refresh();
+                MessageBox.Show("Сохранение прошло успешно");
             }
-            else 
+            else
             {
                 MessageBox.Show("Не все поля заполнены");
             }
@@ -99,11 +104,11 @@ namespace RAdminPanel.UserControlFolder
             if (count > 0 && ShortName.Text != String.Empty && Languages.Text != String.Empty)
             {
                 dataBase = new Base();
+                dataBase.RegistrToBase("insert into langs(locale) values ('" + ShortName.Text + "')");
                 for (int i = 1; i < count + 1; i++)
                 {
                     dataBase.RegistrToBase("insert into service_langs(service_id,locale) values(" + i + ",'" + ShortName.Text + "')");
                 }
-                dataBase.RegistrToBase("insert into langs(locale)values('" + ShortName.Text + "')");
                 shorting = ShortName.Text;
             }
         }
@@ -113,9 +118,74 @@ namespace RAdminPanel.UserControlFolder
             dataBase = new Base();
             if (DeleteComBox.Text != String.Empty)
             {
-                dataBase.RegistrToBase("delete from langs where locale = '" + DeleteComBox.Text + "'");
-                dataBase.RegistrToBase("delete from service_langs where locale = '" + DeleteComBox.Text + "'");
+                if (DeleteComBox.Text == "RU")
+                {
+                    MessageBox.Show("Нельзя удалить начальный язык");
+                    DeleteComBox.SelectedItem = null;
+                }
+                else
+                {
+                    dataBase.RegistrToBase("DELETE from service_langs WHERE locale  ='" + DeleteComBox.Text + "'");
+                    dataBase.RegistrToBase("DELETE from langs WHERE id=" + ID + "");       
+                    MessageBox.Show("Успешно удалено", "", MessageBoxButton.OK);
+                    DeleteComBox.SelectedItem = null;
+                }
+            
             }
+        }
+
+        private void DeleteComBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            dataBase = new Base();
+            ID = dataBase.ReturnID1("SELECT id FROM langs WHERE `locale`='" + DeleteComBox.SelectedValue + "'");
+        }
+
+        private void Button_Click_2(object sender, RoutedEventArgs e)
+        {
+            if (UpdateComboBox.Text != String.Empty)
+            {
+                dataBase = new Base();
+                Updatelister = (List<langgrid>)dataGridUpdate.ItemsSource;
+                for (int i = 0, c = 1; i < count; i++, c++)
+                {
+                    dataBase.RegistrToBase("update service_langs set name='" + Updatelister[i].currentlan.ToString() + "' where service_id = " + c + " and locale = '" + UpdateComboBox.Text + "'");
+                }
+                dataGridUpdate.ItemsSource = null;
+                UpdateComboBox.SelectedItem = null;
+                MessageBox.Show("Успешно изменено");
+            }
+            else
+            {
+                MessageBox.Show("Не все поля заполнены");
+            }
+        }
+
+        private void UpdateComboBox_DropDownClosed(object sender, EventArgs e)
+        {
+            if (UpdateComboBox.Text != String.Empty)
+                DataGridUpdate();
+        }
+        public void DataGridUpdate()
+        {
+            Updatelist = new List<langgrid>();
+            dataBase = new Base();
+            dataBase.del += db =>
+            {
+                if (db.Rows.Count > 0)
+                {
+                    count = db.Rows.Count;
+                    for (int i = 0; i < db.Rows.Count; i++)
+                    {
+                        Updatelist.Add(new langgrid
+                        {
+                            id = (i + 1).ToString(),
+                            currentlan = db.Rows[i][0].ToString()
+                        });
+                    }
+                    dataGridUpdate.ItemsSource = Updatelist;
+                }
+            };
+            dataBase.SoursData("SELECT name FROM service_langs where locale = '" + UpdateComboBox.Text + "'");
         }
     }
 }

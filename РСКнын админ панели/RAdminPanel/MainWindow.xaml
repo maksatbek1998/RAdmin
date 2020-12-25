@@ -53,7 +53,6 @@
                     <ToggleButton x:Name="button2" Height="45" Style="{DynamicResource menu}" Click="Button_Click_5">
                         <DockPanel Margin="5 0 0 0">
                             <Image Source="Image/Img/resume_48px.png" Height="25"/>
-
                             <Label FontSize="14" x:Name="lbl_menu3"  Content="{Binding WorkPlace , UpdateSourceTrigger=PropertyChanged}" Foreground="White " VerticalAlignment="Center"/>
                         </DockPanel>
                     </ToggleButton>

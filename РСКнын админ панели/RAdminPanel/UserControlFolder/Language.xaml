@@ -8,7 +8,7 @@
     <Grid>
         <Border Padding="20">
             <TabControl BorderThickness="0">
-                <TabItem Style="{DynamicResource TabControl}" Header="Жаны тил кошуу" Width="130">
+                <TabItem Style="{DynamicResource TabControl}" Header="Добавить новый язык" Width="150">
                     <StackPanel HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
                         <Grid Width="400" HorizontalAlignment="Left">
                             <Grid.ColumnDefinitions>
@@ -16,9 +16,9 @@
                                 <ColumnDefinition/>
                             </Grid.ColumnDefinitions>
                             <StackPanel Grid.Column="0">
-                                <TextBlock Text="Кайсыл тил аркылуу" Margin="10,5,0,5"/>
-                                <TextBlock Text="Кайсыл тилге" Margin="10,9,0,5"/>
-                                <TextBlock Text="Кыскача аталышы" Margin="10,9,0,5"/>
+                                <TextBlock Text="Выберите язык" Margin="10,5,0,5"/>
+                                <TextBlock Text="Название переводимого языка" Margin="10,9,0,5"/>
+                                <TextBlock Text="Короткое имя" Margin="10,9,0,5"/>
                             </StackPanel>
                             <StackPanel Grid.Column="1">
                                 <ComboBox x:Name="Languages" DropDownClosed="Languages_DropDownClosed" IsEditable="True" IsReadOnly="True" Margin="10,5,0,5" FontSize="12" Height="23" Width="Auto"/>
@@ -31,8 +31,8 @@
                    AutoGenerateColumns="False" >
                             <DataGrid.Columns>
                                 <DataGridTextColumn Header="№" Binding="{Binding id}"  Width="50"/>
-                                <DataGridTextColumn Binding="{Binding currentlan}" Header="Сиз тандаган тил"/>
-                                <DataGridTextColumn Header="Сиз которуучу тил" Binding="{Binding newlan}"/>
+                                <DataGridTextColumn Binding="{Binding currentlan}" Header="Выбранный вами язык"/>
+                                <DataGridTextColumn Header="Его нужно перевести на язык" Binding="{Binding newlan}"/>
                                 <DataGridTemplateColumn Header="Удалить" Width="80" >
                                     <DataGridTemplateColumn.CellTemplate>
                                         <DataTemplate>
@@ -46,10 +46,35 @@
                         </DataGrid>
                     </StackPanel>
                 </TabItem>
-                <TabItem Style="{DynamicResource TabControl}" Header="Удаление Языков" Width="150">
+                <TabItem Style="{DynamicResource TabControl}" Header="Изменение языков" Width="140">
+                    <StackPanel HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                        <Grid Width="400" HorizontalAlignment="Left">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+                            <StackPanel Grid.Column="0">
+                                <TextBlock Text="Выберите язык который хотите изменить" Margin="10,5,-88,5"/>
+                            </StackPanel>
+                            <StackPanel Grid.Column="1" >
+                                <ComboBox DropDownClosed="UpdateComboBox_DropDownClosed" x:Name="UpdateComboBox" Width="100" Margin="100,5,0,0" />
+                            </StackPanel>
+                        </Grid>
+                        <Button Style="{DynamicResource ButtonStyle}" Click="Button_Click_2" Content="Изменить" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+                        <DataGrid Margin="10,7,0,0" x:Name="dataGridUpdate" FontSize="12"  CanUserAddRows="False" Style="{DynamicResource grid_xml}" ColumnHeaderStyle="{DynamicResource hederstyle}" VerticalAlignment="Stretch" VerticalScrollBarVisibility="Auto"   HeadersVisibility="Column"
+                   AutoGenerateColumns="False" >
+                            <DataGrid.Columns>
+                                <DataGridTextColumn Header="№" Binding="{Binding id}"  Width="50"/>
+                                <DataGridTextColumn Binding="{Binding currentlan}" Header="Слова для изменения"/>
+                            </DataGrid.Columns>
+                        </DataGrid>
+                    </StackPanel>
+                </TabItem>
+                <TabItem Style="{DynamicResource TabControl}" Header="Удаление языков" Width="140">
                     <Canvas>
-                        <ComboBox x:Name="DeleteComBox" IsEditable="True" IsReadOnly="True" FontSize="12" Height="23" Width="250" Canvas.Left="243" Canvas.Top="47"/>
-                        <TextBlock Text="Очуруу учун тил танданыз" Canvas.Left="10" Canvas.Top="49" Width="231"/>
+                        <ComboBox x:Name="DeleteComBox" IsEditable="True" IsReadOnly="True" FontSize="12" Height="23" Width="250" Canvas.Left="243" Canvas.Top="47" SelectionChanged="DeleteComBox_SelectionChanged"/>
+                        <TextBlock Text="
+Выберите язык для удаления" Canvas.Left="10" Canvas.Top="49" Width="231"/>
                         <Button Click="Button_Click_1" Style="{DynamicResource ButtonStyle}" Content="Очуруу" Canvas.Left="343" Canvas.Top="85"/>
                     </Canvas>
                 </TabItem>
