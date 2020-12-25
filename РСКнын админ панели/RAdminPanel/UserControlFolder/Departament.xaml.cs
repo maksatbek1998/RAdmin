@@ -21,17 +21,16 @@ namespace RAdminPanel.UserControlFolder
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            if (OtdelName.Text != "" && OtdelPrioritet.Text != "")
+            if (OtdelName.Text != "")
             {
-                Bases.RegistrToBase("INSERT INTO  position value(null,'" + OtdelName.Text + "','" + OtdelPrioritet.Text + "')");
+                Bases.RegistrToBase("INSERT INTO position (name_p) VALUES ('"+OtdelName.Text+"')");
                 OtdelName.Text = "";
-                OtdelPrioritet.Text = "";
                 UpdateData();
             }
         }
         public void UpdateData()
         {
-            Bases.SoursDataGrid("SELECT id,name_p,index_p FROM position ORDER BY index_p desc", ref OtdelData);
+            Bases.SoursDataGrid("SELECT id,name_p FROM position", ref OtdelData);
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)

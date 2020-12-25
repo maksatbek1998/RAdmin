@@ -15,25 +15,21 @@ namespace RAdminPanel.UserControlFolder
     {
         Base dataBase;
         string id_1;
-        static int returnedWork;
         public WorkPlaces()
         {
             InitializeComponent();
             UpdateData();
-            UpdateComboBoxBranch();
         }
         public void Refresh()
         {
             workName.Text = "";
-            workWindow.Text = "";
-            PriorityComboBox.SelectedItem = null;
         }
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            if (workName.Text != String.Empty && workWindow.Text != String.Empty && PriorityComboBox.Text != String.Empty)
+            if (workName.Text != String.Empty )
             {
                 dataBase = new Base();              
-                dataBase.RegistrToBase("insert into workplaces(name_id,windowName,priority,status) values (" +returnedWork + "," + workWindow.Text + "," + PriorityComboBox.Text + ", 0)");
+                dataBase.RegistrToBase("insert into workplaces(name) values ('" +workName.Text + "')");
                 UpdateData();
                 Refresh();
             }
@@ -46,16 +42,7 @@ namespace RAdminPanel.UserControlFolder
         public void UpdateData()
         {
             dataBase = new Base();
-            dataBase.SoursDataGrid("SELECT w.id,p.name_p,w.windowName,w.priority,CASE WHEN w.status = 0  THEN 'Не занято' WHEN w.status=1 THEN 'Занято' END AS status  from workplaces AS w INNER JOIN position AS p ON w.name_id = p.id order by priority desc", ref dataGrid);
-        }
-        public void UpdateComboBoxBranch()
-        {
-            dataBase = new Base();
-            dataBase.eventDysplay2 += delegate (List<string> db)
-            {
-                workName.ItemsSource = db;
-            };
-            dataBase.Display("SELECT name_p FROM position");
+            dataBase.SoursDataGrid("SELECT w.id,w.name from workplaces AS w", ref dataGrid);
         }
         private void Button_Click_2(object sender, RoutedEventArgs e)
         {
@@ -71,15 +58,6 @@ namespace RAdminPanel.UserControlFolder
                     messageO.del_ += () => UpdateData();
                     messageO.ShowDialog();
                 }
-            }
-        }
-
-        private void workName_DropDownClosed(object sender, EventArgs e)
-        {
-            if (workName.SelectedItem != null)
-            {
-                dataBase = new Base();
-                returnedWork = dataBase.ReturnID("select id from position where name_p = '" + workName.SelectedValue.ToString() + "'");
             }
         }
     }

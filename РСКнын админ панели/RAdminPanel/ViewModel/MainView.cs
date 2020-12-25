@@ -24,6 +24,20 @@ namespace RAdminPanel.ViewModel
             set => Set(ref _Filial, value);
         }
 
+        private string _Block = "Блокировка";
+        public string Block
+        {
+            get => _Block;
+            set => Set(ref _Block, value);
+        }
+
+        private string _Auto = "Автовызов";
+        public string Auto
+        {
+            get => _Auto;
+            set => Set(ref _Auto, value);
+        }
+
         private string _Operators = "Операторы";
         public string Operators
         {
@@ -144,6 +158,9 @@ namespace RAdminPanel.ViewModel
             Delete = "Очүрүү";
             Save = "Сактоо";
             BranchName = "Филиалдын аты";
+            Auto = "АвтоЧакыруу";
+            Block = "Бекитүү";
+
         }
 
         private void ToRus(object obj)
@@ -162,6 +179,8 @@ namespace RAdminPanel.ViewModel
             Delete = "Удалить";
             Save = "Сохранить";
             BranchName = "Название филиала";
+            Auto = "АвтоВызов";
+            Block = "Блокировка";
         }
 
         private void ToEng(object obj)
@@ -180,6 +199,8 @@ namespace RAdminPanel.ViewModel
             Delete = "Delete";
             Save = "Save";
             BranchName = "Baranches name";
+            Auto = "Auto";
+            Block = "Block";
         }
 
         #endregion

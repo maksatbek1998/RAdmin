@@ -53,7 +53,6 @@
                     <ToggleButton x:Name="button2" Height="45" Style="{DynamicResource menu}" Click="Button_Click_5">
                         <DockPanel Margin="5 0 0 0">
                             <Image Source="Image/Img/resume_48px.png" Height="25"/>
-
                             <Label FontSize="14" x:Name="lbl_menu3"  Content="{Binding WorkPlace , UpdateSourceTrigger=PropertyChanged}" Foreground="White " VerticalAlignment="Center"/>
                         </DockPanel>
                     </ToggleButton>
@@ -96,13 +95,13 @@
                     <ToggleButton x:Name="button9" Height="45" Style="{DynamicResource menu}" Click="Button_Click_11">
                         <DockPanel Margin="5 0 0 0">
                             <Image Source="Image/Img/sleep_250px.png" Height="25"/>
-                            <Label x:Name="lbl_menu811"  VerticalAlignment="Center" FontSize="14" Content="{Binding SoundSetting, UpdateSourceTrigger=PropertyChanged}" Foreground="White" />
+                            <Label x:Name="lbl_menu811"  VerticalAlignment="Center" FontSize="14" Content="{Binding Auto, UpdateSourceTrigger=PropertyChanged}" Foreground="White" />
                         </DockPanel>
                     </ToggleButton>
                     <ToggleButton x:Name="button10" Height="45" Style="{DynamicResource menu}" Click="Button_Click_12">
                         <DockPanel Margin="5 0 0 0">
                             <Image Source="Image/Img/private_lock_250px.png" Height="25"/>
-                            <Label x:Name="lbl_menu8111"  VerticalAlignment="Center" FontSize="14" Content="{Binding SoundSetting, UpdateSourceTrigger=PropertyChanged}" Foreground="White" />
+                            <Label x:Name="lbl_menu8111"  VerticalAlignment="Center" FontSize="14" Content="{Binding Block, UpdateSourceTrigger=PropertyChanged}" Foreground="White" />
                         </DockPanel>
                     </ToggleButton>
                 </StackPanel>
