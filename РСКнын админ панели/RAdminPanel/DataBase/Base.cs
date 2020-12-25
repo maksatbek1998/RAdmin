@@ -60,6 +60,7 @@ namespace RAdminPanel.DataBase
         }
         public void SoursDataGrid(string s,ref DataGrid data)
         {
+            connection.Close();
             connection.Open();
             MySqlCommand cmd = connection.CreateCommand();
             cmd.CommandType = CommandType.Text;
