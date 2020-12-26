@@ -23,7 +23,7 @@
                 </Grid>
                 <Grid Grid.Row="1">
                     <DataGrid x:Name="OtdelData" Margin="10,-35,0,0" FontSize="12"  CanUserAddRows="False" Style="{DynamicResource grid_xml}" ColumnHeaderStyle="{DynamicResource hederstyle}" VerticalAlignment="Stretch" VerticalScrollBarVisibility="Auto"   HeadersVisibility="Column" HorizontalAlignment="Stretch"
-                   AutoGenerateColumns="False" >
+                   AutoGenerateColumns="False" IsReadOnly="True">
                         <DataGrid.Columns>
                             <DataGridTextColumn Header="№" Width="50" Binding="{Binding id}"/>
                             <DataGridTextColumn Header="Отделдин аталышы" Binding="{Binding name_p}"/>

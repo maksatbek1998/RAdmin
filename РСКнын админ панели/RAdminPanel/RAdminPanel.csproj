@@ -323,5 +323,8 @@
   <ItemGroup>
     <Resource Include="Image\Ico\delete_250px.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\Ico\multiply.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -9,7 +9,7 @@
     <Grid>
         <Border Padding="20">
             <TabControl BorderThickness="0">
-                <TabItem Header="Терминалдын тилин тандоо" Style="{DynamicResource TabControl}" Width="200">
+                <TabItem Header="Терминалдын тилин тандоо" Style="{DynamicResource TabControl}" Width="210">
                     <Grid>
                         <StackPanel>
                             <StackPanel Orientation="Horizontal">
@@ -56,52 +56,201 @@
                         </Canvas>
                     </Grid>
                 </TabItem>
-                <TabItem Header="Терминалдын менюсун тузуу" Style="{DynamicResource TabControl}" Width="210">
+                <TabItem Header="Создание меню для терминала" Style="{DynamicResource TabControl}" Width="220">
                     <Grid>
                         <Grid.RowDefinitions>
                             <RowDefinition Height="120"/>
                             <RowDefinition Height="*"/>
                         </Grid.RowDefinitions>
                         <Canvas>
-                            <TextBlock Text="Кайсыл категорияга" Canvas.Top="10"/>
-                            <ComboBox Canvas.Left="178" Canvas.Top="8" Width="184" IsReadOnly="True">
-                                <ComboBoxItem Content="Главный"/>
+                            <TextBlock Text="Какая категория" Canvas.Top="10"/>
+                            <ComboBox x:Name="ComboCategoria" Canvas.Left="212" Canvas.Top="8" Width="184" IsReadOnly="True" SelectionChanged="ComboBox_SelectionChanged">
                             </ComboBox>
-                            <TextBlock Text="Кошулуучунун аталышы" Canvas.Top="41"/>
-                            <TextBox Style="{DynamicResource textbox_style}" Width="184" Canvas.Left="178" Canvas.Top="39" Tag="Кошулуучунун аталышы"/>
-                            <TextBlock Text="Приоритети" Canvas.Top="8" Canvas.Left="402" Width="105"/>
-                            <ComboBox Canvas.Left="514" Canvas.Top="8" Width="150" IsReadOnly="True">
+                            <TextBlock Text="Название добавляемой элемнт" Canvas.Top="41" Width="212"/>
+                            <TextBox x:Name="CattegoryName" Style="{DynamicResource textbox_style}" Width="184" Canvas.Left="212" Canvas.Top="39" Tag="Название элемнт"/>
+                            <TextBlock Text="Приоритет" Canvas.Top="8" Canvas.Left="436" Width="105"/>
+                            <ComboBox x:Name="ComboPrioritet" Canvas.Left="548" Canvas.Top="8" Width="150" IsReadOnly="False">
                                 <ComboBoxItem Content="1"/>
                                 <ComboBoxItem Content="2"/>
                                 <ComboBoxItem Content="3"/>
                             </ComboBox>
-                            <Button Style="{DynamicResource ButtonStyle}" Content="Сактоо" Canvas.Left="702" Canvas.Top="39"/>
-                            <TextBlock Text="Активдуулугу" Canvas.Top="40" Canvas.Left="402" Width="105"/>
-                            <ComboBox Canvas.Left="514" Canvas.Top="39" Width="150" IsReadOnly="True">
-                                <ComboBoxItem Content="Ооба активдуу"/>
-                                <ComboBoxItem Content="Жок активдуу эмес"/>
+                            <Button Style="{DynamicResource ButtonStyle}" Content="Сохранить" Canvas.Left="715" Canvas.Top="72" Click="Button_Click_15"/>
+                            <TextBlock Text="Активный" Canvas.Top="40" Canvas.Left="436" Width="105"/>
+                            <ComboBox x:Name="ComboActiv" Canvas.Left="548" Canvas.Top="39" Width="150" IsReadOnly="True">
+                                <ComboBoxItem Content="OF"/>
+                                <ComboBoxItem Content="ON"/>
                             </ComboBox>
-                            <Button Style="{DynamicResource ResourceKey=ButtonStyle}" Content="Озгортуу" Canvas.Left="702" Canvas.Top="8"/>
-                            <Button Style="{DynamicResource ResourceKey=ButtonStyle}" Canvas.Left="702" Canvas.Top="69">
+                            <Button Style="{DynamicResource ResourceKey=ButtonStyle}" Canvas.Left="715" Canvas.Top="38" Click="Button_Click_14">
                                 <StackPanel Orientation="Horizontal">
                                     <Image Source="../Image/Ico/Clear.png" Margin="0,0,10,0"/>
-                                    <TextBlock Text="Баарын очуруу"/>
+                                    <TextBlock Text="Очистить все"/>
+                                </StackPanel>
+                            </Button>
+                            <TextBlock Text="Подключенный язык" Canvas.Top="74" Width="173"/>
+                            <ComboBox x:Name="ComboCategoria_Copy" Canvas.Left="212" Canvas.Top="72" Width="184" IsReadOnly="True" SelectedIndex="0" >
+                                <ComboBoxItem Content="RU"/>
+                            </ComboBox>
+                            <TextBlock Text="Суффикс" Canvas.Top="73" Canvas.Left="436" Width="105"/>
+                            <ComboBox x:Name="ComboSufics" Canvas.Left="548" Canvas.Top="72" Width="150" IsReadOnly="True"/>
+                        </Canvas>
+                        <DataGrid x:Name="GlavDataGrid"  FontSize="12"  CanUserAddRows="False" Style="{DynamicResource grid_xml}" ColumnHeaderStyle="{DynamicResource hederstyle}" VerticalAlignment="Stretch" VerticalScrollBarVisibility="Auto"   HeadersVisibility="Column"
+                   AutoGenerateColumns="False"  Grid.Row="1">
+                            <DataGrid.Columns>
+                                <DataGridTextColumn Header="№" Width="40" Binding="{Binding id}"/>
+                                <DataGridTemplateColumn Header="Категории">
+                                    <DataGridTemplateColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <StackPanel Orientation="Horizontal">
+                                                <TextBlock Text="{Binding parent}"/>
+                                                <Button Style="{DynamicResource Close_Button}" Margin="3,0" Click="Button_Click_2">
+                                                    <Image Source="/RAdminPanel;component/Image/Ico/multiply.png" HorizontalAlignment="Right"  Width="14"/>
+                                                </Button>
+                                            </StackPanel>
+                                        </DataTemplate>
+                                    </DataGridTemplateColumn.CellTemplate>
+                                </DataGridTemplateColumn>
+                                <DataGridTemplateColumn Header="В категории" >
+                                    <DataGridTemplateColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <StackPanel Orientation="Horizontal">
+                                                <TextBlock Text="{Binding child1}"/>
+                                                <Button Style="{DynamicResource Close_Button}" Margin="3,0" Click="Button_Click_3">
+                                                    <Image Source="/RAdminPanel;component/Image/Ico/multiply.png" HorizontalAlignment="Right"  Width="14"/>
+                                                </Button>
+                                            </StackPanel>
+                                        </DataTemplate>
+                                    </DataGridTemplateColumn.CellTemplate>
+                                </DataGridTemplateColumn>
+                                <DataGridTemplateColumn Header="В категории" >
+                                    <DataGridTemplateColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <StackPanel Orientation="Horizontal">
+                                                <TextBlock Text="{Binding child2}"/>
+                                                <Button Style="{DynamicResource Close_Button}" Margin="3,0" Click="Button_Click_4">
+                                                    <Image Source="/RAdminPanel;component/Image/Ico/multiply.png" HorizontalAlignment="Right"  Width="14"/>
+                                                </Button>
+                                            </StackPanel>
+                                        </DataTemplate>
+                                    </DataGridTemplateColumn.CellTemplate>
+                                </DataGridTemplateColumn>
+                                <DataGridTemplateColumn Header="В категории" >
+                                    <DataGridTemplateColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <StackPanel Orientation="Horizontal">
+                                                <TextBlock Text="{Binding child3}"/>
+                                                <Button Style="{DynamicResource Close_Button}" Margin="3,0" Click="Button_Click_5">
+                                                    <Image Source="/RAdminPanel;component/Image/Ico/multiply.png" HorizontalAlignment="Right"  Width="14"/>
+                                                </Button>
+                                            </StackPanel>
+                                        </DataTemplate>
+                                    </DataGridTemplateColumn.CellTemplate>
+                                </DataGridTemplateColumn>
+                                <DataGridTemplateColumn Header="В категории" >
+                                    <DataGridTemplateColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <StackPanel Orientation="Horizontal">
+                                                <TextBlock Text="{Binding child4}"/>
+                                                <Button Style="{DynamicResource Close_Button}" Margin="3,0" Click="Button_Click_6">
+                                                    <Image Source="/RAdminPanel;component/Image/Ico/multiply.png" HorizontalAlignment="Right"  Width="14"/>
+                                                </Button>
+                                            </StackPanel>
+                                        </DataTemplate>
+                                    </DataGridTemplateColumn.CellTemplate>
+                                </DataGridTemplateColumn>
+                                <DataGridTemplateColumn Header="В категории" >
+                                    <DataGridTemplateColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <StackPanel Orientation="Horizontal">
+                                                <TextBlock Text="{Binding child5}"/>
+                                                <Button Style="{DynamicResource Close_Button}" Margin="3,0" Click="Button_Click_7">
+                                                    <Image Source="/RAdminPanel;component/Image/Ico/multiply.png" HorizontalAlignment="Right"  Width="14"/>
+                                                </Button>
+                                            </StackPanel>
+                                        </DataTemplate>
+                                    </DataGridTemplateColumn.CellTemplate>
+                                </DataGridTemplateColumn>
+                                <DataGridTemplateColumn Header="В категории" >
+                                    <DataGridTemplateColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <StackPanel Orientation="Horizontal">
+                                                <TextBlock Text="{Binding child6}"/>
+                                                <Button Style="{DynamicResource Close_Button}" Margin="3,0" Click="Button_Click_8">
+                                                    <Image Source="/RAdminPanel;component/Image/Ico/multiply.png" HorizontalAlignment="Right"  Width="14"/>
+                                                </Button>
+                                            </StackPanel>
+                                        </DataTemplate>
+                                    </DataGridTemplateColumn.CellTemplate>
+                                </DataGridTemplateColumn>
+                                <DataGridTemplateColumn Header="В категории" >
+                                    <DataGridTemplateColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <StackPanel Orientation="Horizontal">
+                                                <TextBlock Text="{Binding child7}"/>
+                                                <Button Style="{DynamicResource Close_Button}" Margin="3,0" Click="Button_Click_9">
+                                                    <Image Source="/RAdminPanel;component/Image/Ico/multiply.png" HorizontalAlignment="Right"  Width="14"/>
+                                                </Button>
+                                            </StackPanel>
+                                        </DataTemplate>
+                                    </DataGridTemplateColumn.CellTemplate>
+                                </DataGridTemplateColumn>
+                                <DataGridTemplateColumn Header="В категории" >
+                                    <DataGridTemplateColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <StackPanel Orientation="Horizontal">
+                                                <TextBlock Text="{Binding child8}"/>
+                                                <Button Style="{DynamicResource Close_Button}" Margin="3,0" Click="Button_Click_10">
+                                                    <Image Source="/RAdminPanel;component/Image/Ico/multiply.png" HorizontalAlignment="Right"  Width="14"/>
+                                                </Button>
+                                            </StackPanel>
+                                        </DataTemplate>
+                                    </DataGridTemplateColumn.CellTemplate>
+                                </DataGridTemplateColumn>
+                            </DataGrid.Columns>
+                        </DataGrid>
+                    </Grid>
+                </TabItem>
+                <TabItem Header="Управление меню терминала" Style="{DynamicResource TabControl}" Width="215">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="130"/>
+                            <RowDefinition Height="35"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+                        <Canvas>
+                            <Button Style="{DynamicResource ButtonStyle}" Content="Сохранить" Canvas.Left="435" Canvas.Top="89" Click="Button_Click_13"/>
+                            <TextBlock Text="Активный" Canvas.Top="58" Canvas.Left="10" Width="105"/>
+                            <ComboBox x:Name="Is_Activen" Canvas.Left="196" Canvas.Top="58" Width="230" IsReadOnly="True">
+                                <ComboBoxItem Content="OF"/>
+                                <ComboBoxItem Content="ON"/>
+                            </ComboBox>
+                            <TextBlock Text="Наименование категории" Canvas.Top="26" Canvas.Left="6" Width="185"/>
+                            <TextBox x:Name="NameCatedory" Style="{DynamicResource textbox_style}" Width="230" Canvas.Left="196" Canvas.Top="24" Tag="Наименование категории" IsReadOnly="True"/>
+                            <TextBlock Text="Приоритет" Canvas.Top="90" Canvas.Left="11" Width="105"/>
+                            <ComboBox x:Name="ComboPrioritet_Copy" Canvas.Left="196" Canvas.Top="90" Width="230" IsReadOnly="False">
+                                <ComboBoxItem Content="1"/>
+                                <ComboBoxItem Content="2"/>
+                                <ComboBoxItem Content="3"/>
+                            </ComboBox>
+                            <Button Style="{DynamicResource ResourceKey=ButtonStyle}" Canvas.Left="602" Canvas.Top="89" Click="Button_Click_11">
+                                <StackPanel Orientation="Horizontal">
+                                    <Image Source="/RAdminPanel;component/Image/Ico/Clear.png" Margin="0,0,10,0"/>
+                                    <TextBlock Text="Очистить все"/>
                                 </StackPanel>
                             </Button>
                         </Canvas>
-                        <DataGrid  FontSize="12"  CanUserAddRows="False" Style="{DynamicResource grid_xml}" ColumnHeaderStyle="{DynamicResource hederstyle}" VerticalAlignment="Stretch" VerticalScrollBarVisibility="Auto"   HeadersVisibility="Column"
-                   AutoGenerateColumns="False"  Grid.Row="1">
+                        <TextBox x:Name="SearchText" Style="{DynamicResource styleLog}" Width="228" Canvas.Left="823" Canvas.Top="101" Tag="Категорияны издоо" Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Right" SelectionChanged="TextBox_SelectionChanged"/>
+                        <DataGrid x:Name="DataGridD" FontSize="12"  CanUserAddRows="False" Style="{DynamicResource grid_xml}" ColumnHeaderStyle="{DynamicResource hederstyle}" VerticalAlignment="Stretch" VerticalScrollBarVisibility="Auto"   HeadersVisibility="Column" IsReadOnly="True"
+                   AutoGenerateColumns="False"  Grid.Row="2">
                             <DataGrid.Columns>
-                                <DataGridTextColumn Header="№" Width="40"/>
-                                <DataGridTextColumn Header="Категориялар"/>
-                                <DataGridTextColumn Header="Аткарылуучу операциялар"/>
-                                <DataGridTextColumn Header="Приоритети"/>
-                                <DataGridTextColumn Header="Активдуулугу"/>
-                                <DataGridTemplateColumn Header="Удалить" Width="80">
+                                <DataGridTextColumn Header="№" Width="40" Binding="{Binding id}"/>
+                                <DataGridTextColumn Header="Категории" Binding="{Binding name}"/>
+                                <DataGridTextColumn Header="Активный" Binding="{Binding is_active}"/>
+                                <DataGridTextColumn Header="Приоритет" Binding="{Binding index}"/>
+                                <DataGridTemplateColumn Header="Изменить" Width="80">
                                     <DataGridTemplateColumn.CellTemplate>
                                         <DataTemplate>
-                                            <Button Style="{DynamicResource Close_Button}" BorderThickness="0,0,0,0" Cursor="Hand">
-                                                <Image Source="/RAdminPanel;component/Image/Ico/udalit4.png" Width="20"/>
+                                            <Button Style="{DynamicResource Close_Button}" BorderThickness="0,0,0,0" Cursor="Hand" Click="Button_Click_12">
+                                                <Image Source="/RAdminPanel;component/Image/Ico/Edit.png" Width="20"/>
                                             </Button>
                                         </DataTemplate>
                                     </DataGridTemplateColumn.CellTemplate>
