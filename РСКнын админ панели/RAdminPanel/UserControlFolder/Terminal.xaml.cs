@@ -28,6 +28,7 @@ namespace RAdminPanel.UserControlFolder
             SourseCombo();
             UpdateDataGrid1();
             UpdateDataGridInsert();
+            Sufficss();
         }
         public void UpdateLang()
         {
@@ -61,13 +62,13 @@ namespace RAdminPanel.UserControlFolder
 
         private void LangTerminal_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            ID = Base1.ReturnID1("SELECT id FROM langs WHERE locale='"+LangTerminal.SelectedValue+ "'");
+            ID = Base1.ReturnID1("SELECT id FROM langs WHERE locale='" + LangTerminal.SelectedValue + "'");
         }
 
         private void Button_Click(object sender, System.Windows.RoutedEventArgs e)
         {
             Base1 = new Base();
-            if (ID!="")
+            if (ID != "")
             {
                 Base1.SoursDataGrid("UPDATE langs SET is_aktiv=1 WHERE id= " + ID + "", ref LangData);
             }
@@ -75,8 +76,8 @@ namespace RAdminPanel.UserControlFolder
         }
         public void UpdateTerminalDataGrid()
         {
-            
-               Base1 = new Base();
+
+            Base1 = new Base();
             Base1.SoursDataGrid("SELECT id,locale FROM langs WHERE is_aktiv=1", ref LangData);
         }
 
@@ -176,18 +177,18 @@ namespace RAdminPanel.UserControlFolder
         }
         public void SourseCombo()
         {
-                Base1 = new Base();
-                Base1.eventDysplay2 += delegate (List<string> list)
-                {
-                    ComboCategoria.ItemsSource = list;
-                };
-                Base1.Display("SELECT name FROM services");
-            
+            Base1 = new Base();
+            Base1.eventDysplay2 += delegate (List<string> list)
+            {
+                ComboCategoria.ItemsSource = list;
+            };
+            Base1.Display("SELECT name FROM services");
+
         }
         void UpdateDataGrid1()
         {
-                Base1 = new Base();
-                Base1.SoursDataGrid("SELECT id,parent,child1,child2,child3,child4,child5,child6,child7,child8 FROM services_table", ref GlavDataGrid);            
+            Base1 = new Base();
+            Base1.SoursDataGrid("SELECT id,parent,child1,child2,child3,child4,child5,child6,child7,child8 FROM services_table", ref GlavDataGrid);
         }
 
         private void Button_Click_14(object sender, System.Windows.RoutedEventArgs e)
@@ -196,15 +197,17 @@ namespace RAdminPanel.UserControlFolder
             CattegoryName.Text = "";
             ComboPrioritet.Text = "";
             ComboActiv.Text = "";
+            ComboSufics.Text = "";
             IntID = 0;
         }
 
         private void Button_Click_15(object sender, System.Windows.RoutedEventArgs e)
         {
             Base1 = new Base();
-            if (CattegoryName.Text != "" && ComboPrioritet.Text != "" && ComboActiv.Text != "")
+            if (CattegoryName.Text != "" && ComboPrioritet.Text != "" && ComboActiv.Text != "" && ComboSufics.Text != "")
             {
-                Base1.RegistrToBase("INSERT INTO services VALUES(NULL,'" + CattegoryName.Text + "','" + ComboPrioritet.Text + "'," + IntID + "," + ComboActiv.SelectedIndex + ")");
+                Base1.RegistrToBase("INSERT INTO services VALUES(NULL,'" + CattegoryName.Text + "','" + ComboPrioritet.Text + "'," + IntID + "," + ComboActiv.SelectedIndex + ",'" + ComboSufics.Text + "')");
+                Base1.RegistrToBase("UPDATE alfavit SET STATUS=1 WHERE NAME1='" + ComboSufics.Text + "'");
                 if (ComboCategoria.Text == string.Empty)
                 {
                     CategoriID();
@@ -228,9 +231,11 @@ namespace RAdminPanel.UserControlFolder
                 CattegoryName.Text = "";
                 ComboPrioritet.Text = "";
                 ComboActiv.Text = "";
+                ComboSufics.Text = "";
                 IntID = 0;
                 UpdateDataGrid1();
                 SourseCombo();
+                Sufficss();
                 UpdateDataGridInsert();
             }
             else
@@ -240,42 +245,53 @@ namespace RAdminPanel.UserControlFolder
         }
         void CategoriID()
         {
-                Base1 = new Base();
-                PoslednyElement = Convert.ToInt32(Base1.ReturnID1("SELECT id FROM services ORDER BY id DESC LIMIT 1"));
+            Base1 = new Base();
+            PoslednyElement = Convert.ToInt32(Base1.ReturnID1("SELECT id FROM services ORDER BY id DESC LIMIT 1"));
         }
         public void DeleteData(int column)
         {
-                string id = "";
-                DataRowView dataRow = (DataRowView)GlavDataGrid.SelectedItem;
-                if (dataRow != null)
+            string id = "";
+            DataRowView dataRow = (DataRowView)GlavDataGrid.SelectedItem;
+            if (dataRow != null)
+            {
+                id = dataRow.Row.ItemArray[column].ToString();
+                if (id != "")
                 {
-                    id = dataRow.Row.ItemArray[column].ToString();
-                    if (id != "")
+                    if (id != "Нет")
                     {
-                        if (id != "Нет")
-                        {
-                            Base1 = new Base();
-                            Message messageO = new Message();
-                            string ID1 = Base1.ReturnID1("SELECT id from services WHERE  NAME='" + id + "'");
-                            messageO.Id = ID1;
-                            messageO.TableBasa = "services";
-                            messageO.del_ += () => UpdateDataGrid1();
-                            messageO.ShowDialog();
-                            SourseCombo();
-                            Base1.RegistrToBase("DELETE FROM service_langs WHERE NAME='" + id + "'");
-                        }
-                        else
-                        {
-                            MessageBox.Show("Это пусто !", "Внимание!", MessageBoxButton.OK, MessageBoxImage.Information);
-                        }
+                        Base1 = new Base();
+                        Message messageO = new Message();
+                        string ID1 = Base1.ReturnID1("SELECT id from services WHERE  NAME='" + id + "'");
+                        messageO.Id = ID1;
+                        messageO.TableBasa = "services";
+                        messageO.del_ += () => UpdateDataGrid1();
+                        messageO.ShowDialog();
+                        SourseCombo();
+                        Base1.RegistrToBase("UPDATE alfavit AS a INNER JOIN services AS s ON a.name1=s.suffix SET a.`status`=0 WHERE s.name='" + id + "'");
+                        Base1.RegistrToBase("DELETE FROM service_langs WHERE NAME='" + id + "'");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Это пусто !", "Внимание!", MessageBoxButton.OK, MessageBoxImage.Information);
                     }
                 }
-                UpdateDataGridInsert();
+            }
+            UpdateDataGridInsert();
+            Sufficss();
         }
         void UpdateDataGridInsert()
         {
-                Base1 = new Base();
-                Base1.SoursDataGrid("SELECT id,`name`,`index`,case when is_active='0' then 'OF' ELSE 'ON' END AS is_active from services", ref DataGridD);
+            Base1 = new Base();
+            Base1.SoursDataGrid("SELECT id,`name`,`index`,case when is_active='0' then 'OF' ELSE 'ON' END AS is_active from services", ref DataGridD);
+        }
+        void Sufficss()
+        {
+            Base1 = new Base();
+            Base1.eventDysplay2 += delegate (List<string> list)
+              {
+                  ComboSufics.ItemsSource = list;
+              };
+            Base1.Display("SELECT NAME1 FROM alfavit WHERE STATUS=0");
         }
     }
 }

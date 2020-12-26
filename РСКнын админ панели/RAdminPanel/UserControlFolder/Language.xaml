@@ -10,7 +10,7 @@
             <TabControl BorderThickness="0">
                 <TabItem Style="{DynamicResource TabControl}" Header="Добавить новый язык" Width="150">
                     <StackPanel HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
-                        <Grid Width="400" HorizontalAlignment="Left">
+                        <Grid Width="470" HorizontalAlignment="Left">
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition/>
                                 <ColumnDefinition/>

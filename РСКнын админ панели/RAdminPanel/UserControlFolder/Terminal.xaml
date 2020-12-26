@@ -9,7 +9,7 @@
     <Grid>
         <Border Padding="20">
             <TabControl BorderThickness="0">
-                <TabItem Header="Терминалдын тилин тандоо" Style="{DynamicResource TabControl}" Width="200">
+                <TabItem Header="Терминалдын тилин тандоо" Style="{DynamicResource TabControl}" Width="210">
                     <Grid>
                         <StackPanel>
                             <StackPanel Orientation="Horizontal">
@@ -56,7 +56,7 @@
                         </Canvas>
                     </Grid>
                 </TabItem>
-                <TabItem Header="Создание меню для терминала" Style="{DynamicResource TabControl}" Width="210">
+                <TabItem Header="Создание меню для терминала" Style="{DynamicResource TabControl}" Width="220">
                     <Grid>
                         <Grid.RowDefinitions>
                             <RowDefinition Height="120"/>
@@ -74,13 +74,13 @@
                                 <ComboBoxItem Content="2"/>
                                 <ComboBoxItem Content="3"/>
                             </ComboBox>
-                            <Button Style="{DynamicResource ButtonStyle}" Content="Сохранить" Canvas.Left="436" Canvas.Top="71" Click="Button_Click_15"/>
+                            <Button Style="{DynamicResource ButtonStyle}" Content="Сохранить" Canvas.Left="715" Canvas.Top="72" Click="Button_Click_15"/>
                             <TextBlock Text="Активный" Canvas.Top="40" Canvas.Left="436" Width="105"/>
                             <ComboBox x:Name="ComboActiv" Canvas.Left="548" Canvas.Top="39" Width="150" IsReadOnly="True">
                                 <ComboBoxItem Content="OF"/>
                                 <ComboBoxItem Content="ON"/>
                             </ComboBox>
-                            <Button Style="{DynamicResource ResourceKey=ButtonStyle}" Canvas.Left="602" Canvas.Top="71" Click="Button_Click_14">
+                            <Button Style="{DynamicResource ResourceKey=ButtonStyle}" Canvas.Left="715" Canvas.Top="38" Click="Button_Click_14">
                                 <StackPanel Orientation="Horizontal">
                                     <Image Source="../Image/Ico/Clear.png" Margin="0,0,10,0"/>
                                     <TextBlock Text="Очистить все"/>
@@ -90,6 +90,8 @@
                             <ComboBox x:Name="ComboCategoria_Copy" Canvas.Left="212" Canvas.Top="72" Width="184" IsReadOnly="True" SelectedIndex="0" >
                                 <ComboBoxItem Content="RU"/>
                             </ComboBox>
+                            <TextBlock Text="Суффикс" Canvas.Top="73" Canvas.Left="436" Width="105"/>
+                            <ComboBox x:Name="ComboSufics" Canvas.Left="548" Canvas.Top="72" Width="150" IsReadOnly="True"/>
                         </Canvas>
                         <DataGrid x:Name="GlavDataGrid"  FontSize="12"  CanUserAddRows="False" Style="{DynamicResource grid_xml}" ColumnHeaderStyle="{DynamicResource hederstyle}" VerticalAlignment="Stretch" VerticalScrollBarVisibility="Auto"   HeadersVisibility="Column"
                    AutoGenerateColumns="False"  Grid.Row="1">
@@ -207,7 +209,7 @@
                         </DataGrid>
                     </Grid>
                 </TabItem>
-                <TabItem Header="Управление меню терминала" Style="{DynamicResource TabControl}" Width="210">
+                <TabItem Header="Управление меню терминала" Style="{DynamicResource TabControl}" Width="215">
                     <Grid>
                         <Grid.RowDefinitions>
                             <RowDefinition Height="130"/>
