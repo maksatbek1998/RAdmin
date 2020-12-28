@@ -21,6 +21,7 @@ namespace RAdminPanel.UserControlFolder
         List<langgrid> lister;
         List<langgrid> Updatelist;
         List<langgrid> Updatelister;
+        List<int> langlist = new List<int>();
         public Language()
         {
             InitializeComponent();
@@ -58,14 +59,15 @@ namespace RAdminPanel.UserControlFolder
                         list.Add(new langgrid
                         {
                             id = (i + 1).ToString(),
-                            currentlan = db.Rows[i][0].ToString(),
+                            currentlan = db.Rows[i][1].ToString(),
                             newlan = ""
                         });
+                        langlist.Add(int.Parse(db.Rows[i][0].ToString()));
                     }
                     dataGrid.ItemsSource = list;
                 }
             };
-            dataBase.SoursData("SELECT name FROM service_langs where locale = '" + Languages.Text + "'");
+            dataBase.SoursData("SELECT service_id,name FROM service_langs where locale = '" + Languages.Text + "'");
         }
 
         private void Button_Click(object sender, System.Windows.RoutedEventArgs e)
@@ -74,9 +76,9 @@ namespace RAdminPanel.UserControlFolder
             {
                 dataBase = new Base();
                 lister = (List<langgrid>)dataGrid.ItemsSource;
-                for (int i = 0, c = 1; i < count; i++, c++)
+                for (int i = 0; i < count; i++)
                 {
-                    dataBase.RegistrToBase("update service_langs set name='" + lister[i].newlan.ToString() + "' where service_id = " + c + " and locale = '" + shorting + "'");
+                    dataBase.RegistrToBase("update service_langs set name='" + lister[i].newlan.ToString() + "' where service_id = " + langlist[i].ToString() + " and locale = '" + shorting + "'");
                 }
                 Refresh();
                 MessageBox.Show("Сохранение прошло успешно");
@@ -105,9 +107,9 @@ namespace RAdminPanel.UserControlFolder
             {
                 dataBase = new Base();
                 dataBase.RegistrToBase("insert into langs(locale) values ('" + ShortName.Text + "')");
-                for (int i = 1; i < count + 1; i++)
+                for (int i = 0; i <langlist.Count; i++)
                 {
-                    dataBase.RegistrToBase("insert into service_langs(service_id,locale) values(" + i + ",'" + ShortName.Text + "')");
+                    dataBase.RegistrToBase("insert into service_langs(service_id,locale) values(" + langlist[i].ToString() + ",'" + ShortName.Text + "')");
                 }
                 shorting = ShortName.Text;
             }
@@ -126,11 +128,11 @@ namespace RAdminPanel.UserControlFolder
                 else
                 {
                     dataBase.RegistrToBase("DELETE from service_langs WHERE locale  ='" + DeleteComBox.Text + "'");
-                    dataBase.RegistrToBase("DELETE from langs WHERE id=" + ID + "");       
+                    dataBase.RegistrToBase("DELETE from langs WHERE id=" + ID + "");
                     MessageBox.Show("Успешно удалено", "", MessageBoxButton.OK);
                     DeleteComBox.SelectedItem = null;
                 }
-            
+
             }
         }
 
@@ -163,7 +165,22 @@ namespace RAdminPanel.UserControlFolder
         private void UpdateComboBox_DropDownClosed(object sender, EventArgs e)
         {
             if (UpdateComboBox.Text != String.Empty)
-                DataGridUpdate();
+            {
+                if (UpdateComboBox.Text != "RU")
+                {
+                    DataGridUpdate();
+                }
+                else
+                {
+                    MessageBox.Show("Нельзя изменить начальный язык");
+                    UpdateComboBox.SelectedItem = null;
+                }
+            }
+            else
+            {
+                MessageBox.Show("Выберите язык");
+            }
+
         }
         public void DataGridUpdate()
         {
