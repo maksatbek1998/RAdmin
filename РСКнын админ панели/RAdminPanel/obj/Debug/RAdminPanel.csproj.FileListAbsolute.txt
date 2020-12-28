@@ -188,7 +188,6 @@ D:\C# projects\rsk\RAdmin\РСКнын админ панели\RAdminPanel\bin\D
 D:\C# projects\rsk\RAdmin\РСКнын админ панели\RAdminPanel\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
 C:\RAdmin\РСКнын админ панели\RAdminPanel\obj\Debug\UserControlFolder\Mode.g.cs
 C:\RAdmin\РСКнын админ панели\RAdminPanel\obj\Debug\UserControlFolder\Mode.baml
-C:\RAdmin\РСКнын админ панели\RAdminPanel\obj\Debug\RAdminPanel.csprojAssemblyReference.cache
 D:\C# projects\RAdmin\РСКнын админ панели\RAdminPanel\bin\Debug\RAdminPanel.exe.config
 D:\C# projects\RAdmin\РСКнын админ панели\RAdminPanel\bin\Debug\RAdminPanel.exe
 D:\C# projects\RAdmin\РСКнын админ панели\RAdminPanel\bin\Debug\RAdminPanel.pdb
