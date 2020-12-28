@@ -219,7 +219,7 @@ namespace RAdminPanel.UserControlFolder {
             this.TerminalName_Copy = ((System.Windows.Controls.ComboBox)(target));
             
             #line 101 "..\..\..\UserControlFolder\Rasspisania.xaml"
-            this.TerminalName_Copy.SelectionChanged += new System.Windows.Controls.SelectionChangedEventHandler(this.TerminalName_SelectionChanged);
+            this.TerminalName_Copy.SelectionChanged += new System.Windows.Controls.SelectionChangedEventHandler(this.TerminalName_Copy_SelectionChanged);
             
             #line default
             #line hidden

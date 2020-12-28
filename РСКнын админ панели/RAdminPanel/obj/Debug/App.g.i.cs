@@ -54,7 +54,7 @@ namespace RAdminPanel {
             _contentLoaded = true;
             
             #line 5 "..\..\App.xaml"
-            this.StartupUri = new System.Uri("UserControlFolder/Terminal.xaml", System.UriKind.Relative);
+            this.StartupUri = new System.Uri("UserControlFolder/Rasspisania.xaml", System.UriKind.Relative);
             
             #line default
             #line hidden
