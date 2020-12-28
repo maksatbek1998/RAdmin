@@ -24,7 +24,7 @@ namespace RAdminPanel.UserControlFolder
     {
         Base Bases = new Base();
         string id_1;
-        int ID;
+        int ID=0;
         public Rasspisania()
         {
             InitializeComponent();
@@ -35,9 +35,9 @@ namespace RAdminPanel.UserControlFolder
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            if (Power_Date.Text != "" && Power_OF.Text != "" && Power_ON.Text != "" && TerminalPower.Text != "" && TerminalName.Text != "")
+            if (ID!=0 && Power_Date.Text != "" && Power_OF.Text != "" && Power_ON.Text != "" && TerminalPower.Text != "" && TerminalName.Text != "")
             {
-                Bases.RegistrToBase("insert INTO terminals_options(terminal_id,t_key,t_ON,t_OF,t_date)VALUES('" + ID.ToString() + "','" + TerminalPower.Text + "','" + Power_ON.Text + "','" + Power_OF.Text + "','" + Power_Date.Text + "')");
+                Bases.RegistrToBase("insert INTO terminals_options(terminal_id,t_key,t_ON,t_OF,t_date)VALUES(" + ID + ",'" + TerminalPower.Text + "','" + Power_ON.Text + "','" + Power_OF.Text + "','" + Power_Date.Text + "')");
                 Power_Date.Text = "";
                 Power_OF.Text = "";
                 Power_ON.Text = "";
@@ -45,7 +45,11 @@ namespace RAdminPanel.UserControlFolder
                 TerminalPower.Text = "";
                 TerminalName.Text = "";
                 UpdateData();
-            }    
+            }
+            else
+            {
+                MessageBox.Show("Заполните все поля!", "Внимание!", MessageBoxButton.OK);
+            }
         }
         public void UpdateData()
         {
@@ -70,28 +74,28 @@ namespace RAdminPanel.UserControlFolder
         }
         public void UpdateComboBox()
         {
-            Bases.eventDysplay3 += delegate (Dictionary<string,string> mass)
+            Bases.eventDysplay2 += delegate (List<string> mass)
              {
                  foreach (var item in mass)
                  {
-                     TerminalName.Items.Add(item.Value.ToString());
-                     TerminalName_Copy.Items.Add(item.Value.ToString());
+                     TerminalName.ItemsSource = mass;
+                     TerminalName_Copy.ItemsSource = mass;
                  }
              };
-            Bases.Display_Dictionary1("SELECT NAME AS name,id FROM terminals");
+            Bases.Display("SELECT NAME AS name,id FROM terminals");
         }
 
         private void TerminalName_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            if (TerminalName_Copy.SelectedValue!=null)
+            if (TerminalName.SelectedValue!=null)
             {
-                ID = Bases.ReturnID("SELECT id FROM terminals WHERE NAME='" + TerminalName_Copy.SelectedValue.ToString() + "'");
+                ID = Bases.ReturnID("SELECT id FROM terminals WHERE NAME='" + TerminalName.SelectedValue.ToString() + "'");
             }
         }
 
         private void Button_Click_2(object sender, RoutedEventArgs e)
         {
-            if (ID != 0 && ON_Time.Text!="" && OF_Time.Text!="" && TerminalPower_Copy.Text != "" && DayCombobox.Text != "")
+            if (ID != 0 && ON_Time.Text !="" && OF_Time.Text !="" && TerminalName_Copy.Text !="" && TerminalPower_Copy.Text != "" && DayCombobox.Text != "")
             {
                 Bases.RegistrToBase("insert INTO terminals_options(terminal_id,t_key,t_ON,t_OF,t_day) VALUES (" + ID + ",'" + TerminalPower_Copy.Text + "','" + ON_Time.Text + "','" + OF_Time.Text + "','" + DayCombobox.Text + "')");
                 ID = 0;
@@ -99,7 +103,12 @@ namespace RAdminPanel.UserControlFolder
                 ON_Time.Text = "";
                 OF_Time.Text = "";
                 DayCombobox.Text = "";
+                TerminalName_Copy.Text = "";
                 Day_Grafik1();
+            }
+            else
+            {
+                MessageBox.Show("Заполните все поля!", "Внимание!",MessageBoxButton.OK);
             }
         }
         void Day_Grafik1()
@@ -118,7 +127,7 @@ namespace RAdminPanel.UserControlFolder
                 {
                     messageO.Id = id_1;
                     messageO.TableBasa = "terminals_options";
-                    messageO.del_ += () => UpdateData();
+                    messageO.del_ += () => Day_Grafik1();
                     messageO.ShowDialog();
                 }
             }
@@ -126,9 +135,9 @@ namespace RAdminPanel.UserControlFolder
 
         private void TerminalName_Copy_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            if (TerminalName.SelectedValue != null)
+            if (TerminalName_Copy.SelectedValue != null)
             {
-                ID = Bases.ReturnID("SELECT id FROM terminals WHERE NAME='" + TerminalName.SelectedValue.ToString() + "'");
+                ID = Bases.ReturnID("SELECT id FROM terminals WHERE NAME='" + TerminalName_Copy.SelectedValue.ToString() + "'");
             }
         }
     }

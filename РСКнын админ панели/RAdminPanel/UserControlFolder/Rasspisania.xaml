@@ -17,7 +17,7 @@
                         </Grid.RowDefinitions>
                         <Canvas>
                             <TextBlock Text="Терминалдын дем алуу убакыттары" Canvas.Left="6" Canvas.Top="18" Width="290"/>
-                            <DatePicker x:Name="Power_Date" Canvas.Left="287" Canvas.Top="16" Width="110" />
+                            <DatePicker x:Name="Power_Date" Canvas.Left="287" Canvas.Top="16" Width="230" />
                             <Button Content="Сактоо" Style="{DynamicResource ButtonStyle}" Canvas.Left="546" Canvas.Top="89" Click="Button_Click"/>
                             <TextBlock Text="Жануу убакты" Canvas.Left="7" Canvas.Top="52" Width="140"/>
                             <ComboBox x:Name="Power_ON" Canvas.Left="143" Canvas.Top="52" Width="115" IsReadOnly="False">
@@ -86,9 +86,9 @@
                                     <ComboBoxItem Content="18:00"/>
                                     <ComboBoxItem Content="19:00"/>
                                 </ComboBox>
-                                <Button Content="Сактоо" Style="{DynamicResource ButtonStyle}" Canvas.Left="512" Canvas.Top="45" Click="Button_Click_2"/>
+                                <Button Content="Сактоо" Style="{DynamicResource ButtonStyle}" Canvas.Left="548" Canvas.Top="45" Click="Button_Click_2"/>
                                 <TextBlock Text="Кун тартиби" Canvas.Left="243" Canvas.Top="46" Width="101"/>
-                                <ComboBox x:Name="DayCombobox" Canvas.Left="349" Canvas.Top="46" Width="126" IsReadOnly="True">
+                                <ComboBox x:Name="DayCombobox" Canvas.Left="349" Canvas.Top="46" Width="158" IsReadOnly="True">
                                     <ComboBoxItem Content="Понедельник"/>
                                     <ComboBoxItem Content="Вторник"/>
                                     <ComboBoxItem Content="Среда"/>
@@ -98,9 +98,9 @@
                                     <ComboBoxItem Content="Воскресенье"/>
                                 </ComboBox>
                                 <TextBlock Text="Терминал" Canvas.Left="243" Canvas.Top="10" Width="100"/>
-                                <ComboBox x:Name="TerminalName_Copy" Canvas.Left="349" Canvas.Top="10" Width="126" IsReadOnly="True" SelectionChanged="TerminalName_SelectionChanged"/>
-                                <TextBlock Text="Абалы" Canvas.Left="512" Canvas.Top="10" Width="80"/>
-                                <ComboBox x:Name="TerminalPower_Copy" Canvas.Left="597" Canvas.Top="10" Width="115" IsReadOnly="True">
+                                <ComboBox x:Name="TerminalName_Copy" Canvas.Left="349" Canvas.Top="10" Width="158" IsReadOnly="True" SelectionChanged="TerminalName_Copy_SelectionChanged"/>
+                                <TextBlock Text="Абалы" Canvas.Left="548" Canvas.Top="10" Width="80"/>
+                                <ComboBox x:Name="TerminalPower_Copy" Canvas.Left="633" Canvas.Top="10" Width="115" IsReadOnly="True">
                                     <ComboBoxItem Content="ON"/>
                                     <ComboBoxItem Content="OF"/>
                                 </ComboBox>
