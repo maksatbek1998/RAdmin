@@ -131,7 +131,7 @@ namespace RAdminPanel.UserControlFolder
             if (Is_Activen.Text != String.Empty && ComboPrioritet_Copy.Text != String.Empty && Flag != 0 && SaveID != "")
             {
                 Base1 = new Base();
-                Base1.RegistrToBase("UPDATE services SET `index`=" + ComboPrioritet_Copy.Text + ",is_active=" + Is_Activen.SelectedIndex + " WHERE id=" + SaveID);
+                Base1.RegistrToBase("UPDATE services SET `index`=" + ComboPrioritet_Copy.Text + ",is_active=" + Is_Activen.SelectedIndex + ",alfavit_name='"+ ComboSuffix.Text+ "' WHERE id=" + SaveID);
                 UpdateDataGridInsert();
                 SaveID = "";
                 NameCatedory.Text = "";
@@ -161,7 +161,7 @@ namespace RAdminPanel.UserControlFolder
                 NameCatedory.Text = dataRow.Row.ItemArray[1].ToString();
                 ComboPrioritet_Copy.Text = dataRow.Row.ItemArray[2].ToString();
                 Is_Activen.Text = dataRow.Row.ItemArray[3].ToString();
-                ComboSuffix.Text= dataRow.Row.ItemArray[4].ToString();
+                //ComboSuffix.Text= dataRow.Row.ItemArray[4].ToString();
                 Flag = 1;            
                 
             }
@@ -288,7 +288,7 @@ namespace RAdminPanel.UserControlFolder
         void UpdateDataGridInsert()
         {
             Base1 = new Base();
-            Base1.SoursDataGrid("SELECT id,`name`,`index`,case when is_active='0' then 'OF' ELSE 'ON' END AS is_active,suffix as suff from services", ref DataGridD);
+            Base1.SoursDataGrid("SELECT `id`,`name`,`index`,`alfavit_name`,CASE WHEN is_active=0 THEN 'OF' ELSE 'ON' END AS `is_active` from services", ref DataGridD);
         }
         void Sufficss()
         {

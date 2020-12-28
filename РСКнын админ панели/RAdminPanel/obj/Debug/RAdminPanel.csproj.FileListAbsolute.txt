@@ -321,3 +321,5 @@ D:\project\ElectronRSK\RAdmin\РСКнын админ панели\RAdminPanel\o
 D:\project\ElectronRSK\RAdmin\РСКнын админ панели\RAdminPanel\obj\Debug\RAdminPanel.csproj.CopyComplete
 D:\project\ElectronRSK\RAdmin\РСКнын админ панели\RAdminPanel\obj\Debug\RAdminPanel.exe
 D:\project\ElectronRSK\RAdmin\РСКнын админ панели\RAdminPanel\obj\Debug\RAdminPanel.pdb
+C:\RAdmin\РСКнын админ панели\RAdminPanel\bin\Debug\packages.config
+C:\RAdmin\РСКнын админ панели\RAdminPanel\obj\Debug\RAdminPanel.csprojAssemblyReference.cache

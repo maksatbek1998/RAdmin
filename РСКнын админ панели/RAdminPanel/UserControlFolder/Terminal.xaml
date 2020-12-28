@@ -241,14 +241,14 @@
                             <ComboBox x:Name="ComboSuffix" Canvas.Left="196" Canvas.Top="122" Width="230" IsReadOnly="False"/>
                         </Canvas>
                         <TextBox x:Name="SearchText" Style="{DynamicResource styleLog}" Width="228" Canvas.Left="823" Canvas.Top="101" Tag="Категорияны издоо" Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Right" SelectionChanged="TextBox_SelectionChanged"/>
-                        <DataGrid x:Name="DataGridD" FontSize="12"  CanUserAddRows="False" Style="{DynamicResource grid_xml}" ColumnHeaderStyle="{DynamicResource hederstyle}" VerticalAlignment="Stretch" VerticalScrollBarVisibility="Auto"   HeadersVisibility="Column" IsReadOnly="True"
+                        <DataGrid x:Name="DataGridD" FontSize="12" ItemsSource="{Binding}"  CanUserAddRows="False" Style="{DynamicResource grid_xml}" ColumnHeaderStyle="{DynamicResource hederstyle}" VerticalAlignment="Stretch" VerticalScrollBarVisibility="Auto"   HeadersVisibility="Column" IsReadOnly="True"
                    AutoGenerateColumns="False"  Grid.Row="2">
                             <DataGrid.Columns>
                                 <DataGridTextColumn Header="№" Width="40" Binding="{Binding id}"/>
                                 <DataGridTextColumn Header="Категории" Binding="{Binding name}"/>
-                                <DataGridTextColumn Header="Активный" Binding="{Binding is_active}"/>
                                 <DataGridTextColumn Header="Приоритет" Binding="{Binding index}"/>
-                                <DataGridTextColumn Header="Суффикс" Binding="{Binding suff}"/>
+                                <DataGridTextColumn Header="Активный" Binding="{Binding is_active}"/>
+                                <DataGridTextColumn Header="Суффикс" Binding="{Binding alfavit_name}"/>
                                 <DataGridTemplateColumn Header="Изменить" Width="80">
                                     <DataGridTemplateColumn.CellTemplate>
                                         <DataTemplate>
