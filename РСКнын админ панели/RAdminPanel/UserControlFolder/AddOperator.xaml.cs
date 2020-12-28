@@ -18,19 +18,22 @@ namespace RAdminPanel.UserControlFolder
         Base dataBase;
         static int returnedFili;
         static int returnedPositionId;
-        
+        static int returnedWindowId;
+
         public AddOperator()
         {
             InitializeComponent();          
             UpdateData();
             UpdateComboBoxBranch();
             UpdateComboBoxPosition();
+            WindowComboBoxNanes();
         }
         public void Refresh() 
         {
             UserNameTextBox.Text = "";
             LoginTextBox.Text = "";
             PasswordTextBox.Text = "";
+            WindowComboBox.Text = "";
             BranchComboBox.SelectedItem =  null;
             PositionComboBox.SelectedItem = null;
 
@@ -42,7 +45,7 @@ namespace RAdminPanel.UserControlFolder
             {
                 dataBase = new Base();
 
-                dataBase.RegistrToBase("insert into users(name_u,login,password,position_id,branches_id,workplace_id) values ('" + UserNameTextBox.Text + "','" + LoginTextBox.Text + "','" + Base.ComputeSha256Hash(PasswordTextBox.Text).ToString() + "'," + returnedPositionId + "," + returnedFili + "," + 28 + ")");
+                dataBase.RegistrToBase("insert into users(name_u,login,password,position_id,branches_id,workplace_id) values ('" + UserNameTextBox.Text + "','" + LoginTextBox.Text + "','" + Base.ComputeSha256Hash(PasswordTextBox.Text).ToString() + "'," + returnedPositionId + "," + returnedFili + "," + returnedWindowId + ")");
                 UpdateData();
                 Refresh();
             }
@@ -55,7 +58,7 @@ namespace RAdminPanel.UserControlFolder
         public void UpdateData()
         {
             dataBase = new Base();
-            dataBase.SoursDataGrid("SELECT u.id,u.name_u,b.name_b,p.name_p,u.login,u.password FROM users AS u INNER JOIN position AS p ON p.id = u.position_id INNER JOIN branches AS b ON b.id = u.branches_id", ref dataGrid);
+            dataBase.SoursDataGrid("SELECT u.id,u.name_u,b.name_b,p.name_p,w.name AS NAME1,u.login,u.password FROM users AS u INNER JOIN position AS p ON p.id = u.position_id INNER JOIN branches AS b ON b.id = u.branches_id INNER JOIN workplaces AS w ON u.workplace_id=w.id", ref dataGrid);
         }
         public void UpdateComboBoxBranch()
         {
@@ -74,6 +77,15 @@ namespace RAdminPanel.UserControlFolder
                 PositionComboBox.ItemsSource = db;
             };
             dataBase.Display("SELECT name_p FROM position");
+        }
+        public void WindowComboBoxNanes()
+        {
+            dataBase = new Base();
+            dataBase.eventDysplay2 += delegate (List<string> db)
+            {
+                WindowComboBox.ItemsSource = db;
+            };
+            dataBase.Display("SELECT NAME FROM workplaces");
         }
         private void Button_Click_2(object sender, RoutedEventArgs e)
         {
@@ -118,8 +130,8 @@ namespace RAdminPanel.UserControlFolder
             {               
                 id_1 = dataRow.Row.ItemArray[0].ToString();
                 UserNameTextBox.Text = dataRow.Row.ItemArray[1].ToString();
-                LoginTextBox.Text = dataRow.Row.ItemArray[4].ToString();
-                PasswordTextBox.Text = dataRow.Row.ItemArray[5].ToString();
+                LoginTextBox.Text = dataRow.Row.ItemArray[5].ToString();
+                PasswordTextBox.Text = dataRow.Row.ItemArray[6].ToString();
             }
         }
 
@@ -129,17 +141,26 @@ namespace RAdminPanel.UserControlFolder
             {
 
                 dataBase = new Base();
-                dataBase.RegistrToBase("UPDATE users AS u SET u.name_u = '" + UserNameTextBox.Text + "' ,u.login ='" + LoginTextBox.Text + "' , u.password = '" + PasswordTextBox.Text + "', u.branches_id = " + returnedFili + ", u.position_id = "+returnedPositionId+",u.workplace_id = " + 28 + " WHERE id = " + id_1 + "");
+                dataBase.RegistrToBase("UPDATE users AS u SET u.name_u = '" + UserNameTextBox.Text + "' ,u.login ='" + LoginTextBox.Text + "' , u.password = '" + PasswordTextBox.Text + "', u.branches_id = " + returnedFili + ", u.position_id = "+returnedPositionId+",u.workplace_id = " + returnedWindowId + " WHERE id = " + id_1 + "");
                 MessageBox.Show("Данные успешно обновлены!");
                 UpdateData();
-                UpdateButton.Visibility = Visibility.Hidden;
-                SaveButton.Visibility = Visibility.Visible;
                 Refresh();
+                SaveButton.Visibility = Visibility.Visible;
+                UpdateButton.Visibility = Visibility.Collapsed;
             }
             else 
             {
                 MessageBox.Show("Не верно введены данные");
                 Refresh();
+            }
+        }
+
+        private void PositionComboBox_Copy_DropDownClosed(object sender, EventArgs e)
+        {
+            if (WindowComboBox.SelectedItem != null)
+            {
+                dataBase = new Base();
+                returnedWindowId = dataBase.ReturnID("SELECT id FROM workplaces WHERE NAME='" + WindowComboBox.SelectedValue.ToString() + "'");
             }
         }
     }

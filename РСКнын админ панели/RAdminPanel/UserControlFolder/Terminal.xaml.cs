@@ -136,6 +136,7 @@ namespace RAdminPanel.UserControlFolder
                 SaveID = "";
                 NameCatedory.Text = "";
                 Is_Activen.Text = "";
+                ComboSuffix.Text = "";
                 ComboPrioritet_Copy.Text = "";
             }
         }
@@ -146,6 +147,7 @@ namespace RAdminPanel.UserControlFolder
             NameCatedory.Text = "";
             Is_Activen.Text = "";
             ComboPrioritet_Copy.Text = "";
+            ComboSuffix.Text = "";
         }
 
         private void Button_Click_12(object sender, System.Windows.RoutedEventArgs e)
@@ -153,11 +155,15 @@ namespace RAdminPanel.UserControlFolder
             DataRowView dataRow = (DataRowView)DataGridD.SelectedItem;
             if (dataRow != null)
             {
+               // Base1 = new Base();
+              // AlfavitID=Base1.ReturnID("SELECT a.id FROM services AS s INNER JOIN alfavit AS a ON s.suffix=a.name1 AND s.id="+ dataRow.Row.ItemArray[0].ToString());
                 SaveID = dataRow.Row.ItemArray[0].ToString();
                 NameCatedory.Text = dataRow.Row.ItemArray[1].ToString();
-                Is_Activen.Text = dataRow.Row.ItemArray[3].ToString();
                 ComboPrioritet_Copy.Text = dataRow.Row.ItemArray[2].ToString();
-                Flag = 1;
+                Is_Activen.Text = dataRow.Row.ItemArray[3].ToString();
+                ComboSuffix.Text= dataRow.Row.ItemArray[4].ToString();
+                Flag = 1;            
+                
             }
         }
 
@@ -207,7 +213,7 @@ namespace RAdminPanel.UserControlFolder
             if (CattegoryName.Text != "" && ComboPrioritet.Text != "" && ComboActiv.Text != "" && ComboSufics.Text != "")
             {
                 Base1.RegistrToBase("INSERT INTO services VALUES(NULL,'" + CattegoryName.Text + "','" + ComboPrioritet.Text + "'," + IntID + "," + ComboActiv.SelectedIndex + ",'" + ComboSufics.Text + "')");
-                Base1.RegistrToBase("UPDATE alfavit SET STATUS=1 WHERE NAME1='" + ComboSufics.Text + "'");
+               // Base1.RegistrToBase("UPDATE alfavit SET STATUS=1 WHERE NAME1='" + ComboSufics.Text + "'");
                 if (ComboCategoria.Text == string.Empty)
                 {
                     CategoriID();
@@ -282,7 +288,7 @@ namespace RAdminPanel.UserControlFolder
         void UpdateDataGridInsert()
         {
             Base1 = new Base();
-            Base1.SoursDataGrid("SELECT id,`name`,`index`,case when is_active='0' then 'OF' ELSE 'ON' END AS is_active from services", ref DataGridD);
+            Base1.SoursDataGrid("SELECT id,`name`,`index`,case when is_active='0' then 'OF' ELSE 'ON' END AS is_active,suffix as suff from services", ref DataGridD);
         }
         void Sufficss()
         {
@@ -290,8 +296,9 @@ namespace RAdminPanel.UserControlFolder
             Base1.eventDysplay2 += delegate (List<string> list)
               {
                   ComboSufics.ItemsSource = list;
+                  ComboSuffix.ItemsSource = list;
               };
-            Base1.Display("SELECT NAME1 FROM alfavit WHERE STATUS=0");
+            Base1.Display("SELECT NAME1 FROM alfavit");
         }
     }
 }

@@ -10,7 +10,7 @@
         <Border Padding="20">
             <Grid>
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="180"/>
+                    <RowDefinition Height="140"/>
                     <RowDefinition Height="*"/>
                 </Grid.RowDefinitions>
                 <Grid Grid.Row="0">
@@ -18,7 +18,7 @@
                         <Image Source="../Image/Just_Image/workers.png" Width="110" Height="120" Canvas.Left="17" Canvas.Top="26"/>
                         <TextBlock Text="Жумуштун аталышы" Canvas.Left="177" Canvas.Top="30" />
                         <TextBox x:Name="workName"  FontSize="14" Tag="Жумуштун аталышы" Height="24" Width="254" Canvas.Left="330" Canvas.Top="26"/>
-                        <Button Click="Button_Click" Style="{DynamicResource ButtonStyle}" Content="Сактоо" Canvas.Left="434" Canvas.Top="133"/>
+                        <Button Click="Button_Click" Style="{DynamicResource ButtonStyle}" Content="Сактоо" Canvas.Left="434" Canvas.Top="60"/>
                     </Canvas>
                 </Grid>
                 <Grid Grid.Row="1">
@@ -27,7 +27,6 @@
                         <DataGrid.Columns>
                             <DataGridTextColumn Header="№" Width="50" Binding="{Binding id}"/>
                             <DataGridTextColumn Header="Жумуштун аталышы" Binding="{Binding name}"/>
-                            <DataGridTextColumn Header="Статус" Binding="{Binding status}"/>
                             <DataGridTemplateColumn Header="Удалить" Width="80" >
                                 <DataGridTemplateColumn.CellTemplate>
                                     <DataTemplate>

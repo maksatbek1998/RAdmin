@@ -212,12 +212,12 @@
                 <TabItem Header="Управление меню терминала" Style="{DynamicResource TabControl}" Width="215">
                     <Grid>
                         <Grid.RowDefinitions>
-                            <RowDefinition Height="130"/>
+                            <RowDefinition Height="150"/>
                             <RowDefinition Height="35"/>
                             <RowDefinition Height="*"/>
                         </Grid.RowDefinitions>
                         <Canvas>
-                            <Button Style="{DynamicResource ButtonStyle}" Content="Сохранить" Canvas.Left="435" Canvas.Top="89" Click="Button_Click_13"/>
+                            <Button Style="{DynamicResource ButtonStyle}" Content="Сохранить" Canvas.Left="444" Canvas.Top="121" Click="Button_Click_13"/>
                             <TextBlock Text="Активный" Canvas.Top="58" Canvas.Left="10" Width="105"/>
                             <ComboBox x:Name="Is_Activen" Canvas.Left="196" Canvas.Top="58" Width="230" IsReadOnly="True">
                                 <ComboBoxItem Content="OF"/>
@@ -231,12 +231,14 @@
                                 <ComboBoxItem Content="2"/>
                                 <ComboBoxItem Content="3"/>
                             </ComboBox>
-                            <Button Style="{DynamicResource ResourceKey=ButtonStyle}" Canvas.Left="602" Canvas.Top="89" Click="Button_Click_11">
+                            <Button Style="{DynamicResource ResourceKey=ButtonStyle}" Canvas.Left="611" Canvas.Top="121" Click="Button_Click_11">
                                 <StackPanel Orientation="Horizontal">
                                     <Image Source="/RAdminPanel;component/Image/Ico/Clear.png" Margin="0,0,10,0"/>
                                     <TextBlock Text="Очистить все"/>
                                 </StackPanel>
                             </Button>
+                            <TextBlock Text="Суффикс" Canvas.Top="122" Canvas.Left="11" Width="105"/>
+                            <ComboBox x:Name="ComboSuffix" Canvas.Left="196" Canvas.Top="122" Width="230" IsReadOnly="False"/>
                         </Canvas>
                         <TextBox x:Name="SearchText" Style="{DynamicResource styleLog}" Width="228" Canvas.Left="823" Canvas.Top="101" Tag="Категорияны издоо" Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Right" SelectionChanged="TextBox_SelectionChanged"/>
                         <DataGrid x:Name="DataGridD" FontSize="12"  CanUserAddRows="False" Style="{DynamicResource grid_xml}" ColumnHeaderStyle="{DynamicResource hederstyle}" VerticalAlignment="Stretch" VerticalScrollBarVisibility="Auto"   HeadersVisibility="Column" IsReadOnly="True"
@@ -246,6 +248,7 @@
                                 <DataGridTextColumn Header="Категории" Binding="{Binding name}"/>
                                 <DataGridTextColumn Header="Активный" Binding="{Binding is_active}"/>
                                 <DataGridTextColumn Header="Приоритет" Binding="{Binding index}"/>
+                                <DataGridTextColumn Header="Суффикс" Binding="{Binding suff}"/>
                                 <DataGridTemplateColumn Header="Изменить" Width="80">
                                     <DataGridTemplateColumn.CellTemplate>
                                         <DataTemplate>
