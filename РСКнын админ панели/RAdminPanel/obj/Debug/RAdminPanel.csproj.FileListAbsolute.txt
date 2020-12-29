@@ -101,70 +101,10 @@ D:\C# projects\rsk\RAdmin\РСКнын админ панели\RAdminPanel\obj\D
 D:\C# projects\rsk\RAdmin\РСКнын админ панели\RAdminPanel\obj\Debug\UserControlFolder\Message.g.cs
 D:\C# projects\rsk\RAdmin\РСКнын админ панели\RAdminPanel\obj\Debug\UserControlFolder\Message.baml
 D:\C# projects\rsk\RAdmin\РСКнын админ панели\RAdminPanel\obj\Debug\GeneratedInternalTypeHelper.g.cs
-C:\RAdmin\РСКнын админ панели\RAdminPanel\obj\Debug\StyleFolder\StyleDictionary.baml
-C:\RAdmin\РСКнын админ панели\RAdminPanel\obj\Debug\MainWindow.g.cs
-C:\RAdmin\РСКнын админ панели\RAdminPanel\obj\Debug\UserControlFolder\AddOperator.g.cs
-C:\RAdmin\РСКнын админ панели\RAdminPanel\obj\Debug\UserControlFolder\Branches.g.cs
-C:\RAdmin\РСКнын админ панели\RAdminPanel\obj\Debug\UserControlFolder\Client.g.cs
-C:\RAdmin\РСКнын админ панели\RAdminPanel\obj\Debug\UserControlFolder\Departament.g.cs
-C:\RAdmin\РСКнын админ панели\RAdminPanel\obj\Debug\UserControlFolder\Language.g.cs
-C:\RAdmin\РСКнын админ панели\RAdminPanel\obj\Debug\UserControlFolder\Message.g.cs
-C:\RAdmin\РСКнын админ панели\RAdminPanel\obj\Debug\UserControlFolder\Password.g.cs
-C:\RAdmin\РСКнын админ панели\RAdminPanel\obj\Debug\UserControlFolder\Rasspisania.g.cs
-C:\RAdmin\РСКнын админ панели\RAdminPanel\obj\Debug\UserControlFolder\Sound.g.cs
-C:\RAdmin\РСКнын админ панели\RAdminPanel\obj\Debug\UserControlFolder\Terminal.g.cs
-C:\RAdmin\РСКнын админ панели\RAdminPanel\obj\Debug\UserControlFolder\WorkPlaces.g.cs
-C:\RAdmin\РСКнын админ панели\RAdminPanel\obj\Debug\App.g.cs
-C:\RAdmin\РСКнын админ панели\RAdminPanel\obj\Debug\GeneratedInternalTypeHelper.g.cs
-C:\RAdmin\РСКнын админ панели\RAdminPanel\obj\Debug\RAdminPanel_MarkupCompile.cache
-C:\RAdmin\РСКнын админ панели\RAdminPanel\obj\Debug\RAdminPanel_MarkupCompile.lref
-C:\RAdmin\РСКнын админ панели\RAdminPanel\obj\Debug\RAdminPanel.exe
-C:\RAdmin\РСКнын админ панели\RAdminPanel\obj\Debug\RAdminPanel.pdb
-C:\RAdmin\РСКнын админ панели\RAdminPanel\bin\Debug\RAdminPanel.exe.config
 C:\RAdmin\РСКнын админ панели\RAdminPanel\bin\Debug\RAdminPanel.exe
-C:\RAdmin\РСКнын админ панели\RAdminPanel\bin\Debug\RAdminPanel.pdb
-C:\RAdmin\РСКнын админ панели\RAdminPanel\bin\Debug\BouncyCastle.Crypto.dll
-C:\RAdmin\РСКнын админ панели\RAdminPanel\bin\Debug\Google.Protobuf.dll
-C:\RAdmin\РСКнын админ панели\RAdminPanel\bin\Debug\K4os.Compression.LZ4.dll
-C:\RAdmin\РСКнын админ панели\RAdminPanel\bin\Debug\K4os.Compression.LZ4.Streams.dll
-C:\RAdmin\РСКнын админ панели\RAdminPanel\bin\Debug\K4os.Hash.xxHash.dll
-C:\RAdmin\РСКнын админ панели\RAdminPanel\bin\Debug\MySql.Data.dll
-C:\RAdmin\РСКнын админ панели\RAdminPanel\bin\Debug\Renci.SshNet.dll
-C:\RAdmin\РСКнын админ панели\RAdminPanel\bin\Debug\System.Buffers.dll
-C:\RAdmin\РСКнын админ панели\RAdminPanel\bin\Debug\System.Memory.dll
-C:\RAdmin\РСКнын админ панели\RAdminPanel\bin\Debug\System.Numerics.Vectors.dll
-C:\RAdmin\РСКнын админ панели\RAdminPanel\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
-C:\RAdmin\РСКнын админ панели\RAdminPanel\bin\Debug\Ubiety.Dns.Core.dll
-C:\RAdmin\РСКнын админ панели\RAdminPanel\bin\Debug\Zstandard.Net.dll
-C:\RAdmin\РСКнын админ панели\RAdminPanel\bin\Debug\Google.Protobuf.pdb
-C:\RAdmin\РСКнын админ панели\RAdminPanel\bin\Debug\Google.Protobuf.xml
-C:\RAdmin\РСКнын админ панели\RAdminPanel\bin\Debug\K4os.Compression.LZ4.xml
 C:\RAdmin\РСКнын админ панели\RAdminPanel\bin\Debug\K4os.Compression.LZ4.Streams.xml
-C:\RAdmin\РСКнын админ панели\RAdminPanel\bin\Debug\K4os.Hash.xxHash.xml
-C:\RAdmin\РСКнын админ панели\RAdminPanel\bin\Debug\MySql.Data.xml
-C:\RAdmin\РСКнын админ панели\RAdminPanel\bin\Debug\Renci.SshNet.xml
-C:\RAdmin\РСКнын админ панели\RAdminPanel\bin\Debug\System.Buffers.xml
 C:\RAdmin\РСКнын админ панели\RAdminPanel\bin\Debug\System.Memory.xml
 C:\RAdmin\РСКнын админ панели\RAdminPanel\bin\Debug\System.Numerics.Vectors.xml
-C:\RAdmin\РСКнын админ панели\RAdminPanel\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
-C:\RAdmin\РСКнын админ панели\RAdminPanel\obj\Debug\App.baml
-C:\RAdmin\РСКнын админ панели\RAdminPanel\obj\Debug\MainWindow.baml
-C:\RAdmin\РСКнын админ панели\RAdminPanel\obj\Debug\UserControlFolder\AddOperator.baml
-C:\RAdmin\РСКнын админ панели\RAdminPanel\obj\Debug\UserControlFolder\Branches.baml
-C:\RAdmin\РСКнын админ панели\RAdminPanel\obj\Debug\UserControlFolder\Client.baml
-C:\RAdmin\РСКнын админ панели\RAdminPanel\obj\Debug\UserControlFolder\Departament.baml
-C:\RAdmin\РСКнын админ панели\RAdminPanel\obj\Debug\UserControlFolder\Language.baml
-C:\RAdmin\РСКнын админ панели\RAdminPanel\obj\Debug\UserControlFolder\Message.baml
-C:\RAdmin\РСКнын админ панели\RAdminPanel\obj\Debug\UserControlFolder\Password.baml
-C:\RAdmin\РСКнын админ панели\RAdminPanel\obj\Debug\UserControlFolder\Rasspisania.baml
-C:\RAdmin\РСКнын админ панели\RAdminPanel\obj\Debug\UserControlFolder\Sound.baml
-C:\RAdmin\РСКнын админ панели\RAdminPanel\obj\Debug\UserControlFolder\Terminal.baml
-C:\RAdmin\РСКнын админ панели\RAdminPanel\obj\Debug\UserControlFolder\WorkPlaces.baml
-C:\RAdmin\РСКнын админ панели\RAdminPanel\obj\Debug\RAdminPanel.g.resources
-C:\RAdmin\РСКнын админ панели\RAdminPanel\obj\Debug\RAdminPanel.Properties.Resources.resources
-C:\RAdmin\РСКнын админ панели\RAdminPanel\obj\Debug\RAdminPanel.csproj.GenerateResource.cache
-C:\RAdmin\РСКнын админ панели\RAdminPanel\obj\Debug\RAdminPanel.csproj.CoreCompileInputs.cache
-C:\RAdmin\РСКнын админ панели\RAdminPanel\obj\Debug\RAdminPanel.csproj.CopyComplete
 D:\C# projects\rsk\RAdmin\РСКнын админ панели\RAdminPanel\bin\Debug\BouncyCastle.Crypto.dll
 D:\C# projects\rsk\RAdmin\РСКнын админ панели\RAdminPanel\bin\Debug\K4os.Compression.LZ4.dll
 D:\C# projects\rsk\RAdmin\РСКнын админ панели\RAdminPanel\bin\Debug\K4os.Compression.LZ4.Streams.dll
@@ -186,8 +126,6 @@ D:\C# projects\rsk\RAdmin\РСКнын админ панели\RAdminPanel\bin\D
 D:\C# projects\rsk\RAdmin\РСКнын админ панели\RAdminPanel\bin\Debug\System.Memory.xml
 D:\C# projects\rsk\RAdmin\РСКнын админ панели\RAdminPanel\bin\Debug\System.Numerics.Vectors.xml
 D:\C# projects\rsk\RAdmin\РСКнын админ панели\RAdminPanel\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
-C:\RAdmin\РСКнын админ панели\RAdminPanel\obj\Debug\UserControlFolder\Mode.g.cs
-C:\RAdmin\РСКнын админ панели\RAdminPanel\obj\Debug\UserControlFolder\Mode.baml
 D:\C# projects\RAdmin\РСКнын админ панели\RAdminPanel\bin\Debug\RAdminPanel.exe.config
 D:\C# projects\RAdmin\РСКнын админ панели\RAdminPanel\bin\Debug\RAdminPanel.exe
 D:\C# projects\RAdmin\РСКнын админ панели\RAdminPanel\bin\Debug\RAdminPanel.pdb
@@ -322,4 +260,64 @@ D:\project\ElectronRSK\RAdmin\РСКнын админ панели\RAdminPanel\o
 D:\project\ElectronRSK\RAdmin\РСКнын админ панели\RAdminPanel\obj\Debug\RAdminPanel.exe
 D:\project\ElectronRSK\RAdmin\РСКнын админ панели\RAdminPanel\obj\Debug\RAdminPanel.pdb
 C:\RAdmin\РСКнын админ панели\RAdminPanel\bin\Debug\packages.config
-C:\RAdmin\РСКнын админ панели\RAdminPanel\obj\Debug\RAdminPanel.csprojAssemblyReference.cache
+C:\RAdmin\РСКнын админ панели\RAdminPanel\bin\Debug\RAdminPanel.exe.config
+C:\RAdmin\РСКнын админ панели\RAdminPanel\bin\Debug\BouncyCastle.Crypto.dll
+C:\RAdmin\РСКнын админ панели\RAdminPanel\bin\Debug\Google.Protobuf.dll
+C:\RAdmin\РСКнын админ панели\RAdminPanel\bin\Debug\K4os.Compression.LZ4.dll
+C:\RAdmin\РСКнын админ панели\RAdminPanel\bin\Debug\K4os.Compression.LZ4.Streams.dll
+C:\RAdmin\РСКнын админ панели\RAdminPanel\bin\Debug\K4os.Hash.xxHash.dll
+C:\RAdmin\РСКнын админ панели\RAdminPanel\bin\Debug\MySql.Data.dll
+C:\RAdmin\РСКнын админ панели\RAdminPanel\bin\Debug\Renci.SshNet.dll
+C:\RAdmin\РСКнын админ панели\RAdminPanel\bin\Debug\System.Buffers.dll
+C:\RAdmin\РСКнын админ панели\RAdminPanel\bin\Debug\System.Memory.dll
+C:\RAdmin\РСКнын админ панели\RAdminPanel\bin\Debug\System.Numerics.Vectors.dll
+C:\RAdmin\РСКнын админ панели\RAdminPanel\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\RAdmin\РСКнын админ панели\RAdminPanel\bin\Debug\Ubiety.Dns.Core.dll
+C:\RAdmin\РСКнын админ панели\RAdminPanel\bin\Debug\Zstandard.Net.dll
+C:\RAdmin\РСКнын админ панели\RAdminPanel\bin\Debug\Google.Protobuf.pdb
+C:\RAdmin\РСКнын админ панели\RAdminPanel\bin\Debug\Google.Protobuf.xml
+C:\RAdmin\РСКнын админ панели\RAdminPanel\bin\Debug\K4os.Compression.LZ4.xml
+C:\RAdmin\РСКнын админ панели\RAdminPanel\bin\Debug\K4os.Hash.xxHash.xml
+C:\RAdmin\РСКнын админ панели\RAdminPanel\bin\Debug\MySql.Data.xml
+C:\RAdmin\РСКнын админ панели\RAdminPanel\bin\Debug\Renci.SshNet.xml
+C:\RAdmin\РСКнын админ панели\RAdminPanel\bin\Debug\System.Buffers.xml
+C:\RAdmin\РСКнын админ панели\RAdminPanel\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\RAdmin\РСКнын админ панели\RAdminPanel\obj\Debug\MainWindow.baml
+C:\RAdmin\РСКнын админ панели\RAdminPanel\obj\Debug\StyleFolder\StyleDictionary.baml
+C:\RAdmin\РСКнын админ панели\RAdminPanel\obj\Debug\UserControlFolder\AddOperator.baml
+C:\RAdmin\РСКнын админ панели\RAdminPanel\obj\Debug\UserControlFolder\Branches.baml
+C:\RAdmin\РСКнын админ панели\RAdminPanel\obj\Debug\UserControlFolder\Client.baml
+C:\RAdmin\РСКнын админ панели\RAdminPanel\obj\Debug\UserControlFolder\Departament.baml
+C:\RAdmin\РСКнын админ панели\RAdminPanel\obj\Debug\UserControlFolder\Language.baml
+C:\RAdmin\РСКнын админ панели\RAdminPanel\obj\Debug\UserControlFolder\Message.baml
+C:\RAdmin\РСКнын админ панели\RAdminPanel\obj\Debug\UserControlFolder\Mode.baml
+C:\RAdmin\РСКнын админ панели\RAdminPanel\obj\Debug\UserControlFolder\Password.baml
+C:\RAdmin\РСКнын админ панели\RAdminPanel\obj\Debug\UserControlFolder\Rasspisania.baml
+C:\RAdmin\РСКнын админ панели\RAdminPanel\obj\Debug\UserControlFolder\Sound.baml
+C:\RAdmin\РСКнын админ панели\RAdminPanel\obj\Debug\UserControlFolder\Terminal.baml
+C:\RAdmin\РСКнын админ панели\RAdminPanel\obj\Debug\UserControlFolder\WorkPlaces.baml
+C:\RAdmin\РСКнын админ панели\RAdminPanel\obj\Debug\App.baml
+C:\RAdmin\РСКнын админ панели\RAdminPanel\obj\Debug\MainWindow.g.cs
+C:\RAdmin\РСКнын админ панели\RAdminPanel\obj\Debug\UserControlFolder\AddOperator.g.cs
+C:\RAdmin\РСКнын админ панели\RAdminPanel\obj\Debug\UserControlFolder\Branches.g.cs
+C:\RAdmin\РСКнын админ панели\RAdminPanel\obj\Debug\UserControlFolder\Client.g.cs
+C:\RAdmin\РСКнын админ панели\RAdminPanel\obj\Debug\UserControlFolder\Departament.g.cs
+C:\RAdmin\РСКнын админ панели\RAdminPanel\obj\Debug\UserControlFolder\Language.g.cs
+C:\RAdmin\РСКнын админ панели\RAdminPanel\obj\Debug\UserControlFolder\Message.g.cs
+C:\RAdmin\РСКнын админ панели\RAdminPanel\obj\Debug\UserControlFolder\Mode.g.cs
+C:\RAdmin\РСКнын админ панели\RAdminPanel\obj\Debug\UserControlFolder\Password.g.cs
+C:\RAdmin\РСКнын админ панели\RAdminPanel\obj\Debug\UserControlFolder\Rasspisania.g.cs
+C:\RAdmin\РСКнын админ панели\RAdminPanel\obj\Debug\UserControlFolder\Sound.g.cs
+C:\RAdmin\РСКнын админ панели\RAdminPanel\obj\Debug\UserControlFolder\Terminal.g.cs
+C:\RAdmin\РСКнын админ панели\RAdminPanel\obj\Debug\UserControlFolder\WorkPlaces.g.cs
+C:\RAdmin\РСКнын админ панели\RAdminPanel\obj\Debug\App.g.cs
+C:\RAdmin\РСКнын админ панели\RAdminPanel\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\RAdmin\РСКнын админ панели\RAdminPanel\obj\Debug\RAdminPanel_MarkupCompile.cache
+C:\RAdmin\РСКнын админ панели\RAdminPanel\obj\Debug\RAdminPanel_MarkupCompile.lref
+C:\RAdmin\РСКнын админ панели\RAdminPanel\obj\Debug\RAdminPanel.g.resources
+C:\RAdmin\РСКнын админ панели\RAdminPanel\obj\Debug\RAdminPanel.Properties.Resources.resources
+C:\RAdmin\РСКнын админ панели\RAdminPanel\obj\Debug\RAdminPanel.csproj.GenerateResource.cache
+C:\RAdmin\РСКнын админ панели\RAdminPanel\obj\Debug\RAdminPanel.csproj.CoreCompileInputs.cache
+C:\RAdmin\РСКнын админ панели\RAdminPanel\obj\Debug\RAdminPanel.csproj.CopyComplete
+C:\RAdmin\РСКнын админ панели\RAdminPanel\obj\Debug\RAdminPanel.exe
+C:\RAdmin\РСКнын админ панели\RAdminPanel\obj\Debug\RAdminPanel.pdb
