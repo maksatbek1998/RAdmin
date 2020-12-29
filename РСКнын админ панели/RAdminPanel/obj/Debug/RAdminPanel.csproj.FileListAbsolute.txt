@@ -322,3 +322,4 @@ D:\project\ElectronRSK\RAdmin\РСКнын админ панели\RAdminPanel\o
 D:\project\ElectronRSK\RAdmin\РСКнын админ панели\RAdminPanel\obj\Debug\RAdminPanel.exe
 D:\project\ElectronRSK\RAdmin\РСКнын админ панели\RAdminPanel\obj\Debug\RAdminPanel.pdb
 D:\C# projects\RAdmin\РСКнын админ панели\RAdminPanel\obj\Debug\RAdminPanel.csprojAssemblyReference.cache
+D:\C# projects\RAdmin\РСКнын админ панели\RAdminPanel\bin\Debug\packages.config
