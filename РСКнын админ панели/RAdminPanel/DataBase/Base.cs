@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Windows;
 using System.Collections.Generic;
 using System.Data;
 using System.Security.Cryptography;
@@ -11,7 +12,7 @@ namespace RAdminPanel.DataBase
 {
     class Base
     {
-        public MySqlConnection connection = new MySqlConnection("datasource=192.168.0.118; port=3306;Initial Catalog='rskbank';username=admin;password=1;CharSet=utf8;");
+        public MySqlConnection connection;
         //public MySqlConnection connection = new MySqlConnection("datasource=127.0.0.1; port=3306;Initial Catalog='rskbank';username=root;password=123456;CharSet=utf8;");
         public delegate void DisplaySourse(DataTable db);
         public delegate void DisplaySourse2(List<string> a);
@@ -22,7 +23,9 @@ namespace RAdminPanel.DataBase
         public event SendData del;
         public Base()
         {
-
+            var MyIni1 = new IniFile("Settings_IP.ini");
+            var IP = MyIni1.Read("DefaultVolume");
+            connection = new MySqlConnection("datasource="+IP+"; port=3306;Initial Catalog='rskbank';username=admin;password=1;CharSet=utf8;");
         }
 
         public void Display(string s,int count =5)
