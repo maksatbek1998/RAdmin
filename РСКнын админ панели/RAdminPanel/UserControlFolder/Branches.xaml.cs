@@ -2,6 +2,7 @@
 using System.Data;
 using System.Windows;
 using System.Windows.Controls;
+using RAdminPanel.ViewModel;
 
 
 namespace RAdminPanel.UserControlFolder
@@ -17,6 +18,7 @@ namespace RAdminPanel.UserControlFolder
         {
             InitializeComponent();
             UpdateData();
+            Restart();
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -36,7 +38,7 @@ namespace RAdminPanel.UserControlFolder
             DataRowView dataRow = (DataRowView)DataList.SelectedItem;
             if (dataRow != null)
             {
-                id_1 = dataRow.Row.ItemArray[0].ToString(); 
+                id_1 = dataRow.Row.ItemArray[0].ToString();
                 Message messageO = new Message();
                 if (id_1 != "")
                 {
@@ -45,7 +47,7 @@ namespace RAdminPanel.UserControlFolder
                     messageO.del_ += () => UpdateData();
                     messageO.ShowDialog();
                 }
-            }                                              
+            }
         }
 
         private void DataList_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -54,7 +56,45 @@ namespace RAdminPanel.UserControlFolder
             if (dataRow2 != null)
             {
                 id_1 = dataRow2.Row.ItemArray[0].ToString();
-            }       
+            }
+        }
+        private void Restart()
+        {
+            if (staticClaseForLangue.Lang =="RU")
+            { 
+                FilialName.Text= "Название филиала";
+                FilialAdress.Text = "Адрес филиала";
+                FiliAddressDG.Header = "Адрес филиала";
+                FiliNameDG.Header = "Название филиала";
+                Save.Content = "Сохранить";
+                DeleteDG.Header = "Удалить";
+                CreatedDateDG.Header = "Дата создания";
+            }
+           else if (staticClaseForLangue.Lang == "KG")
+            {
+                FilialName.Text = "Филиалдын аты";
+                FilialAdress.Text = "Филиалдын адреси";
+                FiliAddressDG.Header = "Филиалдын адреси";
+                FiliNameDG.Header = "Филиалдын аты";
+                Save.Content = "Сакто";
+                DeleteDG.Header = "Очуруу";
+                CreatedDateDG.Header = "Тузулгон куну";
+            }
+            else
+            {
+                FilialName.Text = "Branches name";
+                FilialAdress.Text = "Branches address";
+                FiliAddressDG.Header = "Branches address";
+                FiliNameDG.Header = "Branches name";
+                Save.Content = "Save";
+                DeleteDG.Header = "Delete";
+                CreatedDateDG.Header = "Created date";
+            }
+        }
+        public static void Res()
+        {
+            Branches bra = new Branches();
+            bra.Restart();
         }
     }
 }

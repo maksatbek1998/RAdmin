@@ -144,7 +144,6 @@
                 </Border.Effect>
                 <Grid>
                     <Canvas Width="100" HorizontalAlignment="Left">
-
                         <Image x:Name="Skryt"  Canvas.Left="11" Canvas.Top="9" MouseDown="Skryt_MouseDown">
                             <Image.Style>
                                 <Style TargetType="Image" >
@@ -164,7 +163,7 @@
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Top">
                         <StackPanel Orientation="Horizontal" Margin="0 0 10 0">
                             <Button Command="{Binding ToKg}" Style="{DynamicResource Language_Button1}" Content="КГ"/>
-                            <Button Command="{Binding ToRu}" Style="{DynamicResource Language_Button1}" Content="RUS"/>
+                            <Button Command="{Binding ToRu}" Click="Button_Click_13" Style="{DynamicResource Language_Button1}" Content="RUS"/>
                             <Button Command="{Binding ToEn}" Style="{DynamicResource Language_Button1}" Content="EN"/>
                         </StackPanel>
                         <StackPanel Orientation="Horizontal" >
