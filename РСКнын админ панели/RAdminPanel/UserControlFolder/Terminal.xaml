@@ -248,7 +248,7 @@
                                 <DataGridTextColumn Header="Категории" Binding="{Binding name}"/>
                                 <DataGridTextColumn Header="Приоритет" Binding="{Binding index}"/>
                                 <DataGridTextColumn Header="Активный" Binding="{Binding is_active}"/>
-                                <DataGridTextColumn Header="Суффикс" Binding="{Binding alfavit_name}"/>
+                                <DataGridTextColumn Header="Суффикс" Binding="{Binding suffix}"/>
                                 <DataGridTemplateColumn Header="Изменить" Width="80">
                                     <DataGridTemplateColumn.CellTemplate>
                                         <DataTemplate>
