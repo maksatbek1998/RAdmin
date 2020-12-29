@@ -11,7 +11,7 @@ namespace RAdminPanel.DataBase
 {
     class Base
     {
-        public MySqlConnection connection = new MySqlConnection("datasource=192.168.0.7; port=3306;Initial Catalog='rskbank';username=admin;password=1;CharSet=utf8;");
+        public MySqlConnection connection = new MySqlConnection("datasource=192.168.0.118; port=3306;Initial Catalog='rskbank';username=admin;password=1;CharSet=utf8;");
         //public MySqlConnection connection = new MySqlConnection("datasource=127.0.0.1; port=3306;Initial Catalog='rskbank';username=root;password=123456;CharSet=utf8;");
         public delegate void DisplaySourse(DataTable db);
         public delegate void DisplaySourse2(List<string> a);

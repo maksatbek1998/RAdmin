@@ -129,6 +129,7 @@ namespace RAdminPanel.UserControlFolder
                     dataBase.RegistrToBase("DELETE from langs WHERE id=" + ID + "");       
                     MessageBox.Show("Успешно удалено", "", MessageBoxButton.OK);
                     DeleteComBox.SelectedItem = null;
+                    UpdateComboBoxBranch();
                 }
             
             }
