@@ -1,20 +1,10 @@
 ﻿using RAdminPanel.ClassUserControl;
 using RAdminPanel.UserControlFolder;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Controls.Primitives;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
+using RAdminPanel.ViewModel;
 
 namespace RAdminPanel
 {
@@ -39,7 +29,7 @@ namespace RAdminPanel
                 lbl_menu0.Visibility = Visibility.Collapsed;
                 lbl_menu_1.Visibility = Visibility.Collapsed;
                 lbl_menu_2.Width = 32;
-                lbl_menu_2.Margin = new Thickness(7,0,20,0);
+                lbl_menu_2.Margin = new Thickness(7, 0, 20, 0);
                 //JOK.Height = 0;
                 //JOK.Width = 0;
                 lbl_menu1.Visibility = Visibility.Collapsed;
@@ -92,7 +82,7 @@ namespace RAdminPanel
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            if (this.WindowState==WindowState.Normal)
+            if (this.WindowState == WindowState.Normal)
             {
                 this.WindowState = WindowState.Maximized;
             }
@@ -128,13 +118,14 @@ namespace RAdminPanel
         private void fil_Click(object sender, RoutedEventArgs e)
         {
             Checked(0);
-            ShowUserControl.Show(Lists, new Branches());            
+            ShowUserControl.Show(Lists, new Branches());
         }
 
         private void Button_Click_6(object sender, RoutedEventArgs e)
         {
             Checked(5);
             ShowUserControl.Show(Lists, new Terminal());
+            staticClaseForLangue.window = "branch";
         }
 
         private void Button_Click_7(object sender, RoutedEventArgs e)
@@ -215,7 +206,7 @@ namespace RAdminPanel
             {
                 fil.IsChecked = true;
             }
-            else if(button==1)
+            else if (button == 1)
             {
                 button1.IsChecked = true;
             }
@@ -260,6 +251,14 @@ namespace RAdminPanel
         private void Border_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
             this.DragMove();
+        }
+
+        private void Button_Click_13(object sender, RoutedEventArgs e)
+        {
+            if (staticClaseForLangue.window == "branch") 
+            {
+                Branches.Res();
+            }
         }
     }
 }

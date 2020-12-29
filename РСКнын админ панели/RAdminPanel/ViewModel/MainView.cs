@@ -93,42 +93,6 @@ namespace RAdminPanel.ViewModel
             get => _SoundSetting;
             set => Set(ref _SoundSetting, value);
         }
-
-        private string _BranchName = "Название филиала";
-        public string BranchName
-        {
-            get => _BranchName;
-            set => Set(ref _BranchName, value);
-        }
-
-        private string _BranchAdres = "Адрес филиала";
-        public string BranchAdres
-        {
-            get => _BranchAdres;
-            set => Set(ref _BranchAdres, value);
-        }
-
-        private string _CreatedTime = "Дата создания";
-        public string CreatedTime
-        {
-            get => _CreatedTime;
-            set => Set(ref _CreatedTime, value);
-        }
-
-        private string _Delete = "Удалить";
-        public string Delete
-        {
-            get => _Delete;
-            set => Set(ref _Delete, value);
-        }
-
-        private string _Save = "Сохранить";
-        public string Save
-        {
-            get => _Save;
-            set => Set(ref _Save, value);
-        }
-
         #endregion
 
         public MainView()
@@ -138,9 +102,10 @@ namespace RAdminPanel.ViewModel
             ToRu = new ViewCommand(new Action<object>(ToRus));
             ToKg = new ViewCommand(new Action<object>(ToKgr));
             #endregion
+
         }
 
-        #region Методы Изменение языков
+        #region Методы Изменение языков   
 
         private void ToKgr(object obj)
         {
@@ -153,14 +118,8 @@ namespace RAdminPanel.ViewModel
             Clients = "Кардарлар";
             LangSetting = "Тил жөндөөсү";
             SoundSetting = "Үндөрдү орнотуу";
-            BranchAdres = "Филиалдын адреси";            
-            CreatedTime = "Түзүлгөн күнү";
-            Delete = "Очүрүү";
-            Save = "Сактоо";
-            BranchName = "Филиалдын аты";
             Auto = "АвтоЧакыруу";
             Block = "Бекитүү";
-
         }
 
         private void ToRus(object obj)
@@ -174,11 +133,6 @@ namespace RAdminPanel.ViewModel
             Clients = "Клиенты";
             LangSetting = "Настройки языков";
             SoundSetting = "Настройки звуков";
-            BranchAdres = "Адрес филиала";
-            CreatedTime = "Дата создание";
-            Delete = "Удалить";
-            Save = "Сохранить";
-            BranchName = "Название филиала";
             Auto = "АвтоВызов";
             Block = "Блокировка";
         }
@@ -194,11 +148,6 @@ namespace RAdminPanel.ViewModel
             Clients = "Сlients";
             LangSetting = "Languages settings";
             SoundSetting = "Sounds settings";
-            BranchAdres = "Branches address";
-            CreatedTime = "Created date";
-            Delete = "Delete";
-            Save = "Save";
-            BranchName = "Baranches name";
             Auto = "Auto";
             Block = "Block";
         }
