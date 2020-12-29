@@ -105,9 +105,9 @@ namespace RAdminPanel.UserControlFolder
             {
                 dataBase = new Base();
                 dataBase.RegistrToBase("insert into langs(locale) values ('" + ShortName.Text + "')");
-                for (int i = 1; i < count + 1; i++)
+                for (int i = 0; i < lister.Count; i++)
                 {
-                    dataBase.RegistrToBase("insert into service_langs(service_id,locale) values(" + i + ",'" + ShortName.Text + "')");
+                    dataBase.RegistrToBase("insert into service_langs(service_id,locale) values(" + lister[i].ToString() + ",'" + ShortName.Text + "')");
                 }
                 shorting = ShortName.Text;
             }
