@@ -8,9 +8,6 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
-        <Grid.DataContext>
-            <vm:MainView/>
-        </Grid.DataContext>
         <Border Padding="20">
             <Grid>
                 <Grid.RowDefinitions>
@@ -20,11 +17,11 @@
                 <Grid Grid.Row="0">
                     <Canvas>
                         <Image Source="../Image/Just_Image/Branches.png" Width="110" Height="120" Canvas.Left="17" Canvas.Top="26"/>
-                        <TextBlock Text="{Binding BranchName , UpdateSourceTrigger=PropertyChanged}" Canvas.Left="177" Canvas.Top="30" />
-                        <TextBox x:Name="FilialName" FontSize="14"  Style="{DynamicResource textbox_style}" Tag="{Binding BranchName , UpdateSourceTrigger=PropertyChanged}" Height="24" Width="254" Canvas.Left="330" Canvas.Top="26"/>
-                        <TextBlock Text="{Binding BranchAdres , UpdateSourceTrigger=PropertyChanged}" Canvas.Left="177" Canvas.Top="64" />
-                        <TextBox x:Name="FilialAdress" FontSize="14"  Style="{DynamicResource textbox_style}" Tag="{Binding BranchAdres , UpdateSourceTrigger=PropertyChanged}" Height="24" Width="254" Canvas.Left="330" Canvas.Top="61"/>
-                        <Button Style="{DynamicResource ButtonStyle}" Content="{Binding Save , UpdateSourceTrigger=PropertyChanged}" Canvas.Left="434" Canvas.Top="95" Click="Button_Click"/>
+                        <TextBlock Text="Название филиала"  Canvas.Left="177" Canvas.Top="30" />
+                        <TextBox x:Name="FilialName" FontSize="14"  Style="{DynamicResource textbox_style}" Tag="Название филиала" Height="24" Width="254" Canvas.Left="330" Canvas.Top="26"/>
+                        <TextBlock Text="Адрес филиала" Canvas.Left="177" Canvas.Top="64" />
+                        <TextBox x:Name="FilialAdress" FontSize="14"  Style="{DynamicResource textbox_style}" Tag="Адрес филиала" Height="24" Width="254" Canvas.Left="330" Canvas.Top="61"/>
+                        <Button x:Name="Save" Style="{DynamicResource ButtonStyle}" Content="Сохранить" Canvas.Left="434" Canvas.Top="95" Click="Button_Click"/>
                     </Canvas>
                 </Grid>
                 <Grid Grid.Row="1">
@@ -34,11 +31,11 @@
                             <vm:BindingProxy x:Key="proxy" Data="{Binding }"/>
                         </DataGrid.Resources>
                         <DataGrid.Columns>
-                            <DataGridTextColumn Header="№" Width="50" Binding="{Binding id}"/>
-                            <DataGridTextColumn Header="{Binding Data.BranchName , Source={StaticResource proxy} , UpdateSourceTrigger=PropertyChanged}"  Binding="{Binding name_b}"/>
-                            <DataGridTextColumn Header="{Binding Data.BranchAdres , Source={StaticResource proxy} , UpdateSourceTrigger=PropertyChanged}" Binding="{Binding address}"/>
-                            <DataGridTextColumn Header="{Binding Data.CreatedTime , Source={StaticResource proxy} , UpdateSourceTrigger=PropertyChanged}" Binding="{Binding created_at}"/>
-                            <DataGridTemplateColumn Header="{Binding Data.Delete , Source={StaticResource proxy} , UpdateSourceTrigger=PropertyChanged}" Width="80" >
+                            <DataGridTextColumn  Header="№" Width="50" Binding="{Binding id}"/>
+                            <DataGridTextColumn x:Name="FiliNameDG" Header="Название филиала"  Binding="{Binding name_b}"/>
+                            <DataGridTextColumn x:Name="FiliAddressDG" Header="Адрес филиала" Binding="{Binding address}"/>
+                            <DataGridTextColumn x:Name="CreatedDateDG" Header="Дата создания" Binding="{Binding created_at}"/>
+                            <DataGridTemplateColumn x:Name="DeleteDG" Header="Удалить" Width="80" >
                                 <DataGridTemplateColumn.CellTemplate>
                                     <DataTemplate>
                                         <Button Style="{DynamicResource Close_Button}" BorderThickness="0,0,0,0" Cursor="Hand" Click="Button_Click_1">

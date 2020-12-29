@@ -9,5 +9,6 @@ namespace RAdminPanel.ViewModel
     public static class staticClaseForLangue
     {
         public static string Lang = "RU";
+        public static string window;
     }
 }

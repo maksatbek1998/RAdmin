@@ -216,7 +216,6 @@ D:\C# projects\RAdmin\РСКнын админ панели\RAdminPanel\bin\Debug
 D:\C# projects\RAdmin\РСКнын админ панели\RAdminPanel\bin\Debug\System.Memory.xml
 D:\C# projects\RAdmin\РСКнын админ панели\RAdminPanel\bin\Debug\System.Numerics.Vectors.xml
 D:\C# projects\RAdmin\РСКнын админ панели\RAdminPanel\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
-D:\C# projects\RAdmin\РСКнын админ панели\RAdminPanel\obj\Debug\RAdminPanel.csprojAssemblyReference.cache
 D:\C# projects\RAdmin\РСКнын админ панели\RAdminPanel\obj\Debug\StyleFolder\StyleDictionary.baml
 D:\C# projects\RAdmin\РСКнын админ панели\RAdminPanel\obj\Debug\MainWindow.g.cs
 D:\C# projects\RAdmin\РСКнын админ панели\RAdminPanel\obj\Debug\UserControlFolder\AddOperator.g.cs
@@ -322,3 +321,4 @@ D:\project\ElectronRSK\RAdmin\РСКнын админ панели\RAdminPanel\o
 D:\project\ElectronRSK\RAdmin\РСКнын админ панели\RAdminPanel\obj\Debug\RAdminPanel.csproj.CopyComplete
 D:\project\ElectronRSK\RAdmin\РСКнын админ панели\RAdminPanel\obj\Debug\RAdminPanel.exe
 D:\project\ElectronRSK\RAdmin\РСКнын админ панели\RAdminPanel\obj\Debug\RAdminPanel.pdb
+D:\C# projects\RAdmin\РСКнын админ панели\RAdminPanel\obj\Debug\RAdminPanel.csprojAssemblyReference.cache
