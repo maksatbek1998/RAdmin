@@ -252,7 +252,7 @@ namespace RAdminPanel {
         
         #line 101 "..\..\MainWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
-        internal System.Windows.Controls.Primitives.ToggleButton button10;
+        internal System.Windows.Controls.Primitives.ToggleButton button22;
         
         #line default
         #line hidden
@@ -260,15 +260,23 @@ namespace RAdminPanel {
         
         #line 104 "..\..\MainWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
-        internal System.Windows.Controls.Label lbl_menu8111;
+        internal System.Windows.Controls.Label lbl_menu822;
         
         #line default
         #line hidden
         
         
-        #line 111 "..\..\MainWindow.xaml"
+        #line 107 "..\..\MainWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
-        internal System.Windows.Controls.Image lbl_menu9;
+        internal System.Windows.Controls.Primitives.ToggleButton button10;
+        
+        #line default
+        #line hidden
+        
+        
+        #line 110 "..\..\MainWindow.xaml"
+        [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
+        internal System.Windows.Controls.Label lbl_menu8111;
         
         #line default
         #line hidden
@@ -276,13 +284,21 @@ namespace RAdminPanel {
         
         #line 117 "..\..\MainWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
+        internal System.Windows.Controls.Image lbl_menu9;
+        
+        #line default
+        #line hidden
+        
+        
+        #line 123 "..\..\MainWindow.xaml"
+        [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.TextBlock MyChangingColorText;
         
         #line default
         #line hidden
         
         
-        #line 121 "..\..\MainWindow.xaml"
+        #line 127 "..\..\MainWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Media.SolidColorBrush MySolidColorBrush;
         
@@ -290,7 +306,7 @@ namespace RAdminPanel {
         #line hidden
         
         
-        #line 147 "..\..\MainWindow.xaml"
+        #line 153 "..\..\MainWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Image Skryt;
         
@@ -298,7 +314,7 @@ namespace RAdminPanel {
         #line hidden
         
         
-        #line 187 "..\..\MainWindow.xaml"
+        #line 193 "..\..\MainWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Grid Lists;
         
@@ -482,63 +498,59 @@ namespace RAdminPanel {
             this.lbl_menu811 = ((System.Windows.Controls.Label)(target));
             return;
             case 28:
-            this.button10 = ((System.Windows.Controls.Primitives.ToggleButton)(target));
+            this.button22 = ((System.Windows.Controls.Primitives.ToggleButton)(target));
             
             #line 101 "..\..\MainWindow.xaml"
-            this.button10.Click += new System.Windows.RoutedEventHandler(this.Button_Click_12);
+            this.button22.Click += new System.Windows.RoutedEventHandler(this.button22_Click);
             
             #line default
             #line hidden
             return;
             case 29:
-            this.lbl_menu8111 = ((System.Windows.Controls.Label)(target));
+            this.lbl_menu822 = ((System.Windows.Controls.Label)(target));
             return;
             case 30:
-            this.lbl_menu9 = ((System.Windows.Controls.Image)(target));
+            this.button10 = ((System.Windows.Controls.Primitives.ToggleButton)(target));
+            
+            #line 107 "..\..\MainWindow.xaml"
+            this.button10.Click += new System.Windows.RoutedEventHandler(this.Button_Click_12);
+            
+            #line default
+            #line hidden
             return;
             case 31:
-            this.MyChangingColorText = ((System.Windows.Controls.TextBlock)(target));
+            this.lbl_menu8111 = ((System.Windows.Controls.Label)(target));
             return;
             case 32:
-            this.MySolidColorBrush = ((System.Windows.Media.SolidColorBrush)(target));
+            this.lbl_menu9 = ((System.Windows.Controls.Image)(target));
             return;
             case 33:
+            this.MyChangingColorText = ((System.Windows.Controls.TextBlock)(target));
+            return;
+            case 34:
+            this.MySolidColorBrush = ((System.Windows.Media.SolidColorBrush)(target));
+            return;
+            case 35:
             
-            #line 141 "..\..\MainWindow.xaml"
+            #line 147 "..\..\MainWindow.xaml"
             ((System.Windows.Controls.Border)(target)).MouseLeftButtonDown += new System.Windows.Input.MouseButtonEventHandler(this.Border_MouseLeftButtonDown);
             
             #line default
             #line hidden
             return;
-            case 34:
+            case 36:
             this.Skryt = ((System.Windows.Controls.Image)(target));
             
-            #line 147 "..\..\MainWindow.xaml"
+            #line 153 "..\..\MainWindow.xaml"
             this.Skryt.MouseDown += new System.Windows.Input.MouseButtonEventHandler(this.Skryt_MouseDown);
-            
-            #line default
-            #line hidden
-            return;
-            case 35:
-            
-            #line 166 "..\..\MainWindow.xaml"
-            ((System.Windows.Controls.Button)(target)).Click += new System.Windows.RoutedEventHandler(this.Button_Click_13);
-            
-            #line default
-            #line hidden
-            return;
-            case 36:
-            
-            #line 170 "..\..\MainWindow.xaml"
-            ((System.Windows.Controls.Button)(target)).Click += new System.Windows.RoutedEventHandler(this.Button_Click_2);
             
             #line default
             #line hidden
             return;
             case 37:
             
-            #line 173 "..\..\MainWindow.xaml"
-            ((System.Windows.Controls.Button)(target)).Click += new System.Windows.RoutedEventHandler(this.Button_Click_1);
+            #line 172 "..\..\MainWindow.xaml"
+            ((System.Windows.Controls.Button)(target)).Click += new System.Windows.RoutedEventHandler(this.Button_Click_13);
             
             #line default
             #line hidden
@@ -546,12 +558,28 @@ namespace RAdminPanel {
             case 38:
             
             #line 176 "..\..\MainWindow.xaml"
-            ((System.Windows.Controls.Button)(target)).Click += new System.Windows.RoutedEventHandler(this.Button_Click);
+            ((System.Windows.Controls.Button)(target)).Click += new System.Windows.RoutedEventHandler(this.Button_Click_2);
             
             #line default
             #line hidden
             return;
             case 39:
+            
+            #line 179 "..\..\MainWindow.xaml"
+            ((System.Windows.Controls.Button)(target)).Click += new System.Windows.RoutedEventHandler(this.Button_Click_1);
+            
+            #line default
+            #line hidden
+            return;
+            case 40:
+            
+            #line 182 "..\..\MainWindow.xaml"
+            ((System.Windows.Controls.Button)(target)).Click += new System.Windows.RoutedEventHandler(this.Button_Click);
+            
+            #line default
+            #line hidden
+            return;
+            case 41:
             this.Lists = ((System.Windows.Controls.Grid)(target));
             return;
             }

@@ -49,9 +49,17 @@ namespace RAdminPanel.UserControlFolder {
         #line hidden
         
         
-        #line 25 "..\..\..\UserControlFolder\Departament.xaml"
+        #line 29 "..\..\..\UserControlFolder\Departament.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.DataGrid OtdelData;
+        
+        #line default
+        #line hidden
+        
+        
+        #line 45 "..\..\..\UserControlFolder\Departament.xaml"
+        [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
+        internal System.Windows.Controls.DataGrid OtdelData2;
         
         #line default
         #line hidden
@@ -99,6 +107,21 @@ namespace RAdminPanel.UserControlFolder {
             return;
             case 3:
             this.OtdelData = ((System.Windows.Controls.DataGrid)(target));
+            
+            #line 29 "..\..\..\UserControlFolder\Departament.xaml"
+            this.OtdelData.SelectionChanged += new System.Windows.Controls.SelectionChangedEventHandler(this.OtdelData_SelectionChanged);
+            
+            #line default
+            #line hidden
+            return;
+            case 5:
+            this.OtdelData2 = ((System.Windows.Controls.DataGrid)(target));
+            
+            #line 49 "..\..\..\UserControlFolder\Departament.xaml"
+            this.OtdelData2.SelectedCellsChanged += new System.Windows.Controls.SelectedCellsChangedEventHandler(this.OtdelData_SelectedCellsChanged2);
+            
+            #line default
+            #line hidden
             return;
             }
             this._contentLoaded = true;
@@ -115,8 +138,22 @@ namespace RAdminPanel.UserControlFolder {
             {
             case 4:
             
-            #line 33 "..\..\..\UserControlFolder\Departament.xaml"
+            #line 37 "..\..\..\UserControlFolder\Departament.xaml"
             ((System.Windows.Controls.Button)(target)).Click += new System.Windows.RoutedEventHandler(this.Button_Click_1);
+            
+            #line default
+            #line hidden
+            break;
+            case 6:
+            
+            #line 62 "..\..\..\UserControlFolder\Departament.xaml"
+            ((System.Windows.Controls.CheckBox)(target)).Checked += new System.Windows.RoutedEventHandler(this.CheckBox_Checked);
+            
+            #line default
+            #line hidden
+            
+            #line 63 "..\..\..\UserControlFolder\Departament.xaml"
+            ((System.Windows.Controls.CheckBox)(target)).Unchecked += new System.Windows.RoutedEventHandler(this.CheckBox_Unchecked);
             
             #line default
             #line hidden
