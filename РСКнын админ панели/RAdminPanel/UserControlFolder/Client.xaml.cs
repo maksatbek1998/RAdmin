@@ -13,7 +13,7 @@ namespace RAdminPanel.UserControlFolder
     {
         Base dataBase;
 
-        static  int returnedOper;
+        static int returnedOper;
 
         static int returnedUslug;
 
@@ -56,17 +56,17 @@ namespace RAdminPanel.UserControlFolder
                             checkNum = db.Rows[i][1].ToString(),
                             status = db.Rows[i][2].ToString(),
                             uslugvid = db.Rows[i][3].ToString(),
-                            window = db.Rows[i][4].ToString(),
-                            oper = db.Rows[i][5].ToString(),
+                            window = db.Rows[i][4] != DBNull.Value ? db.Rows[i][4].ToString() : "",
+                            oper = db.Rows[i][5] != DBNull.Value ? db.Rows[i][5].ToString() : "",
                             start = Convert.ToDateTime(db.Rows[i][6]),
-                            end = Convert.ToDateTime(db.Rows[i][7])
+                            end = db.Rows[i][7] != DBNull.Value ? Convert.ToDateTime(db.Rows[i][7]) : DateTime.MinValue
                         });
                     }
                     Mainlist = list;
                     dataGrid.ItemsSource = list;
                 }
             };
-            dataBase.SoursData("SELECT t.id,t.nomer,t.status,s.name,'Нет','Нет',DATE_FORMAT(t.created_at,'%Y-%m-%d  %h:%i:%s'),'Нет' from turns AS t INNER JOIN services AS s ON s.id = t.service_id AND t.user_id IS NULL AND t.user_id IS null  WHERE DATE_FORMAT(t.created_at,'%Y.%m.%d') =curdate() and t.status = 'new'");
+            dataBase.SoursData("SELECT t.id,t.nomer,t.status, (SELECT s.name FROM services AS s WHERE s.id = t.service_id) AS ser_nam, (SELECT g.window_nomer FROM workplaces AS g WHERE g.id = t.workplace_id) AS nam, (SELECT gg.name_u FROM users AS gg WHERE gg.id = t.user_id) AS nam_u, t.created_at, t.updated_at FROM `rskbank`.`turns` AS t WHERE CURRENT_DATE()< t.created_at");
         }
 
         public void UpdateData2()
@@ -86,17 +86,17 @@ namespace RAdminPanel.UserControlFolder
                             checkNum = db.Rows[i][1].ToString(),
                             status = db.Rows[i][2].ToString(),
                             uslugvid = db.Rows[i][3].ToString(),
-                            window = db.Rows[i][4].ToString(),
-                            oper = db.Rows[i][5].ToString(),
+                            window = db.Rows[i][4] != DBNull.Value ? db.Rows[i][4].ToString() : "",
+                            oper = db.Rows[i][5] != DBNull.Value ? db.Rows[i][5].ToString() : "",
                             start = Convert.ToDateTime(db.Rows[i][6]),
-                            end = Convert.ToDateTime(db.Rows[i][7])
+                            end = db.Rows[i][7] != DBNull.Value ? Convert.ToDateTime(db.Rows[i][7]) : DateTime.MinValue
                         });
                     }
                     MainlistDt2 = listDt2;
                     dataGrid2.ItemsSource = listDt2;
                 }
             };
-            dataBase.SoursData("SELECT t.id,t.nomer,t.`status`,s.name,w.name,u.name_u,DATE_FORMAT(t.created_at,'%Y-%m-%d  %h:%i:%s'),DATE_FORMAT(t.updated_at,'%Y-%m-%d  %h:%i:%s') from turns AS t INNER JOIN users AS u ON t.user_id =u.id INNER JOIN workplaces AS w ON w.id = t.workplace_id INNER JOIN services AS s ON s.id = t.service_id WHERE DATE_FORMAT(t.created_at,'%d.%m.%Y') ='" + DateTime.Now.ToString("dd.MM.yyyy") + "'");
+            dataBase.SoursData("SELECT t.id, t.nomer, t.status, (SELECT s.name FROM services AS s WHERE s.id = t.service_id) AS ser_nam, (SELECT g.window_nomer FROM workplaces AS g WHERE g.id = t.workplace_id) AS nam, (SELECT gg.name_u FROM users AS gg WHERE gg.id = t.user_id) AS nam_u, t.created_at, t.updated_at FROM `rskbank`.`turns` AS t WHERE CURRENT_DATE()< t.created_at");
         }
 
         #region Filtr
@@ -179,17 +179,17 @@ namespace RAdminPanel.UserControlFolder
                                 checkNum = db.Rows[i][1].ToString(),
                                 status = db.Rows[i][2].ToString(),
                                 uslugvid = db.Rows[i][3].ToString(),
-                                window = db.Rows[i][4].ToString(),
-                                oper = db.Rows[i][5].ToString(),
+                                window = db.Rows[i][4] != DBNull.Value ? db.Rows[i][4].ToString() : "",
+                                oper = db.Rows[i][5] != DBNull.Value ? db.Rows[i][5].ToString() : "",
                                 start = Convert.ToDateTime(db.Rows[i][6]),
-                                end = Convert.ToDateTime(db.Rows[i][7])
+                                end = db.Rows[i][7] != DBNull.Value ? Convert.ToDateTime(db.Rows[i][7]) : DateTime.MinValue
                             });
                         }
                         list = list0;
                         dataGrid.ItemsSource = list;
                     }
                 };
-                dataBase.SoursData("SELECT t.id,t.nomer,t.status,s.name,'Нет','Нет',DATE_FORMAT(t.created_at,'%Y-%m-%d  %h:%i:%s'),DATE_FORMAT(t.updated_at,'%Y-%m-%d  %h:%i:%s') from turns AS t INNER JOIN services AS s ON s.id = t.service_id AND t.user_id IS NULL AND t.user_id IS null  WHERE DATE_FORMAT(t.created_at,'%Y.%m.%d') =curdate() and t.status = 'new'");
+                dataBase.SoursData("SELECT t.id,t.nomer,t.status, (SELECT s.name FROM services AS s WHERE s.id = t.service_id) AS ser_nam, (SELECT g.window_nomer FROM workplaces AS g WHERE g.id = t.workplace_id) AS nam, (SELECT gg.name_u FROM users AS gg WHERE gg.id = t.user_id) AS nam_u, t.created_at, t.updated_at FROM `rskbank`.`turns` AS t WHERE CURRENT_DATE()< t.created_at and t.status ='new'"); 
                 filterTextBox.Text = String.Empty;
             }
           

@@ -107,7 +107,6 @@ namespace RAdminPanel.ViewModel
             ToRu = new ViewCommand(new Action<object>(ToRus));
             ToKg = new ViewCommand(new Action<object>(ToKgr));
             #endregion
-
         }
 
         #region Методы Изменение языков   

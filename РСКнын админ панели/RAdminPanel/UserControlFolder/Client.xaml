@@ -41,7 +41,10 @@
                                 <TextBox  x:Name="filterTextBox" Style="{DynamicResource styleLog}" Tag="Номери боюнча издоо" Width="200" TextChanged="filterTextBox_TextChanged"/>
                             </StackPanel>
                             <DataGrid x:Name="dataGrid" Margin="10,7,0,0" FontSize="12"  CanUserAddRows="False" Style="{DynamicResource grid_xml}" ColumnHeaderStyle="{DynamicResource hederstyle}" VerticalAlignment="Stretch" VerticalScrollBarVisibility="Auto"   HeadersVisibility="Column" HorizontalAlignment="Stretch"
-                   AutoGenerateColumns="False" Grid.Row="1" >
+                   AutoGenerateColumns="False" Grid.Row="1" 
+                                      VirtualizingPanel.IsVirtualizing="True"
+                                      VirtualizingPanel.CacheLength="1"
+                                      VirtualizingPanel.CacheLengthUnit="Item">
                                 <DataGrid.Columns>
                                     <DataGridTextColumn Header="№"  Width="0.5*" Binding="{Binding id}"/>
                                     <DataGridTextColumn Header="Чектин номери" Width="1.5*" Binding="{Binding checkNum}" />
