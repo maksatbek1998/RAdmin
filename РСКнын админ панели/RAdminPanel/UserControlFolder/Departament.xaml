@@ -10,7 +10,7 @@
         <Border Padding="20">
             <Grid>
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="180"/>
+                    <RowDefinition Height="140"/>
                     <RowDefinition Height="*"/>
                 </Grid.RowDefinitions>
                 <Grid Grid.Row="0">
@@ -22,7 +22,11 @@
                     </Canvas>
                 </Grid>
                 <Grid Grid.Row="1">
-                    <DataGrid x:Name="OtdelData" Margin="10,-35,0,0" FontSize="12"  CanUserAddRows="False" Style="{DynamicResource grid_xml}" ColumnHeaderStyle="{DynamicResource hederstyle}" VerticalAlignment="Stretch" VerticalScrollBarVisibility="Auto"   HeadersVisibility="Column" HorizontalAlignment="Stretch"
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+                    <DataGrid x:Name="OtdelData" Grid.Column="0" SelectionChanged="OtdelData_SelectionChanged"  Margin="10,7,0,0"  FontSize="12"  CanUserAddRows="False" Style="{DynamicResource grid_xml}" ColumnHeaderStyle="{DynamicResource hederstyle}" VerticalAlignment="Stretch" VerticalScrollBarVisibility="Auto"   HeadersVisibility="Column" HorizontalAlignment="Stretch"
                    AutoGenerateColumns="False" IsReadOnly="True">
                         <DataGrid.Columns>
                             <DataGridTextColumn Header="№" Width="50" Binding="{Binding id}"/>
@@ -36,6 +40,32 @@
                                     </DataTemplate>
                                 </DataGridTemplateColumn.CellTemplate>
                             </DataGridTemplateColumn>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                    <DataGrid x:Name="OtdelData2" Margin="10,7,0,0" 
+                              Grid.Column="1"
+                              FontSize="12"  CanUserAddRows="False" 
+                              Style="{DynamicResource grid_xml}" 
+                              SelectedCellsChanged="OtdelData_SelectedCellsChanged2"
+                              ColumnHeaderStyle="{DynamicResource hederstyle}" 
+                              VerticalAlignment="Stretch" 
+                              VerticalScrollBarVisibility="Auto"   
+                              HeadersVisibility="Column" 
+                              HorizontalAlignment="Stretch"
+                   AutoGenerateColumns="False" >
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="№" Width="50" Binding="{Binding id}"/>
+                            <DataGridTemplateColumn Header="Статус" Width="70" >
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <CheckBox IsChecked="{Binding flag}" 
+                                                  Checked="CheckBox_Checked" 
+                                                  Unchecked="CheckBox_Unchecked"
+                                                  Content="{Binding Path=Item.ChargeSectionNumber}" />
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+                            <DataGridTextColumn Header="Категории" Binding="{Binding name}"/>
                         </DataGrid.Columns>
                     </DataGrid>
                 </Grid>

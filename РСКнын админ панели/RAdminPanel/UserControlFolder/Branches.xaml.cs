@@ -62,8 +62,8 @@ namespace RAdminPanel.UserControlFolder
         {
             if (staticClaseForLangue.Lang =="RU")
             { 
-                FilialName.Text= "Название филиала";
-                FilialAdress.Text = "Адрес филиала";
+                FilialName.Tag= "Название филиала";
+                FilialAdress.Tag = "Адрес филиала";
                 FiliAddressDG.Header = "Адрес филиала";
                 FiliNameDG.Header = "Название филиала";
                 Save.Content = "Сохранить";
@@ -72,8 +72,8 @@ namespace RAdminPanel.UserControlFolder
             }
            else if (staticClaseForLangue.Lang == "KG")
             {
-                FilialName.Text = "Филиалдын аты";
-                FilialAdress.Text = "Филиалдын адреси";
+                FilialName.Tag = "Филиалдын аты";
+                FilialAdress.Tag = "Филиалдын адреси";
                 FiliAddressDG.Header = "Филиалдын адреси";
                 FiliNameDG.Header = "Филиалдын аты";
                 Save.Content = "Сакто";
@@ -82,8 +82,8 @@ namespace RAdminPanel.UserControlFolder
             }
             else
             {
-                FilialName.Text = "Branches name";
-                FilialAdress.Text = "Branches address";
+                FilialName.Tag = "Branches name";
+                FilialAdress.Tag = "Branches address";
                 FiliAddressDG.Header = "Branches address";
                 FiliNameDG.Header = "Branches name";
                 Save.Content = "Save";

@@ -82,6 +82,7 @@ namespace RAdminPanel.UserControlFolder
                 }
                 Refresh();
                 MessageBox.Show("Сохранение прошло успешно");
+                UpdateComboBoxBranch();
             }
             else
             {
