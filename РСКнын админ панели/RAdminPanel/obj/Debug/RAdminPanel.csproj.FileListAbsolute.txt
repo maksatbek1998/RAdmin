@@ -324,3 +324,5 @@ D:\project\ElectronRSK\RAdmin\РСКнын админ панели\RAdminPanel\o
 D:\C# projects\RAdmin\РСКнын админ панели\RAdminPanel\obj\Debug\RAdminPanel.csprojAssemblyReference.cache
 D:\C# projects\RAdmin\РСКнын админ панели\RAdminPanel\bin\Debug\packages.config
 C:\RAdmin\РСКнын админ панели\RAdminPanel\bin\Debug\packages.config
+C:\RAdmin\РСКнын админ панели\RAdminPanel\obj\Debug\UserControlFolder\Printer.g.cs
+C:\RAdmin\РСКнын админ панели\RAdminPanel\obj\Debug\UserControlFolder\Printer.baml

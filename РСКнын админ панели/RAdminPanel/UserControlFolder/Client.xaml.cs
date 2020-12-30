@@ -66,7 +66,7 @@ namespace RAdminPanel.UserControlFolder
                     dataGrid.ItemsSource = list;
                 }
             };
-            dataBase.SoursData("SELECT t.id,t.nomer,t.`status`,s.name,w.name,u.name_u,DATE_FORMAT(t.created_at,'%Y-%m-%d  %h:%i:%s'),DATE_FORMAT(t.updated_at,'%Y-%m-%d  %h:%i:%s') from turns AS t INNER JOIN users AS u ON t.user_id =u.id INNER JOIN workplaces AS w ON w.id = t.workplace_id INNER JOIN services AS s ON s.id = t.service_id WHERE DATE_FORMAT(t.created_at,'%d.%m.%Y') ='" + DateTime.Now.ToString("dd.MM.yyyy") + "'");
+            dataBase.SoursData("SELECT t.id,t.nomer,t.status,s.name,'Нет','Нет',DATE_FORMAT(t.created_at,'%Y-%m-%d  %h:%i:%s'),'Нет' from turns AS t INNER JOIN services AS s ON s.id = t.service_id AND t.user_id IS NULL AND t.user_id IS null  WHERE DATE_FORMAT(t.created_at,'%Y.%m.%d') =curdate() and t.status = 'new'");
         }
 
         public void UpdateData2()
@@ -189,7 +189,7 @@ namespace RAdminPanel.UserControlFolder
                         dataGrid.ItemsSource = list;
                     }
                 };
-                dataBase.SoursData("SELECT t.id,t.nomer,t.`status`,s.name,w.name,u.name_u,DATE_FORMAT(t.created_at,'%Y-%m-%d  %h:%i:%s'),DATE_FORMAT(t.updated_at,'%Y-%m-%d  %h:%i:%s') from turns AS t INNER JOIN users AS u ON t.user_id =u.id INNER JOIN workplaces AS w ON w.id = t.workplace_id INNER JOIN services AS s ON s.id = t.service_id WHERE DATE_FORMAT(t.created_at,'%d.%m.%Y') ='" + DateTime.Now.ToString("dd.MM.yyyy") + "' and t.status = 'new'");
+                dataBase.SoursData("SELECT t.id,t.nomer,t.status,s.name,'Нет','Нет',DATE_FORMAT(t.created_at,'%Y-%m-%d  %h:%i:%s'),DATE_FORMAT(t.updated_at,'%Y-%m-%d  %h:%i:%s') from turns AS t INNER JOIN services AS s ON s.id = t.service_id AND t.user_id IS NULL AND t.user_id IS null  WHERE DATE_FORMAT(t.created_at,'%Y.%m.%d') =curdate() and t.status = 'new'");
                 filterTextBox.Text = String.Empty;
             }
           

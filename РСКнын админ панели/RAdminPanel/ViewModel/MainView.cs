@@ -37,7 +37,12 @@ namespace RAdminPanel.ViewModel
             get => _Auto;
             set => Set(ref _Auto, value);
         }
-
+        private string _Print = "Принтер";
+        public string Print
+        {
+            get => _Print;
+            set => Set(ref _Print, value);
+        }
         private string _Operators = "Операторы";
         public string Operators
         {
@@ -118,7 +123,8 @@ namespace RAdminPanel.ViewModel
             Clients = "Кардарлар";
             LangSetting = "Тил жөндөөсү";
             SoundSetting = "Үндөрдү орнотуу";
-            Auto = "АвтоЧакыруу";
+            Auto = "Авто Чакыруу";
+            Print = "Принтер";
             Block = "Бекитүү";
         }
 
@@ -134,6 +140,7 @@ namespace RAdminPanel.ViewModel
             LangSetting = "Настройки языков";
             SoundSetting = "Настройки звуков";
             Auto = "АвтоВызов";
+            Print = "Принтер";
             Block = "Блокировка";
         }
 
@@ -149,6 +156,7 @@ namespace RAdminPanel.ViewModel
             LangSetting = "Languages settings";
             SoundSetting = "Sounds settings";
             Auto = "Auto";
+            Print = "Принтер";
             Block = "Block";
         }
 

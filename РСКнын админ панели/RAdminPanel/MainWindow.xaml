@@ -98,6 +98,12 @@
                             <Label x:Name="lbl_menu811"  VerticalAlignment="Center" FontSize="14" Content="{Binding Auto, UpdateSourceTrigger=PropertyChanged}" Foreground="White" />
                         </DockPanel>
                     </ToggleButton>
+                    <ToggleButton x:Name="button22" Height="45" Style="{DynamicResource menu}" Click="button22_Click">
+                        <DockPanel Margin="5 0 0 0">
+                            <Image Source="Image/Img/print.png" Height="23"/>
+                            <Label x:Name="lbl_menu822"  VerticalAlignment="Center" FontSize="14" Content="{Binding Print, UpdateSourceTrigger=PropertyChanged}" Foreground="White" />
+                        </DockPanel>
+                    </ToggleButton>
                     <ToggleButton x:Name="button10" Height="45" Style="{DynamicResource menu}" Click="Button_Click_12">
                         <DockPanel Margin="5 0 0 0">
                             <Image Source="Image/Img/private_lock_250px.png" Height="25"/>
@@ -115,7 +121,7 @@
                 </Image>
                 <TextBlock 
   Name="MyChangingColorText" HorizontalAlignment="Center"
-  Width="124" Height="24" FontSize="14"  FontWeight="Bold" VerticalAlignment="Bottom" Text="Больше чем банк" Margin="0,0,0,10">
+  Width="165" Height="24" FontSize="14"  FontWeight="Bold" VerticalAlignment="Bottom" Text="Больше возможностей" Margin="0,0,0,10">
   
                     <TextBlock.Foreground>
                         <SolidColorBrush x:Name="MySolidColorBrush" Color="White" />
@@ -162,7 +168,7 @@
                     </Canvas>
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Top">
                         <StackPanel Orientation="Horizontal" Margin="0 0 10 0">
-                            <Button Command="{Binding ToKg}" Style="{DynamicResource Language_Button1}" Content="КГ"/>
+                            <Button Command="{Binding ToKg}" Style="{DynamicResource Language_Button1}" Content="KG"/>
                             <Button Command="{Binding ToRu}" Click="Button_Click_13" Style="{DynamicResource Language_Button1}" Content="RUS"/>
                             <Button Command="{Binding ToEn}" Style="{DynamicResource Language_Button1}" Content="EN"/>
                         </StackPanel>

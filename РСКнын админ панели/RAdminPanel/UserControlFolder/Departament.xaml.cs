@@ -12,6 +12,7 @@ namespace RAdminPanel.UserControlFolder
     public partial class Departament : UserControl
     {
         string id_1="";
+        string number_f = "", number_f2 = "";
         Base Bases = new Base();
         public Departament()
         {
@@ -47,6 +48,43 @@ namespace RAdminPanel.UserControlFolder
                     messageO.del_ += () => UpdateData();
                     messageO.ShowDialog();
                 }
+            }
+        }
+
+        private void CheckBox_Unchecked(object sender, RoutedEventArgs e)
+        {
+            if (number_f2 != "")
+                Bases.RegistrToBase(" DELETE FROM positions_services  " +
+                    $"WHERE  position_id={number_f} and service_id={number_f2}");
+        }
+
+        private void CheckBox_Checked(object sender, RoutedEventArgs e)
+        {
+            if (number_f2 != "")
+                Bases.RegistrToBase("INSERT INTO positions_services(position_id,service_id)" +
+                    $"values('{number_f}','{number_f2}')");
+        }
+
+        private void OtdelData_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            DataRowView dataRow = (DataRowView)OtdelData.SelectedItem;
+            if (dataRow != null)
+            {
+                number_f = dataRow.Row.ItemArray[0].ToString();
+            }
+            //MessageBox.Show(number_f);
+            Bases.SoursDataGrid("SELECT v.id,v.name, if(p.position_id=" + number_f + ",true,FALSE) AS flag " +
+                "FROM view_services v LEFT JOIN positions_services p " +
+                $"ON v.id = p.service_id AND p.position_id={number_f} ORDER BY v.id", ref OtdelData2);
+            number_f2 = "";
+        }
+
+        private void OtdelData_SelectedCellsChanged2(object sender, SelectedCellsChangedEventArgs e)
+        {
+            DataRowView dataRow = (DataRowView)OtdelData2.SelectedItem;
+            if (dataRow != null)
+            {
+                number_f2 = dataRow.Row.ItemArray[0].ToString();
             }
         }
     }

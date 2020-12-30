@@ -39,6 +39,7 @@ namespace RAdminPanel
                 lbl_menu5.Visibility = Visibility.Collapsed;
                 lbl_menu6.Visibility = Visibility.Collapsed;
                 lbl_menu8.Visibility = Visibility.Collapsed;
+                lbl_menu822.Visibility = Visibility.Collapsed;
                 lbl_menu9.Visibility = Visibility.Collapsed;
                 lbl_menu81.Visibility = Visibility.Collapsed;
                 lbl_menu22.Visibility = Visibility.Collapsed;
@@ -69,6 +70,7 @@ namespace RAdminPanel
                 lbl_menu8.Visibility = Visibility.Visible;
                 lbl_menu9.Visibility = Visibility.Visible;
                 lbl_menu811.Visibility = Visibility.Visible;
+                lbl_menu822.Visibility = Visibility.Visible;
                 MyChangingColorText.Visibility = Visibility.Visible;
                 lbl_menu8111.Visibility = Visibility.Visible;
                 Skryt.Width = 32;
@@ -202,6 +204,7 @@ namespace RAdminPanel
             button8.IsChecked = false;
             button9.IsChecked = false;
             button10.IsChecked = false;
+            button22.IsChecked = false;
             if (button == 0)
             {
                 fil.IsChecked = true;
@@ -246,6 +249,10 @@ namespace RAdminPanel
             {
                 button10.IsChecked = true;
             }
+            else if (button == 11)
+            {
+                button22.IsChecked = true;
+            }
         }
 
         private void Border_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
@@ -259,6 +266,12 @@ namespace RAdminPanel
             {
                 Branches.Res();
             }
+        }
+
+        private void button22_Click(object sender, RoutedEventArgs e)
+        {
+            Checked(11);
+            ShowUserControl.Show(Lists, new Printer());
         }
     }
 }

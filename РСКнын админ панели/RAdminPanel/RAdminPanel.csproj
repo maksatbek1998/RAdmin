@@ -109,6 +109,7 @@
     <Compile Include="ClassUserControl\langgrid.cs" />
     <Compile Include="ClassUserControl\ShowUserControl.cs" />
     <Compile Include="DataBase\Base.cs" />
+    <Compile Include="DataBase\IniFile.cs" />
     <Compile Include="UserControlFolder\AddOperator.xaml.cs">
       <DependentUpon>AddOperator.xaml</DependentUpon>
     </Compile>
@@ -132,6 +133,9 @@
     </Compile>
     <Compile Include="UserControlFolder\Password.xaml.cs">
       <DependentUpon>Password.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControlFolder\Printer.xaml.cs">
+      <DependentUpon>Printer.xaml</DependentUpon>
     </Compile>
     <Compile Include="UserControlFolder\Rasspisania.xaml.cs">
       <DependentUpon>Rasspisania.xaml</DependentUpon>
@@ -196,6 +200,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="UserControlFolder\Password.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControlFolder\Printer.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -327,6 +335,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Image\Ico\multiply.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\Img\print.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
