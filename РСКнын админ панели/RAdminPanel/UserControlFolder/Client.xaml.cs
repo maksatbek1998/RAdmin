@@ -208,7 +208,7 @@ namespace RAdminPanel.UserControlFolder
                 dataGrid.ItemsSource = new List<gridvar>();
                 list1.Clear();
                 dataBase = new Base();
-                dataBase.del += db =>
+                dataBase.del += db => 
                 {
                     if (db.Rows.Count > 0)
                     {
