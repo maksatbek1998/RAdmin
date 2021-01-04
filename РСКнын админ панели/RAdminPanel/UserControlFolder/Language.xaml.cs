@@ -1,5 +1,6 @@
 ﻿using RAdminPanel.ClassUserControl;
 using RAdminPanel.DataBase;
+using RAdminPanel.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -82,6 +83,7 @@ namespace RAdminPanel.UserControlFolder
                 }
                 Refresh();
                 MessageBox.Show("Сохранение прошло успешно");
+                UpdateComboBoxBranch();
             }
             else
             {
@@ -204,6 +206,34 @@ namespace RAdminPanel.UserControlFolder
                 }
             };
             dataBase.SoursData("SELECT name FROM service_langs where locale = '" + UpdateComboBox.Text + "'");
+        }
+        private void Restart()
+        {
+            if (staticClaseForLangue.Lang == "RUS")
+            {
+                tab1.Header = "Добавить новый язык";
+                tab2.Header = "Изменение языков";
+                tab3.Header = "Удаление языков";
+                name_lang.Text = "Выберите язык";
+                name_lang_perevod.Text = "Название переводимого языка";
+                name_kratko.Text = "Короткое имя";
+                Button_save.Content = "";
+                vybrannyi.Header = "Выбранный вами язык";
+                kotoruluuchu.Header = "Его нужно перевести на язык";
+                ochuruu.Header = "";
+            }
+            else if (staticClaseForLangue.Lang == "KG")
+            {
+                tab1.Header = "";
+                tab2.Header = "";
+                tab3.Header = "";
+            }
+            if (staticClaseForLangue.Lang == "EN")
+            {
+                tab1.Header = "";
+                tab2.Header = "";
+                tab3.Header = "";
+            }
         }
     }
 }

@@ -4,9 +4,12 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:RAdminPanel.UserControlFolder"
-             xmlns:vm="clr-namespace:RAdminPanel.ViewModel"
+             xmlns:vm="clr-namespace:RAdminPanel.ViewModel"             
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
+    <UserControl.DataContext>
+        <vm:MainView/>
+    </UserControl.DataContext>
     <Grid>
         <Border Padding="20">
             <Grid>
@@ -17,9 +20,9 @@
                 <Grid Grid.Row="0">
                     <Canvas>
                         <Image Source="../Image/Just_Image/Branches.png" Width="110" Height="120" Canvas.Left="17" Canvas.Top="26"/>
-                        <TextBlock Text="Название филиала"  Canvas.Left="177" Canvas.Top="30" />
+                        <TextBlock x:Name="FilialNameT" Text="Название филиала"  Canvas.Left="177" Canvas.Top="30" />
                         <TextBox x:Name="FilialName" FontSize="14"  Style="{DynamicResource textbox_style}" Tag="Название филиала" Height="24" Width="254" Canvas.Left="330" Canvas.Top="26"/>
-                        <TextBlock Text="Адрес филиала" Canvas.Left="177" Canvas.Top="64" />
+                        <TextBlock x:Name="FilialAdressT" Text="Адрес филиала" Canvas.Left="177" Canvas.Top="64" />
                         <TextBox x:Name="FilialAdress" FontSize="14"  Style="{DynamicResource textbox_style}" Tag="Адрес филиала" Height="24" Width="254" Canvas.Left="330" Canvas.Top="61"/>
                         <Button x:Name="Save" Style="{DynamicResource ButtonStyle}" Content="Сохранить" Canvas.Left="434" Canvas.Top="95" Click="Button_Click"/>
                     </Canvas>

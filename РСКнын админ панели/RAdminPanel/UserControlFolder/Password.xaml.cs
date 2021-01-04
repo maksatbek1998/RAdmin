@@ -33,9 +33,9 @@ namespace RAdminPanel.UserControlFolder
         private void button_1_Click(object sender, RoutedEventArgs e)
         {
             Base1 = new Base();
-            if (LogTextBox.Text!=String.Empty && PassTextBox.Text!=String.Empty)
+            if (LogTextBox.Text!=String.Empty && PassTextBox.Password!=String.Empty)
             {
-                flag = Base1.ReturnIDString("SELECT id FROM parol WHERE LOG='" + LogTextBox.Text + "' AND pass='" + PassTextBox.Text + "'");
+                flag = Base1.ReturnIDString("SELECT id FROM parol WHERE LOG='" + LogTextBox.Text + "' AND pass='" + PassTextBox.Password + "'");
                 if (flag != String.Empty)
                 { 
 /*                    MainWindow mainWindow = new MainWindow();
@@ -77,9 +77,9 @@ namespace RAdminPanel.UserControlFolder
 
         private void button_1_Copy_Click(object sender, RoutedEventArgs e)
         {
-            if (LogTextBox.Text != String.Empty && PassTextBox.Text != String.Empty)
+            if (LogTextBox.Text != String.Empty && PassTextBox.Password != String.Empty)
             {
-                flag = Base1.ReturnIDString("SELECT id FROM parol WHERE LOG='" + LogTextBox.Text + "' AND pass='" + PassTextBox.Text + "'");
+                flag = Base1.ReturnIDString("SELECT id FROM parol WHERE LOG='" + LogTextBox.Text + "' AND pass='" + PassTextBox.Password + "'");
                 if (flag != String.Empty)
                 {
                     if (OldPass.Text != String.Empty && NewPass.Text != String.Empty)

@@ -24,7 +24,7 @@
                                 <Button Style="{DynamicResource ButtonStyle}" Content="Кошуу" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="20,22,0,5" Click="Button_Click"/>
                             </StackPanel>
                             <DataGrid x:Name="LangData" Margin="10,7,0,0" FontSize="12"  CanUserAddRows="False" Style="{DynamicResource grid_xml}" ColumnHeaderStyle="{DynamicResource hederstyle}" VerticalAlignment="Stretch" VerticalScrollBarVisibility="Auto" HorizontalAlignment="Stretch"   HeadersVisibility="Column" 
-                   AutoGenerateColumns="False" >
+                   AutoGenerateColumns="False" IsReadOnly="True">
                                 <DataGrid.Columns>
                                     <DataGridTextColumn Header="№" Width="50" Binding="{Binding id}"/>
                                     <DataGridTextColumn Header="Терминалдагы тилдер" Binding="{Binding locale}"/>
@@ -42,8 +42,8 @@
                         </StackPanel>
                     </Grid>
                 </TabItem>
-                <TabItem Header="Терминалды очуруу жана жандыруу" Style="{DynamicResource TabControl}" Width="260">
-                    <Grid>
+                <!-- <TabItem Header="Терминалды очуруу жана жандыруу" Style="{DynamicResource TabControl}" Width="260">
+                <Grid>
                         <Grid.RowDefinitions>
                             <RowDefinition Height="120"/>
                             <RowDefinition Height="*"/>
@@ -55,7 +55,7 @@
                             <Button Style="{DynamicResource ButtonStyle}" Content="Очуруу" Canvas.Left="610" Canvas.Top="21" FontWeight="DemiBold"/>
                         </Canvas>
                     </Grid>
-                </TabItem>
+                </TabItem>-->
                 <TabItem Header="Создание меню для терминала" Style="{DynamicResource TabControl}" Width="220">
                     <Grid>
                         <Grid.RowDefinitions>
@@ -93,7 +93,7 @@
                             <TextBlock Text="Суффикс" Canvas.Top="73" Canvas.Left="436" Width="105"/>
                             <ComboBox x:Name="ComboSufics" Canvas.Left="548" Canvas.Top="72" Width="150" IsReadOnly="True"/>
                         </Canvas>
-                        <DataGrid x:Name="GlavDataGrid"  FontSize="12"  CanUserAddRows="False" Style="{DynamicResource grid_xml}" ColumnHeaderStyle="{DynamicResource hederstyle}" VerticalAlignment="Stretch" VerticalScrollBarVisibility="Auto"   HeadersVisibility="Column"
+                        <DataGrid x:Name="GlavDataGrid"  FontSize="12"  CanUserAddRows="False" Style="{DynamicResource grid_xml}" ColumnHeaderStyle="{DynamicResource hederstyle}" VerticalAlignment="Stretch" VerticalScrollBarVisibility="Auto"   HeadersVisibility="Column" IsReadOnly="True"
                    AutoGenerateColumns="False"  Grid.Row="1">
                             <DataGrid.Columns>
                                 <DataGridTextColumn Header="№" Width="40" Binding="{Binding id}"/>

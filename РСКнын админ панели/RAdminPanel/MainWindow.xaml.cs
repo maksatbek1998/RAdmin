@@ -34,11 +34,12 @@ namespace RAdminPanel
                 //JOK.Width = 0;
                 lbl_menu1.Visibility = Visibility.Collapsed;
                 lbl_menu2.Visibility = Visibility.Collapsed;
-                lbl_menu3.Visibility = Visibility.Collapsed;
+               // lbl_menu3.Visibility = Visibility.Collapsed;
                 lbl_menu4.Visibility = Visibility.Collapsed;
                 lbl_menu5.Visibility = Visibility.Collapsed;
                 lbl_menu6.Visibility = Visibility.Collapsed;
                 lbl_menu8.Visibility = Visibility.Collapsed;
+                lbl_menu822.Visibility = Visibility.Collapsed;
                 lbl_menu9.Visibility = Visibility.Collapsed;
                 lbl_menu81.Visibility = Visibility.Collapsed;
                 lbl_menu22.Visibility = Visibility.Collapsed;
@@ -62,13 +63,14 @@ namespace RAdminPanel
                 lbl_menu_2.Margin = new Thickness(10, 0, 20, 0);
                 lbl_menu81.Visibility = Visibility.Visible;
                 lbl_menu22.Visibility = Visibility.Visible;
-                lbl_menu3.Visibility = Visibility.Visible;
+               // lbl_menu3.Visibility = Visibility.Visible;
                 lbl_menu4.Visibility = Visibility.Visible;
                 lbl_menu5.Visibility = Visibility.Visible;
                 lbl_menu6.Visibility = Visibility.Visible;
                 lbl_menu8.Visibility = Visibility.Visible;
                 lbl_menu9.Visibility = Visibility.Visible;
                 lbl_menu811.Visibility = Visibility.Visible;
+                lbl_menu822.Visibility = Visibility.Visible;
                 MyChangingColorText.Visibility = Visibility.Visible;
                 lbl_menu8111.Visibility = Visibility.Visible;
                 Skryt.Width = 32;
@@ -193,7 +195,7 @@ namespace RAdminPanel
         {
             fil.IsChecked = false;
             button1.IsChecked = false;
-            button2.IsChecked = false;
+           // button2.IsChecked = false;
             button3.IsChecked = false;
             button4.IsChecked = false;
             button5.IsChecked = false;
@@ -202,6 +204,7 @@ namespace RAdminPanel
             button8.IsChecked = false;
             button9.IsChecked = false;
             button10.IsChecked = false;
+            button22.IsChecked = false;
             if (button == 0)
             {
                 fil.IsChecked = true;
@@ -212,7 +215,7 @@ namespace RAdminPanel
             }
             else if (button == 2)
             {
-                button2.IsChecked = true;
+               // button2.IsChecked = true;
             }
             else if (button == 3)
             {
@@ -246,6 +249,10 @@ namespace RAdminPanel
             {
                 button10.IsChecked = true;
             }
+            else if (button == 11)
+            {
+                button22.IsChecked = true;
+            }
         }
 
         private void Border_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
@@ -255,10 +262,29 @@ namespace RAdminPanel
 
         private void Button_Click_13(object sender, RoutedEventArgs e)
         {
-            if (staticClaseForLangue.window == "branch") 
-            {
-                Branches.Res();
-            }
+            /*     if (staticClaseForLangue.window == "branch") 
+                 {
+                     Branches.Res();
+                 staticClaseForLangue.Lang = "KG";
+                 }*/
+            staticClaseForLangue.Lang = "RUS";
+
+        }
+
+        private void button22_Click(object sender, RoutedEventArgs e)
+        {
+            Checked(11);
+            ShowUserControl.Show(Lists, new Printer());
+        }
+
+        private void Button_Click_14(object sender, RoutedEventArgs e)
+        {
+            staticClaseForLangue.Lang = "KG";
+        }
+
+        private void Button_Click_15(object sender, RoutedEventArgs e)
+        {
+            staticClaseForLangue.Lang = "EN";
         }
     }
 }

@@ -17,39 +17,39 @@ using System.Windows.Shapes;
 namespace RAdminPanel.UserControlFolder
 {
     /// <summary>
-    /// Логика взаимодействия для Mode.xaml
+    /// Логика взаимодействия для Printer.xaml
     /// </summary>
-    public partial class Mode : UserControl
+    public partial class Printer : UserControl
     {
         Base Base1;
-        public Mode()
+        public Printer()
         {
             InitializeComponent();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            int result = 0;
-            if (UserNameTextBox.Text != "")
+            int result1 = 0;
+            if (Metr.Text!="")
             {
-                if (!int.TryParse(UserNameTextBox.Text, out result))
+                if (!int.TryParse(Metr.Text, out result1))
                 {
                     MessageBox.Show("Дайте целое число!", "", MessageBoxButton.OK);
                 }
                 else
                 {
-                    if (result >= 1)
+                    if (result1 >= 1)
                     {
+                        int result = Convert.ToInt32(Metr.Text) * 100;
                         Base1 = new Base();
-                        Base1.RegistrToBase("UPDATE options SET value='" + UserNameTextBox.Text + "' WHERE id=5");
+                        Base1.RegistrToBase("UPDATE `rskbank`.`options` SET `value`='" + result + "' WHERE  `key`='Terminal_Paper'");
                         MessageBox.Show("Успешно сохранено", "", MessageBoxButton.OK);
-                        UserNameTextBox.Text = "";
+                        Metr.Text = "";
                     }
                     else
                     {
                         MessageBox.Show("Не указывайте 0 или отрицательное число!", "", MessageBoxButton.OK);
                     }
-
                 }
             }
             else
