@@ -49,12 +49,12 @@
                             <Label FontSize="14"  VerticalAlignment="Center" Content="{Binding Otdels, UpdateSourceTrigger=PropertyChanged}" Foreground="White" x:Name="lbl_menu22"/>
                         </DockPanel>
                     </ToggleButton>
-                    <ToggleButton x:Name="button2" Height="45" Style="{DynamicResource menu}" Click="Button_Click_5">
+                    <!-- <ToggleButton x:Name="button2" Height="45" Style="{DynamicResource menu}" Click="Button_Click_5">
                         <DockPanel Margin="5 0 0 0">
                             <Image Source="Image/Img/resume_48px.png" Height="25"/>
                             <Label FontSize="14" x:Name="lbl_menu3"  Content="{Binding WorkPlace , UpdateSourceTrigger=PropertyChanged}" Foreground="White " VerticalAlignment="Center"/>
                         </DockPanel>
-                    </ToggleButton>
+                    </ToggleButton>-->
                     <ToggleButton x:Name="button3" Height="45" Style="{DynamicResource menu}" Click="Button_Click_4" >
                         <DockPanel Margin="5 0 0 0">
                             <Image Source="Image/Img/business_building_48px.png" Height="25" />
@@ -95,6 +95,12 @@
                         <DockPanel Margin="5 0 0 0">
                             <Image Source="Image/Img/sleep_250px.png" Height="25"/>
                             <Label x:Name="lbl_menu811"  VerticalAlignment="Center" FontSize="14" Content="{Binding Auto, UpdateSourceTrigger=PropertyChanged}" Foreground="White" />
+                        </DockPanel>
+                    </ToggleButton>
+                    <ToggleButton x:Name="button22" Height="45" Style="{DynamicResource menu}" Click="button22_Click">
+                        <DockPanel Margin="5 0 0 0">
+                            <Image Source="Image/Img/print.png" Height="23"/>
+                            <Label x:Name="lbl_menu822"  VerticalAlignment="Center" FontSize="14" Content="{Binding Print, UpdateSourceTrigger=PropertyChanged}" Foreground="White" />
                         </DockPanel>
                     </ToggleButton>
                     <ToggleButton x:Name="button10" Height="45" Style="{DynamicResource menu}" Click="Button_Click_12">
@@ -160,9 +166,9 @@
                     </Canvas>
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Top">
                         <StackPanel Orientation="Horizontal" Margin="0 0 10 0">
-                            <Button Command="{Binding ToKg}" Style="{DynamicResource Language_Button1}" Content="КГ"/>
+                            <Button Command="{Binding ToKg}" Style="{DynamicResource Language_Button1}" Content="KG" Click="Button_Click_14"/>
                             <Button Command="{Binding ToRu}" Click="Button_Click_13" Style="{DynamicResource Language_Button1}" Content="RUS"/>
-                            <Button Command="{Binding ToEn}" Style="{DynamicResource Language_Button1}" Content="EN"/>
+                            <Button Command="{Binding ToEn}" Style="{DynamicResource Language_Button1}" Content="EN" Click="Button_Click_15"/>
                         </StackPanel>
                         <StackPanel Orientation="Horizontal" >
                             <Button  Style="{DynamicResource Close_Button}" VerticalAlignment="Top" Click="Button_Click_2">

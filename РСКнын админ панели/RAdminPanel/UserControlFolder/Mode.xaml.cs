@@ -29,12 +29,28 @@ namespace RAdminPanel.UserControlFolder
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+            int result = 0;
             if (UserNameTextBox.Text != "")
             {
-                Base1 = new Base();
-                Base1.RegistrToBase("UPDATE options SET value='" + UserNameTextBox.Text + "' WHERE id=5");
-                MessageBox.Show("Успешно сохранено", "", MessageBoxButton.OK);
-                UserNameTextBox.Text = "";
+                if (!int.TryParse(UserNameTextBox.Text, out result))
+                {
+                    MessageBox.Show("Дайте целое число!", "", MessageBoxButton.OK);
+                }
+                else
+                {
+                    if (result >= 1)
+                    {
+                        Base1 = new Base();
+                        Base1.RegistrToBase("UPDATE options SET value='" + UserNameTextBox.Text + "' WHERE id=5");
+                        MessageBox.Show("Успешно сохранено", "", MessageBoxButton.OK);
+                        UserNameTextBox.Text = "";
+                    }
+                    else
+                    {
+                        MessageBox.Show("Не указывайте 0 или отрицательное число!", "", MessageBoxButton.OK);
+                    }
+
+                }
             }
             else
             {

@@ -13,7 +13,7 @@
         </Grid.DataContext>
         <Border Padding="10">
             <TabControl BorderThickness="0">
-                <TabItem Header="Клиенттер агымы" Style="{DynamicResource TabControl}" Width="150">
+                <TabItem x:Name="Tab1" Header="Клиенттер агымы" Style="{DynamicResource TabControl}" Width="150">
                     <Grid>
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="223*"/>
@@ -25,11 +25,11 @@
                         </Grid.RowDefinitions>
                         <Canvas Grid.ColumnSpan="2">
                             <ToggleButton Checked="ToggleButton_Click" x:Name="tog1" Style="{DynamicResource Togle_Button}" Unchecked="tog1_Unchecked" Canvas.Left="130" Canvas.Top="10"/>
-                            <TextBlock Text="Очереттегилер" Canvas.Left="10" Canvas.Top="14"/>
+                            <TextBlock x:Name="Ochered" Text="Очереттегилер" Canvas.Left="10" Canvas.Top="14"/>
                             <ToggleButton x:Name="tog2" Style="{DynamicResource Togle_Button}" Checked="ToggleButton_Click1" Unchecked="tog1_Unchecked1" Canvas.Left="439" Canvas.Top="10"/>
-                            <TextBlock Text="Кутуп тургандар" Canvas.Left="307" Canvas.Top="14"/>
-                            <ToggleButton x:Name="tog3" Style="{DynamicResource Togle_Button}" Checked="ToggleButton_Click2" Unchecked="tog1_Unchecked2" Canvas.Left="800" Canvas.Top="10"/>
-                            <TextBlock Text="Операторго жолуккандар" Canvas.Left="602" Canvas.Top="14"/>
+                            <TextBlock  x:Name="Ochered1" Text="Кутуп тургандар" Canvas.Left="307" Canvas.Top="14"/>
+                            <ToggleButton x:Name="tog3" Style="{DynamicResource Togle_Button}" Checked="ToggleButton_Click2" Unchecked="tog1_Unchecked2" Canvas.Left="836" Canvas.Top="10"/>
+                            <TextBlock  x:Name="Ochered2" Text="Операторго жолуккандар" Canvas.Left="602" Canvas.Top="14"/>
                         </Canvas>
                         <Grid Grid.Row="1" Grid.ColumnSpan="2">
                             <Grid.RowDefinitions>
@@ -37,7 +37,7 @@
                                 <RowDefinition Height="*"/>
                             </Grid.RowDefinitions>
                             <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Bottom">
-                                <TextBlock Text="Чек номери боюнча издоо" Canvas.Left="602" Canvas.Top="14" VerticalAlignment="Center" Margin="0,0,15,0"/>
+                                <TextBlock x:Name="Search2" Text="Чек номери боюнча издоо" Canvas.Left="602" Canvas.Top="14" VerticalAlignment="Center" Margin="0,0,15,0"/>
                                 <TextBox  x:Name="filterTextBox" Style="{DynamicResource styleLog}" Tag="Номери боюнча издоо" Width="200" TextChanged="filterTextBox_TextChanged"/>
                             </StackPanel>
                             <DataGrid x:Name="dataGrid" Margin="10,7,0,0" FontSize="12"  CanUserAddRows="False" Style="{DynamicResource grid_xml}" ColumnHeaderStyle="{DynamicResource hederstyle}" VerticalAlignment="Stretch" VerticalScrollBarVisibility="Auto"   HeadersVisibility="Column" HorizontalAlignment="Stretch"
@@ -47,19 +47,19 @@
                                       VirtualizingPanel.CacheLengthUnit="Item">
                                 <DataGrid.Columns>
                                     <DataGridTextColumn Header="№"  Width="0.5*" Binding="{Binding id}"/>
-                                    <DataGridTextColumn Header="Чектин номери" Width="1.5*" Binding="{Binding checkNum}" />
-                                    <DataGridTextColumn Header="Статусу" Width="*" Binding="{Binding status}" />
-                                    <DataGridTextColumn Header="Услуганын туру" Width="1.5*"  Binding="{Binding uslugvid}"/>
-                                    <DataGridTextColumn Header="Терезе" Width="*"  Binding="{Binding window}"/>
-                                    <DataGridTextColumn Header="Опеоратор" Width="1.2*"  Binding="{Binding oper}" />
-                                    <DataGridTextColumn  Header="Очеред алган убакты" Width="2*" Binding="{Binding start, StringFormat='dd-MM-yyyy hh:mm:ss'}"/>
-                                    <DataGridTextColumn Header="Очереди буткон убакты" Width="2*" Binding="{Binding end,StringFormat='dd-MM-yyyy hh:mm:ss'}"/>
+                                    <DataGridTextColumn x:Name="nam_chek" Header="Чектин номери" Width="1.5*" Binding="{Binding checkNum}" />
+                                    <DataGridTextColumn x:Name="nam_status" Header="Статусу" Width="*" Binding="{Binding status}" />
+                                    <DataGridTextColumn x:Name="nam_usluga" Header="Услуганын туру" Width="1.5*"  Binding="{Binding uslugvid}"/>
+                                    <DataGridTextColumn x:Name="nam_window" Header="Терезе" Width="*"  Binding="{Binding window}"/>
+                                    <DataGridTextColumn x:Name="nam_operator" Header="Опеоратор" Width="1.2*"  Binding="{Binding oper}" />
+                                    <DataGridTextColumn x:Name="nam_ochered_algan"  Header="Очеред алган убакты" Width="2*" Binding="{Binding start, StringFormat='dd-MM-yyyy hh:mm:ss'}"/>
+                                    <DataGridTextColumn x:Name="nam_ochered_butkon" Header="Очереди буткон убакты" Width="2*" Binding="{Binding end,StringFormat='dd-MM-yyyy hh:mm:ss'}"/>
                                 </DataGrid.Columns>
                             </DataGrid>
                         </Grid>
                     </Grid>
                 </TabItem>
-                <TabItem Header="Клиенттер тизмеси" Style="{DynamicResource TabControl}" Width="150">
+                <TabItem x:Name="Tab2"  Header="Клиенттер тизмеси" Style="{DynamicResource TabControl}" Width="150">
                     <Grid>
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="22*"/>
@@ -70,11 +70,11 @@
                             <RowDefinition Height="*"/>
                         </Grid.RowDefinitions>
                         <Canvas Grid.ColumnSpan="2">
-                            <DatePicker SelectedDateChanged="DatePicker_SelectedDateChanged" x:Name="dataPicker" Canvas.Left="165" Canvas.Top="12" Width="117"/>
-                            <TextBlock Text="Датасы менен издоо" Canvas.Left="10" Canvas.Top="14"/>
-                            <TextBlock Text="Имя работника" Canvas.Left="287" Canvas.Top="14" Width="134"/>
+                            <DatePicker x:Name="dataPicker" Canvas.Left="165" Canvas.Top="12" Width="117" SelectedDateChanged="DatePicker_SelectedDateChanged"/>
+                            <TextBlock x:Name="Tdate" Text="Датасы менен издоо" Canvas.Left="10" Canvas.Top="14"/>
+                            <TextBlock x:Name="Namework" Text="Имя работника" Canvas.Left="287" Canvas.Top="14" Width="134"/>
                             <ComboBox DropDownClosed="OperComBox_DropDownClosed"  x:Name="OperComBox" Canvas.Left="402" Canvas.Top="12" Width="150" IsReadOnly="True"/>
-                            <TextBlock Text="Отдел" Canvas.Left="586" Canvas.Top="12"/>
+                            <TextBlock x:Name="Otdel" Text="Отдел" Canvas.Left="586" Canvas.Top="12"/>
                             <ComboBox DropDownClosed="UslugComBox_DropDownClosed"  x:Name="UslugComBox" Canvas.Left="677" Canvas.Top="10" Width="150" IsReadOnly="True"/>
                         </Canvas>
                         <Grid Grid.Row="1" Grid.ColumnSpan="2">
@@ -82,22 +82,22 @@
                                 <RowDefinition Height="35"/>
                                 <RowDefinition Height="*"/>
                             </Grid.RowDefinitions>
-                            <Button Grid.Row="0" Style="{DynamicResource ButtonStyle}" Content="Адаттагыдай коруу" HorizontalAlignment="Left" Click="Button_Click" VerticalAlignment="Bottom" Margin="10,0"/>
+                            <Button x:Name="Defult1" Grid.Row="0" Style="{DynamicResource ButtonStyle}" Content="Адаттагыдай коруу" HorizontalAlignment="Left" Click="Button_Click" VerticalAlignment="Bottom" Margin="10,0,0,0" Width="196"/>
                             <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Bottom">
-                                <TextBlock Text="Номери боюнча издоо" Canvas.Left="602" Canvas.Top="14" VerticalAlignment="Center" Margin="0,0,15,0"/>
+                                <TextBlock x:Name="SearchT" Text="Номери боюнча издоо" Canvas.Left="602" Canvas.Top="14" VerticalAlignment="Center" Margin="0,0,15,0"/>
                                 <TextBox x:Name="FiltrTextBox2" TextChanged="filterTextBox1_TextChanged" Style="{DynamicResource styleLog}" Tag="Номери боюнча издоо" Width="200"/>
                             </StackPanel>
                             <DataGrid x:Name="dataGrid2" Margin="10,7,0,0" FontSize="12"  CanUserAddRows="False" Style="{DynamicResource grid_xml}" ColumnHeaderStyle="{DynamicResource hederstyle}" VerticalAlignment="Stretch" VerticalScrollBarVisibility="Auto"   HeadersVisibility="Column" HorizontalAlignment="Stretch"
                    AutoGenerateColumns="False" Grid.Row="1" >
                                 <DataGrid.Columns>
                                     <DataGridTextColumn Header="№"  Width="0.5*" Binding="{Binding id}"/>
-                                    <DataGridTextColumn Header="Чектин номери" Width="1.5*" Binding="{Binding checkNum}" />
-                                    <DataGridTextColumn Header="Статусу" Width="*" Binding="{Binding status}" />
-                                    <DataGridTextColumn Header="Услуганын туру" Width="1.5*"  Binding="{Binding uslugvid}"/>
-                                    <DataGridTextColumn Header="Терезе" Width="*"  Binding="{Binding window}"/>
-                                    <DataGridTextColumn Header="Опеоратор" Width="1.2*"  Binding="{Binding oper}" />
-                                    <DataGridTextColumn Header="Очеред алган убакты" Width="2*" Binding="{Binding start,StringFormat='dd-MM-yyyy hh:mm:ss'}"/>
-                                    <DataGridTextColumn Header="Очереди буткон убакты" Width="2*" Binding="{Binding end,StringFormat='dd-MM-yyyy hh:mm:ss'}"/>
+                                    <DataGridTextColumn x:Name="name_chek" Header="Чектин номери" Width="1.5*" Binding="{Binding checkNum}" />
+                                    <DataGridTextColumn x:Name="name_status"  Header="Статусу" Width="*" Binding="{Binding status}" />
+                                    <DataGridTextColumn x:Name="name_usluga"  Header="Услуганын туру" Width="1.5*"  Binding="{Binding uslugvid}"/>
+                                    <DataGridTextColumn x:Name="name_tereze"  Header="Терезе" Width="*"  Binding="{Binding window}"/>
+                                    <DataGridTextColumn x:Name="name_operator"  Header="Опеоратор" Width="1.2*"  Binding="{Binding oper}" />
+                                    <DataGridTextColumn x:Name="name_ochered_algan"  Header="Очеред алган убакты" Width="2*" Binding="{Binding start,StringFormat='dd-MM-yyyy hh:mm:ss'}"/>
+                                    <DataGridTextColumn x:Name="name_ochered_butkon"  Header="Очереди буткон убакты" Width="2*" Binding="{Binding end,StringFormat='dd-MM-yyyy hh:mm:ss'}"/>
                                 </DataGrid.Columns>
                             </DataGrid>
                         </Grid>

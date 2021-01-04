@@ -130,7 +130,7 @@ namespace RAdminPanel.ViewModel
         private void ToRus(object obj)
         {
             Filial = "Филиалы";
-            Operators = "Операторы";
+            Operators = "Операторы"; 
             Otdels = "Отделы";
             WorkPlace = "Рабочие места";
             Raspisanie = "Управление расписанием";

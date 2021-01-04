@@ -19,21 +19,19 @@
             <Grid Grid.Row="0">
                 <Canvas>
                     <Image Source="../Image/Just_Image/Person.JPG" Width="120" Height="140" Canvas.Left="17" Canvas.Top="26"/>
-                    <TextBlock Text="Ф.И.О" Canvas.Left="177" Canvas.Top="20" />
+                    <TextBlock x:Name="UserNameTextBox1"  Text="Ф.И.О" Canvas.Left="177" Canvas.Top="20" />
                     <TextBox x:Name="UserNameTextBox" FontSize="14"  Style="{DynamicResource textbox_style}" Tag=" Ф.И.О" Height="24" Width="254" Canvas.Left="269" Canvas.Top="16"/>
-                    <TextBlock Text="Филиал" Canvas.Left="177" Canvas.Top="51"/>
+                    <TextBlock x:Name="Filial" Text="Филиал" Canvas.Left="177" Canvas.Top="51"/>
                     <ComboBox DropDownClosed="BranchComboBox_DropDownClosed" x:Name="BranchComboBox"  Canvas.Left="269" Canvas.Top="47"/>
-                    <TextBlock Text="Жумуш орду" Canvas.Left="177" Canvas.Top="82" />
+                    <TextBlock x:Name="Otdel" Text="Отдел" Canvas.Left="177" Canvas.Top="82" />
                     <ComboBox DropDownClosed="PositionComboBox_DropDownClosed"  x:Name="PositionComboBox" Canvas.Left="269" Canvas.Top="78"/>
-                    <TextBlock Text="Логин" Canvas.Left="178" Canvas.Top="141" />
-                    <TextBox x:Name="LoginTextBox" FontSize="14"  Style="{DynamicResource textbox_style}" Tag="Логин" Height="24" Width="254" Canvas.Left="269" Canvas.Top="136"/>
-                    <TextBlock Text="Пароль" Canvas.Left="177" Canvas.Top="166" />
-                    <TextBox x:Name="PasswordTextBox" FontSize="14"  Style="{DynamicResource textbox_style}" Tag="Пароль" Height="24" Width="254" Canvas.Left="269" Canvas.Top="165"/>
-                    <Button x:Name="SaveButton" Style="{DynamicResource ResourceKey=ButtonStyle}" Content="Сактоо" Click="Button_Click" Canvas.Left="542" Canvas.Top="165">
+                    <TextBlock x:Name="log" Text="Логин" Canvas.Left="178" Canvas.Top="111" />
+                    <TextBox x:Name="LoginTextBox" FontSize="14"  Style="{DynamicResource textbox_style}" Tag="Логин" Height="24" Width="254" Canvas.Left="269" Canvas.Top="107"/>
+                    <TextBlock x:Name="pass" Text="Пароль" Canvas.Left="177" Canvas.Top="137" />
+                    <TextBox x:Name="PasswordTextBox" FontSize="14"  Style="{DynamicResource textbox_style}" Tag="Пароль" Height="24" Width="254" Canvas.Left="269" Canvas.Top="136"/>
+                    <Button x:Name="SaveButton" Style="{DynamicResource ResourceKey=ButtonStyle}" Content="Сохранить" Click="Button_Click" Canvas.Left="542" Canvas.Top="136">
                     </Button>
                     <Button x:Name="UpdateButton" Style="{DynamicResource ResourceKey=ButtonStyle}" Visibility="Collapsed" Content="Изменить" Click="UpdateButton_Click" Canvas.Left="542" Canvas.Top="165"/>
-                    <TextBlock Text="Терезеси" Canvas.Left="177" Canvas.Top="111" />
-                    <ComboBox DropDownClosed="PositionComboBox_Copy_DropDownClosed"  x:Name="WindowComboBox" Canvas.Left="269" Canvas.Top="107"/>
                 </Canvas>
             </Grid>
             <Grid Grid.Row="1">
@@ -41,13 +39,13 @@
                    AutoGenerateColumns="False" >
                     <DataGrid.Columns>
                         <DataGridTextColumn  Header="№" Width="50" Binding="{Binding id}" />
-                        <DataGridTextColumn  Header="Ф.И.О" Binding="{Binding name_u}"/>
-                        <DataGridTextColumn  Header="Филиал" Binding="{Binding name_b}"/>
-                        <DataGridTextColumn  Header="Жумушу" Binding="{Binding name_p}"/>
-                        <DataGridTextColumn  Header="Терезеси" Binding="{Binding NAME1}"/>
-                        <DataGridTextColumn  Header="Логин" Binding="{Binding login}"/>
-                        <DataGridTextColumn  Header="Пароль" Binding="{Binding password}"/>
-                        <DataGridTemplateColumn Header="Изменить" Width="80" >
+                        <DataGridTextColumn x:Name="fio"  Header="Ф.И.О" Binding="{Binding name_u}"/>
+                        <DataGridTextColumn x:Name="fil"  Header="Филиал" Binding="{Binding name_b}"/>
+                        <DataGridTextColumn x:Name="otd"  Header="Отдел" Binding="{Binding name_p}"/>
+                       <!-- <DataGridTextColumn  Header="Терезеси" Binding="{Binding NAME1}"/>-->
+                        <DataGridTextColumn x:Name="log1"  Header="Логин" Binding="{Binding login}"/>
+                        <DataGridTextColumn x:Name="pass1"  Header="Пароль" Binding="{Binding password}"/>
+                        <DataGridTemplateColumn x:Name="izmenit"  Header="Изменить" Width="80" >
                             <DataGridTemplateColumn.CellTemplate>
                                 <DataTemplate>
                                     <Button Style="{DynamicResource Close_Button}" BorderThickness="0,0,0,0" Cursor="Hand" Click="UpdateButtonClick">
@@ -56,7 +54,7 @@
                                 </DataTemplate>
                             </DataGridTemplateColumn.CellTemplate>
                         </DataGridTemplateColumn>
-                        <DataGridTemplateColumn Header="Удалить" Width="80" >
+                        <DataGridTemplateColumn x:Name="udalit"  Header="Удалить" Width="80" >
                             <DataGridTemplateColumn.CellTemplate>
                                 <DataTemplate>
                                     <Button Style="{DynamicResource Close_Button}" BorderThickness="0,0,0,0" Cursor="Hand" Click="Button_Click_2">

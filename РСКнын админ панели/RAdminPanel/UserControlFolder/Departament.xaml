@@ -16,9 +16,9 @@
                 <Grid Grid.Row="0">
                     <Canvas>
                         <Image Source="../Image/Img/depar.png" Width="110" Height="120" Canvas.Left="17" Canvas.Top="14"/>
-                        <TextBlock Text="Отделдин аталышы" Canvas.Left="177" Canvas.Top="30" />
+                        <TextBlock x:Name="name_otdel" Text="Отделдин аталышы" Canvas.Left="177" Canvas.Top="30" />
                         <TextBox x:Name="OtdelName" FontSize="14"  Style="{DynamicResource textbox_style}" Tag="Отделдин аталышы" Height="24" Width="254" Canvas.Left="330" Canvas.Top="26"/>
-                        <Button Style="{DynamicResource ButtonStyle}" Content="Сактоо" Canvas.Left="434" Canvas.Top="96" Click="Button_Click"/>
+                        <Button x:Name="Save_Button" Style="{DynamicResource ButtonStyle}" Content="Сактоо" Canvas.Left="434" Canvas.Top="96" Click="Button_Click"/>
                     </Canvas>
                 </Grid>
                 <Grid Grid.Row="1">
@@ -30,8 +30,8 @@
                    AutoGenerateColumns="False" IsReadOnly="True">
                         <DataGrid.Columns>
                             <DataGridTextColumn Header="№" Width="50" Binding="{Binding id}"/>
-                            <DataGridTextColumn Header="Отделдин аталышы" Binding="{Binding name_p}"/>
-                            <DataGridTemplateColumn Header="Удалить" Width="80" >
+                            <DataGridTextColumn x:Name="name_ot" Header="Бөлүмдүн аталышы" Binding="{Binding name_p}"/>
+                            <DataGridTemplateColumn x:Name="delete" Header="Удалить" Width="80" >
                                 <DataGridTemplateColumn.CellTemplate>
                                     <DataTemplate>
                                         <Button Style="{DynamicResource Close_Button}" BorderThickness="0,0,0,0" Cursor="Hand" Click="Button_Click_1">
@@ -51,11 +51,11 @@
                               VerticalAlignment="Stretch" 
                               VerticalScrollBarVisibility="Auto"   
                               HeadersVisibility="Column" 
-                              HorizontalAlignment="Stretch"
+                              HorizontalAlignment="Stretch" IsReadOnly="True"
                    AutoGenerateColumns="False" >
                         <DataGrid.Columns>
                             <DataGridTextColumn Header="№" Width="50" Binding="{Binding id}"/>
-                            <DataGridTemplateColumn Header="Статус" Width="70" >
+                            <DataGridTemplateColumn x:Name="status" Header="Статус" Width="70" >
                                 <DataGridTemplateColumn.CellTemplate>
                                     <DataTemplate>
                                         <CheckBox IsChecked="{Binding flag}" 
@@ -65,7 +65,7 @@
                                     </DataTemplate>
                                 </DataGridTemplateColumn.CellTemplate>
                             </DataGridTemplateColumn>
-                            <DataGridTextColumn Header="Категории" Binding="{Binding name}"/>
+                            <DataGridTextColumn x:Name="kategory" Header="Категории" Binding="{Binding name}"/>
                         </DataGrid.Columns>
                     </DataGrid>
                 </Grid>

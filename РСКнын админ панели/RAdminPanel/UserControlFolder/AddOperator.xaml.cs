@@ -1,4 +1,5 @@
 ﻿using RAdminPanel.DataBase;
+using RAdminPanel.ViewModel;
 using RAdminPanel.ViewModel.Models;
 using System;
 using System.Collections.Generic;
@@ -26,14 +27,15 @@ namespace RAdminPanel.UserControlFolder
             UpdateData();
             UpdateComboBoxBranch();
             UpdateComboBoxPosition();
-            WindowComboBoxNanes();
+            Restart();
+          //  WindowComboBoxNanes();
         }
         public void Refresh() 
         {
             UserNameTextBox.Text = "";
             LoginTextBox.Text = "";
             PasswordTextBox.Text = "";
-            WindowComboBox.Text = "";
+          // WindowComboBox.Text = "";
             BranchComboBox.SelectedItem =  null;
             PositionComboBox.SelectedItem = null;
 
@@ -45,7 +47,7 @@ namespace RAdminPanel.UserControlFolder
             {
                 dataBase = new Base();
 
-                dataBase.RegistrToBase("insert into users(name_u,login,password,position_id,branches_id,workplace_id) values ('" + UserNameTextBox.Text + "','" + LoginTextBox.Text + "','" + Base.ComputeSha256Hash(PasswordTextBox.Text).ToString() + "'," + returnedPositionId + "," + returnedFili + "," + returnedWindowId + ")");
+                dataBase.RegistrToBase("insert into users(name_u,login,password,position_id,branches_id) values ('" + UserNameTextBox.Text + "','" + LoginTextBox.Text + "','" + Base.ComputeSha256Hash(PasswordTextBox.Text).ToString()+ "'," + returnedPositionId + "," + returnedFili + ")");
                 UpdateData();
                 Refresh();
             }
@@ -58,7 +60,7 @@ namespace RAdminPanel.UserControlFolder
         public void UpdateData()
         {
             dataBase = new Base();
-            dataBase.SoursDataGrid("SELECT u.id,u.name_u,b.name_b,p.name_p,w.name AS NAME1,u.login,u.password FROM users AS u INNER JOIN position AS p ON p.id = u.position_id INNER JOIN branches AS b ON b.id = u.branches_id INNER JOIN workplaces AS w ON u.workplace_id=w.id", ref dataGrid);
+            dataBase.SoursDataGrid("SELECT u.id,u.name_u,b.name_b,p.name_p,u.login,u.password FROM users AS u INNER JOIN position AS p ON p.id = u.position_id INNER JOIN branches AS b ON b.id = u.branches_id ", ref dataGrid);
         }
         public void UpdateComboBoxBranch()
         {
@@ -78,7 +80,7 @@ namespace RAdminPanel.UserControlFolder
             };
             dataBase.Display("SELECT name_p FROM position");
         }
-        public void WindowComboBoxNanes()
+/*        public void WindowComboBoxNanes()
         {
             dataBase = new Base();
             dataBase.eventDysplay2 += delegate (List<string> db)
@@ -86,7 +88,7 @@ namespace RAdminPanel.UserControlFolder
                 WindowComboBox.ItemsSource = db;
             };
             dataBase.Display("SELECT NAME FROM workplaces");
-        }
+        }*/
         private void Button_Click_2(object sender, RoutedEventArgs e)
         {
             DataRowView dataRow = (DataRowView)dataGrid.SelectedItem;
@@ -130,8 +132,8 @@ namespace RAdminPanel.UserControlFolder
             {               
                 id_1 = dataRow.Row.ItemArray[0].ToString();
                 UserNameTextBox.Text = dataRow.Row.ItemArray[1].ToString();
-                LoginTextBox.Text = dataRow.Row.ItemArray[5].ToString();
-                PasswordTextBox.Text = dataRow.Row.ItemArray[6].ToString();
+                LoginTextBox.Text = dataRow.Row.ItemArray[4].ToString();
+                PasswordTextBox.Text = dataRow.Row.ItemArray[5].ToString();
             }
         }
 
@@ -141,7 +143,7 @@ namespace RAdminPanel.UserControlFolder
             {
 
                 dataBase = new Base();
-                dataBase.RegistrToBase("UPDATE users AS u SET u.name_u = '" + UserNameTextBox.Text + "' ,u.login ='" + LoginTextBox.Text + "' , u.password = '" + PasswordTextBox.Text + "', u.branches_id = " + returnedFili + ", u.position_id = "+returnedPositionId+",u.workplace_id = " + returnedWindowId + " WHERE id = " + id_1 + "");
+                dataBase.RegistrToBase("UPDATE users AS u SET u.name_u = '" + UserNameTextBox.Text + "' ,u.login ='" + LoginTextBox.Text + "' , u.password = '" +Base.ComputeSha256Hash(PasswordTextBox.Text).ToString() + "', u.branches_id = " + returnedFili + ", u.position_id = "+returnedPositionId+" WHERE id = " + id_1 + "");
                 MessageBox.Show("Данные успешно обновлены!");
                 UpdateData();
                 Refresh();
@@ -155,12 +157,72 @@ namespace RAdminPanel.UserControlFolder
             }
         }
 
-        private void PositionComboBox_Copy_DropDownClosed(object sender, EventArgs e)
+        /*        private void PositionComboBox_Copy_DropDownClosed(object sender, EventArgs e)
+                {
+                    if (WindowComboBox.SelectedItem != null)
+                    {
+                        dataBase = new Base();
+                        returnedWindowId = dataBase.ReturnID("SELECT id FROM workplaces WHERE NAME='" + WindowComboBox.SelectedValue.ToString() + "'");
+                    }
+                }*/
+        private void Restart()
         {
-            if (WindowComboBox.SelectedItem != null)
+            if (staticClaseForLangue.Lang == "RUS")
             {
-                dataBase = new Base();
-                returnedWindowId = dataBase.ReturnID("SELECT id FROM workplaces WHERE NAME='" + WindowComboBox.SelectedValue.ToString() + "'");
+                UserNameTextBox1.Text = "Ф.И.О";
+                UserNameTextBox1.Tag = "Ф.И.О";
+                Filial.Text = "Филиал";
+                Otdel.Text = "Отдел";
+                log.Text = "Логин";
+                LoginTextBox.Tag = "Логин";
+                pass.Text = "Пароль";
+                PasswordTextBox.Tag = "Пароль";
+                fio.Header = "Ф.И.О";
+                fil.Header = "Филиал";
+                otd.Header = "Отдел";
+                log1.Header = "Логин";
+                pass1.Header = "Пароль";
+                izmenit.Header = "Изменить";
+                udalit.Header = "Удалить";
+                SaveButton.Content = "Сактоо";
+            }
+            else if (staticClaseForLangue.Lang == "KG")
+            {
+                UserNameTextBox1.Text = "Ф.И.О";
+                UserNameTextBox1.Tag = "Ф.И.О";
+                Filial.Text = "Филиал";
+                Otdel.Text = "Бөлүм";
+                log.Text = "Логин";
+                LoginTextBox.Tag = "Логин";
+                pass.Text = "Купуя сөз";
+                PasswordTextBox.Tag = "Купуя сөз";
+                fio.Header = "Ф.И.О";
+                fil.Header = "Филиал";
+                otd.Header = "Бөлүм";
+                log1.Header = "Логин";
+                pass1.Header = "Купуя сөз";
+                izmenit.Header = "Өзгөртүү";
+                udalit.Header = "Өчүрүү"; 
+                SaveButton.Content = "Сохранить";
+            }
+            if (staticClaseForLangue.Lang == "EN")
+            {
+                UserNameTextBox1.Text = "Surname";
+                UserNameTextBox1.Tag = "Surname";
+                Filial.Text = "Branch";
+                Otdel.Text = "Section";
+                log.Text = "Login";
+                LoginTextBox.Tag = "Login";
+                pass.Text = "Password";
+                PasswordTextBox.Tag = "Password";
+                fio.Header = "Surname";
+                fil.Header = "Branch";
+                otd.Header = "Section";
+                log1.Header = "Login";
+                pass1.Header = "Password";
+                izmenit.Header = "Change in";
+                udalit.Header = "Delete";
+                SaveButton.Content = "Save";
             }
         }
     }

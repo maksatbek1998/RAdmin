@@ -8,7 +8,7 @@
     <Grid>
         <Border Padding="20">
             <TabControl BorderThickness="0">
-                <TabItem Style="{DynamicResource TabControl}" Header="Добавить новый язык" Width="150">
+                <TabItem x:Name="tab1" Style="{DynamicResource TabControl}" Header="Добавить новый язык" Width="150">
                     <StackPanel HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
                         <Grid Width="470" HorizontalAlignment="Left">
                             <Grid.ColumnDefinitions>
@@ -16,9 +16,9 @@
                                 <ColumnDefinition/>
                             </Grid.ColumnDefinitions>
                             <StackPanel Grid.Column="0">
-                                <TextBlock Text="Выберите язык" Margin="10,5,0,5"/>
-                                <TextBlock Text="Название переводимого языка" Margin="10,9,0,5"/>
-                                <TextBlock Text="Короткое имя" Margin="10,9,0,5"/>
+                                <TextBlock x:Name="name_lang" Text="Выберите язык" Margin="10,5,0,5"/>
+                                <TextBlock  x:Name="name_lang_perevod"  Text="Название переводимого языка" Margin="10,9,0,5"/>
+                                <TextBlock  x:Name="name_kratko"  Text="Короткое имя" Margin="10,9,0,5"/>
                             </StackPanel>
                             <StackPanel Grid.Column="1">
                                 <ComboBox x:Name="Languages" DropDownClosed="Languages_DropDownClosed" IsEditable="True" IsReadOnly="True" Margin="10,5,0,5" FontSize="12" Height="23" Width="Auto"/>
@@ -26,14 +26,14 @@
                                 <TextBox LostFocus="ShortName_LostFocus" x:Name="ShortName" Margin="10,5,0,5" Height="23"/>
                             </StackPanel>
                         </Grid>
-                        <Button Style="{DynamicResource ButtonStyle}" Click="Button_Click" Content="Сактоо" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+                        <Button x:Name="Button_save" Style="{DynamicResource ButtonStyle}" Click="Button_Click" Content="Сактоо" HorizontalAlignment="Right" VerticalAlignment="Center"/>
                         <DataGrid x:Name="dataGrid" Margin="10,7,0,0" FontSize="12"  CanUserAddRows="False" Style="{DynamicResource grid_xml}" ColumnHeaderStyle="{DynamicResource hederstyle}" VerticalAlignment="Stretch" VerticalScrollBarVisibility="Auto"   HeadersVisibility="Column"
                    AutoGenerateColumns="False" >
                             <DataGrid.Columns>
                                 <DataGridTextColumn Header="№" Binding="{Binding id}"  Width="50"/>
-                                <DataGridTextColumn Binding="{Binding currentlan}" Header="Выбранный вами язык"/>
-                                <DataGridTextColumn Header="Его нужно перевести на язык" Binding="{Binding newlan}"/>
-                                <DataGridTemplateColumn Header="Удалить" Width="80" >
+                                <DataGridTextColumn x:Name="vybrannyi" Binding="{Binding currentlan}" Header="Выбранный вами язык"/>
+                                <DataGridTextColumn x:Name="kotoruluuchu" Header="Его нужно перевести на язык" Binding="{Binding newlan}"/>
+                                <DataGridTemplateColumn x:Name="ochuruu" Header="Удалить" Width="80" >
                                     <DataGridTemplateColumn.CellTemplate>
                                         <DataTemplate>
                                             <Button Style="{DynamicResource Close_Button}" BorderThickness="0,0,0,0" Cursor="Hand">
@@ -46,7 +46,7 @@
                         </DataGrid>
                     </StackPanel>
                 </TabItem>
-                <TabItem Style="{DynamicResource TabControl}" Header="Изменение языков" Width="140">
+                <TabItem x:Name="tab2" Style="{DynamicResource TabControl}" Header="Изменение языков" Width="140">
                     <StackPanel HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
                         <Grid Width="400" HorizontalAlignment="Left">
                             <Grid.ColumnDefinitions>
@@ -70,7 +70,7 @@
                         </DataGrid>
                     </StackPanel>
                 </TabItem>
-                <TabItem Style="{DynamicResource TabControl}" Header="Удаление языков" Width="140">
+                <TabItem x:Name="tab3" Style="{DynamicResource TabControl}" Header="Удаление языков" Width="140">
                     <Canvas>
                         <ComboBox x:Name="DeleteComBox" IsEditable="True" IsReadOnly="True" FontSize="12" Height="23" Width="250" Canvas.Left="243" Canvas.Top="47" SelectionChanged="DeleteComBox_SelectionChanged"/>
                         <TextBlock Text="

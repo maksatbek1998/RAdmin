@@ -29,26 +29,33 @@ namespace RAdminPanel.UserControlFolder
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
+            int result1 = 0;
             if (Metr.Text!="")
             {
-                /*                object iBoxed = Metr.Text;
-                                if (iBoxed is int)
-                                {*/
-                int result = Convert.ToInt32(Metr.Text)*100;
-                Base1 = new Base();
-                Base1.RegistrToBase("UPDATE `rskbank`.`options` SET `value`='"+ result + "' WHERE  `key`='Terminal_Paper'");
-                MessageBox.Show("Успешно сохранено", "", MessageBoxButton.OK);
-                Metr.Text= "";
-/*                }
+                if (!int.TryParse(Metr.Text, out result1))
+                {
+                    MessageBox.Show("Дайте целое число!", "", MessageBoxButton.OK);
+                }
                 else
                 {
-                    MessageBox.Show("Пожалуйста, введите число !", "Внимание !", MessageBoxButton.OK);
-                }*/
+                    if (result1 >= 1)
+                    {
+                        int result = Convert.ToInt32(Metr.Text) * 100;
+                        Base1 = new Base();
+                        Base1.RegistrToBase("UPDATE `rskbank`.`options` SET `value`='" + result + "' WHERE  `key`='Terminal_Paper'");
+                        MessageBox.Show("Успешно сохранено", "", MessageBoxButton.OK);
+                        Metr.Text = "";
+                    }
+                    else
+                    {
+                        MessageBox.Show("Не указывайте 0 или отрицательное число!", "", MessageBoxButton.OK);
+                    }
+                }
             }
             else
             {
                 MessageBox.Show("Заполните поли!", "Внимание !", MessageBoxButton.OK);
-            }     
+            }
         }
     }
 }
