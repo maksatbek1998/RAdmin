@@ -326,3 +326,5 @@ D:\C# projects\RAdmin\РСКнын админ панели\RAdminPanel\bin\Debug
 C:\RAdmin\РСКнын админ панели\RAdminPanel\bin\Debug\packages.config
 C:\RAdmin\РСКнын админ панели\RAdminPanel\obj\Debug\UserControlFolder\Printer.g.cs
 C:\RAdmin\РСКнын админ панели\RAdminPanel\obj\Debug\UserControlFolder\Printer.baml
+D:\C# projects\RAdmin\РСКнын админ панели\RAdminPanel\obj\Debug\UserControlFolder\Printer.g.cs
+D:\C# projects\RAdmin\РСКнын админ панели\RAdminPanel\obj\Debug\UserControlFolder\Printer.baml
