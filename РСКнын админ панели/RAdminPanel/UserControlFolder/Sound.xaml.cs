@@ -1,4 +1,5 @@
 ﻿using RAdminPanel.DataBase;
+using RAdminPanel.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -27,6 +28,7 @@ namespace RAdminPanel.UserControlFolder
         {
             InitializeComponent();
             ToSourseCombo();
+            Restart();
         }
 
         private void Button_Click_2(object sender, RoutedEventArgs e)
@@ -74,6 +76,33 @@ namespace RAdminPanel.UserControlFolder
         private void SoundCombo_Copy_SelectionChanged_1(object sender, SelectionChangedEventArgs e)
         {
             Option = SoundCombo_Copy.SelectedValue.ToString();
+        }
+        private void Restart()
+        {
+            if (staticClaseForLangue.Lang == "RUS")
+            {
+                Lang.Text = "Выбрать язык";
+                button.Content = "Сохранить";
+                c1.Content = "Только на одном языке";
+                c2.Content = "Все языки";
+                c3.Content = "Только звук";
+            }
+            else if (staticClaseForLangue.Lang == "KG")
+            {
+                Lang.Text = "Тил тандоо";
+                button.Content = "Сактоо";
+                c1.Content = "Бир гана тилде";
+                c2.Content = "Бардык тилде";
+                c3.Content = "Бир гана звук";
+            }
+            if (staticClaseForLangue.Lang == "EN")
+            {
+                Lang.Text = "Select language";
+                button.Content = "Save";
+                c1.Content = "Only in one language";
+                c2.Content = "All languages";
+                c3.Content = "Sound only";
+            }
         }
     }
 }

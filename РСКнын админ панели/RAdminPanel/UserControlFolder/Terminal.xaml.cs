@@ -1,4 +1,5 @@
 ﻿using RAdminPanel.DataBase;
+using RAdminPanel.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -29,6 +30,7 @@ namespace RAdminPanel.UserControlFolder
             UpdateDataGrid1();
             UpdateDataGridInsert();
             Sufficss();
+            Restart();
         }
         public void UpdateLang()
         {
@@ -299,6 +301,132 @@ namespace RAdminPanel.UserControlFolder
                   ComboSuffix.ItemsSource = list;
               };
             Base1.Display("SELECT NAME1 FROM alfavit");
+        }
+        private void Restart()
+        {
+            if (staticClaseForLangue.Lang == "RUS")
+            {
+                tab1.Header = "Выберите язык терминала";
+                tab2.Header = "Создание меню для терминала";
+                tab3.Header = "Управление меню терминала";
+                Lang.Text = "Выберите язык для добавления";
+                Koshuu.Content = "Добавить";
+                LangTerminal1.Header = "Языки в терминале";
+                LangAktiv.Header = "Не активен";
+                Cat_name.Text = "Какая категория";
+                Naz_name.Text = "Название добавляемой элемнт";
+                CattegoryName.Tag = "Название добавляемой элемнт";
+                Poklucheni.Text = "Выбранный язык";
+                prioritet.Text = "Приоритет";
+                Aktive.Text = "Активный";
+                Suff.Text = "Суффикс";
+                ochistit.Text = "Очистить все";
+                save.Content = "Сохранить";
+                D1.Header = "Категории";
+                D2.Header = "В категории";
+                D3.Header = "В категории";
+                D4.Header = "В категории";
+                D5.Header = "В категории";
+                D6.Header = "В категории";
+                D7.Header = "В категории";
+                D8.Header = "В категории";
+                D9.Header = "В категории";
+                name_cat.Text = "Наименование категории";
+                NameCatedory.Tag = "Наименование категории";
+                isaktiv.Text = "Активный";
+                prioritet1.Text = "Приоритет";
+                suffiks.Text = "Суффикс";
+                ochistitt.Text = "Очистить все";
+                SearchText.Tag = "Искать по категории";
+                save1.Content = "Сохранить";
+                H1.Header = "Категории";
+                H2.Header = "Приоритет";
+                H3.Header = "Активный";
+                H4.Header = "Суффикс";
+                H5.Header = "Изменить";
+            }
+            else if (staticClaseForLangue.Lang == "KG")
+            {
+                tab1.Header = "Терминал тилин тандаңыз";
+                tab2.Header = "Терминалдын менюсун түзүү";
+                tab3.Header = "Терминал менюсун башкаруу";
+                Lang.Text = "Кошуу үчүн тилди тандаңыз";
+                Koshuu.Content = "Кошуу";
+                LangTerminal1.Header = "Терминалда тилдер";
+                LangAktiv.Header = "Активдүү эмес";
+                Cat_name.Text = "Кайсы категория";
+                Naz_name.Text = "Кошулуучу элементтин аталышы";
+                CattegoryName.Tag = "Кошулуучу элементтин аталышы";
+                Poklucheni.Text = "Тандалган тил";
+                prioritet.Text = "Артыкчылык";
+                Aktive.Text = "Активдүү";
+                Suff.Text = "Суффикс";
+                ochistit.Text = "Баарын тазалоо";
+                save.Content = "Сактоо";
+                D1.Header = "Категориялар";
+                D2.Header = "Категория";
+                D3.Header = "Категория";
+                D4.Header = "Категория";
+                D5.Header = "Категория";
+                D6.Header = "Категория";
+                D7.Header = "Категория";
+                D8.Header = "Категория";
+                D9.Header = "Категория";
+                name_cat.Text = "Категориянын аталышы";
+                NameCatedory.Tag = "Категориянын аталышы";
+                isaktiv.Text = "Активдүү";
+                prioritet1.Text = "Артыкчылык";
+                suffiks.Text = "Суффикс";
+                ochistitt.Text = "Баарын тазалоо";
+                SearchText.Tag = "Категория боюнча издөө";
+                save1.Content = "Сактоо";
+                H1.Header = "Категориялар";
+                H2.Header = "Артыкчылык";
+                H3.Header = "Активдүү";
+                H4.Header = "Суффикс";
+                H5.Header = "Түзөтүү";
+            }
+            if (staticClaseForLangue.Lang == "EN")
+            {
+                tab1.Header = "Select the terminal language";
+                tab2.Header = "Creating a menu for the terminal";
+                tab3.Header = "Manage the terminal menu";
+                Lang.Text = "Select a language to add";
+                Koshuu.Content = "Add";
+                LangTerminal1.Header = "Languages ​​in the terminal";
+                LangAktiv.Header = "Not active";
+                Cat_name.Text = "Which category";
+                Naz_name.Text = "The name of the element to be added";
+                CattegoryName.Tag = "The name of the element to be added";
+                Poklucheni.Text = "Selected language";
+                prioritet.Text = "Preference";
+                Aktive.Text = "Active";
+                Suff.Text = "Suffix";
+                ochistit.Text = "Clean everything";
+                save.Content = "Save";
+                D1.Header = "Categories";
+                D2.Header = "Category";
+                D3.Header = "Category";
+                D4.Header = "Category";
+                D5.Header = "Category";
+                D6.Header = "Category";
+                D7.Header = "Category";
+                D8.Header = "Category";
+                D9.Header = "Category";
+                name_cat.Text = "Category name";
+                NameCatedory.Tag = "Category name";
+                isaktiv.Text = "Active";
+                prioritet1.Text = "Preference";
+                suffiks.Text = "Suffix";
+                ochistitt.Text = "Clean everything";
+                SearchText.Tag = "Search by category";
+                save1.Content = "Save";
+                H1.Header = "Categories";
+                H2.Header = "Preference";
+                H3.Header = "Active";
+                H4.Header = "Suffix";
+                H5.Header = "Correction";
+            }
         }
     }
 }

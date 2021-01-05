@@ -10,12 +10,12 @@
         <Border Padding="20">
             <Canvas>
                 <Image Source="../Image/Img/sound.png" Width="90" Height="90" Canvas.Left="17" Canvas.Top="26"/>
-                <Button Style="{DynamicResource ButtonStyle}" Content="Сактоо" Canvas.Left="434" Canvas.Top="73" Click="Button_Click_2"/>
-                <TextBlock Text="Тил тандоо" Canvas.Top="36" Canvas.Left="177" Width="148"/>
+                <Button x:Name="button" Style="{DynamicResource ButtonStyle}" Content="Сактоо" Canvas.Left="434" Canvas.Top="73" Click="Button_Click_2"/>
+                <TextBlock x:Name="Lang" Text="Тил тандоо" Canvas.Top="36" Canvas.Left="177" Width="148"/>
                 <ComboBox x:Name="SoundCombo" Canvas.Left="330" Canvas.Top="36" Width="254" IsReadOnly="True" SelectionChanged="Sound_SelectionChanged">
-                    <ComboBoxItem Content="Только на одном языке"/>
-                    <ComboBoxItem Content="Все языки"/>
-                    <ComboBoxItem Content="Только звук"/>
+                    <ComboBoxItem x:Name="c1" Content="Только на одном языке"/>
+                    <ComboBoxItem x:Name="c2" Content="Все языки"/>
+                    <ComboBoxItem x:Name="c3" Content="Только звук"/>
                 </ComboBox>
                 <StackPanel x:Name="LanguageCombo" Orientation="Horizontal" Canvas.Top="36" Canvas.Left="630" Visibility="Hidden">
                     <TextBlock Text="Выберите язык"  Width="148"/>

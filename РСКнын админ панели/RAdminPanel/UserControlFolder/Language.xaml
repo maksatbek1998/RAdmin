@@ -54,28 +54,27 @@
                                 <ColumnDefinition/>
                             </Grid.ColumnDefinitions>
                             <StackPanel Grid.Column="0">
-                                <TextBlock Text="Выберите язык который хотите изменить" Margin="10,5,-88,5"/>
+                                <TextBlock x:Name="Izmenit_Lang" Text="Выберите язык который хотите изменить" Margin="10,5,-88,5"/>
                             </StackPanel>
                             <StackPanel Grid.Column="1" >
                                 <ComboBox DropDownClosed="UpdateComboBox_DropDownClosed" x:Name="UpdateComboBox" Width="100" Margin="100,5,0,0" />
                             </StackPanel>
                         </Grid>
-                        <Button Style="{DynamicResource ButtonStyle}" Click="Button_Click_2" Content="Изменить" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+                        <Button x:Name="Izmenit_button" Style="{DynamicResource ButtonStyle}" Click="Button_Click_2" Content="Изменить" HorizontalAlignment="Right" VerticalAlignment="Center"/>
                         <DataGrid Margin="10,7,0,0" x:Name="dataGridUpdate" FontSize="12"  CanUserAddRows="False" Style="{DynamicResource grid_xml}" ColumnHeaderStyle="{DynamicResource hederstyle}" VerticalAlignment="Stretch" VerticalScrollBarVisibility="Auto"   HeadersVisibility="Column"
                    AutoGenerateColumns="False" >
                             <DataGrid.Columns>
                                 <DataGridTextColumn Header="№" Binding="{Binding id}"  Width="50"/>
-                                <DataGridTextColumn Binding="{Binding currentlan}" Header="Слова для изменения"/>
+                                <DataGridTextColumn x:Name="izmenit_text" Binding="{Binding currentlan}" Header="Слова для изменения"/>
                             </DataGrid.Columns>
                         </DataGrid>
                     </StackPanel>
                 </TabItem>
-                <TabItem x:Name="tab3" Style="{DynamicResource TabControl}" Header="Удаление языков" Width="140">
+                <TabItem x:Name="tab3" Style="{DynamicResource TabControl}" Header="Удаление языков" Width="180">
                     <Canvas>
                         <ComboBox x:Name="DeleteComBox" IsEditable="True" IsReadOnly="True" FontSize="12" Height="23" Width="250" Canvas.Left="243" Canvas.Top="47" SelectionChanged="DeleteComBox_SelectionChanged"/>
-                        <TextBlock Text="
-Выберите язык для удаления" Canvas.Left="10" Canvas.Top="49" Width="231"/>
-                        <Button Click="Button_Click_1" Style="{DynamicResource ButtonStyle}" Content="Очуруу" Canvas.Left="343" Canvas.Top="85"/>
+                        <TextBlock x:Name="Delete_lang" Text="Выберите язык для удаления" Canvas.Left="10" Canvas.Top="49" Width="231"/>
+                        <Button x:Name="Delete_button" Click="Button_Click_1" Style="{DynamicResource ButtonStyle}" Content="Очуруу" Canvas.Left="343" Canvas.Top="85"/>
                     </Canvas>
                 </TabItem>
             </TabControl>

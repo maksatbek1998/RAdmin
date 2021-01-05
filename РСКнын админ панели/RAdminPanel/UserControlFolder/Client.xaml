@@ -24,9 +24,9 @@
                             <RowDefinition Height="*"/>
                         </Grid.RowDefinitions>
                         <Canvas Grid.ColumnSpan="2">
-                            <ToggleButton Checked="ToggleButton_Click" x:Name="tog1" Style="{DynamicResource Togle_Button}" Unchecked="tog1_Unchecked" Canvas.Left="130" Canvas.Top="10"/>
+                            <ToggleButton Checked="ToggleButton_Click" x:Name="tog1" Style="{DynamicResource Togle_Button}" Unchecked="tog1_Unchecked" Canvas.Left="139" Canvas.Top="10"/>
                             <TextBlock x:Name="Ochered" Text="Очереттегилер" Canvas.Left="10" Canvas.Top="14"/>
-                            <ToggleButton x:Name="tog2" Style="{DynamicResource Togle_Button}" Checked="ToggleButton_Click1" Unchecked="tog1_Unchecked1" Canvas.Left="439" Canvas.Top="10"/>
+                            <ToggleButton x:Name="tog2" Style="{DynamicResource Togle_Button}" Checked="ToggleButton_Click1" Unchecked="tog1_Unchecked1" Canvas.Left="451" Canvas.Top="10"/>
                             <TextBlock  x:Name="Ochered1" Text="Кутуп тургандар" Canvas.Left="307" Canvas.Top="14"/>
                             <ToggleButton x:Name="tog3" Style="{DynamicResource Togle_Button}" Checked="ToggleButton_Click2" Unchecked="tog1_Unchecked2" Canvas.Left="836" Canvas.Top="10"/>
                             <TextBlock  x:Name="Ochered2" Text="Операторго жолуккандар" Canvas.Left="602" Canvas.Top="14"/>

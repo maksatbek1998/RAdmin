@@ -10,8 +10,8 @@
         <Border Padding="20">
             <Canvas>
                 <Image Source="../Image/Img/print.png" Width="90" Height="90" Canvas.Left="17" Canvas.Top="26"/>
-                <Button Style="{DynamicResource ButtonStyle}" Content="Сактоо" Canvas.Left="434" Canvas.Top="73" Click="Button_Click_1"/>
-                <TextBlock Text="Чектин метири" Canvas.Top="36" Canvas.Left="177" Width="148"/>
+                <Button x:Name="button" Style="{DynamicResource ButtonStyle}" Content="Сактоо" Canvas.Left="434" Canvas.Top="73" Click="Button_Click_1"/>
+                <TextBlock x:Name="Chek" Text="Чектин метири" Canvas.Top="36" Canvas.Left="177" Width="148"/>
                 <TextBox x:Name="Metr" Canvas.Left="330" Canvas.Top="36" Width="254" Tag="Чектин метири" Style="{DynamicResource textbox_style}"/>
             </Canvas>
         </Border>

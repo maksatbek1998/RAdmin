@@ -10,13 +10,13 @@
         <Canvas>
             <Image Source="../Image/Img/sleep_250px.png" Width="90" Height="90" Canvas.Left="49" Canvas.Top="38"/>
             <!-- <TextBlock Text="Клиент чакыруу режимин башкаруу" Canvas.Left="177" Canvas.Top="42"  Width="275"/>-->
-            <TextBlock Text="Чакыруу убакты скеунда менен" Canvas.Left="193" Canvas.Top="52"  Width="275"/>
+            <TextBlock x:Name="Chakuruu" Text="Чакыруу убакты скеунда менен" Canvas.Left="193" Canvas.Top="52"  Width="275"/>
             <!-- <ComboBox x:Name="SoundCombo" Canvas.Left="457" Canvas.Top="42" Width="254" IsReadOnly="True" SelectionChanged="Sound_SelectionChanged">
                 <ComboBoxItem Content="NO"/>
                 <ComboBoxItem Content="OF"/>
             </ComboBox>-->
             <TextBox x:Name="UserNameTextBox" FontSize="14"  Style="{DynamicResource textbox_style}" Tag="Кутуу убакты скеунда менен" Height="24" Width="254" Canvas.Left="473" Canvas.Top="49"/>
-            <Button Style="{DynamicResource ButtonStyle}" Content="Сактоо" Canvas.Left="577" Canvas.Top="87" Click="Button_Click"/>
+            <Button x:Name="Save" Style="{DynamicResource ButtonStyle}" Content="Сактоо" Canvas.Left="577" Canvas.Top="87" Click="Button_Click"/>
         </Canvas>
     </Grid>
 </UserControl>

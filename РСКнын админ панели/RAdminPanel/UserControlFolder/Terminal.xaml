@@ -9,7 +9,7 @@
     <Grid>
         <Border Padding="20">
             <TabControl BorderThickness="0">
-                <TabItem Header="Терминалдын тилин тандоо" Style="{DynamicResource TabControl}" Width="210">
+                <TabItem x:Name="tab1" Header="Терминалдын тилин тандоо" Style="{DynamicResource TabControl}" Width="220">
                     <Grid>
                         <StackPanel>
                             <StackPanel Orientation="Horizontal">
@@ -18,17 +18,17 @@
                                         <ColumnDefinition/>
                                         <ColumnDefinition/>
                                     </Grid.ColumnDefinitions>
-                                    <TextBlock Text="Кошуу учун тил танданыз" Margin="10,5,0,5"/>
-                                    <ComboBox x:Name="LangTerminal" Grid.Column="1" Width="200" SelectionChanged="LangTerminal_SelectionChanged"/>
+                                    <TextBlock x:Name="Lang" Text="Выберите язык для добавления" Margin="10,5,173,5" Grid.ColumnSpan="2"/>
+                                    <ComboBox x:Name="LangTerminal" Grid.Column="1" Width="200" SelectionChanged="LangTerminal_SelectionChanged" Margin="27,4,-27,4"/>
                                 </Grid>
-                                <Button Style="{DynamicResource ButtonStyle}" Content="Кошуу" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="20,22,0,5" Click="Button_Click"/>
+                                <Button x:Name="Koshuu" Style="{DynamicResource ButtonStyle}" Content="Кошуу" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="50,22,0,5" Click="Button_Click"/>
                             </StackPanel>
                             <DataGrid x:Name="LangData" Margin="10,7,0,0" FontSize="12"  CanUserAddRows="False" Style="{DynamicResource grid_xml}" ColumnHeaderStyle="{DynamicResource hederstyle}" VerticalAlignment="Stretch" VerticalScrollBarVisibility="Auto" HorizontalAlignment="Stretch"   HeadersVisibility="Column" 
                    AutoGenerateColumns="False" IsReadOnly="True">
                                 <DataGrid.Columns>
                                     <DataGridTextColumn Header="№" Width="50" Binding="{Binding id}"/>
-                                    <DataGridTextColumn Header="Терминалдагы тилдер" Binding="{Binding locale}"/>
-                                    <DataGridTemplateColumn Header="Не активен" Width="70">
+                                    <DataGridTextColumn x:Name="LangTerminal1" Header="Терминалдагы тилдер" Binding="{Binding locale}"/>
+                                    <DataGridTemplateColumn x:Name="LangAktiv" Header="Не активен" Width="70">
                                         <DataGridTemplateColumn.CellTemplate>
                                             <DataTemplate>
                                                 <Button Style="{DynamicResource Close_Button}" BorderThickness="0,0,0,0" Cursor="Hand" Click="Button_Click_1">
@@ -56,26 +56,26 @@
                         </Canvas>
                     </Grid>
                 </TabItem>-->
-                <TabItem Header="Создание меню для терминала" Style="{DynamicResource TabControl}" Width="220">
+                <TabItem x:Name="tab2" Header="Создание меню для терминала" Style="{DynamicResource TabControl}" Width="240">
                     <Grid>
                         <Grid.RowDefinitions>
                             <RowDefinition Height="120"/>
                             <RowDefinition Height="*"/>
                         </Grid.RowDefinitions>
                         <Canvas>
-                            <TextBlock Text="Какая категория" Canvas.Top="10"/>
+                            <TextBlock x:Name="Cat_name" Text="Какая категория" Canvas.Top="10"/>
                             <ComboBox x:Name="ComboCategoria" Canvas.Left="212" Canvas.Top="8" Width="184" IsReadOnly="True" SelectionChanged="ComboBox_SelectionChanged">
                             </ComboBox>
-                            <TextBlock Text="Название добавляемой элемнт" Canvas.Top="41" Width="212"/>
+                            <TextBlock x:Name="Naz_name" Text="Название добавляемой элемнт" Canvas.Top="41" Width="212"/>
                             <TextBox x:Name="CattegoryName" Style="{DynamicResource textbox_style}" Width="184" Canvas.Left="212" Canvas.Top="39" Tag="Название элемнт"/>
-                            <TextBlock Text="Приоритет" Canvas.Top="8" Canvas.Left="436" Width="105"/>
+                            <TextBlock x:Name="prioritet" Text="Приоритет" Canvas.Top="8" Canvas.Left="436" Width="105"/>
                             <ComboBox x:Name="ComboPrioritet" Canvas.Left="548" Canvas.Top="8" Width="150" IsReadOnly="False">
                                 <ComboBoxItem Content="1"/>
                                 <ComboBoxItem Content="2"/>
                                 <ComboBoxItem Content="3"/>
                             </ComboBox>
-                            <Button Style="{DynamicResource ButtonStyle}" Content="Сохранить" Canvas.Left="715" Canvas.Top="72" Click="Button_Click_15"/>
-                            <TextBlock Text="Активный" Canvas.Top="40" Canvas.Left="436" Width="105"/>
+                            <Button x:Name="save" Style="{DynamicResource ButtonStyle}" Content="Сохранить" Canvas.Left="715" Canvas.Top="72" Click="Button_Click_15"/>
+                            <TextBlock x:Name="Aktive" Text="Активный" Canvas.Top="40" Canvas.Left="436" Width="105"/>
                             <ComboBox x:Name="ComboActiv" Canvas.Left="548" Canvas.Top="39" Width="150" IsReadOnly="True">
                                 <ComboBoxItem Content="OF"/>
                                 <ComboBoxItem Content="ON"/>
@@ -83,21 +83,21 @@
                             <Button Style="{DynamicResource ResourceKey=ButtonStyle}" Canvas.Left="715" Canvas.Top="38" Click="Button_Click_14">
                                 <StackPanel Orientation="Horizontal">
                                     <Image Source="../Image/Ico/Clear.png" Margin="0,0,10,0"/>
-                                    <TextBlock Text="Очистить все"/>
+                                    <TextBlock x:Name="ochistit" Text="Очистить все"/>
                                 </StackPanel>
                             </Button>
-                            <TextBlock Text="Подключенный язык" Canvas.Top="74" Width="173"/>
+                            <TextBlock x:Name="Poklucheni" Text="Подключенный язык" Canvas.Top="74" Width="173"/>
                             <ComboBox x:Name="ComboCategoria_Copy" Canvas.Left="212" Canvas.Top="72" Width="184" IsReadOnly="True" SelectedIndex="0" >
                                 <ComboBoxItem Content="RU"/>
                             </ComboBox>
-                            <TextBlock Text="Суффикс" Canvas.Top="73" Canvas.Left="436" Width="105"/>
+                            <TextBlock x:Name="Suff" Text="Суффикс" Canvas.Top="73" Canvas.Left="436" Width="105"/>
                             <ComboBox x:Name="ComboSufics" Canvas.Left="548" Canvas.Top="72" Width="150" IsReadOnly="True"/>
                         </Canvas>
                         <DataGrid x:Name="GlavDataGrid"  FontSize="12"  CanUserAddRows="False" Style="{DynamicResource grid_xml}" ColumnHeaderStyle="{DynamicResource hederstyle}" VerticalAlignment="Stretch" VerticalScrollBarVisibility="Auto"   HeadersVisibility="Column" IsReadOnly="True"
                    AutoGenerateColumns="False"  Grid.Row="1">
                             <DataGrid.Columns>
                                 <DataGridTextColumn Header="№" Width="40" Binding="{Binding id}"/>
-                                <DataGridTemplateColumn Header="Категории">
+                                <DataGridTemplateColumn x:Name="D1" Header="Категории">
                                     <DataGridTemplateColumn.CellTemplate>
                                         <DataTemplate>
                                             <StackPanel Orientation="Horizontal">
@@ -109,7 +109,7 @@
                                         </DataTemplate>
                                     </DataGridTemplateColumn.CellTemplate>
                                 </DataGridTemplateColumn>
-                                <DataGridTemplateColumn Header="В категории" >
+                                <DataGridTemplateColumn x:Name="D2" Header="В категории" >
                                     <DataGridTemplateColumn.CellTemplate>
                                         <DataTemplate>
                                             <StackPanel Orientation="Horizontal">
@@ -121,7 +121,7 @@
                                         </DataTemplate>
                                     </DataGridTemplateColumn.CellTemplate>
                                 </DataGridTemplateColumn>
-                                <DataGridTemplateColumn Header="В категории" >
+                                <DataGridTemplateColumn x:Name="D3" Header="В категории" >
                                     <DataGridTemplateColumn.CellTemplate>
                                         <DataTemplate>
                                             <StackPanel Orientation="Horizontal">
@@ -133,7 +133,7 @@
                                         </DataTemplate>
                                     </DataGridTemplateColumn.CellTemplate>
                                 </DataGridTemplateColumn>
-                                <DataGridTemplateColumn Header="В категории" >
+                                <DataGridTemplateColumn x:Name="D4" Header="В категории" >
                                     <DataGridTemplateColumn.CellTemplate>
                                         <DataTemplate>
                                             <StackPanel Orientation="Horizontal">
@@ -145,7 +145,7 @@
                                         </DataTemplate>
                                     </DataGridTemplateColumn.CellTemplate>
                                 </DataGridTemplateColumn>
-                                <DataGridTemplateColumn Header="В категории" >
+                                <DataGridTemplateColumn x:Name="D5" Header="В категории" >
                                     <DataGridTemplateColumn.CellTemplate>
                                         <DataTemplate>
                                             <StackPanel Orientation="Horizontal">
@@ -157,7 +157,7 @@
                                         </DataTemplate>
                                     </DataGridTemplateColumn.CellTemplate>
                                 </DataGridTemplateColumn>
-                                <DataGridTemplateColumn Header="В категории" >
+                                <DataGridTemplateColumn x:Name="D6" Header="В категории" >
                                     <DataGridTemplateColumn.CellTemplate>
                                         <DataTemplate>
                                             <StackPanel Orientation="Horizontal">
@@ -169,7 +169,7 @@
                                         </DataTemplate>
                                     </DataGridTemplateColumn.CellTemplate>
                                 </DataGridTemplateColumn>
-                                <DataGridTemplateColumn Header="В категории" >
+                                <DataGridTemplateColumn x:Name="D7" Header="В категории" >
                                     <DataGridTemplateColumn.CellTemplate>
                                         <DataTemplate>
                                             <StackPanel Orientation="Horizontal">
@@ -181,7 +181,7 @@
                                         </DataTemplate>
                                     </DataGridTemplateColumn.CellTemplate>
                                 </DataGridTemplateColumn>
-                                <DataGridTemplateColumn Header="В категории" >
+                                <DataGridTemplateColumn x:Name="D8" Header="В категории" >
                                     <DataGridTemplateColumn.CellTemplate>
                                         <DataTemplate>
                                             <StackPanel Orientation="Horizontal">
@@ -193,7 +193,7 @@
                                         </DataTemplate>
                                     </DataGridTemplateColumn.CellTemplate>
                                 </DataGridTemplateColumn>
-                                <DataGridTemplateColumn Header="В категории" >
+                                <DataGridTemplateColumn x:Name="D9" Header="В категории" >
                                     <DataGridTemplateColumn.CellTemplate>
                                         <DataTemplate>
                                             <StackPanel Orientation="Horizontal">
@@ -209,7 +209,7 @@
                         </DataGrid>
                     </Grid>
                 </TabItem>
-                <TabItem Header="Управление меню терминала" Style="{DynamicResource TabControl}" Width="215">
+                <TabItem x:Name="tab3" Header="Управление меню терминала" Style="{DynamicResource TabControl}" Width="225">
                     <Grid>
                         <Grid.RowDefinitions>
                             <RowDefinition Height="150"/>
@@ -217,15 +217,15 @@
                             <RowDefinition Height="*"/>
                         </Grid.RowDefinitions>
                         <Canvas>
-                            <Button Style="{DynamicResource ButtonStyle}" Content="Сохранить" Canvas.Left="444" Canvas.Top="121" Click="Button_Click_13"/>
-                            <TextBlock Text="Активный" Canvas.Top="58" Canvas.Left="10" Width="105"/>
+                            <Button x:Name="save1" Style="{DynamicResource ButtonStyle}" Content="Сохранить" Canvas.Left="444" Canvas.Top="121" Click="Button_Click_13"/>
+                            <TextBlock x:Name="isaktiv" Text="Активный" Canvas.Top="58" Canvas.Left="10" Width="105"/>
                             <ComboBox x:Name="Is_Activen" Canvas.Left="196" Canvas.Top="58" Width="230" IsReadOnly="True">
                                 <ComboBoxItem Content="OF"/>
                                 <ComboBoxItem Content="ON"/>
                             </ComboBox>
-                            <TextBlock Text="Наименование категории" Canvas.Top="26" Canvas.Left="6" Width="185"/>
+                            <TextBlock x:Name="name_cat" Text="Наименование категории" Canvas.Top="26" Canvas.Left="6" Width="185"/>
                             <TextBox x:Name="NameCatedory" Style="{DynamicResource textbox_style}" Width="230" Canvas.Left="196" Canvas.Top="24" Tag="Наименование категории" IsReadOnly="True"/>
-                            <TextBlock Text="Приоритет" Canvas.Top="90" Canvas.Left="11" Width="105"/>
+                            <TextBlock x:Name="prioritet1" Text="Приоритет" Canvas.Top="90" Canvas.Left="11" Width="105"/>
                             <ComboBox x:Name="ComboPrioritet_Copy" Canvas.Left="196" Canvas.Top="90" Width="230" IsReadOnly="False">
                                 <ComboBoxItem Content="1"/>
                                 <ComboBoxItem Content="2"/>
@@ -234,10 +234,10 @@
                             <Button Style="{DynamicResource ResourceKey=ButtonStyle}" Canvas.Left="611" Canvas.Top="121" Click="Button_Click_11">
                                 <StackPanel Orientation="Horizontal">
                                     <Image Source="/RAdminPanel;component/Image/Ico/Clear.png" Margin="0,0,10,0"/>
-                                    <TextBlock Text="Очистить все"/>
+                                    <TextBlock x:Name="ochistitt" Text="Очистить все"/>
                                 </StackPanel>
                             </Button>
-                            <TextBlock Text="Суффикс" Canvas.Top="122" Canvas.Left="11" Width="105"/>
+                            <TextBlock x:Name="suffiks" Text="Суффикс" Canvas.Top="122" Canvas.Left="11" Width="105"/>
                             <ComboBox x:Name="ComboSuffix" Canvas.Left="196" Canvas.Top="122" Width="230" IsReadOnly="False"/>
                         </Canvas>
                         <TextBox x:Name="SearchText" Style="{DynamicResource styleLog}" Width="228" Canvas.Left="823" Canvas.Top="101" Tag="Категорияны издоо" Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Right" SelectionChanged="TextBox_SelectionChanged"/>
@@ -245,11 +245,11 @@
                    AutoGenerateColumns="False"  Grid.Row="2">
                             <DataGrid.Columns>
                                 <DataGridTextColumn Header="№" Width="40" Binding="{Binding id}"/>
-                                <DataGridTextColumn Header="Категории" Binding="{Binding name}"/>
-                                <DataGridTextColumn Header="Приоритет" Binding="{Binding index}"/>
-                                <DataGridTextColumn Header="Активный" Binding="{Binding is_active}"/>
-                                <DataGridTextColumn Header="Суффикс" Binding="{Binding suffix}"/>
-                                <DataGridTemplateColumn Header="Изменить" Width="80">
+                                <DataGridTextColumn x:Name="H1" Header="Категории" Binding="{Binding name}"/>
+                                <DataGridTextColumn x:Name="H2" Header="Приоритет" Binding="{Binding index}"/>
+                                <DataGridTextColumn x:Name="H3" Header="Активный" Binding="{Binding is_active}"/>
+                                <DataGridTextColumn x:Name="H4" Header="Суффикс" Binding="{Binding suffix}"/>
+                                <DataGridTemplateColumn x:Name="H5" Header="Изменить" Width="80">
                                     <DataGridTemplateColumn.CellTemplate>
                                         <DataTemplate>
                                             <Button Style="{DynamicResource Close_Button}" BorderThickness="0,0,0,0" Cursor="Hand" Click="Button_Click_12">

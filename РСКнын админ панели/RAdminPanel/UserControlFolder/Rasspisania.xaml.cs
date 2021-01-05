@@ -1,4 +1,5 @@
 ﻿using RAdminPanel.DataBase;
+using RAdminPanel.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -31,6 +32,7 @@ namespace RAdminPanel.UserControlFolder
             UpdateData();
             UpdateComboBox();
             Day_Grafik1();
+            Restart();
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -135,6 +137,78 @@ namespace RAdminPanel.UserControlFolder
             if (TerminalName_Copy.SelectedValue != null)
             {
                 ID = Bases.ReturnID("SELECT id FROM terminals WHERE NAME='" + TerminalName_Copy.SelectedValue.ToString() + "'");
+            }
+        }
+        private void Restart()
+        {
+            if (staticClaseForLangue.Lang == "RUS")
+            {
+                tab1.Header = "CEO праздники";
+                tab2.Header = "Согласно расписанию SEO";
+                terminal.Text = "Время отдыха на терминале";
+                ter_name.Text = "Терминал";
+                Ochuu.Text = "Время выключить";
+                save.Content = "Сохранить";
+                Ochuu_ubakty.Header = "Время выключить";
+                Ochuu_Terminal.Header = "Терминал";
+                Ochuu_data.Header = "Дата";
+                Ochuu_delete.Header = "Удалить";
+                T_ochuu.Text = "Время выключить";
+                T_abaly.Text = "Состояние";
+                T_name.Text = "Терминал";
+                T_day.Text = "Дни недели";
+                save_button.Content = "Сохранить";
+                D_Ochuu.Header = "Время выключить";
+                D_day.Header = "Дни недели";
+                D_terminal.Header = "Терминал";
+                D_abal.Header = "Состояние";
+                D_delete.Header = "Удалить";
+            }
+            else if (staticClaseForLangue.Lang == "KG")
+            {
+                tab1.Header = "СЭО майрам кундору";
+                tab2.Header = "СЭО график боюнча";
+                terminal.Text = "Терминалдын дем алуу убакыттары";
+                ter_name.Text = "Терминал";
+                Ochuu.Text = "Өчүү убакты";
+                save.Content = "Сактоо";
+                Ochuu_ubakty.Header = "Өчүү убакты";
+                Ochuu_Terminal.Header = "Терминал";
+                Ochuu_data.Header = "Дата";
+                Ochuu_delete.Header = "Өчүрүү";
+                T_ochuu.Text = "Өчүү убакты";
+                T_abaly.Text = "Абалы";
+                T_name.Text = "Терминал";
+                T_day.Text = "Апта күндөрү";
+                save_button.Content = "Сактоо";
+                D_Ochuu.Header = "Өчүү убакты";
+                D_day.Header = "Апта күндөрү";
+                D_terminal.Header = "Терминал";
+                D_abal.Header = "Абалы";
+                D_delete.Header = "Өчүрүү";
+            }
+            if (staticClaseForLangue.Lang == "EN")
+            {
+                tab1.Header = "CEO holidays";
+                tab2.Header = "According to the SEO schedule";
+                terminal.Text = "Terminal rest periods";
+                ter_name.Text = "Terminal";
+                Ochuu.Text = "Turn off time";
+                save.Content = "Save";
+                Ochuu_ubakty.Header = "Turn off time";
+                Ochuu_Terminal.Header = "Terminal";
+                Ochuu_data.Header = "Date";
+                Ochuu_delete.Header = "Delete";
+                T_ochuu.Text = "Turn off time";
+                T_abaly.Text = "Condition";
+                T_name.Text = "Terminal";
+                T_day.Text = "Days of the week";
+                save_button.Content = "Save";
+                D_Ochuu.Header = "Turn off time";
+                D_day.Header = "Days of the week";
+                D_terminal.Header = "Terminal";
+                D_abal.Header = "Condition";
+                D_delete.Header = "Delete";
             }
         }
     }

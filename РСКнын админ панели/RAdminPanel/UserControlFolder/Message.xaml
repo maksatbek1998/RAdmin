@@ -22,9 +22,9 @@
 
         </Grid>
         <StackPanel Grid.Row="1">
-            <TextBlock FontSize="18"
+            <TextBlock x:Name="message" FontSize="18" TextAlignment="Center"
                        Foreground="#0A6E9E"
-                       HorizontalAlignment="Center" VerticalAlignment="Center">Вы уверренно хотите удалить?</TextBlock>
+                       HorizontalAlignment="Center" VerticalAlignment="Center" Margin="12,0,10,0" Width="358" Text="Вы уверренно хотите удалить?"></TextBlock>
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" >
 
                 <Button Style="{DynamicResource ButtonStyle}"  Margin="0,30,0,0" 

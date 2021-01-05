@@ -1,4 +1,5 @@
 ﻿using RAdminPanel.DataBase;
+using RAdminPanel.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -25,6 +26,7 @@ namespace RAdminPanel.UserControlFolder
         public Mode()
         {
             InitializeComponent();
+            Restart();
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -55,6 +57,27 @@ namespace RAdminPanel.UserControlFolder
             else
             {
                 MessageBox.Show("Заполните поли!", "Внимание !", MessageBoxButton.OK);
+            }
+        }
+        private void Restart()
+        {
+            if (staticClaseForLangue.Lang == "RUS")
+            {
+                Chakuruu.Text = "Время вызова клиента в минутах";
+                UserNameTextBox.Tag = "Время вызова клиента в минутах";
+                Save.Content = "Сохранить";
+            }
+            else if (staticClaseForLangue.Lang == "KG")
+            {
+             Chakuruu.Text = "Клиент чакыруу убакты минута менен";
+                UserNameTextBox.Tag = "Клиент чакыруу убакты минута менен";
+                Save.Content = "Сактоо";
+            }
+            if (staticClaseForLangue.Lang == "EN")
+            {
+      Chakuruu.Text = "Client call time in minutes";
+                UserNameTextBox.Tag = "Client call time in minutes";
+                Save.Content = "Save";
             }
         }
     }

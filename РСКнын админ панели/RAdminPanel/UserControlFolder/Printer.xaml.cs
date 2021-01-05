@@ -1,4 +1,5 @@
 ﻿using RAdminPanel.DataBase;
+using RAdminPanel.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -25,12 +26,13 @@ namespace RAdminPanel.UserControlFolder
         public Printer()
         {
             InitializeComponent();
+            Restart();
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
             int result1 = 0;
-            if (Metr.Text!="")
+            if (Metr.Text != "")
             {
                 if (!int.TryParse(Metr.Text, out result1))
                 {
@@ -55,6 +57,27 @@ namespace RAdminPanel.UserControlFolder
             else
             {
                 MessageBox.Show("Заполните поли!", "Внимание !", MessageBoxButton.OK);
+            }
+        }
+        private void Restart()
+        {
+            if (staticClaseForLangue.Lang == "RUS")
+            {
+                Chek.Text = "Метр чека";
+                Metr.Tag = "Метр чека";
+                button.Content = "Сохранить";
+            }
+            else if (staticClaseForLangue.Lang == "KG")
+            {
+                Chek.Text = "Чектин метири";
+                Metr.Tag = "Чектин метири";
+                button.Content = "Сактоо";
+            }
+            if (staticClaseForLangue.Lang == "EN")
+            {
+                Chek.Text = "Check meter";
+                Metr.Tag = "Check meter";
+                button.Content = "Save";
             }
         }
     }

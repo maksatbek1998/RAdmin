@@ -27,6 +27,7 @@ namespace RAdminPanel.UserControlFolder
         {
             InitializeComponent();
             UpdateComboBoxBranch();
+            Restart();
         }
 
         private void Languages_DropDownClosed(object sender, EventArgs e)
@@ -217,22 +218,51 @@ namespace RAdminPanel.UserControlFolder
                 name_lang.Text = "Выберите язык";
                 name_lang_perevod.Text = "Название переводимого языка";
                 name_kratko.Text = "Короткое имя";
-                Button_save.Content = "";
+                Button_save.Content = "Сохранить";
                 vybrannyi.Header = "Выбранный вами язык";
                 kotoruluuchu.Header = "Его нужно перевести на язык";
-                ochuruu.Header = "";
+                ochuruu.Header = "Удалить";
+                izmenit_text.Header = "Слова для изменения";
+                Izmenit_button.Content = "Изменить";
+                Izmenit_Lang.Text = "Выберите язык который хотите изменить";
+                Delete_lang.Text = "Выберите язык для удаления";
+                Delete_button.Content = "Удалить";
             }
             else if (staticClaseForLangue.Lang == "KG")
             {
-                tab1.Header = "";
-                tab2.Header = "";
-                tab3.Header = "";
+                tab1.Header = "Жаңы тил кошуңуз";
+                tab2.Header = "Тилдерди өзгөртүү";
+                tab3.Header = "Тилдерди өчүрүү";
+                name_lang.Text = "Тилди тандаңыз";
+                name_lang_perevod.Text = "Которулган тилдин аталышы";
+                name_kratko.Text = "Кыска аты";
+                Button_save.Content = "Сактоо";
+                vybrannyi.Header = "Сиз тандаган тил";
+                kotoruluuchu.Header = "Которулуучу тил";
+                ochuruu.Header = "Өчүрүү";
+                izmenit_text.Header = "Өзгөртүлүүчү сөздөр";
+                Izmenit_button.Content = "Өзгөртүү";
+                Izmenit_Lang.Text = "Өзгөртүүнү каалаган тилди тандаңыз";
+                Delete_lang.Text = "Өчүрүү үчүн тилди тандаңыз";
+                Delete_button.Content = "Өчүрүү";
             }
             if (staticClaseForLangue.Lang == "EN")
             {
-                tab1.Header = "";
-                tab2.Header = "";
-                tab3.Header = "";
+                tab1.Header = "Add new language";
+                tab2.Header = "Changing languages";
+                tab3.Header = "Deleting languages";
+                name_lang.Text = "Choose language";
+                name_lang_perevod.Text = "Name of the target language";
+                name_kratko.Text = "Short name";
+                Button_save.Content = "Save";
+                vybrannyi.Header = "Your chosen language";
+                kotoruluuchu.Header = "It needs to be translated into the language";
+                ochuruu.Header = "Delete";
+                izmenit_text.Header = "Words for change";
+                Izmenit_button.Content = "Edit";
+                Izmenit_Lang.Text = "Select the language you want to change";
+                Delete_lang.Text = "Select the language to remove";
+                Delete_button.Content = "Delete";
             }
         }
     }

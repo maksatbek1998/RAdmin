@@ -184,7 +184,8 @@ namespace RAdminPanel.UserControlFolder
                 pass1.Header = "Пароль";
                 izmenit.Header = "Изменить";
                 udalit.Header = "Удалить";
-                SaveButton.Content = "Сактоо";
+                SaveButton.Content = "Сохранить";
+                UpdateButton.Content = "Изменить";
             }
             else if (staticClaseForLangue.Lang == "KG")
             {
@@ -203,7 +204,9 @@ namespace RAdminPanel.UserControlFolder
                 pass1.Header = "Купуя сөз";
                 izmenit.Header = "Өзгөртүү";
                 udalit.Header = "Өчүрүү"; 
-                SaveButton.Content = "Сохранить";
+                SaveButton.Content = "Сактоо";
+                UpdateButton.Content = "Өзгөртүү";
+
             }
             if (staticClaseForLangue.Lang == "EN")
             {
@@ -223,6 +226,8 @@ namespace RAdminPanel.UserControlFolder
                 izmenit.Header = "Change in";
                 udalit.Header = "Delete";
                 SaveButton.Content = "Save";
+                UpdateButton.Content = "Change in";
+
             }
         }
     }

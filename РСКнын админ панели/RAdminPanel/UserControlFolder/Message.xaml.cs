@@ -1,4 +1,5 @@
 ﻿using RAdminPanel.DataBase;
+using RAdminPanel.ViewModel;
 using System.Windows;
 
 
@@ -17,6 +18,7 @@ namespace RAdminPanel.UserControlFolder
         public Message()
         {
             InitializeComponent();
+            Restart();
         }
 
         private void button2_Click(object sender, RoutedEventArgs e)
@@ -30,6 +32,27 @@ namespace RAdminPanel.UserControlFolder
                 dbCon.RemoveData(TableBasa, Id);
             del_();
             this.Close();
+        }
+        private void Restart()
+        {
+            if (staticClaseForLangue.Lang == "RUS")
+            {
+                message.Text = "Вы уверренно хотите удалить?";
+                button.Content = "Да";
+                button2.Content = "Нет";
+            }
+            else if (staticClaseForLangue.Lang == "KG")
+            {
+                message.Text = "Чын эле жок кылгыңыз келеби ? ";
+                button.Content = "Ооба";
+                button2.Content = "Жок";
+            }
+            if (staticClaseForLangue.Lang == "EN")
+            {
+                message.Text = "Are you sure you want to delete ? ";
+                button.Content = "Yes";
+                button2.Content = "No";
+            }
         }
     }
 }
