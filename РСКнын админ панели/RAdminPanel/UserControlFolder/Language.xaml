@@ -78,6 +78,34 @@
                         <Button Click="Button_Click_1" Style="{DynamicResource ButtonStyle}" Content="Очуруу" Canvas.Left="343" Canvas.Top="85"/>
                     </Canvas>
                 </TabItem>
+                <TabItem x:Name="tab4" Style="{DynamicResource TabControl}" Header="Обновление" Width="140">
+                    <StackPanel HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                        <Grid Width="470" HorizontalAlignment="Left">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="73*"/>
+                                <ColumnDefinition Width="162*"/>
+                                <ColumnDefinition Width="235*"/>
+                            </Grid.ColumnDefinitions>
+                            <StackPanel Grid.Column="0" Grid.ColumnSpan="2">
+                                <TextBlock  Text="Основной язык" Margin="10,5,0,5"/>
+                                <TextBlock  Text="Язык для перевода" Margin="10,9,0,5"/>
+                            </StackPanel>
+                            <StackPanel Grid.Column="2">
+                                <TextBlock x:Name="MainText" Text="RU" Margin="10,5,0,5" FontSize="12" Height="23" Width="Auto"/>
+                                <ComboBox x:Name="TextTran" Margin="10,5" DropDownClosed= "TextTran_DropDownClosed" Width="Auto"/>
+                            </StackPanel>
+                        </Grid>
+                        <Button x:Name="Pup" Style="{DynamicResource ButtonStyle}" Click="Pup_Click" Content="Сактоо" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+                        <DataGrid x:Name="UpdateGrid" Margin="10,7,0,0" FontSize="12"  CanUserAddRows="False" Style="{DynamicResource grid_xml}" ColumnHeaderStyle="{DynamicResource hederstyle}" VerticalAlignment="Stretch" VerticalScrollBarVisibility="Auto"   HeadersVisibility="Column"
+                   AutoGenerateColumns="False" >
+                            <DataGrid.Columns>
+                                <DataGridTextColumn Header="№" Width="50"/>
+                                <DataGridTextColumn  Binding="{Binding currentlan}" Header="Основной язык"/>
+                                <DataGridTextColumn  Header="Перевести" Binding="{Binding newlan}"/>
+                            </DataGrid.Columns>
+                        </DataGrid>
+                    </StackPanel>
+                </TabItem>
             </TabControl>
         </Border>
     </Grid>

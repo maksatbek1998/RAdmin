@@ -9,7 +9,6 @@ using System.Windows.Controls;
 
 namespace RAdminPanel.UserControlFolder
 {
-
     public partial class Client : UserControl
     {
         Base dataBase;
@@ -376,15 +375,27 @@ namespace RAdminPanel.UserControlFolder
                 }
                 else if (dataPicker.Text != "" && OperComBox.Text != "" && UslugComBox.Text == "")
                 {
-                    dataBase.SoursData("SELECT t.id,t.nomer,(SELECT ts.`desc` FROM turns_status AS ts WHERE ts.name = t.`status`) AS `status`,s.name,(SELECT g.window_nomer FROM workplaces AS g WHERE g.id = t.workplace_id) AS nam,u.name_u, DATE_FORMAT(t.created_at,'%Y-%m-%d  %h:%i:%s'), DATE_FORMAT(t.updated_at,'%Y-%m-%d  %h:%i:%s') FROM turns AS t INNER JOIN users AS u ON t.user_id =u.id INNER JOIN services AS s ON s.id = t.service_id WHERE DATE_FORMAT(t.created_at,'%d.%m.%Y') = '04.01.2021' AND t.user_id = " + returnedOper + "");
+                    dataBase.SoursData("SELECT t.id,t.nomer,(SELECT ts.`desc` FROM turns_status AS ts WHERE ts.name = t.`status`) as `status`,s.name,(SELECT g.window_nomer FROM workplaces AS g WHERE g.id = t.workplace_id) AS nam,u.name_u,DATE_FORMAT(t.created_at,'%Y-%m-%d  %h:%i:%s'),DATE_FORMAT(t.updated_at,'%Y-%m-%d  %h:%i:%s') from turns AS t INNER JOIN users AS u ON t.user_id =u.id INNER JOIN services AS s ON s.id = t.service_id  WHERE DATE_FORMAT(t.created_at,'%d.%m.%Y') = '" + dataPicker.Text + "' AND t.user_id = " + returnedOper + "");
                 }
                 else if (dataPicker.Text != "" && OperComBox.Text == "" && UslugComBox.Text == "")
                 {
                     dataBase.SoursData("SELECT t.id,t.nomer,(SELECT ts.`desc` FROM turns_status AS ts WHERE ts.name = t.`status`) as `status`,s.name,(SELECT g.window_nomer FROM workplaces AS g WHERE g.id = t.workplace_id) AS nam,u.name_u,DATE_FORMAT(t.created_at,'%Y-%m-%d  %h:%i:%s'),DATE_FORMAT(t.updated_at,'%Y-%m-%d  %h:%i:%s') from turns AS t INNER JOIN users AS u ON t.user_id =u.id INNER JOIN services AS s ON s.id = t.service_id  WHERE DATE_FORMAT(t.created_at,'%d.%m.%Y') = '" + dataPicker.Text + "'");
                 }
+                else if (dataPicker.Text == "" && OperComBox.Text != "" && UslugComBox.Text == "")
+                {
+                    dataBase.SoursData("SELECT t.id,t.nomer,(SELECT ts.`desc` FROM turns_status AS ts WHERE ts.name = t.`status`) as `status`,s.name,(SELECT g.window_nomer FROM workplaces AS g WHERE g.id = t.workplace_id) AS nam,u.name_u,DATE_FORMAT(t.created_at,'%Y-%m-%d  %h:%i:%s'),DATE_FORMAT(t.updated_at,'%Y-%m-%d  %h:%i:%s') from turns AS t INNER JOIN users AS u ON t.user_id =u.id INNER JOIN services AS s ON s.id = t.service_id  WHERE user_id = " + returnedOper + "");
+                }
                 else if (dataPicker.Text != "" && OperComBox.Text == "" && UslugComBox.Text != "")
                 {
                     dataBase.SoursData("SELECT t.id,t.nomer,(SELECT ts.`desc` FROM turns_status AS ts WHERE ts.name = t.`status`) as `status`,s.name,(SELECT g.window_nomer FROM workplaces AS g WHERE g.id = t.workplace_id) AS nam,u.name_u,DATE_FORMAT(t.created_at,'%Y-%m-%d  %h:%i:%s'),DATE_FORMAT(t.updated_at,'%Y-%m-%d  %h:%i:%s') from turns AS t INNER JOIN users AS u ON t.user_id =u.id INNER JOIN services AS s ON s.id = t.service_id  WHERE DATE_FORMAT(t.created_at,'%d.%m.%Y') = '" + dataPicker.Text + "' AND t.service_id = " + returnedUslug + "");
+                }
+                else if (dataPicker.Text == "" && OperComBox.Text == "" && UslugComBox.Text != "")
+                {
+                    dataBase.SoursData("SELECT t.id,t.nomer,(SELECT ts.`desc` FROM turns_status AS ts WHERE ts.name = t.`status`) as `status`,s.name,(SELECT g.window_nomer FROM workplaces AS g WHERE g.id = t.workplace_id) AS nam,u.name_u,DATE_FORMAT(t.created_at,'%Y-%m-%d  %h:%i:%s'),DATE_FORMAT(t.updated_at,'%Y-%m-%d  %h:%i:%s') from turns AS t INNER JOIN users AS u ON t.user_id =u.id INNER JOIN services AS s ON s.id = t.service_id  WHERE t.service_id = " + returnedUslug + "");
+                }
+                else if (dataPicker.Text == "" && OperComBox.Text != "" && UslugComBox.Text != "")
+                {
+                    dataBase.SoursData("SELECT t.id,t.nomer,(SELECT ts.`desc` FROM turns_status AS ts WHERE ts.name = t.`status`) as `status`,s.name,(SELECT g.window_nomer FROM workplaces AS g WHERE g.id = t.workplace_id) AS nam,u.name_u,DATE_FORMAT(t.created_at,'%Y-%m-%d  %h:%i:%s'),DATE_FORMAT(t.updated_at,'%Y-%m-%d  %h:%i:%s') from turns AS t INNER JOIN users AS u ON t.user_id =u.id INNER JOIN services AS s ON s.id = t.service_id  WHERE service_id = " + returnedUslug + " and t.user_id = " + returnedOper + "");
                 }
                 else
                 {
@@ -426,15 +437,27 @@ namespace RAdminPanel.UserControlFolder
             }
             else if (dataPicker.Text != "" && OperComBox.Text != "" && UslugComBox.Text == "")
             {
-                dataBase.SoursData("SELECT t.id,t.nomer,(SELECT ts.`desc` FROM turns_status AS ts WHERE ts.name = t.`status`) AS `status`,s.name,(SELECT g.window_nomer FROM workplaces AS g WHERE g.id = t.workplace_id) AS nam,u.name_u, DATE_FORMAT(t.created_at,'%Y-%m-%d  %h:%i:%s'), DATE_FORMAT(t.updated_at,'%Y-%m-%d  %h:%i:%s') FROM turns AS t INNER JOIN users AS u ON t.user_id =u.id INNER JOIN services AS s ON s.id = t.service_id WHERE DATE_FORMAT(t.created_at,'%d.%m.%Y') = '04.01.2021' AND t.user_id = " + returnedOper + "");
+                dataBase.SoursData("SELECT t.id,t.nomer,(SELECT ts.`desc` FROM turns_status AS ts WHERE ts.name = t.`status`) as `status`,s.name,(SELECT g.window_nomer FROM workplaces AS g WHERE g.id = t.workplace_id) AS nam,u.name_u,DATE_FORMAT(t.created_at,'%Y-%m-%d  %h:%i:%s'),DATE_FORMAT(t.updated_at,'%Y-%m-%d  %h:%i:%s') from turns AS t INNER JOIN users AS u ON t.user_id =u.id INNER JOIN services AS s ON s.id = t.service_id  WHERE DATE_FORMAT(t.created_at,'%d.%m.%Y') = '" + dataPicker.Text + "' AND t.user_id = " + returnedOper + "");
             }
             else if (dataPicker.Text != "" && OperComBox.Text == "" && UslugComBox.Text == "")
             {
                 dataBase.SoursData("SELECT t.id,t.nomer,(SELECT ts.`desc` FROM turns_status AS ts WHERE ts.name = t.`status`) as `status`,s.name,(SELECT g.window_nomer FROM workplaces AS g WHERE g.id = t.workplace_id) AS nam,u.name_u,DATE_FORMAT(t.created_at,'%Y-%m-%d  %h:%i:%s'),DATE_FORMAT(t.updated_at,'%Y-%m-%d  %h:%i:%s') from turns AS t INNER JOIN users AS u ON t.user_id =u.id INNER JOIN services AS s ON s.id = t.service_id  WHERE DATE_FORMAT(t.created_at,'%d.%m.%Y') = '" + dataPicker.Text + "'");
             }
+            else if (dataPicker.Text == "" && OperComBox.Text != "" && UslugComBox.Text == "")
+            {
+                dataBase.SoursData("SELECT t.id,t.nomer,(SELECT ts.`desc` FROM turns_status AS ts WHERE ts.name = t.`status`) as `status`,s.name,(SELECT g.window_nomer FROM workplaces AS g WHERE g.id = t.workplace_id) AS nam,u.name_u,DATE_FORMAT(t.created_at,'%Y-%m-%d  %h:%i:%s'),DATE_FORMAT(t.updated_at,'%Y-%m-%d  %h:%i:%s') from turns AS t INNER JOIN users AS u ON t.user_id =u.id INNER JOIN services AS s ON s.id = t.service_id  WHERE user_id = " + returnedOper + "");
+            }
             else if (dataPicker.Text != "" && OperComBox.Text == "" && UslugComBox.Text != "")
             {
                 dataBase.SoursData("SELECT t.id,t.nomer,(SELECT ts.`desc` FROM turns_status AS ts WHERE ts.name = t.`status`) as `status`,s.name,(SELECT g.window_nomer FROM workplaces AS g WHERE g.id = t.workplace_id) AS nam,u.name_u,DATE_FORMAT(t.created_at,'%Y-%m-%d  %h:%i:%s'),DATE_FORMAT(t.updated_at,'%Y-%m-%d  %h:%i:%s') from turns AS t INNER JOIN users AS u ON t.user_id =u.id INNER JOIN services AS s ON s.id = t.service_id  WHERE DATE_FORMAT(t.created_at,'%d.%m.%Y') = '" + dataPicker.Text + "' AND t.service_id = " + returnedUslug + "");
+            }
+            else if (dataPicker.Text == "" && OperComBox.Text == "" && UslugComBox.Text != "")
+            {
+                dataBase.SoursData("SELECT t.id,t.nomer,(SELECT ts.`desc` FROM turns_status AS ts WHERE ts.name = t.`status`) as `status`,s.name,(SELECT g.window_nomer FROM workplaces AS g WHERE g.id = t.workplace_id) AS nam,u.name_u,DATE_FORMAT(t.created_at,'%Y-%m-%d  %h:%i:%s'),DATE_FORMAT(t.updated_at,'%Y-%m-%d  %h:%i:%s') from turns AS t INNER JOIN users AS u ON t.user_id =u.id INNER JOIN services AS s ON s.id = t.service_id  WHERE t.service_id = " + returnedUslug + "");
+            }
+            else if (dataPicker.Text == "" && OperComBox.Text != "" && UslugComBox.Text != "")
+            {
+                dataBase.SoursData("SELECT t.id,t.nomer,(SELECT ts.`desc` FROM turns_status AS ts WHERE ts.name = t.`status`) as `status`,s.name,(SELECT g.window_nomer FROM workplaces AS g WHERE g.id = t.workplace_id) AS nam,u.name_u,DATE_FORMAT(t.created_at,'%Y-%m-%d  %h:%i:%s'),DATE_FORMAT(t.updated_at,'%Y-%m-%d  %h:%i:%s') from turns AS t INNER JOIN users AS u ON t.user_id =u.id INNER JOIN services AS s ON s.id = t.service_id  WHERE service_id = " + returnedUslug + " and t.user_id = " + returnedOper + "");
             }
             else
             {
@@ -483,15 +506,27 @@ namespace RAdminPanel.UserControlFolder
                 }
                 else if (dataPicker.Text != "" && OperComBox.Text != "" && UslugComBox.Text == "")
                 {
-                    dataBase.SoursData("SELECT t.id,t.nomer,(SELECT ts.`desc` FROM turns_status AS ts WHERE ts.name = t.`status`) AS `status`,s.name,(SELECT g.window_nomer FROM workplaces AS g WHERE g.id = t.workplace_id) AS nam,u.name_u, DATE_FORMAT(t.created_at,'%Y-%m-%d  %h:%i:%s'), DATE_FORMAT(t.updated_at,'%Y-%m-%d  %h:%i:%s') FROM turns AS t INNER JOIN users AS u ON t.user_id =u.id INNER JOIN services AS s ON s.id = t.service_id WHERE DATE_FORMAT(t.created_at,'%d.%m.%Y') = '04.01.2021' AND t.user_id = " + returnedOper + "");
+                    dataBase.SoursData("SELECT t.id,t.nomer,(SELECT ts.`desc` FROM turns_status AS ts WHERE ts.name = t.`status`) as `status`,s.name,(SELECT g.window_nomer FROM workplaces AS g WHERE g.id = t.workplace_id) AS nam,u.name_u,DATE_FORMAT(t.created_at,'%Y-%m-%d  %h:%i:%s'),DATE_FORMAT(t.updated_at,'%Y-%m-%d  %h:%i:%s') from turns AS t INNER JOIN users AS u ON t.user_id =u.id INNER JOIN services AS s ON s.id = t.service_id  WHERE DATE_FORMAT(t.created_at,'%d.%m.%Y') = '" + dataPicker.Text + "' AND t.user_id = " + returnedOper + "");
                 }
                 else if (dataPicker.Text != "" && OperComBox.Text == "" && UslugComBox.Text == "")
                 {
                     dataBase.SoursData("SELECT t.id,t.nomer,(SELECT ts.`desc` FROM turns_status AS ts WHERE ts.name = t.`status`) as `status`,s.name,(SELECT g.window_nomer FROM workplaces AS g WHERE g.id = t.workplace_id) AS nam,u.name_u,DATE_FORMAT(t.created_at,'%Y-%m-%d  %h:%i:%s'),DATE_FORMAT(t.updated_at,'%Y-%m-%d  %h:%i:%s') from turns AS t INNER JOIN users AS u ON t.user_id =u.id INNER JOIN services AS s ON s.id = t.service_id  WHERE DATE_FORMAT(t.created_at,'%d.%m.%Y') = '" + dataPicker.Text + "'");
                 }
+                else if (dataPicker.Text == "" && OperComBox.Text != "" && UslugComBox.Text == "")
+                {
+                    dataBase.SoursData("SELECT t.id,t.nomer,(SELECT ts.`desc` FROM turns_status AS ts WHERE ts.name = t.`status`) as `status`,s.name,(SELECT g.window_nomer FROM workplaces AS g WHERE g.id = t.workplace_id) AS nam,u.name_u,DATE_FORMAT(t.created_at,'%Y-%m-%d  %h:%i:%s'),DATE_FORMAT(t.updated_at,'%Y-%m-%d  %h:%i:%s') from turns AS t INNER JOIN users AS u ON t.user_id =u.id INNER JOIN services AS s ON s.id = t.service_id  WHERE user_id = " + returnedOper + "");
+                }
                 else if (dataPicker.Text != "" && OperComBox.Text == "" && UslugComBox.Text != "")
                 {
                     dataBase.SoursData("SELECT t.id,t.nomer,(SELECT ts.`desc` FROM turns_status AS ts WHERE ts.name = t.`status`) as `status`,s.name,(SELECT g.window_nomer FROM workplaces AS g WHERE g.id = t.workplace_id) AS nam,u.name_u,DATE_FORMAT(t.created_at,'%Y-%m-%d  %h:%i:%s'),DATE_FORMAT(t.updated_at,'%Y-%m-%d  %h:%i:%s') from turns AS t INNER JOIN users AS u ON t.user_id =u.id INNER JOIN services AS s ON s.id = t.service_id  WHERE DATE_FORMAT(t.created_at,'%d.%m.%Y') = '" + dataPicker.Text + "' AND t.service_id = " + returnedUslug + "");
+                }
+                else if (dataPicker.Text == "" && OperComBox.Text == "" && UslugComBox.Text != "")
+                {
+                    dataBase.SoursData("SELECT t.id,t.nomer,(SELECT ts.`desc` FROM turns_status AS ts WHERE ts.name = t.`status`) as `status`,s.name,(SELECT g.window_nomer FROM workplaces AS g WHERE g.id = t.workplace_id) AS nam,u.name_u,DATE_FORMAT(t.created_at,'%Y-%m-%d  %h:%i:%s'),DATE_FORMAT(t.updated_at,'%Y-%m-%d  %h:%i:%s') from turns AS t INNER JOIN users AS u ON t.user_id =u.id INNER JOIN services AS s ON s.id = t.service_id  WHERE t.service_id = " + returnedUslug + "");
+                }
+                else if (dataPicker.Text == "" && OperComBox.Text != "" && UslugComBox.Text != "")
+                {
+                    dataBase.SoursData("SELECT t.id,t.nomer,(SELECT ts.`desc` FROM turns_status AS ts WHERE ts.name = t.`status`) as `status`,s.name,(SELECT g.window_nomer FROM workplaces AS g WHERE g.id = t.workplace_id) AS nam,u.name_u,DATE_FORMAT(t.created_at,'%Y-%m-%d  %h:%i:%s'),DATE_FORMAT(t.updated_at,'%Y-%m-%d  %h:%i:%s') from turns AS t INNER JOIN users AS u ON t.user_id =u.id INNER JOIN services AS s ON s.id = t.service_id  WHERE service_id = " + returnedUslug + " and t.user_id = " + returnedOper + "");
                 }
                 else
                 {
